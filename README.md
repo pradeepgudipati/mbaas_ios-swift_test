@@ -28,3 +28,4 @@ Assuming you have the Axway MBaaS IOS SDK.
 "Users",
 "Access Control Lists",
 "Photos",
+Test

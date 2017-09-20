@@ -84,6 +84,7 @@
 		7B5102B61F690E8A00A7BDF9 /* AuthBrowserController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B5102771F690E8A00A7BDF9 /* AuthBrowserController.swift */; };
 		7B5102B71F690E8A00A7BDF9 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B5102781F690E8A00A7BDF9 /* Logger.swift */; };
 		7B5102B91F69170600A7BDF9 /* APIListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B5102B81F69170600A7BDF9 /* APIListViewController.swift */; };
+		7B51ED221F7279C500A26437 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = 7B51ED211F7279C500A26437 /* README.md */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -187,6 +188,7 @@
 		7B5102771F690E8A00A7BDF9 /* AuthBrowserController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthBrowserController.swift; sourceTree = "<group>"; };
 		7B5102781F690E8A00A7BDF9 /* Logger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
 		7B5102B81F69170600A7BDF9 /* APIListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIListViewController.swift; sourceTree = "<group>"; };
+		7B51ED211F7279C500A26437 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -228,6 +230,7 @@
 		7B5101FA1F690E6400A7BDF9 = {
 			isa = PBXGroup;
 			children = (
+				7B51ED211F7279C500A26437 /* README.md */,
 				7B5102051F690E6400A7BDF9 /* Axway-Test */,
 				7B51021A1F690E6500A7BDF9 /* Axway-TestTests */,
 				7B5102251F690E6500A7BDF9 /* Axway-TestUITests */,
@@ -535,6 +538,7 @@
 				7B5102881F690E8A00A7BDF9 /* LikesAPI.swift in Sources */,
 				7B5102AC1F690E8A00A7BDF9 /* AXResponseSerialization.swift in Sources */,
 				7B51028E1F690E8A00A7BDF9 /* PlacesAPI.swift in Sources */,
+				7B51ED221F7279C500A26437 /* README.md in Sources */,
 				7B51027C1F690E8A00A7BDF9 /* AdminAPI.swift in Sources */,
 				7B5102A81F690E8A00A7BDF9 /* AXNetworkReachabilityManager.swift in Sources */,
 				7B5102981F690E8A00A7BDF9 /* ApiKeyAuth.swift in Sources */,
