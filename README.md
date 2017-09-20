@@ -23,7 +23,7 @@ Steps to Download MBaaS IOS SDK
   * In the Authorization tab, generate an API Key for the Application Created.
 * Under API Section, select the MBaaS API's and Download the IOS SDK Client.
 
-***Assuming you have the Axway MBaaS IOS SDK.***
+## Assuming you have the Axway MBaaS IOS SDK. ##
 
 Pull this project to your Xcode project and just perform below modifications in the project files
 
