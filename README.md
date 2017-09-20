@@ -34,4 +34,4 @@ Pull this project to your Xcode project and just perform below modifications in 
 This reference applications verifies the following Axway MBaaS Objects
 
   1. "Users"
-  2."Access Control Lists"
+  2. "Access Control Lists"
