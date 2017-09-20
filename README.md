@@ -31,7 +31,7 @@ Pull this project to your Xcode project and just perform below modifications in 
   2. Check mark - Copy items if needed, Check mark add to targets
   3. Open AppDelegate.swift and add sharedInstance.apiKey = "Applications API Key"
 
-This reference applications verifies the following Axway MBaaS Objects,
+This reference applications verifies the following Axway MBaaS Objects
 
-  1. "Users",
+  1. "Users"
   2."Access Control Lists"
