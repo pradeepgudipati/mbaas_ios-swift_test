@@ -44,6 +44,9 @@ class ViewController: UIViewController,UIImagePickerControllerDelegate,UINavigat
     self.present(imagePicker, animated: true, completion: nil)
     
   }
+  /*
+     This method is used for upload image
+ */
   
   func uploadPhotoToServer(imageUploadURL:URL) {
     

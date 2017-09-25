@@ -16,6 +16,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
   func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
     // Override point for customization after application launch.
+    //Add application key 
     MbassAPI.sharedInstance.apiKey = "UNCYIe7DYOJAaZWNET2EwcMCI0828JvP"
     return true
   }

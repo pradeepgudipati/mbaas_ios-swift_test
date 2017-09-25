@@ -65,6 +65,7 @@ class APIListViewController: UIViewController,UITableViewDataSource,UITableViewD
       let firstName = nameDic["first_name"] as! String
       let lastName = nameDic["last_name"] as! String
       cell!.textLabel?.text = "\(firstName) \(lastName)"
+      
     }
     return cell!
   }
@@ -107,7 +108,9 @@ class APIListViewController: UIViewController,UITableViewDataSource,UITableViewD
 
     }
   }
-  
+  /*
+      This method is used for login user. Params username, password
+ */
   func loginMethod(username:String,password:String) {
     
 
@@ -149,6 +152,7 @@ class APIListViewController: UIViewController,UITableViewDataSource,UITableViewD
       let keyTextField = alertController.textFields![0] as UITextField
       let valueTextField = alertController.textFields![1] as UITextField
       
+      //Login with dynamic details
       self.loginMethod(username: keyTextField.text!, password: valueTextField.text!)
       
     })
@@ -160,6 +164,7 @@ class APIListViewController: UIViewController,UITableViewDataSource,UITableViewD
     let defaultAction = UIAlertAction(title: "Default", style: UIAlertActionStyle.destructive, handler: {
       (action : UIAlertAction!) -> Void in
       
+      //Login with static details
       self.loginMethod(username: "bahubhali", password: "password")
 
     })
