@@ -15,6 +15,7 @@ class ViewController: UIViewController,UIImagePickerControllerDelegate,UINavigat
   override func viewDidLoad() {
     super.viewDidLoad()
     // Do any additional setup after loading the view, typically from a nib.
+    self.clearDocumentoryFolder()
   }
 
   override func didReceiveMemoryWarning() {
@@ -88,10 +89,15 @@ class ViewController: UIViewController,UIImagePickerControllerDelegate,UINavigat
     
     let image = info[UIImagePickerControllerOriginalImage] as! UIImage
 
+    let currentTimestamp = "\(NSDate().timeIntervalSince1970 * 1000)"
+
     //Save the image to document directory
     do {
+      
+      
+      
       let documentsURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
-      let fileURL = documentsURL.appendingPathComponent("\(Timestamp).jpg")
+      let fileURL = documentsURL.appendingPathComponent("\(currentTimestamp).jpg")
       if let pngImageData = UIImageJPEGRepresentation(image,0.5) {
         try pngImageData.write(to: fileURL, options: .atomic)
       }
@@ -99,7 +105,7 @@ class ViewController: UIViewController,UIImagePickerControllerDelegate,UINavigat
     
     //Get image Path
     let documentsURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
-    let filePath = documentsURL.appendingPathComponent("\(Timestamp).jpg").path
+    let filePath = documentsURL.appendingPathComponent("\(currentTimestamp).jpg").path
     
     let imageURL = URL(fileURLWithPath: filePath);
     
@@ -111,6 +117,35 @@ class ViewController: UIViewController,UIImagePickerControllerDelegate,UINavigat
   
   var Timestamp: String {
     return "\(NSDate().timeIntervalSince1970 * 1000)"
+  }
+  
+  
+  func clearDocumentoryFolder() {
+    let fileManager = FileManager.default
+    let documentsUrl =  FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first! as NSURL
+    let documentsPath = documentsUrl.path
+    
+    do {
+      if let documentPath = documentsPath
+      {
+        let fileNames = try fileManager.contentsOfDirectory(atPath: "\(documentPath)")
+        print("all files in cache: \(fileNames)")
+        for fileName in fileNames {
+          
+          if (fileName.hasSuffix(".png") || fileName.hasSuffix(".jpg"))
+          {
+            let filePathName = "\(documentPath)/\(fileName)"
+            try fileManager.removeItem(atPath: filePathName)
+          }
+        }
+        
+        let files = try fileManager.contentsOfDirectory(atPath: "\(documentPath)")
+        print("all files in cache after deleting images: \(files)")
+      }
+      
+    } catch {
+      print("Could not clear temp folder: \(error)")
+    }
   }
 }
 
