@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		23117BA41FDE6C1700A3541A /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23117BA31FDE6C1700A3541A /* UserModel.swift */; };
+		23A3C6861FD977A800E2CC98 /* ChatsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23A3C6851FD977A800E2CC98 /* ChatsViewController.swift */; };
+		23CECA481FDE85F200D40693 /* CreateUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23CECA471FDE85F200D40693 /* CreateUserViewController.swift */; };
+		23CECA4A1FDE886500D40693 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23CECA491FDE886500D40693 /* Utils.swift */; };
 		7B474D201F6A5093005F044A /* ACHUD+Animation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B474D1C1F6A5093005F044A /* ACHUD+Animation.swift */; };
 		7B474D211F6A5093005F044A /* ACProgressHUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B474D1D1F6A5093005F044A /* ACProgressHUD.swift */; };
 		7B474D221F6A5093005F044A /* ACProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B474D1E1F6A5093005F044A /* ACProgressView.swift */; };
@@ -105,6 +109,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		23117BA31FDE6C1700A3541A /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
+		23A3C6851FD977A800E2CC98 /* ChatsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatsViewController.swift; sourceTree = "<group>"; };
+		23CECA471FDE85F200D40693 /* CreateUserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateUserViewController.swift; sourceTree = "<group>"; };
+		23CECA491FDE886500D40693 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		7B474D1C1F6A5093005F044A /* ACHUD+Animation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ACHUD+Animation.swift"; sourceTree = "<group>"; };
 		7B474D1D1F6A5093005F044A /* ACProgressHUD.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ACProgressHUD.swift; sourceTree = "<group>"; };
 		7B474D1E1F6A5093005F044A /* ACProgressView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ACProgressView.swift; sourceTree = "<group>"; };
@@ -216,6 +224,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		23A3C6821FD9776700E2CC98 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				7B5102081F690E6400A7BDF9 /* ViewController.swift */,
+				7B5102B81F69170600A7BDF9 /* APIListViewController.swift */,
+				7B474D241F6BB53D005F044A /* ACLListViewController.swift */,
+				7B474D261F6BB741005F044A /* CreateOrUpdateACLViewController.swift */,
+				23A3C6851FD977A800E2CC98 /* ChatsViewController.swift */,
+				23CECA471FDE85F200D40693 /* CreateUserViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
 		7B474D1B1F6A5093005F044A /* Source */ = {
 			isa = PBXGroup;
 			children = (
@@ -254,10 +275,6 @@
 				7B474D1B1F6A5093005F044A /* Source */,
 				7B5102341F690E8A00A7BDF9 /* mbass */,
 				7B5102061F690E6400A7BDF9 /* AppDelegate.swift */,
-				7B5102081F690E6400A7BDF9 /* ViewController.swift */,
-				7B5102B81F69170600A7BDF9 /* APIListViewController.swift */,
-				7B474D241F6BB53D005F044A /* ACLListViewController.swift */,
-				7B474D261F6BB741005F044A /* CreateOrUpdateACLViewController.swift */,
 				7B51020A1F690E6400A7BDF9 /* Main.storyboard */,
 				7B51020D1F690E6400A7BDF9 /* Assets.xcassets */,
 				7B51020F1F690E6400A7BDF9 /* LaunchScreen.storyboard */,
@@ -287,6 +304,7 @@
 		7B5102341F690E8A00A7BDF9 /* mbass */ = {
 			isa = PBXGroup;
 			children = (
+				23A3C6821FD9776700E2CC98 /* Controllers */,
 				7B5102351F690E8A00A7BDF9 /* AlamofireImplementations.swift */,
 				7B5102361F690E8A00A7BDF9 /* APIHelper.swift */,
 				7B5102371F690E8A00A7BDF9 /* APIs */,
@@ -357,6 +375,7 @@
 			children = (
 				7B5102611F690E8A00A7BDF9 /* ErrorResponse_.swift */,
 				7B5102621F690E8A00A7BDF9 /* SuccessResponse.swift */,
+				23117BA31FDE6C1700A3541A /* UserModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -390,6 +409,7 @@
 			children = (
 				7B5102771F690E8A00A7BDF9 /* AuthBrowserController.swift */,
 				7B5102781F690E8A00A7BDF9 /* Logger.swift */,
+				23CECA491FDE886500D40693 /* Utils.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -543,6 +563,7 @@
 				7B5102A81F690E8A00A7BDF9 /* AXNetworkReachabilityManager.swift in Sources */,
 				7B5102981F690E8A00A7BDF9 /* ApiKeyAuth.swift in Sources */,
 				7B51028D1F690E8A00A7BDF9 /* PhotosAPI.swift in Sources */,
+				23CECA481FDE85F200D40693 /* CreateUserViewController.swift in Sources */,
 				7B5102AD1F690E8A00A7BDF9 /* AXResult.swift in Sources */,
 				7B5102B31F690E8A00A7BDF9 /* AXValidation.swift in Sources */,
 				7B5102091F690E6400A7BDF9 /* ViewController.swift in Sources */,
@@ -572,9 +593,11 @@
 				7B5102A91F690E8A00A7BDF9 /* AXParameterEncoding.swift in Sources */,
 				7B474D221F6A5093005F044A /* ACProgressView.swift in Sources */,
 				7B5102A11F690E8A00A7BDF9 /* Extensions.swift in Sources */,
+				23A3C6861FD977A800E2CC98 /* ChatsViewController.swift in Sources */,
 				7B5102B71F690E8A00A7BDF9 /* Logger.swift in Sources */,
 				7B5102801F690E8A00A7BDF9 /* CustomObjectsAPI.swift in Sources */,
 				7B5102B91F69170600A7BDF9 /* APIListViewController.swift in Sources */,
+				23117BA41FDE6C1700A3541A /* UserModel.swift in Sources */,
 				7B5102AA1F690E8A00A7BDF9 /* AXRequest.swift in Sources */,
 				7B5102971F690E8A00A7BDF9 /* APIs.swift in Sources */,
 				7B51028A1F690E8A00A7BDF9 /* MessagesAPI.swift in Sources */,
@@ -584,6 +607,7 @@
 				7B51029A1F690E8A00A7BDF9 /* HTTPBasicAuth.swift in Sources */,
 				7B5102B41F690E8A00A7BDF9 /* DispatchQueue+Alamofire.swift in Sources */,
 				7B5102821F690E8A00A7BDF9 /* EmailTemplateAPI.swift in Sources */,
+				23CECA4A1FDE886500D40693 /* Utils.swift in Sources */,
 				7B51029D1F690E8A00A7BDF9 /* OAuthApplication.swift in Sources */,
 				7B5102AB1F690E8A00A7BDF9 /* AXResponse.swift in Sources */,
 				7B5102961F690E8A00A7BDF9 /* UsersAPI.swift in Sources */,

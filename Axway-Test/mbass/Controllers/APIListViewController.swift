@@ -192,13 +192,13 @@ class APIListViewController: UIViewController,UITableViewDataSource,UITableViewD
       (action : UIAlertAction!) -> Void in
       
     })
-    let defaultAction = UIAlertAction(title: "Default", style: UIAlertActionStyle.destructive, handler: {
-      (action : UIAlertAction!) -> Void in
-      
-      //Login with static details
-      self.loginMethod(username: "bahubhali", password: "password")
-
-    })
+//    let defaultAction = UIAlertAction(title: "Default", style: UIAlertActionStyle.destructive, handler: {
+//      (action : UIAlertAction!) -> Void in
+//
+//      //Login with static details
+//      self.loginMethod(username: "bahubhali", password: "password")
+//
+//    })
     
     alertController.addTextField { (textField : UITextField!) -> Void in
       textField.placeholder = "Username"
@@ -209,95 +209,11 @@ class APIListViewController: UIViewController,UITableViewDataSource,UITableViewD
     
     alertController.addAction(saveAction)
     alertController.addAction(cancelAction)
-    alertController.addAction(defaultAction)
+    //alertController.addAction(defaultAction)
 
     self.present(alertController, animated: true, completion: nil)
   }
 
-  
-//  func createUser() {
-//
-//    ACProgressHUD.shared.showHUD()
-//
-//    //let profileURL : NSURL = NSURL(string: "http://placehold.it/120x120&text=image2")!
-//    UsersAPI.usersCreate(email: "bhalla@yopmail.com", username: "Bhalla", password: "password", passwordConfirmation: "password", firstName: "bhalla", lastName: "Deva",  tags:nil, customFields: "", aclName: "", aclId: "", suId: nil, role: "", template: "", confirmationTemplate: "", prettyJson: true) { (response, error) in
-//
-//      ACProgressHUD.shared.hideHUD()
-//
-//      if (error != nil) {
-//
-//        let alert = UIAlertController(title: "Create Error", message: error?.localizedDescription, preferredStyle: UIAlertControllerStyle.alert)
-//        alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: nil))
-//        self.present(alert, animated: true, completion: nil)
-//
-//      }
-//      else {
-//
-//
-//        let value = response?.description
-//
-//        let alert = UIAlertController(title: "Create User Success", message:value, preferredStyle: UIAlertControllerStyle.alert)
-//        alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: nil))
-//        self.present(alert, animated: true, completion: nil)
-//
-//      }
-//
-//
-//    }
-//
-//  }
-    
-//    func createUserAlertView(){
-//        
-//        let alertController = UIAlertController(title: "Create User", message: "Please enter login details or Login as default", preferredStyle: UIAlertControllerStyle.alert)
-//        
-//        let saveAction = UIAlertAction(title: "Login", style: UIAlertActionStyle.default, handler: {
-//            alert -> Void in
-//            
-//            let keyTextField = alertController.textFields![0] as UITextField
-//            let valueTextField = alertController.textFields![1] as UITextField
-//            
-//            //Login with dynamic details
-//            self.loginMethod(username: keyTextField.text!, password: valueTextField.text!)
-//            
-//        })
-//        
-//        let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.default, handler: {
-//            (action : UIAlertAction!) -> Void in
-//            
-//        })
-//        let defaultAction = UIAlertAction(title: "Default", style: UIAlertActionStyle.destructive, handler: {
-//            (action : UIAlertAction!) -> Void in
-//            
-//        })
-//        
-//        alertController.addTextField { (textField : UITextField!) -> Void in
-//            textField.placeholder = "FirstName"
-//        }
-//        alertController.addTextField { (textField : UITextField!) -> Void in
-//            textField.placeholder = "LastName"
-//        }
-//        alertController.addTextField { (textField : UITextField!) -> Void in
-//            textField.placeholder = "UserName"
-//        }
-//        alertController.addTextField { (textField : UITextField!) -> Void in
-//            textField.placeholder = "EmailId"
-//        }
-//        alertController.addTextField { (textField : UITextField!) -> Void in
-//            textField.placeholder = "Password"
-//        }
-//        alertController.addTextField { (textField : UITextField!) -> Void in
-//            textField.placeholder = "Cofirm Password"
-//        }
-//        
-//        alertController.addAction(saveAction)
-//        alertController.addAction(cancelAction)
-//        alertController.addAction(defaultAction)
-//        
-//        self.present(alertController, animated: true, completion: nil)
-//        
-//    }
-//  
   func createMultipleUsers() {
     
     ACProgressHUD.shared.showHUD()

@@ -17,8 +17,11 @@ class CreateUserViewController: UIViewController,UITextFieldDelegate {
     @IBOutlet weak var password: UITextField!
     @IBOutlet weak var confirmPassword: UITextField!
     
+    var currentTag:Int = 100
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         // Do any additional setup after loading the view.
     }
 
@@ -89,5 +92,85 @@ class CreateUserViewController: UIViewController,UITextFieldDelegate {
         
     }
     
+    lazy var inputToolbar: UIToolbar = {
+        var toolbar = UIToolbar()
+        toolbar.barStyle = .default
+        toolbar.backgroundColor = UIColor.lightGray
+        toolbar.isTranslucent = true
+        toolbar.sizeToFit()
+        var doneButton = UIBarButtonItem(title: "Done", style: UIBarButtonItemStyle.done, target: self, action: #selector(doneBtnAction(sender:)))
+        var flexibleSpaceButton = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
+        var fixedSpaceButton = UIBarButtonItem(barButtonSystemItem: .fixedSpace, target: nil, action: nil)
+        var nextButton  = UIBarButtonItem(title: ">", style: UIBarButtonItemStyle.done, target: self, action: #selector(keyboardNextButton(_sender:)))
+        nextButton.width = 50.0
+        var previousButton  = UIBarButtonItem(title: "<", style: UIBarButtonItemStyle.done, target: self, action: #selector(keyboardPreviousButton(_sender:)))
+    
+        toolbar.setItems([fixedSpaceButton,previousButton, fixedSpaceButton, nextButton, flexibleSpaceButton, doneButton], animated: false)
+        toolbar.isUserInteractionEnabled = true
+
+        return toolbar
+    }()
+
+    
+    func keyboardNextButton(_sender : Any){
+        
+        if currentTag == 100{
+            lastName.becomeFirstResponder()
+        }
+        else if currentTag == 101{
+            userName.becomeFirstResponder()
+        }
+        else if currentTag == 102{
+            emailId.becomeFirstResponder()
+        }
+        else if currentTag == 103{
+            password.becomeFirstResponder()
+        }
+        else if currentTag == 104{
+            confirmPassword.becomeFirstResponder()
+        }
+        else if currentTag == 105
+        {
+            self.view.endEditing(true)
+        }
+    }
+    
+    func keyboardPreviousButton(_sender : Any){
+        
+        if currentTag == 105{
+            password.becomeFirstResponder()
+        }
+        else if currentTag == 104{
+            emailId.becomeFirstResponder()
+        }
+        else if currentTag == 103{
+            userName.becomeFirstResponder()
+        }
+        else if currentTag == 102{
+            lastName.becomeFirstResponder()
+        }
+        else if currentTag == 101{
+            firstName.becomeFirstResponder()
+        }
+        
+    }
+  
+    func doneBtnAction(sender:Any)
+    {
+        self.view.endEditing(true)
+    }
+    
+    func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
+        textField.inputAccessoryView = inputToolbar
+        return true
+    }
+
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+       currentTag = textField.tag
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        return true
+    }
 
 }
