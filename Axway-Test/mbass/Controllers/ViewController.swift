@@ -8,33 +8,26 @@
 
 import UIKit
 
-class ViewController: UIViewController,UIImagePickerControllerDelegate,UINavigationControllerDelegate {
+class ViewController: UIViewController,UIImagePickerControllerDelegate,UINavigationControllerDelegate,UITableViewDataSource,UITableViewDelegate {
 
-  let imagePicker = UIImagePickerController()
+    @IBOutlet var baseView: UIView!
+    @IBOutlet weak var itemsTableView: UITableView!
+    
+    let imagePicker = UIImagePickerController()
+    var itemsArr = NSMutableArray()
+    var userslistArray: NSMutableArray = ["Create User","Login User","Show Current User","Update Current User","Remove User","Logout Current User","Query User"];
+    var cllistArray: NSMutableArray = ["Create ACL","Show ACL","Update User in ACL","Check Permission of ACL"]
   
   override func viewDidLoad() {
     super.viewDidLoad()
     // Do any additional setup after loading the view, typically from a nib.
+    itemsArr = ["Users","Access Control","Chats","Checkins","Geo Fences","Custom Objects","Photo Collections","Photos","Places","Push Notifications"];
     self.clearDocumentoryFolder()
   }
 
   override func didReceiveMemoryWarning() {
     super.didReceiveMemoryWarning()
     // Dispose of any resources that can be recreated.
-  }
-  
-  @IBAction func testUsersMethod(_ sender: Any) {
-    
-    let aAPIListViewController = self.storyboard?.instantiateViewController(withIdentifier: "APIListViewController") as! APIListViewController
-    self.navigationController?.pushViewController(aAPIListViewController, animated: true)
-    
-  }
-  
-  @IBAction func testAclsMethod(_ sender: Any) {
-    
-    let aACLListViewController = self.storyboard?.instantiateViewController(withIdentifier: "ACLListViewController") as! ACLListViewController
-    self.navigationController?.pushViewController(aACLListViewController, animated: true)
-    
   }
   
   @IBAction func uploadPhoto(_ sender: Any) {
@@ -147,5 +140,57 @@ class ViewController: UIViewController,UIImagePickerControllerDelegate,UINavigat
       print("Could not clear temp folder: \(error)")
     }
   }
+    
+//TableView Controllor methods
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        
+        return self.itemsArr.count;
+        
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: "itemsTableViewCell")
+         cell!.textLabel?.text = self.itemsArr[indexPath.row] as? String
+        return cell!
+    }
+
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        switch indexPath.row {
+            
+        case 0:
+            let aAPIListViewController = self.storyboard?.instantiateViewController(withIdentifier: "APIListViewController") as! APIListViewController
+            aAPIListViewController.listArray = userslistArray
+            aAPIListViewController.usersList = true
+            self.navigationController?.pushViewController(aAPIListViewController, animated: true)
+            break
+        case 1:
+            let aAPIListViewController = self.storyboard?.instantiateViewController(withIdentifier: "APIListViewController") as! APIListViewController
+            aAPIListViewController.listArray = cllistArray
+            aAPIListViewController.cllist = true
+            self.navigationController?.pushViewController(aAPIListViewController, animated: true)
+
+//            let aACLListViewController = self.storyboard?.instantiateViewController(withIdentifier: "ACLListViewController") as! ACLListViewController
+//            self.navigationController?.pushViewController(aACLListViewController, animated: true)
+            break
+//        case 2:
+//            createMultipleUsers()
+//            break
+//        case 3:
+//            deleteUser()
+//            break
+//        case 4:
+//            showQueryAlert()
+//            break
+//        case 5:
+//            showAllUsers()
+//            break
+            
+        default:
+            break
+            
+        }
+    }
 }
 

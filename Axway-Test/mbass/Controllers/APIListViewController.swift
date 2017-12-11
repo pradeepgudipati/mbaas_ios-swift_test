@@ -15,19 +15,13 @@ class APIListViewController: UIViewController,UITableViewDataSource,UITableViewD
   @IBOutlet weak var listView: UIView!
   var listArray: NSMutableArray = []
   var allUsersListArray: NSArray = []
+  var usersList: Bool = false
+    var cllist:Bool = false
 
     override func viewDidLoad() {
         super.viewDidLoad()
       self.tableView.delegate = self
       self.tableView.dataSource = self
-      
-      listArray.add("LOGIN")
-      listArray.add("CREATE USER")
-      listArray.add("CREATE MULTIPLE USERS")
-      listArray.add("DELETE USER")
-      listArray.add("DELETE QUERY USER")
-      listArray.add("SHOW ALL USERS")
-
       listView.isHidden = true
       self.usersListtableView.tableFooterView = UIView()
         // Do any additional setup after loading the view.
@@ -76,7 +70,8 @@ class APIListViewController: UIViewController,UITableViewDataSource,UITableViewD
 
   func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
     
-    
+    if usersList
+    {
     if (tableView == self.usersListtableView) {
       
       return;
@@ -85,30 +80,65 @@ class APIListViewController: UIViewController,UITableViewDataSource,UITableViewD
     switch indexPath.row {
       
       case 0:
-        showLoginAlert()
+        createUser()
        break
       case 1:
-      createUser()
+        showLoginAlert()
       break
       case 2:
-      createMultipleUsers()
+      //createMultipleUsers()
       break
      case 3:
-      deleteUser()
+      //deleteUser()
       break
       case 4:
-      showQueryAlert()
+        deleteUser()
+      //showQueryAlert()
       break
       case 5:
-      showAllUsers()
+      //showAllUsers()
       break
+      case 6:
+        showQueryAlert()
       
     default:
         showLoginAlert()
 
     }
+    }
+    else if cllist
+    {
+        switch indexPath.row{
+        case 0:
+            let aCreateOrUpdateACLViewController = self.storyboard?.instantiateViewController(withIdentifier: "CreateOrUpdateACLViewController") as! CreateOrUpdateACLViewController
+            aCreateOrUpdateACLViewController.operationTypeValue = operationType.Create
+            self.navigationController?.pushViewController(aCreateOrUpdateACLViewController, animated: true)
+            break;
+            
+        case 1:
+            let aCreateOrUpdateACLViewController = self.storyboard?.instantiateViewController(withIdentifier: "CreateOrUpdateACLViewController") as! CreateOrUpdateACLViewController
+            aCreateOrUpdateACLViewController.operationTypeValue = operationType.Show
+            self.navigationController?.pushViewController(aCreateOrUpdateACLViewController, animated: true)
+            break;
+    
+        case 2:
+            let aCreateOrUpdateACLViewController = self.storyboard?.instantiateViewController(withIdentifier: "CreateOrUpdateACLViewController") as! CreateOrUpdateACLViewController
+            aCreateOrUpdateACLViewController.operationTypeValue = operationType.Update
+            self.navigationController?.pushViewController(aCreateOrUpdateACLViewController, animated: true)
+
+            break;
+            
+        default:
+            break;
+        }
+    }
+    else
+    {
+        
+    }
   }
-  /*
+  
+/*
       This method is used for login user. Params username, password
  */
   func loginMethod(username:String,password:String) {

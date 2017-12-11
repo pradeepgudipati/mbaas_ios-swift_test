@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="X46-Dw-J6h">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="X46-Dw-J6h">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -15,7 +15,7 @@
             <objects>
                 <navigationController id="X46-Dw-J6h" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="VjA-kd-zUP">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="barTintColor" red="0.24313725490196078" green="0.32941176470588235" blue="0.68235294117647061" alpha="1" colorSpace="calibratedRGB"/>
@@ -40,65 +40,43 @@
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YXh-GM-H1m">
-                                <rect key="frame" x="77" y="50" width="220" height="30"/>
-                                <color key="backgroundColor" red="0.24313725489999999" green="0.3294117647" blue="0.68235294120000001" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="220" id="MD1-5h-cID"/>
-                                    <constraint firstAttribute="height" constant="30" id="ZQy-qg-6Ws"/>
-                                </constraints>
-                                <state key="normal" title="TEST USERS">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ea4-pC-Rb2">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="itemsTableViewCell" id="aMk-ik-goD">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="aMk-ik-goD" id="TMG-sW-pQS">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
                                 <connections>
-                                    <action selector="testUsersMethod:" destination="BYZ-38-t0r" eventType="touchUpInside" id="esp-lN-XBz"/>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="RAG-5t-I8d"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="uYm-v0-oaa"/>
                                 </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g2U-J3-LDc">
-                                <rect key="frame" x="77" y="120" width="220" height="30"/>
-                                <color key="backgroundColor" red="0.24313725489999999" green="0.3294117647" blue="0.68235294120000001" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="220" id="597-ck-Hba"/>
-                                    <constraint firstAttribute="height" constant="30" id="vxq-on-DO7"/>
-                                </constraints>
-                                <state key="normal" title="TEST ACLS">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="testAclsMethod:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ejr-ma-rSx"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0G6-XE-IXF">
-                                <rect key="frame" x="77" y="190" width="220" height="30"/>
-                                <color key="backgroundColor" red="0.24313725489999999" green="0.3294117647" blue="0.68235294120000001" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="220" id="l3Y-dW-w9J"/>
-                                    <constraint firstAttribute="height" constant="30" id="s2v-Fd-81X"/>
-                                </constraints>
-                                <state key="normal" title="UPLOAD PHOTO">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="uploadPhoto:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Yih-yy-Wqc"/>
-                                </connections>
-                            </button>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="g2U-J3-LDc" firstAttribute="top" secondItem="YXh-GM-H1m" secondAttribute="bottom" constant="40" id="84D-f5-xis"/>
-                            <constraint firstItem="0G6-XE-IXF" firstAttribute="top" secondItem="g2U-J3-LDc" secondAttribute="bottom" constant="40" id="8Nj-bx-rAI"/>
-                            <constraint firstItem="g2U-J3-LDc" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ElG-AA-6QU"/>
-                            <constraint firstItem="0G6-XE-IXF" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="KxI-xF-Hd1"/>
-                            <constraint firstItem="YXh-GM-H1m" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="bIY-iO-qf5"/>
-                            <constraint firstItem="YXh-GM-H1m" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="50" id="eCw-Uk-bvv"/>
+                            <constraint firstAttribute="trailing" secondItem="ea4-pC-Rb2" secondAttribute="trailing" id="CzI-iQ-YRk"/>
+                            <constraint firstItem="ea4-pC-Rb2" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="HQm-m4-tEd"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="ea4-pC-Rb2" secondAttribute="bottom" id="JC0-6o-AFJ"/>
+                            <constraint firstItem="ea4-pC-Rb2" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="sH6-Hs-bFY"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Axway" id="bXs-XY-TyT">
                         <barButtonItem key="rightBarButtonItem" systemItem="refresh" id="ni4-JO-ca1"/>
                     </navigationItem>
+                    <connections>
+                        <outlet property="baseView" destination="8bC-Xf-vdC" id="zAL-22-Xvh"/>
+                        <outlet property="itemsTableView" destination="ea4-pC-Rb2" id="JT5-lz-tZU"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -141,7 +119,7 @@
                                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="1v5-H6-NSe" id="idJ-ka-uIR">
-                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                 </tableViewCellContentView>
                                             </tableViewCell>
@@ -295,7 +273,7 @@
                                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="mvz-wA-zsg" id="Fgz-ee-mlU">
-                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                 </tableViewCellContentView>
                                             </tableViewCell>

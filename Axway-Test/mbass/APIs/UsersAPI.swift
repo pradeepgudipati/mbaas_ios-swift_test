@@ -1209,7 +1209,7 @@ single line (`false`). Default is `false`.
 		let convertedParameters = APIHelper.convertBoolToString(source: parameters)
 		let requestBuilder: RequestBuilder<[String:Any]>.Type = MbassAPI.sharedInstance.requestBuilderFactory.getBuilder()
 
-		var customHeadersDict : [String: String] = [:]
+        let customHeadersDict : [String: String] = [:]
 
 
 
