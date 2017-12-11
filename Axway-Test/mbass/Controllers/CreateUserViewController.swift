@@ -45,7 +45,11 @@ class CreateUserViewController: UIViewController,UITextFieldDelegate {
             else {
                 let value = response?.description
                 let alert = UIAlertController(title: "Create User Success", message:value, preferredStyle: UIAlertControllerStyle.alert)
-                alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: nil))
+                alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: {(action : UIAlertAction!) -> Void in
+                    
+                    self.navigationController?.popViewController(animated: true)
+                    
+                }))
                 self.present(alert, animated: true, completion: nil)
                 
             }
@@ -53,6 +57,9 @@ class CreateUserViewController: UIViewController,UITextFieldDelegate {
     }
         
     }
+    
+    /* validating text fields*/
+    
     func validateTextField() -> Bool{
         
         if (firstName.text?.isEmpty)! || firstName.text == nil
@@ -91,6 +98,8 @@ class CreateUserViewController: UIViewController,UITextFieldDelegate {
         }
         
     }
+    
+    /* UIToolbar methods for previous,next and done options */
     
     lazy var inputToolbar: UIToolbar = {
         var toolbar = UIToolbar()
@@ -154,7 +163,8 @@ class CreateUserViewController: UIViewController,UITextFieldDelegate {
         }
         
     }
-  
+    
+    /* UITextField Methods*/
     func doneBtnAction(sender:Any)
     {
         self.view.endEditing(true)

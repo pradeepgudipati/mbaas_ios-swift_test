@@ -260,11 +260,6 @@ class APIListViewController: UIViewController,UITableViewDataSource,UITableViewD
       }
       
     }
-    
-  
-    
-    
-    
   }
   
   func deleteUser() {
