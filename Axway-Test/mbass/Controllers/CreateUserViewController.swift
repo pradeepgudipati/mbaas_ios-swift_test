@@ -92,6 +92,10 @@ class CreateUserViewController: UIViewController,UITextFieldDelegate {
             Utils.showAlertWithOkButton(titleStr:"Alert", messageStr:"Please enter confirm password", viewController: self)
             return false
         }
+        else if password.text != confirmPassword.text{
+            Utils.showAlertWithOkButton(titleStr:"Alert", messageStr:"Password and confirm password doesnot match", viewController: self)
+            return false
+        }
         else
         {
             return true

@@ -87,14 +87,24 @@ class APIListViewController: UIViewController,UITableViewDataSource,UITableViewD
         showLoginAlert()
       break
       case 2:
-      //createMultipleUsers()
-      break
+        //checking whether userid is present or not to get user informations
+        if UserDefaults.standard.object(forKey: "userId") != nil
+        {
+            //obtaining stored userid to get user information
+            let userDefaults = UserDefaults.standard
+            let useridstr  = userDefaults.string(forKey: "userId")
+            showLoginUserInfo(userid:useridstr!)
+        }
+        else
+        {
+        Utils.showAlertWithOkButton(titleStr: "Alert", messageStr: "Please login to get user details", viewController: self)
+        }
+       break
      case 3:
       //deleteUser()
       break
       case 4:
         deleteUser()
-      //showQueryAlert()
       break
       case 5:
       //showAllUsers()
@@ -162,9 +172,19 @@ class APIListViewController: UIViewController,UITableViewDataSource,UITableViewD
         
         
         let value = response?.description
+        let responseDictionary = response?["response"] as! NSDictionary
+        let responseArr = responseDictionary["users"] as! NSArray
+        let dict = responseArr[0] as! NSDictionary
+        
+        //store userid into userdefaults for further usage
+        let userDefaults = UserDefaults.standard
+        userDefaults.set(dict["id"], forKey: "userId")
         
         let alert = UIAlertController(title: "Login Success", message:value, preferredStyle: UIAlertControllerStyle.alert)
-        alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: nil))
+        alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: {
+            alert -> Void in
+            
+        }))
         self.present(alert, animated: true, completion: nil)
         
       }
@@ -177,6 +197,11 @@ class APIListViewController: UIViewController,UITableViewDataSource,UITableViewD
     
     let alertController = UIAlertController(title: "Login", message: "Please enter login details or Login as default", preferredStyle: UIAlertControllerStyle.alert)
     
+    let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.default, handler: {
+        (action : UIAlertAction!) -> Void in
+        
+    })
+    
     let saveAction = UIAlertAction(title: "Login", style: UIAlertActionStyle.default, handler: {
       alert -> Void in
       
@@ -184,35 +209,62 @@ class APIListViewController: UIViewController,UITableViewDataSource,UITableViewD
       let valueTextField = alertController.textFields![1] as UITextField
       
       //Login with dynamic details
+        if (keyTextField.text?.isEmpty)!
+        {
+           Utils.showAlertWithOkButton(titleStr:"Alert", messageStr: "Please enter username", viewController: self)
+        }
+        else if (valueTextField.text?.isEmpty)!
+        {
+          Utils.showAlertWithOkButton(titleStr:"Alert", messageStr: "Please enter password", viewController: self)
+        }
+        else
+        {
       self.loginMethod(username: keyTextField.text!, password: valueTextField.text!)
+        }
       
     })
-    
-    let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.default, handler: {
-      (action : UIAlertAction!) -> Void in
-      
-    })
-//    let defaultAction = UIAlertAction(title: "Default", style: UIAlertActionStyle.destructive, handler: {
-//      (action : UIAlertAction!) -> Void in
-//
-//      //Login with static details
-//      self.loginMethod(username: "bahubhali", password: "password")
-//
-//    })
     
     alertController.addTextField { (textField : UITextField!) -> Void in
       textField.placeholder = "Username"
     }
     alertController.addTextField { (textField : UITextField!) -> Void in
       textField.placeholder = "Password"
+      textField.isSecureTextEntry = true
     }
     
-    alertController.addAction(saveAction)
     alertController.addAction(cancelAction)
-    //alertController.addAction(defaultAction)
+    alertController.addAction(saveAction)
 
     self.present(alertController, animated: true, completion: nil)
   }
+    
+    
+    func showLoginUserInfo(userid:String){
+        ACProgressHUD.shared.showHUD()
+
+        UsersAPI.usersShow(userId: userid, userIds: nil, responseJsonDepth: nil, showUserLike: nil, prettyJson: nil) { (response, error) in
+            ACProgressHUD.shared.hideHUD()
+            if (error != nil) {
+                
+                let alert = UIAlertController(title: "Error", message: error?.localizedDescription, preferredStyle: UIAlertControllerStyle.alert)
+                alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: nil))
+                self.present(alert, animated: true, completion: nil)
+                
+                return;
+                
+            }
+            else
+            {
+                let value = response?.description
+                
+                let alert = UIAlertController(title: "Success", message:value, preferredStyle: UIAlertControllerStyle.alert)
+                alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: nil))
+                self.present(alert, animated: true, completion: nil)
+                
+            }
+            
+        }
+    }
 
   func createMultipleUsers() {
     
