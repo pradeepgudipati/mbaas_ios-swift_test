@@ -81,6 +81,7 @@ class APIListViewController: UIViewController,UITableViewDataSource,UITableViewD
       
       case 0:
         let navCreateUser = self.storyboard?.instantiateViewController(withIdentifier: "CreateUserViewController") as! CreateUserViewController
+        navCreateUser.isUpdateUser = false
         self.navigationController?.pushViewController(navCreateUser,animated:true)
        break
       case 1:
@@ -101,7 +102,10 @@ class APIListViewController: UIViewController,UITableViewDataSource,UITableViewD
         }
        break
      case 3:
-      //deleteUser()
+        let navCreateUser = self.storyboard?.instantiateViewController(withIdentifier: "CreateUserViewController") as! CreateUserViewController
+        navCreateUser.isUpdateUser = true
+        self.navigationController?.pushViewController(navCreateUser,animated:true)
+        
       break
       case 4:
         deleteUser()
