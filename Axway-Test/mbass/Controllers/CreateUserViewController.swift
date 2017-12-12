@@ -64,7 +64,7 @@ class CreateUserViewController: UIViewController,UITextFieldDelegate {
                     self.userName.text = (dict["username"] as! String)
                     self.emailId.text = (dict["email"] as! String)
                     
-                }
+                } 
                 else
                 {
                     let value = response?.description

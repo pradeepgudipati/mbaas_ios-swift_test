@@ -111,7 +111,7 @@ class APIListViewController: UIViewController,UITableViewDataSource,UITableViewD
         deleteUser()
       break
       case 5:
-      //showAllUsers()
+      logoutCurrentUser()
       break
       case 6:
         showQueryAlert()
@@ -197,6 +197,7 @@ class APIListViewController: UIViewController,UITableViewDataSource,UITableViewD
 
   }
   
+ //This method is used for displaying login alert to enter username and password
   func showLoginAlert() {
     
     let alertController = UIAlertController(title: "Login", message: "Please enter login details or Login as default", preferredStyle: UIAlertControllerStyle.alert)
@@ -243,6 +244,7 @@ class APIListViewController: UIViewController,UITableViewDataSource,UITableViewD
   }
     
     
+    //This method is used for obtaining the information of user by passing loggedin userid
     func showLoginUserInfo(userid:String){
         ACProgressHUD.shared.showHUD()
 
@@ -270,54 +272,55 @@ class APIListViewController: UIViewController,UITableViewDataSource,UITableViewD
         }
     }
 
-  func createMultipleUsers() {
-    
-    ACProgressHUD.shared.showHUD()
-    
-    var count = 0
-    
-    let usersArray = [["name": "Bijjaladeva", "password": "password"],["name": "Bhadra", "id": "password"],["name": "Marthanda", "id": "password"],["name": "Sivagami", "id": "password"]]
-    
-    userLoop: for index in 0...usersArray.count-1 {
-      
-      
-      let userDictionary = usersArray[index]
-      
-      let name = userDictionary["name"]
-      
-      UsersAPI.usersCreate(email: name!+"@yopmail.com", username: name, password: "password", passwordConfirmation: "password", firstName: name, lastName: "CG",  tags:nil, customFields: "", aclName: "", aclId: "", suId: nil, role: "", template: "", confirmationTemplate: "", prettyJson: true) { (response, error) in
-        
-        ACProgressHUD.shared.hideHUD()
-        
-        count += 1;
-        
-        if (error != nil) {
-          
-          let alert = UIAlertController(title: "Login Error", message: error?.localizedDescription, preferredStyle: UIAlertControllerStyle.alert)
-          alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: nil))
-          self.present(alert, animated: true, completion: nil)
-          
-          return;
-          
-        }
-        else {
-          
-          if count == 4 {
-            
-            let alert = UIAlertController(title: "Success", message:"Multiple users created successfully", preferredStyle: UIAlertControllerStyle.alert)
-            alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: nil))
-            self.present(alert, animated: true, completion: nil)
-            
-          }
-         
-          
-        }
-        
-      }
-      
-    }
-  }
+//  func createMultipleUsers() {
+//
+//    ACProgressHUD.shared.showHUD()
+//
+//    var count = 0
+//
+//    let usersArray = [["name": "Bijjaladeva", "password": "password"],["name": "Bhadra", "id": "password"],["name": "Marthanda", "id": "password"],["name": "Sivagami", "id": "password"]]
+//
+//    userLoop: for index in 0...usersArray.count-1 {
+//
+//
+//      let userDictionary = usersArray[index]
+//
+//      let name = userDictionary["name"]
+//
+//      UsersAPI.usersCreate(email: name!+"@yopmail.com", username: name, password: "password", passwordConfirmation: "password", firstName: name, lastName: "CG",  tags:nil, customFields: "", aclName: "", aclId: "", suId: nil, role: "", template: "", confirmationTemplate: "", prettyJson: true) { (response, error) in
+//
+//        ACProgressHUD.shared.hideHUD()
+//
+//        count += 1;
+//
+//        if (error != nil) {
+//
+//          let alert = UIAlertController(title: "Login Error", message: error?.localizedDescription, preferredStyle: UIAlertControllerStyle.alert)
+//          alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: nil))
+//          self.present(alert, animated: true, completion: nil)
+//
+//          return;
+//
+//        }
+//        else {
+//
+//          if count == 4 {
+//
+//            let alert = UIAlertController(title: "Success", message:"Multiple users created successfully", preferredStyle: UIAlertControllerStyle.alert)
+//            alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: nil))
+//            self.present(alert, animated: true, completion: nil)
+//
+//          }
+//
+//
+//        }
+//
+//      }
+//
+//    }
+//  }
   
+    // deleting user
   func deleteUser() {
     
     ACProgressHUD.shared.showHUD()
@@ -351,7 +354,7 @@ class APIListViewController: UIViewController,UITableViewDataSource,UITableViewD
     
   }
   
-  
+  //delete user by query
   func deleteUserByQuery(key:String,value:String) {
     
     ACProgressHUD.shared.showHUD()
@@ -384,6 +387,40 @@ class APIListViewController: UIViewController,UITableViewDataSource,UITableViewD
     
     
   }
+   
+    //logout current user
+    func logoutCurrentUser(){
+     
+        ACProgressHUD.shared.showHUD()
+        
+        UsersAPI.usersLogoutUser { (response, error) in
+            
+            
+            ACProgressHUD.shared.hideHUD()
+            
+            if (error != nil) {
+                
+                let alert = UIAlertController(title: "Logout Error", message: error?.localizedDescription, preferredStyle: UIAlertControllerStyle.alert)
+                alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: nil))
+                self.present(alert, animated: true, completion: nil)
+                
+            }
+            else {
+                
+                
+                let value = response?.description
+                
+                let alert = UIAlertController(title: "User logged out Successfully", message:value, preferredStyle: UIAlertControllerStyle.alert)
+                alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: nil))
+                self.present(alert, animated: true, completion: nil)
+                
+            }
+            
+            
+        }
+        
+        
+    }
   
   func showQueryAlert() {
     
@@ -416,11 +453,10 @@ class APIListViewController: UIViewController,UITableViewDataSource,UITableViewD
     
     self.present(alertController, animated: true, completion: nil)
   }
+    
+    
   
   func showAllUsers() {
-    
-    
-    
     ACProgressHUD.shared.showHUD()
 
     UsersAPI.usersQuery { (response, error) in
