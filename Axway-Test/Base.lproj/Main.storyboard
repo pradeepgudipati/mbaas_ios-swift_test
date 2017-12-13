@@ -482,7 +482,7 @@
                                     <constraint firstAttribute="height" constant="40" id="eSV-I6-mLC"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
-                                <state key="normal" title="CREATE">
+                                <state key="normal">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -517,6 +517,7 @@
                     </view>
                     <connections>
                         <outlet property="confirmPassword" destination="tMt-DO-Egq" id="ZnG-q6-imn"/>
+                        <outlet property="createBtn" destination="Hee-OZ-2Xk" id="dsa-mh-Gb1"/>
                         <outlet property="emailId" destination="MnN-Aj-v66" id="Ee0-GN-Gey"/>
                         <outlet property="firstName" destination="9Us-jZ-ejV" id="zlv-qR-b48"/>
                         <outlet property="lastName" destination="pOg-B4-rsC" id="yvM-1X-Es6"/>

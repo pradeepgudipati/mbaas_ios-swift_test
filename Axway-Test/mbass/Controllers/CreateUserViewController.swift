@@ -17,6 +17,7 @@ class CreateUserViewController: UIViewController,UITextFieldDelegate {
     @IBOutlet weak var password: UITextField!
     @IBOutlet weak var confirmPassword: UITextField!
     
+    @IBOutlet weak var createBtn: UIButton!
     var currentTag:Int = 100
     var isUpdateUser: Bool = false
     
@@ -25,7 +26,13 @@ class CreateUserViewController: UIViewController,UITextFieldDelegate {
         
         if isUpdateUser
         {
+          self.createBtn.setTitle("UPDATE", for: UIControlState.normal)
           showLoginUserInfo()
+        
+        }
+        else
+        {
+            self.createBtn.setTitle("CREATE", for: UIControlState.normal)
         }
         
         // Do any additional setup after loading the view.
@@ -85,7 +92,7 @@ class CreateUserViewController: UIViewController,UITextFieldDelegate {
     
     @IBAction func createUserBtnAction(_ sender: Any) {
         if validateTextField() {
-            
+        
             if isUpdateUser
             {
               updateUserApi()
