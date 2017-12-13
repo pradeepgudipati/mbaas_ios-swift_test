@@ -326,7 +326,7 @@
                                 <rect key="frame" x="88" y="148" width="199" height="30"/>
                                 <color key="backgroundColor" red="0.24313725489999999" green="0.3294117647" blue="0.68235294120000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="199" id="gsL-d8-AFe"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="199" id="gsL-d8-AFe"/>
                                     <constraint firstAttribute="height" constant="30" id="lEj-IM-u7s"/>
                                 </constraints>
                                 <state key="normal" title="Select Readers">
@@ -337,10 +337,10 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ki8-17-yu9">
-                                <rect key="frame" x="88" y="218" width="199" height="30"/>
+                                <rect key="frame" x="88" y="226" width="199" height="30"/>
                                 <color key="backgroundColor" red="0.24313725489999999" green="0.3294117647" blue="0.68235294120000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="199" id="35b-he-AlJ"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="199" id="35b-he-AlJ"/>
                                     <constraint firstAttribute="height" constant="30" id="Om4-ff-kyi"/>
                                 </constraints>
                                 <state key="normal" title="Select Writers">
@@ -351,11 +351,11 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9mF-dF-LNH">
-                                <rect key="frame" x="88" y="298" width="199" height="30"/>
+                                <rect key="frame" x="88" y="302" width="199" height="30"/>
                                 <color key="backgroundColor" red="0.29803921570000003" green="0.68627450980000004" blue="0.31372549020000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="9Ae-np-GEo"/>
-                                    <constraint firstAttribute="width" constant="199" id="mxb-Xn-aPH"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="199" id="mxb-Xn-aPH"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
                                 <state key="normal" title="Create ACL">
@@ -366,8 +366,8 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="OCU-d5-Hba" firstAttribute="top" secondItem="kdf-su-gne" secondAttribute="top" id="08l-MU-crU"/>
-                            <constraint firstItem="Ki8-17-yu9" firstAttribute="top" secondItem="eBD-fA-7HL" secondAttribute="bottom" constant="40" id="6HK-OR-W7e"/>
-                            <constraint firstItem="9mF-dF-LNH" firstAttribute="top" secondItem="Ki8-17-yu9" secondAttribute="bottom" constant="50" id="LzF-zE-qAu"/>
+                            <constraint firstItem="Ki8-17-yu9" firstAttribute="top" secondItem="eBD-fA-7HL" secondAttribute="bottom" constant="48" id="6HK-OR-W7e"/>
+                            <constraint firstItem="9mF-dF-LNH" firstAttribute="top" secondItem="Ki8-17-yu9" secondAttribute="bottom" constant="46" id="LzF-zE-qAu"/>
                             <constraint firstItem="9mF-dF-LNH" firstAttribute="centerX" secondItem="kdf-su-gne" secondAttribute="centerX" id="Nar-Ad-lvz"/>
                             <constraint firstItem="OCU-d5-Hba" firstAttribute="leading" secondItem="kdf-su-gne" secondAttribute="leading" id="OSp-fB-zlg"/>
                             <constraint firstItem="QBX-gK-k9w" firstAttribute="top" secondItem="RBG-f3-a38" secondAttribute="bottom" constant="40" id="Vpb-lN-Y1b"/>

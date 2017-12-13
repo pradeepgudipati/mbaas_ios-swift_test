@@ -94,7 +94,14 @@ class APIListViewController: UIViewController,UITableViewDataSource,UITableViewD
             //obtaining stored userid to get user information
             let userDefaults = UserDefaults.standard
             let useridstr  = userDefaults.string(forKey: "userId")
-            showLoginUserInfo(userid:useridstr!)
+            if ( useridstr?.characters.count != 0)
+            {
+             showLoginUserInfo(userid:useridstr!)
+            }
+            else
+            {
+             Utils.showAlertWithOkButton(titleStr: "Alert", messageStr: "Please login to get user details", viewController: self)
+            }
         }
         else
         {
@@ -108,7 +115,7 @@ class APIListViewController: UIViewController,UITableViewDataSource,UITableViewD
         
       break
       case 4:
-        deleteUser()
+        showDeleteUserAlert()
       break
       case 5:
       logoutCurrentUser()
@@ -174,7 +181,8 @@ class APIListViewController: UIViewController,UITableViewDataSource,UITableViewD
       }
       else {
         
-        
+        if let val = response?["response"]{
+            print(val)
         let value = response?.description
         let responseDictionary = response?["response"] as! NSDictionary
         let responseArr = responseDictionary["users"] as! NSArray
@@ -190,6 +198,15 @@ class APIListViewController: UIViewController,UITableViewDataSource,UITableViewD
             
         }))
         self.present(alert, animated: true, completion: nil)
+        }
+        else
+        {
+            let value = response?.description
+            let alert = UIAlertController(title: "Alert", message: value, preferredStyle: UIAlertControllerStyle.alert)
+            alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+            
+        }
         
       }
     
@@ -321,11 +338,12 @@ class APIListViewController: UIViewController,UITableViewDataSource,UITableViewD
 //  }
   
     // deleting user
-  func deleteUser() {
+    func deleteUser(emailStr: String) {
     
     ACProgressHUD.shared.showHUD()
 
-    UsersAPI.usersBatchDelete(where_: "{\"Email\":\"bhalla@yopmail.com\"}") { (response, error) in
+    let str = "{\"Email\":" + emailStr + "}"
+    UsersAPI.usersBatchDelete(where_: str) { (response, error) in
       
       ACProgressHUD.shared.hideHUD()
 
@@ -353,6 +371,43 @@ class APIListViewController: UIViewController,UITableViewDataSource,UITableViewD
     
     
   }
+    
+    //This method is used for displaying delete user alert to enter username
+    func showDeleteUserAlert() {
+        
+        let alertController = UIAlertController(title: "Enter EmailId", message: "Please enter the emailId that you want delete", preferredStyle: UIAlertControllerStyle.alert)
+        
+        let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.default, handler: {
+            (action : UIAlertAction!) -> Void in
+            
+        })
+        
+        let saveAction = UIAlertAction(title: "Delete", style: UIAlertActionStyle.default, handler: {
+            alert -> Void in
+            
+            let keyTextField = alertController.textFields![0] as UITextField
+            
+            //Login with dynamic details
+            if (keyTextField.text?.isEmpty)!
+            {
+                Utils.showAlertWithOkButton(titleStr:"Alert", messageStr: "Please enter EmailId", viewController: self)
+            }
+            else
+            {
+                self.deleteUser(emailStr:keyTextField.text!)
+            }
+            
+        })
+        
+        alertController.addTextField { (textField : UITextField!) -> Void in
+            textField.placeholder = "EmailId"
+        }
+        
+        alertController.addAction(cancelAction)
+        alertController.addAction(saveAction)
+        
+        self.present(alertController, animated: true, completion: nil)
+    }
   
   //delete user by query
   func deleteUserByQuery(key:String,value:String) {
@@ -411,7 +466,11 @@ class APIListViewController: UIViewController,UITableViewDataSource,UITableViewD
                 let value = response?.description
                 
                 let alert = UIAlertController(title: "User logged out Successfully", message:value, preferredStyle: UIAlertControllerStyle.alert)
-                alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: nil))
+                alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: { alert -> Void in
+                    
+                    let userDefaults = UserDefaults.standard
+                    userDefaults.set("", forKey: "userId")
+                }))
                 self.present(alert, animated: true, completion: nil)
                 
             }
@@ -426,7 +485,7 @@ class APIListViewController: UIViewController,UITableViewDataSource,UITableViewD
     
     let alertController = UIAlertController(title: "Query", message: "Please enter query", preferredStyle: UIAlertControllerStyle.alert)
     
-    let saveAction = UIAlertAction(title: "Delete", style: UIAlertActionStyle.destructive, handler: {
+    let saveAction = UIAlertAction(title: "Ok", style: UIAlertActionStyle.destructive, handler: {
       alert -> Void in
       
       let keyTextField = alertController.textFields![0] as UITextField
@@ -448,8 +507,8 @@ class APIListViewController: UIViewController,UITableViewDataSource,UITableViewD
       textField.placeholder = "Enter value"
     }
     
-    alertController.addAction(saveAction)
     alertController.addAction(cancelAction)
+    alertController.addAction(saveAction)
     
     self.present(alertController, animated: true, completion: nil)
   }
@@ -470,11 +529,7 @@ class APIListViewController: UIViewController,UITableViewDataSource,UITableViewD
         
       }
       else {
-        
-       
-        
         let responseDictionary = response?["response"] as! NSDictionary
-       
         self.allUsersListArray = responseDictionary["users"] as! NSArray
           
           self.view.bringSubview(toFront: self.listView)
