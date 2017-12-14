@@ -302,7 +302,6 @@
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="6EG-Zk-Emk" secondAttribute="trailing" id="6JA-5K-2TB"/>
                                     <constraint firstItem="6EG-Zk-Emk" firstAttribute="leading" secondItem="OCU-d5-Hba" secondAttribute="leading" id="BXn-zb-Lin"/>
-                                    <constraint firstAttribute="trailing" secondItem="IlL-VH-N9r" secondAttribute="trailing" id="FXl-VV-3yI"/>
                                     <constraint firstItem="IlL-VH-N9r" firstAttribute="leading" secondItem="OCU-d5-Hba" secondAttribute="leading" id="QI5-Oc-Zxt"/>
                                     <constraint firstItem="6EG-Zk-Emk" firstAttribute="top" secondItem="IlL-VH-N9r" secondAttribute="bottom" id="XmM-az-axq"/>
                                     <constraint firstItem="6EG-Zk-Emk" firstAttribute="top" secondItem="IlL-VH-N9r" secondAttribute="bottom" id="jJE-Ym-hq3"/>
@@ -337,7 +336,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ki8-17-yu9">
-                                <rect key="frame" x="88" y="226" width="199" height="30"/>
+                                <rect key="frame" x="88" y="216" width="199" height="30"/>
                                 <color key="backgroundColor" red="0.24313725489999999" green="0.3294117647" blue="0.68235294120000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="199" id="35b-he-AlJ"/>
@@ -351,7 +350,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9mF-dF-LNH">
-                                <rect key="frame" x="88" y="302" width="199" height="30"/>
+                                <rect key="frame" x="88" y="283" width="199" height="30"/>
                                 <color key="backgroundColor" red="0.29803921570000003" green="0.68627450980000004" blue="0.31372549020000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="9Ae-np-GEo"/>
@@ -362,27 +361,44 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bU1-vX-82q">
+                                <rect key="frame" x="88" y="346" width="199" height="30"/>
+                                <color key="backgroundColor" red="0.96078431369999995" green="0.41176470590000003" blue="0.13725490200000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="199" id="efJ-C8-6GG"/>
+                                    <constraint firstAttribute="height" constant="30" id="lFO-c5-GRz"/>
+                                </constraints>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <state key="normal" title="Delete"/>
+                                <connections>
+                                    <action selector="deleteBtnAction:" destination="bkk-k9-Mum" eventType="touchUpInside" id="Lk1-4b-Owp"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="OCU-d5-Hba" firstAttribute="top" secondItem="kdf-su-gne" secondAttribute="top" id="08l-MU-crU"/>
-                            <constraint firstItem="Ki8-17-yu9" firstAttribute="top" secondItem="eBD-fA-7HL" secondAttribute="bottom" constant="48" id="6HK-OR-W7e"/>
-                            <constraint firstItem="9mF-dF-LNH" firstAttribute="top" secondItem="Ki8-17-yu9" secondAttribute="bottom" constant="46" id="LzF-zE-qAu"/>
+                            <constraint firstItem="Ki8-17-yu9" firstAttribute="top" secondItem="eBD-fA-7HL" secondAttribute="bottom" constant="38" id="6HK-OR-W7e"/>
+                            <constraint firstItem="9mF-dF-LNH" firstAttribute="top" secondItem="Ki8-17-yu9" secondAttribute="bottom" constant="37" id="LzF-zE-qAu"/>
+                            <constraint firstItem="bU1-vX-82q" firstAttribute="leading" secondItem="9mF-dF-LNH" secondAttribute="leading" id="NAf-mc-rtp"/>
                             <constraint firstItem="9mF-dF-LNH" firstAttribute="centerX" secondItem="kdf-su-gne" secondAttribute="centerX" id="Nar-Ad-lvz"/>
                             <constraint firstItem="OCU-d5-Hba" firstAttribute="leading" secondItem="kdf-su-gne" secondAttribute="leading" id="OSp-fB-zlg"/>
                             <constraint firstItem="QBX-gK-k9w" firstAttribute="top" secondItem="RBG-f3-a38" secondAttribute="bottom" constant="40" id="Vpb-lN-Y1b"/>
                             <constraint firstItem="ZFZ-Nw-qKL" firstAttribute="top" secondItem="OCU-d5-Hba" secondAttribute="bottom" id="Wus-ht-nVR"/>
                             <constraint firstItem="eBD-fA-7HL" firstAttribute="centerX" secondItem="kdf-su-gne" secondAttribute="centerX" id="ZPR-V5-zUo"/>
+                            <constraint firstItem="bU1-vX-82q" firstAttribute="centerX" secondItem="IlL-VH-N9r" secondAttribute="centerX" id="az4-6F-mEW"/>
                             <constraint firstAttribute="trailing" secondItem="OCU-d5-Hba" secondAttribute="trailing" id="b5n-P7-yBe"/>
                             <constraint firstItem="eBD-fA-7HL" firstAttribute="top" secondItem="QBX-gK-k9w" secondAttribute="bottom" constant="58" id="d7e-ye-o34"/>
                             <constraint firstItem="QBX-gK-k9w" firstAttribute="leading" secondItem="kdf-su-gne" secondAttribute="leadingMargin" constant="11" id="e3L-hI-sSF"/>
                             <constraint firstAttribute="trailingMargin" secondItem="QBX-gK-k9w" secondAttribute="trailing" constant="11" id="rwd-Nz-GyT"/>
                             <constraint firstItem="Ki8-17-yu9" firstAttribute="centerX" secondItem="kdf-su-gne" secondAttribute="centerX" id="wFu-sv-yxS"/>
+                            <constraint firstItem="bU1-vX-82q" firstAttribute="top" secondItem="9mF-dF-LNH" secondAttribute="bottom" constant="33" id="xB5-KN-EEn"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="aclButton" destination="9mF-dF-LNH" id="SbP-8a-oen"/>
                         <outlet property="aclnameTextfield" destination="QBX-gK-k9w" id="4pD-Vx-q39"/>
+                        <outlet property="deleteBtn" destination="bU1-vX-82q" id="W2F-Zt-3N4"/>
                         <outlet property="listView" destination="OCU-d5-Hba" id="4De-g9-YJQ"/>
                         <outlet property="tableView" destination="IlL-VH-N9r" id="jnD-St-Ac5"/>
                     </connections>

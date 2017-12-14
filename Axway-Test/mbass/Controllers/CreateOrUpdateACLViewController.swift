@@ -22,9 +22,9 @@ class CreateOrUpdateACLViewController: UIViewController,UITableViewDataSource,UI
   var listArray: NSMutableArray = []
   var selectedReadersListArray: NSMutableArray = []
   var selectedWritersListArray: NSMutableArray = []
-
   var readersListArray: NSMutableArray = []
   var writersListArray: NSMutableArray = []
+  @IBOutlet weak var deleteBtn: UIButton!
   @IBOutlet weak var aclnameTextfield: UITextField!
   
     override func viewDidLoad() {
@@ -34,6 +34,7 @@ class CreateOrUpdateACLViewController: UIViewController,UITableViewDataSource,UI
       listView.isHidden = true
       self.tableView.allowsMultipleSelection = true
       self.tableView.tableFooterView = UIView()
+        
         // Do any additional setup after loading the view.
       switch operationTypeValue {
            case operationType.Create:
@@ -43,27 +44,26 @@ class CreateOrUpdateACLViewController: UIViewController,UITableViewDataSource,UI
             break;
       case operationType.Show:
         self.title = "Show"
+        deleteBtn.isHidden=false
+        deleteBtn.setTitle("Delete ACL", for: UIControlState.normal)
         aclButton.setTitle("Show ACL", for: UIControlState.normal)
          aclButton.addTarget(self, action:#selector(showACLMethod(_:)), for: UIControlEvents.touchUpInside)
             break;
       case operationType.Update:
         self.title = "Update"
+        deleteBtn.isHidden=false
+        deleteBtn.setTitle("Remove User", for: UIControlState.normal)
         aclButton.setTitle("Update ACL", for: UIControlState.normal)
          aclButton.addTarget(self, action:#selector(updateACLMethod), for: UIControlEvents.touchUpInside)
             break;
           }
-  
-
     }
-  
-  
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
   
   @IBAction func showACLMethod(_ sender: Any) {
-    
     
     if aclnameTextfield.text?.characters.count==0 {
       return
@@ -113,7 +113,7 @@ class CreateOrUpdateACLViewController: UIViewController,UITableViewDataSource,UI
           
           let value = response?.description
           
-          let alert = UIAlertController(title: "Fail", message:value, preferredStyle: UIAlertControllerStyle.alert)
+          let alert = UIAlertController(title: "Alert", message:value, preferredStyle: UIAlertControllerStyle.alert)
           alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: nil))
           self.present(alert, animated: true, completion: nil)
 
@@ -370,7 +370,44 @@ class CreateOrUpdateACLViewController: UIViewController,UITableViewDataSource,UI
     listView.isHidden = true
   }
   
-  func displayAllUSers() {
+    @IBAction func deleteBtnAction(_ sender: Any) {
+        if aclnameTextfield.text!.characters.count > 0
+        {
+       
+            ACProgressHUD.shared.showHUD()
+    ACLsAPI.aCLsDelete(iD: nil, name: aclnameTextfield.text, prettyJson: nil
+        , suId: nil
+        , completion: { (response, error) in
+            
+            ACProgressHUD.shared.hideHUD()
+            
+            if (error != nil) {
+                
+                let alert = UIAlertController(title: "Error", message: error?.localizedDescription, preferredStyle: UIAlertControllerStyle.alert)
+                alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: nil))
+                self.present(alert, animated: true, completion: nil)
+                
+            }
+            else {
+                
+                
+                let value = response?.description
+                let alert = UIAlertController(title: "Delete ACL", message:value, preferredStyle: UIAlertControllerStyle.alert)
+                alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: nil))
+                self.present(alert, animated: true, completion: nil)
+                
+            }
+            
+            })
+      
+      
+        }
+        else
+            {
+                Utils.showAlertWithOkButton(titleStr: "Alert", messageStr: "Please enter ACL name to delete", viewController: self)
+            }
+    }
+    func displayAllUSers() {
     
      
 
