@@ -56,7 +56,9 @@ class CreateOrUpdateACLViewController: UIViewController,UITableViewDataSource,UI
         aclButton.setTitle("Update ACL", for: UIControlState.normal)
          aclButton.addTarget(self, action:#selector(updateACLMethod), for: UIControlEvents.touchUpInside)
             break;
+        
           }
+     
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -373,7 +375,66 @@ class CreateOrUpdateACLViewController: UIViewController,UITableViewDataSource,UI
     @IBAction func deleteBtnAction(_ sender: Any) {
         if aclnameTextfield.text!.characters.count > 0
         {
-       
+        if deleteBtn.titleLabel?.text == "Remove User"
+        {
+            //Get all readerids
+            for index in selectedReadersListArray {
+                
+                if index as! Int == 0 {
+                    continue
+                }
+                let nameDic:NSDictionary = listArray[index as! Int] as! NSDictionary;
+                
+                let userId = nameDic["id"] as! NSString
+                
+                readersListArray.add(userId)
+            }
+            
+            for index in selectedWritersListArray {
+                
+                if index as! Int == 0 {
+                    continue
+                }
+                
+                let nameDic:NSDictionary = listArray[index as! Int] as! NSDictionary;
+                
+                let userId = nameDic["id"] as! NSString
+                
+                writersListArray.add(userId)
+            }
+   
+            ACProgressHUD.shared.showHUD()
+                
+            
+            let readerIDs = readersListArray.componentsJoined(by: ",")
+            let writerIDs = writersListArray.componentsJoined(by: ",")
+  
+            
+            ACLsAPI.aCLsRemove(name:aclnameTextfield.text , iD:nil , prettyJson: nil, readerIds: readerIDs, writerIds: writerIDs, completion: { (response, error) in
+                
+                ACProgressHUD.shared.hideHUD()
+                
+                if (error != nil) {
+                    
+                    let alert = UIAlertController(title: "Error", message: error?.localizedDescription, preferredStyle: UIAlertControllerStyle.alert)
+                    alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: nil))
+                    self.present(alert, animated: true, completion: nil)
+                    
+                }
+                else {
+                    
+                    let value = response?.description
+                    let alert = UIAlertController(title: "Remove User", message:value, preferredStyle: UIAlertControllerStyle.alert)
+                    alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: nil))
+                    self.present(alert, animated: true, completion: nil)
+                    
+                }
+                
+            })
+          
+        }
+        else
+        {
             ACProgressHUD.shared.showHUD()
     ACLsAPI.aCLsDelete(iD: nil, name: aclnameTextfield.text, prettyJson: nil
         , suId: nil
@@ -400,12 +461,12 @@ class CreateOrUpdateACLViewController: UIViewController,UITableViewDataSource,UI
             
             })
       
-      
-        }
-        else
-            {
-                Utils.showAlertWithOkButton(titleStr: "Alert", messageStr: "Please enter ACL name to delete", viewController: self)
-            }
+      }
+    }
+    else
+    {
+    Utils.showAlertWithOkButton(titleStr: "Alert", messageStr: "Please enter ACL name to delete", viewController: self)
+    }
     }
     func displayAllUSers() {
     

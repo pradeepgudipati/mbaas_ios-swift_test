@@ -149,6 +149,11 @@ class APIListViewController: UIViewController,UITableViewDataSource,UITableViewD
             self.navigationController?.pushViewController(aCreateOrUpdateACLViewController, animated: true)
 
             break;
+        case 3:
+//            let aCreateOrUpdateACLViewController = self.storyboard?.instantiateViewController(withIdentifier: "CreateOrUpdateACLViewController") as! CreateOrUpdateACLViewController
+//            aCreateOrUpdateACLViewController.operationTypeValue = operationType.checkPermissions
+//            self.navigationController?.pushViewController(aCreateOrUpdateACLViewController, animated: true)
+            break;
             
         default:
             break;
@@ -516,8 +521,7 @@ class APIListViewController: UIViewController,UITableViewDataSource,UITableViewD
     
   
   func showAllUsers() {
-    ACProgressHUD.shared.showHUD()
-
+   
     UsersAPI.usersQuery { (response, error) in
       ACProgressHUD.shared.hideHUD()
       
@@ -540,7 +544,7 @@ class APIListViewController: UIViewController,UITableViewDataSource,UITableViewD
     }
     
   }
-
+    
   @IBAction func doneMethod(_ sender: Any) {
     
     listView.isHidden = true
