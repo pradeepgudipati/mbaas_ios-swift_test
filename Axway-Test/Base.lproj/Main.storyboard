@@ -335,6 +335,19 @@
                                     <action selector="selectReadersMethod:" destination="bkk-k9-Mum" eventType="touchUpInside" id="VBC-HM-vTR"/>
                                 </connections>
                             </button>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nW3-hZ-gsd">
+                                <rect key="frame" x="88" y="148" width="199" height="30"/>
+                                <color key="backgroundColor" red="0.24313725489999999" green="0.3294117647" blue="0.68235294120000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="5W3-PE-li6"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="199" id="bEx-uQ-9ov"/>
+                                </constraints>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <state key="normal" title="Check"/>
+                                <connections>
+                                    <action selector="checkBtnAction:" destination="bkk-k9-Mum" eventType="touchUpInside" id="Ziv-BL-ejV"/>
+                                </connections>
+                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ki8-17-yu9">
                                 <rect key="frame" x="88" y="216" width="199" height="30"/>
                                 <color key="backgroundColor" red="0.24313725489999999" green="0.3294117647" blue="0.68235294120000001" alpha="1" colorSpace="calibratedRGB"/>
@@ -379,6 +392,7 @@
                         <constraints>
                             <constraint firstItem="OCU-d5-Hba" firstAttribute="top" secondItem="kdf-su-gne" secondAttribute="top" id="08l-MU-crU"/>
                             <constraint firstItem="Ki8-17-yu9" firstAttribute="top" secondItem="eBD-fA-7HL" secondAttribute="bottom" constant="38" id="6HK-OR-W7e"/>
+                            <constraint firstItem="nW3-hZ-gsd" firstAttribute="top" secondItem="QBX-gK-k9w" secondAttribute="bottom" constant="58" id="6qT-hv-rxD"/>
                             <constraint firstItem="9mF-dF-LNH" firstAttribute="top" secondItem="Ki8-17-yu9" secondAttribute="bottom" constant="37" id="LzF-zE-qAu"/>
                             <constraint firstItem="bU1-vX-82q" firstAttribute="leading" secondItem="9mF-dF-LNH" secondAttribute="leading" id="NAf-mc-rtp"/>
                             <constraint firstItem="9mF-dF-LNH" firstAttribute="centerX" secondItem="kdf-su-gne" secondAttribute="centerX" id="Nar-Ad-lvz"/>
@@ -391,6 +405,7 @@
                             <constraint firstItem="eBD-fA-7HL" firstAttribute="top" secondItem="QBX-gK-k9w" secondAttribute="bottom" constant="58" id="d7e-ye-o34"/>
                             <constraint firstItem="QBX-gK-k9w" firstAttribute="leading" secondItem="kdf-su-gne" secondAttribute="leadingMargin" constant="11" id="e3L-hI-sSF"/>
                             <constraint firstAttribute="trailingMargin" secondItem="QBX-gK-k9w" secondAttribute="trailing" constant="11" id="rwd-Nz-GyT"/>
+                            <constraint firstItem="nW3-hZ-gsd" firstAttribute="centerX" secondItem="IlL-VH-N9r" secondAttribute="centerX" id="w8d-7O-cPQ"/>
                             <constraint firstItem="Ki8-17-yu9" firstAttribute="centerX" secondItem="kdf-su-gne" secondAttribute="centerX" id="wFu-sv-yxS"/>
                             <constraint firstItem="bU1-vX-82q" firstAttribute="top" secondItem="9mF-dF-LNH" secondAttribute="bottom" constant="33" id="xB5-KN-EEn"/>
                         </constraints>
@@ -398,8 +413,12 @@
                     <connections>
                         <outlet property="aclButton" destination="9mF-dF-LNH" id="SbP-8a-oen"/>
                         <outlet property="aclnameTextfield" destination="QBX-gK-k9w" id="4pD-Vx-q39"/>
+                        <outlet property="checkBtn" destination="nW3-hZ-gsd" id="sgP-bs-4KN"/>
+                        <outlet property="createAclBtn" destination="9mF-dF-LNH" id="ub8-pn-bcb"/>
                         <outlet property="deleteBtn" destination="bU1-vX-82q" id="W2F-Zt-3N4"/>
                         <outlet property="listView" destination="OCU-d5-Hba" id="4De-g9-YJQ"/>
+                        <outlet property="selectWritersBtn" destination="Ki8-17-yu9" id="bqC-ck-qhB"/>
+                        <outlet property="selectedReadersBtn" destination="eBD-fA-7HL" id="o0j-JV-iPa"/>
                         <outlet property="tableView" destination="IlL-VH-N9r" id="jnD-St-Ac5"/>
                     </connections>
                 </viewController>

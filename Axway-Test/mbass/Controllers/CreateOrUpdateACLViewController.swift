@@ -8,7 +8,7 @@
 
 import UIKit
 enum operationType: Int {
-  case Create = 1, Show, Update
+  case Create = 1, Show, Update, checkPermissions
 }
 
 class CreateOrUpdateACLViewController: UIViewController,UITableViewDataSource,UITableViewDelegate {
@@ -26,7 +26,11 @@ class CreateOrUpdateACLViewController: UIViewController,UITableViewDataSource,UI
   var writersListArray: NSMutableArray = []
   @IBOutlet weak var deleteBtn: UIButton!
   @IBOutlet weak var aclnameTextfield: UITextField!
-  
+  @IBOutlet weak var selectedReadersBtn: UIButton!
+  @IBOutlet weak var selectWritersBtn: UIButton!
+  @IBOutlet weak var createAclBtn: UIButton!
+    @IBOutlet weak var checkBtn: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
       self.tableView.delegate = self
@@ -37,7 +41,7 @@ class CreateOrUpdateACLViewController: UIViewController,UITableViewDataSource,UI
         
         // Do any additional setup after loading the view.
       switch operationTypeValue {
-           case operationType.Create:
+     case operationType.Create:
             self.title = "Create"
             aclButton.setTitle("Create ACL", for: UIControlState.normal)
             aclButton.addTarget(self, action:#selector(createACLMethod(_:)), for: UIControlEvents.touchUpInside)
@@ -56,8 +60,14 @@ class CreateOrUpdateACLViewController: UIViewController,UITableViewDataSource,UI
         aclButton.setTitle("Update ACL", for: UIControlState.normal)
          aclButton.addTarget(self, action:#selector(updateACLMethod), for: UIControlEvents.touchUpInside)
             break;
-        
-          }
+      case operationType.checkPermissions:
+         self.title = "Check Permissions"
+         self.selectedReadersBtn.isHidden = true
+         self.selectWritersBtn.isHidden = true
+         self.createAclBtn.isHidden = true
+         self.deleteBtn.isHidden = true
+         self.checkBtn.isHidden = false
+        }
      
     }
     override func didReceiveMemoryWarning() {
@@ -367,7 +377,57 @@ class CreateOrUpdateACLViewController: UIViewController,UITableViewDataSource,UI
     
   }
   
-  @IBAction func doneMethod(_ sender: Any) {
+    @IBAction func checkBtnAction(_ sender: Any) {
+        
+        if aclnameTextfield.text!.characters.count > 0
+        {
+            if UserDefaults.standard.object(forKey: "userId") != nil
+            {
+                //obtaining stored userid to get user information
+                let userDefaults = UserDefaults.standard
+                let useridstr  = userDefaults.string(forKey: "userId")
+                if ( useridstr?.characters.count != 0)
+                {
+                    checkUserPermissions(userIdStr: useridstr!)
+                }
+                else
+                {
+                    Utils.showAlertWithOkButton(titleStr: "Alert", messageStr: "Please login to get user details", viewController: self)
+                }
+            }
+            else
+            {
+                Utils.showAlertWithOkButton(titleStr: "Alert", messageStr: "Please login to get user details", viewController: self)
+            }
+        }
+    }
+    
+    func checkUserPermissions(userIdStr:String){
+        
+        ACProgressHUD.shared.showHUD()
+        ACLsAPI.aCLsCheck(name: aclnameTextfield.text, iD: nil, prettyJson: nil, userId: userIdStr) { (response, error) in
+            ACProgressHUD.shared.hideHUD()
+            
+            if (error != nil) {
+                
+                let alert = UIAlertController(title: "Error", message: error?.localizedDescription, preferredStyle: UIAlertControllerStyle.alert)
+                alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: nil))
+                self.present(alert, animated: true, completion: nil)
+                
+            }
+            else {
+                
+                let value = response?.description
+                let alert = UIAlertController(title: "Check Permissions", message:value, preferredStyle: UIAlertControllerStyle.alert)
+                alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: nil))
+                self.present(alert, animated: true, completion: nil)
+                
+            }
+        }
+    
+    }
+    
+    @IBAction func doneMethod(_ sender: Any) {
     
     listView.isHidden = true
   }

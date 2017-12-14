@@ -150,9 +150,9 @@ class APIListViewController: UIViewController,UITableViewDataSource,UITableViewD
 
             break;
         case 3:
-//            let aCreateOrUpdateACLViewController = self.storyboard?.instantiateViewController(withIdentifier: "CreateOrUpdateACLViewController") as! CreateOrUpdateACLViewController
-//            aCreateOrUpdateACLViewController.operationTypeValue = operationType.checkPermissions
-//            self.navigationController?.pushViewController(aCreateOrUpdateACLViewController, animated: true)
+            let aCreateOrUpdateACLViewController = self.storyboard?.instantiateViewController(withIdentifier: "CreateOrUpdateACLViewController") as! CreateOrUpdateACLViewController
+            aCreateOrUpdateACLViewController.operationTypeValue = operationType.checkPermissions
+            self.navigationController?.pushViewController(aCreateOrUpdateACLViewController, animated: true)
             break;
             
         default:
