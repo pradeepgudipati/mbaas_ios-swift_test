@@ -94,9 +94,7 @@ class CreateOrUpdateACLViewController: UIViewController,UITableViewDataSource,UI
       
       if (error != nil) {
         
-        let alert = UIAlertController(title: "Error", message: error?.localizedDescription, preferredStyle: UIAlertControllerStyle.alert)
-        alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: nil))
-        self.present(alert, animated: true, completion: nil)
+        Utils.showAlertWithOkButton(titleStr:"Error" , messageStr: (error?.localizedDescription)!, viewController: self)
         
       }
       else {
@@ -109,34 +107,18 @@ class CreateOrUpdateACLViewController: UIViewController,UITableViewDataSource,UI
         let failStatus = "fail"
         if (serverStatus.lowercased() == failStatus) {
           
-          let value = response?.description
+        let value = response?.description
           
-          let alert = UIAlertController(title: "Fail", message:value, preferredStyle: UIAlertControllerStyle.alert)
-          alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: nil))
-          self.present(alert, animated: true, completion: nil)
-          
+        Utils.showAlertWithOkButton(titleStr:"Fail" , messageStr: value!, viewController: self)
+            
         }
         else {
           
-         // let responseDictionary = response?["response"] as! NSDictionary
-
-          //let readersArray = responseDictionary["readers"]
-          //let writerssArray = responseDictionary["writers"]
-          
           let value = response?.description
-          
-          let alert = UIAlertController(title: "Alert", message:value, preferredStyle: UIAlertControllerStyle.alert)
-          alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: nil))
-          self.present(alert, animated: true, completion: nil)
-
+          Utils.showAlertWithOkButton(titleStr:"Alert" , messageStr:value!, viewController: self)
           
         }
-        
-       
-        
       }
-      
-
     }
     
   }
@@ -153,10 +135,7 @@ class CreateOrUpdateACLViewController: UIViewController,UITableViewDataSource,UI
       
       if (error != nil) {
         
-        let alert = UIAlertController(title: "All Users", message: error?.localizedDescription, preferredStyle: UIAlertControllerStyle.alert)
-        alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: nil))
-        self.present(alert, animated: true, completion: nil)
-        
+        Utils.showAlertWithOkButton(titleStr:"All Users" , messageStr: (error?.localizedDescription)!, viewController: self)
       }
       else {
         
@@ -290,19 +269,15 @@ class CreateOrUpdateACLViewController: UIViewController,UITableViewDataSource,UI
       
       if (error != nil) {
         
-        let alert = UIAlertController(title: "Error", message: error?.localizedDescription, preferredStyle: UIAlertControllerStyle.alert)
-        alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: nil))
-        self.present(alert, animated: true, completion: nil)
+        Utils.showAlertWithOkButton(titleStr:"Error" , messageStr: (error?.localizedDescription)!, viewController: self)
         
       }
       else {
         
         
         let value = response?.description
-        
-        let alert = UIAlertController(title: "Create ACL", message:value, preferredStyle: UIAlertControllerStyle.alert)
-        alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: nil))
-        self.present(alert, animated: true, completion: nil)
+    
+       Utils.showAlertWithOkButton(titleStr:"Create ACL" , messageStr: value!, viewController: self)
         
       }
       
@@ -357,19 +332,14 @@ class CreateOrUpdateACLViewController: UIViewController,UITableViewDataSource,UI
         
         if (error != nil) {
           
-          let alert = UIAlertController(title: "Error", message: error?.localizedDescription, preferredStyle: UIAlertControllerStyle.alert)
-          alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: nil))
-          self.present(alert, animated: true, completion: nil)
-          
+            Utils.showAlertWithOkButton(titleStr:"Error" , messageStr: (error?.localizedDescription)!, viewController: self)
+            
         }
         else {
           
           
           let value = response?.description
-          
-          let alert = UIAlertController(title: "Create ACL", message:value, preferredStyle: UIAlertControllerStyle.alert)
-          alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: nil))
-          self.present(alert, animated: true, completion: nil)
+        Utils.showAlertWithOkButton(titleStr: "Create ACL", messageStr: value! , viewController: self)
           
         }
 
@@ -409,18 +379,15 @@ class CreateOrUpdateACLViewController: UIViewController,UITableViewDataSource,UI
             ACProgressHUD.shared.hideHUD()
             
             if (error != nil) {
-                
-                let alert = UIAlertController(title: "Error", message: error?.localizedDescription, preferredStyle: UIAlertControllerStyle.alert)
-                alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: nil))
-                self.present(alert, animated: true, completion: nil)
+           
+                Utils.showAlertWithOkButton(titleStr:"Error" , messageStr: (error?.localizedDescription)!, viewController: self)
                 
             }
             else {
                 
                 let value = response?.description
-                let alert = UIAlertController(title: "Check Permissions", message:value, preferredStyle: UIAlertControllerStyle.alert)
-                alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: nil))
-                self.present(alert, animated: true, completion: nil)
+
+                Utils.showAlertWithOkButton(titleStr:"Check Permissions" , messageStr: value!, viewController: self)
                 
             }
         }
@@ -475,19 +442,12 @@ class CreateOrUpdateACLViewController: UIViewController,UITableViewDataSource,UI
                 ACProgressHUD.shared.hideHUD()
                 
                 if (error != nil) {
-                    
-                    let alert = UIAlertController(title: "Error", message: error?.localizedDescription, preferredStyle: UIAlertControllerStyle.alert)
-                    alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: nil))
-                    self.present(alert, animated: true, completion: nil)
-                    
+                    Utils.showAlertWithOkButton(titleStr:"Error" , messageStr: (error?.localizedDescription)!, viewController: self)
                 }
                 else {
-                    
                     let value = response?.description
-                    let alert = UIAlertController(title: "Remove User", message:value, preferredStyle: UIAlertControllerStyle.alert)
-                    alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: nil))
-                    self.present(alert, animated: true, completion: nil)
-                    
+                    Utils.showAlertWithOkButton(titleStr:"Remove User" , messageStr: value!, viewController: self)
+                   
                 }
                 
             })
@@ -504,19 +464,14 @@ class CreateOrUpdateACLViewController: UIViewController,UITableViewDataSource,UI
             
             if (error != nil) {
                 
-                let alert = UIAlertController(title: "Error", message: error?.localizedDescription, preferredStyle: UIAlertControllerStyle.alert)
-                alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: nil))
-                self.present(alert, animated: true, completion: nil)
+                 Utils.showAlertWithOkButton(titleStr:"Error" , messageStr: (error?.localizedDescription)!, viewController: self)
                 
             }
             else {
                 
                 
                 let value = response?.description
-                let alert = UIAlertController(title: "Delete ACL", message:value, preferredStyle: UIAlertControllerStyle.alert)
-                alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: nil))
-                self.present(alert, animated: true, completion: nil)
-                
+                Utils.showAlertWithOkButton(titleStr:"Delete ACL" , messageStr: value!, viewController: self)
             }
             
             })

@@ -112,9 +112,8 @@ class CreateUserViewController: UIViewController,UITextFieldDelegate {
             (response, error) in
             ACProgressHUD.shared.hideHUD()
             if (error != nil) {
-                let alert = UIAlertController(title: "Create Error", message: error?.localizedDescription, preferredStyle: UIAlertControllerStyle.alert)
-                alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: nil))
-                self.present(alert, animated: true, completion: nil)
+                
+                Utils.showAlertWithOkButton(titleStr:"Error" , messageStr: (error?.localizedDescription)!, viewController: self)
                 
             }
             else {
@@ -137,10 +136,7 @@ class CreateUserViewController: UIViewController,UITextFieldDelegate {
         UsersAPI.usersUpdate(email: emailId.text, username: userName.text, password: password.text, passwordConfirmation: confirmPassword.text, firstName: firstName.text, lastName: lastName.text, photo: nil, photoId: nil, tags: nil, customFields: nil, aclName: nil, aclId: nil, suId: nil, prettyJson:nil) { (response, error) in
             ACProgressHUD.shared.hideHUD()
             if (error != nil) {
-                let alert = UIAlertController(title: "Create Error", message: error?.localizedDescription, preferredStyle: UIAlertControllerStyle.alert)
-                alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: nil))
-                self.present(alert, animated: true, completion: nil)
-                
+              Utils.showAlertWithOkButton(titleStr:"Error" , messageStr: (error?.localizedDescription)!, viewController: self)
             }
             else {
                 let value = response?.description

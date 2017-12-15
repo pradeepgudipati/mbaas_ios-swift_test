@@ -179,16 +179,13 @@ class APIListViewController: UIViewController,UITableViewDataSource,UITableViewD
 
       if (error != nil) {
         
-        let alert = UIAlertController(title: "Login Error", message: error?.localizedDescription, preferredStyle: UIAlertControllerStyle.alert)
-        alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: nil))
-        self.present(alert, animated: true, completion: nil)
-        
+        Utils.showAlertWithOkButton(titleStr:"Login Error" , messageStr: (error?.localizedDescription)!, viewController: self)
       }
       else {
         
         if let val = response?["response"]{
             print(val)
-        let value = response?.description
+        //let value = response?.description
         let responseDictionary = response?["response"] as! NSDictionary
         let responseArr = responseDictionary["users"] as! NSArray
         let dict = responseArr[0] as! NSDictionary
@@ -197,19 +194,12 @@ class APIListViewController: UIViewController,UITableViewDataSource,UITableViewD
         let userDefaults = UserDefaults.standard
         userDefaults.set(dict["id"], forKey: "userId")
         
-        let alert = UIAlertController(title: "Login Success", message:value, preferredStyle: UIAlertControllerStyle.alert)
-        alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: {
-            alert -> Void in
-            
-        }))
-        self.present(alert, animated: true, completion: nil)
+        Utils.showAlertWithOkButton(titleStr:"Login Success" , messageStr: (error?.localizedDescription)!, viewController: self)
+
         }
         else
         {
-            let value = response?.description
-            let alert = UIAlertController(title: "Alert", message: value, preferredStyle: UIAlertControllerStyle.alert)
-            alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: nil))
-            self.present(alert, animated: true, completion: nil)
+        Utils.showAlertWithOkButton(titleStr:"Alert" , messageStr: (error?.localizedDescription)!, viewController: self)
             
         }
         
@@ -274,10 +264,7 @@ class APIListViewController: UIViewController,UITableViewDataSource,UITableViewD
             ACProgressHUD.shared.hideHUD()
             if (error != nil) {
                 
-                let alert = UIAlertController(title: "Error", message: error?.localizedDescription, preferredStyle: UIAlertControllerStyle.alert)
-                alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: nil))
-                self.present(alert, animated: true, completion: nil)
-                
+                Utils.showAlertWithOkButton(titleStr:"Error" , messageStr: (error?.localizedDescription)!, viewController: self)
                 return;
                 
             }
@@ -285,10 +272,7 @@ class APIListViewController: UIViewController,UITableViewDataSource,UITableViewD
             {
                 let value = response?.description
                 
-                let alert = UIAlertController(title: "Success", message:value, preferredStyle: UIAlertControllerStyle.alert)
-                alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: nil))
-                self.present(alert, animated: true, completion: nil)
-                
+                Utils.showAlertWithOkButton(titleStr:"Success" , messageStr: value!, viewController: self)
             }
             
         }
@@ -354,20 +338,13 @@ class APIListViewController: UIViewController,UITableViewDataSource,UITableViewD
 
       if (error != nil) {
         
-        let alert = UIAlertController(title: "Delete Error", message: error?.localizedDescription, preferredStyle: UIAlertControllerStyle.alert)
-        alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: nil))
-        self.present(alert, animated: true, completion: nil)
+        Utils.showAlertWithOkButton(titleStr:"Delete Error" , messageStr: (error?.localizedDescription)!, viewController: self)
         
       }
       else {
         
-        
         let value = response?.description
-        
-        let alert = UIAlertController(title: "Delete User Success", message:value, preferredStyle: UIAlertControllerStyle.alert)
-        alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: nil))
-        self.present(alert, animated: true, completion: nil)
-        
+        Utils.showAlertWithOkButton(titleStr:"Deleted User Successfully" , messageStr: value!, viewController: self)
       }
 
       
@@ -425,27 +402,16 @@ class APIListViewController: UIViewController,UITableViewDataSource,UITableViewD
 
       if (error != nil) {
         
-        let alert = UIAlertController(title: "Delete Error", message: error?.localizedDescription, preferredStyle: UIAlertControllerStyle.alert)
-        alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: nil))
-        self.present(alert, animated: true, completion: nil)
+        Utils.showAlertWithOkButton(titleStr:"Delete Error" , messageStr: (error?.localizedDescription)!, viewController: self)
         
       }
       else {
         
-        
         let value = response?.description
-        
-        let alert = UIAlertController(title: "Delete User Success", message:value, preferredStyle: UIAlertControllerStyle.alert)
-        alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: nil))
-        self.present(alert, animated: true, completion: nil)
+        Utils.showAlertWithOkButton(titleStr:"Deleted User Successfully" , messageStr: value!, viewController: self)
         
       }
-      
-      
-      
     }
-    
-    
   }
    
     //logout current user
@@ -459,11 +425,7 @@ class APIListViewController: UIViewController,UITableViewDataSource,UITableViewD
             ACProgressHUD.shared.hideHUD()
             
             if (error != nil) {
-                
-                let alert = UIAlertController(title: "Logout Error", message: error?.localizedDescription, preferredStyle: UIAlertControllerStyle.alert)
-                alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: nil))
-                self.present(alert, animated: true, completion: nil)
-                
+                 Utils.showAlertWithOkButton(titleStr:"Logout Error" , messageStr: (error?.localizedDescription)!, viewController: self)
             }
             else {
                 
@@ -527,10 +489,7 @@ class APIListViewController: UIViewController,UITableViewDataSource,UITableViewD
       
       if (error != nil) {
         
-        let alert = UIAlertController(title: "All Users", message: error?.localizedDescription, preferredStyle: UIAlertControllerStyle.alert)
-        alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: nil))
-        self.present(alert, animated: true, completion: nil)
-        
+         Utils.showAlertWithOkButton(titleStr:"All Users" , messageStr: (error?.localizedDescription)!, viewController: self)
       }
       else {
         let responseDictionary = response?["response"] as! NSDictionary
