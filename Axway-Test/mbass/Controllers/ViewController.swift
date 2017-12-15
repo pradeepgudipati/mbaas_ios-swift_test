@@ -17,6 +17,7 @@ class ViewController: UIViewController,UIImagePickerControllerDelegate,UINavigat
     var itemsArr = NSMutableArray()
     var userslistArray: NSMutableArray = ["Create User","Login User","Show Current User","Update Current User","Remove User","Logout Current User","Query User"];
     var cllistArray: NSMutableArray = ["Create ACL","Show ACL","Update User in ACL","Check Permission of ACL"]
+    var chatListArray: NSMutableArray = ["Query Chat Groups","Create New Group"]
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -160,23 +161,14 @@ class ViewController: UIViewController,UIImagePickerControllerDelegate,UINavigat
         switch indexPath.row {
             
         case 0:
-            let aAPIListViewController = self.storyboard?.instantiateViewController(withIdentifier: "APIListViewController") as! APIListViewController
-            aAPIListViewController.listArray = userslistArray
-            aAPIListViewController.usersList = true
-            self.navigationController?.pushViewController(aAPIListViewController, animated: true)
+             navigateToApiListViewController(userlist: true, cllist: false, chatlist: false, listArray: userslistArray)
             break
         case 1:
-            let aAPIListViewController = self.storyboard?.instantiateViewController(withIdentifier: "APIListViewController") as! APIListViewController
-            aAPIListViewController.listArray = cllistArray
-            aAPIListViewController.cllist = true
-            self.navigationController?.pushViewController(aAPIListViewController, animated: true)
-
-//            let aACLListViewController = self.storyboard?.instantiateViewController(withIdentifier: "ACLListViewController") as! ACLListViewController
-//            self.navigationController?.pushViewController(aACLListViewController, animated: true)
+             navigateToApiListViewController(userlist: false, cllist: true, chatlist: false, listArray: cllistArray)
             break
-//        case 2:
-//            createMultipleUsers()
-//            break
+        case 2:
+            navigateToApiListViewController(userlist: false, cllist: false, chatlist: true, listArray: chatListArray)
+            break
 //        case 3:
 //            deleteUser()
 //            break
@@ -191,6 +183,16 @@ class ViewController: UIViewController,UIImagePickerControllerDelegate,UINavigat
             break
             
         }
+    }
+    
+    func navigateToApiListViewController(userlist:Bool,cllist:Bool,chatlist:Bool,listArray: NSMutableArray){
+        let aAPIListViewController = self.storyboard?.instantiateViewController(withIdentifier: "APIListViewController") as! APIListViewController
+        aAPIListViewController.listArray = listArray
+        aAPIListViewController.usersList = userlist
+        aAPIListViewController.cllist = cllist
+        aAPIListViewController.chatlist = chatlist
+        self.navigationController?.pushViewController(aAPIListViewController, animated: true)
+
     }
 }
 

@@ -16,7 +16,8 @@ class APIListViewController: UIViewController,UITableViewDataSource,UITableViewD
   var listArray: NSMutableArray = []
   var allUsersListArray: NSArray = []
   var usersList: Bool = false
-    var cllist:Bool = false
+  var cllist:Bool = false
+  var chatlist:Bool = false
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,6 +25,12 @@ class APIListViewController: UIViewController,UITableViewDataSource,UITableViewD
       self.tableView.dataSource = self
       listView.isHidden = true
       self.usersListtableView.tableFooterView = UIView()
+        
+        if chatlist
+        {
+            getchatsGroup()
+        }
+        
         // Do any additional setup after loading the view.
     }
 
@@ -185,7 +192,7 @@ class APIListViewController: UIViewController,UITableViewDataSource,UITableViewD
         
         if let val = response?["response"]{
             print(val)
-        //let value = response?.description
+        let value = response?.description
         let responseDictionary = response?["response"] as! NSDictionary
         let responseArr = responseDictionary["users"] as! NSArray
         let dict = responseArr[0] as! NSDictionary
@@ -194,7 +201,7 @@ class APIListViewController: UIViewController,UITableViewDataSource,UITableViewD
         let userDefaults = UserDefaults.standard
         userDefaults.set(dict["id"], forKey: "userId")
         
-        Utils.showAlertWithOkButton(titleStr:"Login Success" , messageStr: (error?.localizedDescription)!, viewController: self)
+            Utils.showAlertWithOkButton(titleStr:"Login Success" , messageStr:value! , viewController: self)
 
         }
         else
@@ -278,54 +285,6 @@ class APIListViewController: UIViewController,UITableViewDataSource,UITableViewD
         }
     }
 
-//  func createMultipleUsers() {
-//
-//    ACProgressHUD.shared.showHUD()
-//
-//    var count = 0
-//
-//    let usersArray = [["name": "Bijjaladeva", "password": "password"],["name": "Bhadra", "id": "password"],["name": "Marthanda", "id": "password"],["name": "Sivagami", "id": "password"]]
-//
-//    userLoop: for index in 0...usersArray.count-1 {
-//
-//
-//      let userDictionary = usersArray[index]
-//
-//      let name = userDictionary["name"]
-//
-//      UsersAPI.usersCreate(email: name!+"@yopmail.com", username: name, password: "password", passwordConfirmation: "password", firstName: name, lastName: "CG",  tags:nil, customFields: "", aclName: "", aclId: "", suId: nil, role: "", template: "", confirmationTemplate: "", prettyJson: true) { (response, error) in
-//
-//        ACProgressHUD.shared.hideHUD()
-//
-//        count += 1;
-//
-//        if (error != nil) {
-//
-//          let alert = UIAlertController(title: "Login Error", message: error?.localizedDescription, preferredStyle: UIAlertControllerStyle.alert)
-//          alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: nil))
-//          self.present(alert, animated: true, completion: nil)
-//
-//          return;
-//
-//        }
-//        else {
-//
-//          if count == 4 {
-//
-//            let alert = UIAlertController(title: "Success", message:"Multiple users created successfully", preferredStyle: UIAlertControllerStyle.alert)
-//            alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: nil))
-//            self.present(alert, animated: true, completion: nil)
-//
-//          }
-//
-//
-//        }
-//
-//      }
-//
-//    }
-//  }
-  
     // deleting user
     func deleteUser(emailStr: String) {
     
@@ -483,7 +442,7 @@ class APIListViewController: UIViewController,UITableViewDataSource,UITableViewD
     
   
   func showAllUsers() {
-   
+   ACProgressHUD.shared.showHUD()
     UsersAPI.usersQuery { (response, error) in
       ACProgressHUD.shared.hideHUD()
       
@@ -503,6 +462,46 @@ class APIListViewController: UIViewController,UITableViewDataSource,UITableViewD
     }
     
   }
+    
+    func getchatsGroup()
+    {
+        ACProgressHUD.shared.showHUD()
+        
+        ChatsAPI.chatsGetChatGroups(page: nil , perPage: nil , where_: nil , order: nil , responseJsonDepth: 3 , prettyJson: nil){(response, error) in
+            ACProgressHUD.shared.hideHUD()
+            if (error != nil) {
+                
+                Utils.showAlertWithOkButton(titleStr:"All Users" , messageStr: (error?.localizedDescription)!, viewController: self)
+            }
+            else{
+                let value = response?.description
+                if response!["response"] != nil{
+                    let responsArr = response?["response"] as! NSArray
+                    let respDict = responsArr[0] as! NSDictionary
+                    let chatDict = respDict["chat_groups"] as! NSDictionary
+                    if let val = chatDict["participate_users"]{
+                    print(val)
+                        let responseArr = chatDict["participate_users"] as! NSArray
+                    if responseArr.count>0
+                    {
+                        for i in responseArr
+                        {
+                            let respDict = responseArr[i as! Int] as! NSDictionary
+                            let nameStr = respDict["first_name"] as! String
+                            self.listArray.add(nameStr)
+                            self.tableView.reloadData()
+                        }
+                    }
+                    }
+                }
+                
+                
+                let alert = UIAlertController(title: "User data", message:value, preferredStyle: UIAlertControllerStyle.alert)
+                alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler:nil))
+                self.present(alert, animated: true, completion: nil)
+            }
+        }
+    }
     
   @IBAction func doneMethod(_ sender: Any) {
     
