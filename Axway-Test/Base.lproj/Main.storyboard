@@ -564,5 +564,43 @@
             </objects>
             <point key="canvasLocation" x="2656.8000000000002" y="44.527736131934034"/>
         </scene>
+        <!--Show Chats View Controller-->
+        <scene sceneID="sxR-Rw-lKd">
+            <objects>
+                <viewController storyboardIdentifier="ShowChatsViewController" id="0zm-dZ-hrD" customClass="ShowChatsViewController" customModule="Axway_Test" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="zTA-gG-Ka7"/>
+                        <viewControllerLayoutGuide type="bottom" id="t96-3j-2Kw"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="pUn-3d-7Fj">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" placeholder="Enter chat message" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ixb-0F-SVB">
+                                <rect key="frame" x="27" y="45" width="320" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="done"/>
+                                <connections>
+                                    <outlet property="delegate" destination="0zm-dZ-hrD" id="0pp-03-Y8D"/>
+                                </connections>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="t96-3j-2Kw" firstAttribute="top" secondItem="ixb-0F-SVB" secondAttribute="bottom" constant="592" id="Qm9-2P-0cG"/>
+                            <constraint firstItem="ixb-0F-SVB" firstAttribute="leading" secondItem="pUn-3d-7Fj" secondAttribute="leadingMargin" constant="11" id="ddw-2R-kdI"/>
+                            <constraint firstItem="ixb-0F-SVB" firstAttribute="centerX" secondItem="pUn-3d-7Fj" secondAttribute="centerX" id="t52-qo-4rj"/>
+                            <constraint firstItem="ixb-0F-SVB" firstAttribute="top" secondItem="zTA-gG-Ka7" secondAttribute="bottom" constant="25" id="uuY-Y3-6U7"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="chatTxtField" destination="ixb-0F-SVB" id="jOV-Cf-bQo"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="llR-Z7-mk4" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3284" y="46.326836581709152"/>
+        </scene>
     </scenes>
 </document>

@@ -18,7 +18,9 @@ class APIListViewController: UIViewController,UITableViewDataSource,UITableViewD
   var usersList: Bool = false
   var cllist:Bool = false
   var chatlist:Bool = false
-
+  var checkinlist:Bool = false
+  var chatsArr: NSArray = []
+  
     override func viewDidLoad() {
         super.viewDidLoad()
       self.tableView.delegate = self
@@ -166,8 +168,48 @@ class APIListViewController: UIViewController,UITableViewDataSource,UITableViewD
             break;
         }
     }
-    else
+    else if chatlist
     {
+        if indexPath.row == 0
+        {
+            
+        }
+        else if indexPath.row == 1
+        {
+            
+        }
+        else
+        {
+        let showChatsViewController = self.storyboard?.instantiateViewController(withIdentifier: "ShowChatsViewController") as! ShowChatsViewController
+        
+            if self.chatsArr.count > 0
+            {
+                let participentsDict = self.chatsArr[indexPath.row - 2] as! NSDictionary
+                showChatsViewController.chatGroupId = participentsDict["id"] as! String
+                let participentsArr = participentsDict["participate_users"] as! NSArray
+                if participentsArr.count>0
+                {
+                    var participentIds:String = ""
+                    for respDict in participentsArr
+                    {
+                        let resDict = respDict as! NSDictionary
+                        if participentIds.characters.count == 0
+                        {
+                            participentIds = resDict["id"] as! String
+                        }
+                        else
+                        {
+                            let idStr =  resDict["id"] as! String
+                            participentIds +=  "," + idStr
+                        }
+                    }
+                    showChatsViewController.participateIds = participentIds
+                }
+                self.navigationController?.pushViewController(showChatsViewController, animated: true)
+                
+            }
+       
+        }
         
     }
   }
@@ -200,8 +242,7 @@ class APIListViewController: UIViewController,UITableViewDataSource,UITableViewD
         //store userid into userdefaults for further usage
         let userDefaults = UserDefaults.standard
         userDefaults.set(dict["id"], forKey: "userId")
-        
-            Utils.showAlertWithOkButton(titleStr:"Login Success" , messageStr:value! , viewController: self)
+        Utils.showAlertWithOkButton(titleStr:"Login Success" , messageStr:value! , viewController: self)
 
         }
         else
@@ -233,18 +274,21 @@ class APIListViewController: UIViewController,UITableViewDataSource,UITableViewD
       let valueTextField = alertController.textFields![1] as UITextField
       
       //Login with dynamic details
-        if (keyTextField.text?.isEmpty)!
-        {
-           Utils.showAlertWithOkButton(titleStr:"Alert", messageStr: "Please enter username", viewController: self)
-        }
-        else if (valueTextField.text?.isEmpty)!
-        {
-          Utils.showAlertWithOkButton(titleStr:"Alert", messageStr: "Please enter password", viewController: self)
-        }
-        else
-        {
-      self.loginMethod(username: keyTextField.text!, password: valueTextField.text!)
-        }
+//        if (keyTextField.text?.isEmpty)!
+//        {
+//           Utils.showAlertWithOkButton(titleStr:"Alert", messageStr: "Please enter username", viewController: self)
+//        }
+//        else if (valueTextField.text?.isEmpty)!
+//        {
+//          Utils.showAlertWithOkButton(titleStr:"Alert", messageStr: "Please enter password", viewController: self)
+//        }
+//        else
+//        {
+      //self.loginMethod(username: keyTextField.text!, password: valueTextField.text!)
+       // }
+        
+        self.loginMethod(username: "bahubhali", password: "password")
+        
       
     })
     
@@ -476,21 +520,31 @@ class APIListViewController: UIViewController,UITableViewDataSource,UITableViewD
             else{
                 let value = response?.description
                 if response!["response"] != nil{
-                    let responsArr = response?["response"] as! NSArray
-                    let respDict = responsArr[0] as! NSDictionary
-                    let chatDict = respDict["chat_groups"] as! NSDictionary
-                    if let val = chatDict["participate_users"]{
-                    print(val)
-                        let responseArr = chatDict["participate_users"] as! NSArray
-                    if responseArr.count>0
+                    let responsDict = response?["response"] as! NSDictionary
+                    self.chatsArr = responsDict["chat_groups"] as! NSArray
+
+                    for partcpntsDict in self.chatsArr
                     {
-                        for i in responseArr
+                    let participentsDict = partcpntsDict as! NSDictionary
+                    let participentsArr = participentsDict["participate_users"] as! NSArray
+                    if participentsArr.count>0
+                    {
+                        var nameStr:String = ""
+                        for respDict in participentsArr
                         {
-                            let respDict = responseArr[i as! Int] as! NSDictionary
-                            let nameStr = respDict["first_name"] as! String
-                            self.listArray.add(nameStr)
-                            self.tableView.reloadData()
+                            let resDict = respDict as! NSDictionary
+                            if nameStr.characters.count == 0
+                            {
+                                 nameStr = resDict["first_name"] as! String
+                            }
+                            else
+                            {
+                                let firstNameStr =  resDict["first_name"] as! String
+                                nameStr +=  "," + firstNameStr
+                            }
                         }
+                        self.listArray.add(nameStr)
+                        self.tableView.reloadData()
                     }
                     }
                 }

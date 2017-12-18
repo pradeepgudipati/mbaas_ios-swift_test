@@ -8,7 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		23117BA41FDE6C1700A3541A /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23117BA31FDE6C1700A3541A /* UserModel.swift */; };
-		23A3C6861FD977A800E2CC98 /* ChatsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23A3C6851FD977A800E2CC98 /* ChatsViewController.swift */; };
+		23BCE7421FE3F60800A4DDA5 /* CheckInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23BCE7411FE3F60700A4DDA5 /* CheckInViewController.swift */; };
+		23BCE7461FE7BFC000A4DDA5 /* ShowChatsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23BCE7451FE7BFC000A4DDA5 /* ShowChatsViewController.swift */; };
 		23CECA481FDE85F200D40693 /* CreateUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23CECA471FDE85F200D40693 /* CreateUserViewController.swift */; };
 		23CECA4A1FDE886500D40693 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23CECA491FDE886500D40693 /* Utils.swift */; };
 		7B474D201F6A5093005F044A /* ACHUD+Animation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B474D1C1F6A5093005F044A /* ACHUD+Animation.swift */; };
@@ -110,7 +111,8 @@
 
 /* Begin PBXFileReference section */
 		23117BA31FDE6C1700A3541A /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
-		23A3C6851FD977A800E2CC98 /* ChatsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatsViewController.swift; sourceTree = "<group>"; };
+		23BCE7411FE3F60700A4DDA5 /* CheckInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckInViewController.swift; sourceTree = "<group>"; };
+		23BCE7451FE7BFC000A4DDA5 /* ShowChatsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowChatsViewController.swift; sourceTree = "<group>"; };
 		23CECA471FDE85F200D40693 /* CreateUserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateUserViewController.swift; sourceTree = "<group>"; };
 		23CECA491FDE886500D40693 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		7B474D1C1F6A5093005F044A /* ACHUD+Animation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ACHUD+Animation.swift"; sourceTree = "<group>"; };
@@ -227,14 +229,23 @@
 		23A3C6821FD9776700E2CC98 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				23BCE7471FE7CCF800A4DDA5 /* Chats */,
 				7B5102081F690E6400A7BDF9 /* ViewController.swift */,
 				7B5102B81F69170600A7BDF9 /* APIListViewController.swift */,
 				7B474D241F6BB53D005F044A /* ACLListViewController.swift */,
 				7B474D261F6BB741005F044A /* CreateOrUpdateACLViewController.swift */,
-				23A3C6851FD977A800E2CC98 /* ChatsViewController.swift */,
 				23CECA471FDE85F200D40693 /* CreateUserViewController.swift */,
+				23BCE7411FE3F60700A4DDA5 /* CheckInViewController.swift */,
 			);
 			path = Controllers;
+			sourceTree = "<group>";
+		};
+		23BCE7471FE7CCF800A4DDA5 /* Chats */ = {
+			isa = PBXGroup;
+			children = (
+				23BCE7451FE7BFC000A4DDA5 /* ShowChatsViewController.swift */,
+			);
+			path = Chats;
 			sourceTree = "<group>";
 		};
 		7B474D1B1F6A5093005F044A /* Source */ = {
@@ -570,8 +581,10 @@
 				7B5102871F690E8A00A7BDF9 /* KeyValuesAPI.swift in Sources */,
 				7B5102A31F690E8A00A7BDF9 /* SuccessResponse.swift in Sources */,
 				7B5102A41F690E8A00A7BDF9 /* Models.swift in Sources */,
+				23BCE7461FE7BFC000A4DDA5 /* ShowChatsViewController.swift in Sources */,
 				7B5102B61F690E8A00A7BDF9 /* AuthBrowserController.swift in Sources */,
 				7B474D251F6BB53D005F044A /* ACLListViewController.swift in Sources */,
+				23BCE7421FE3F60800A4DDA5 /* CheckInViewController.swift in Sources */,
 				7B474D201F6A5093005F044A /* ACHUD+Animation.swift in Sources */,
 				7B5102B21F690E8A00A7BDF9 /* AXTimeline.swift in Sources */,
 				7B5102911F690E8A00A7BDF9 /* PushSchedulesAPI.swift in Sources */,
@@ -593,7 +606,6 @@
 				7B5102A91F690E8A00A7BDF9 /* AXParameterEncoding.swift in Sources */,
 				7B474D221F6A5093005F044A /* ACProgressView.swift in Sources */,
 				7B5102A11F690E8A00A7BDF9 /* Extensions.swift in Sources */,
-				23A3C6861FD977A800E2CC98 /* ChatsViewController.swift in Sources */,
 				7B5102B71F690E8A00A7BDF9 /* Logger.swift in Sources */,
 				7B5102801F690E8A00A7BDF9 /* CustomObjectsAPI.swift in Sources */,
 				7B5102B91F69170600A7BDF9 /* APIListViewController.swift in Sources */,
