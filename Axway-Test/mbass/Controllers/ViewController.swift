@@ -18,6 +18,7 @@ class ViewController: UIViewController,UIImagePickerControllerDelegate,UINavigat
     var userslistArray: NSMutableArray = ["Create User","Login User","Show Current User","Update Current User","Remove User","Logout Current User","Query User"];
     var cllistArray: NSMutableArray = ["Create ACL","Show ACL","Update User in ACL","Check Permission of ACL"]
     var chatListArray: NSMutableArray = ["Query Chat Groups","Create New Group"]
+    var checkinArray: NSMutableArray = ["Create Checkin","Query Checkin"]
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -87,9 +88,6 @@ class ViewController: UIViewController,UIImagePickerControllerDelegate,UINavigat
 
     //Save the image to document directory
     do {
-      
-      
-      
       let documentsURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
       let fileURL = documentsURL.appendingPathComponent("\(currentTimestamp).jpg")
       if let pngImageData = UIImageJPEGRepresentation(image,0.5) {
@@ -161,17 +159,17 @@ class ViewController: UIViewController,UIImagePickerControllerDelegate,UINavigat
         switch indexPath.row {
             
         case 0:
-             navigateToApiListViewController(userlist: true, cllist: false, chatlist: false, listArray: userslistArray)
+            navigateToApiListViewController(userlist: true, cllist: false, chatlist: false,checkinlist:false, listArray: userslistArray)
             break
         case 1:
-             navigateToApiListViewController(userlist: false, cllist: true, chatlist: false, listArray: cllistArray)
+            navigateToApiListViewController(userlist: false, cllist: true, chatlist: false,checkinlist:false, listArray: cllistArray)
             break
         case 2:
-            navigateToApiListViewController(userlist: false, cllist: false, chatlist: true, listArray: chatListArray)
+            navigateToApiListViewController(userlist: false, cllist: false, chatlist: true,checkinlist:false, listArray: chatListArray)
             break
-//        case 3:
-//            deleteUser()
-//            break
+        case 3:
+            navigateToApiListViewController(userlist: false, cllist: false, chatlist: false, checkinlist: true, listArray: checkinArray)
+            break
 //        case 4:
 //            showQueryAlert()
 //            break
@@ -185,12 +183,13 @@ class ViewController: UIViewController,UIImagePickerControllerDelegate,UINavigat
         }
     }
     
-    func navigateToApiListViewController(userlist:Bool,cllist:Bool,chatlist:Bool,listArray: NSMutableArray){
+    func navigateToApiListViewController(userlist:Bool,cllist:Bool,chatlist:Bool,checkinlist:Bool,listArray: NSMutableArray){
         let aAPIListViewController = self.storyboard?.instantiateViewController(withIdentifier: "APIListViewController") as! APIListViewController
         aAPIListViewController.listArray = listArray
         aAPIListViewController.usersList = userlist
         aAPIListViewController.cllist = cllist
         aAPIListViewController.chatlist = chatlist
+        aAPIListViewController.checkinlist = checkinlist
         self.navigationController?.pushViewController(aAPIListViewController, animated: true)
 
     }
