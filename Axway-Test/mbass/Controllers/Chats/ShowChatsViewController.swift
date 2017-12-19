@@ -8,12 +8,17 @@
 
 import UIKit
 
-class ShowChatsViewController: UIViewController,UITextFieldDelegate {
+class ShowChatsViewController: UIViewController,UITextFieldDelegate,UITableViewDelegate,UITableViewDataSource {
 
     @IBOutlet weak var chatTxtField: UITextField!
+    @IBOutlet weak var chatsTableView: UITableView!
+    
+    var chatsArr:NSArray = []
+    
     var chatGroupId:String = ""
     var participateIds:String = ""
     var chatId:String = ""
+    var queryWhere:String = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,7 +31,33 @@ class ShowChatsViewController: UIViewController,UITextFieldDelegate {
         // Dispose of any resources that can be recreated.
     }
     
-
+    //UITableview methods
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        
+        return self.chatsArr.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: "ChatsCell")
+        cell!.selectionStyle = UITableViewCellSelectionStyle.none
+        
+        let chatDict = self.chatsArr[indexPath.row] as! NSDictionary
+        let messageStr = chatDict["message"] as! String
+        let namesDict = chatDict["from"] as! NSDictionary
+        let firstName = namesDict["first_name"] as! String
+        let lastName = namesDict["last_name"] as! String
+        cell!.textLabel?.numberOfLines = 2
+        cell!.textLabel?.text = "\(messageStr) \n\(firstName) \(lastName)"
+        
+        
+        return cell!
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+    }
+    
     func chatsQuery(){
         ACProgressHUD.shared.showHUD()
         
@@ -40,8 +71,16 @@ class ShowChatsViewController: UIViewController,UITextFieldDelegate {
             }
             else
             {
-                let value = response?.description
-                Utils.showAlertWithOkButton(titleStr:"Chats" , messageStr: value!, viewController: self)
+                //let value = response?.description
+                let responseDictionary = response?["response"] as! NSDictionary
+                self.chatsArr = responseDictionary["chats"] as! NSArray
+                if self.chatsArr.count > 0
+                {
+                    let chatDict = self.chatsArr[0] as! NSDictionary
+                    self.queryWhere = chatDict["updated_at"] as! String
+                }
+                self.chatsTableView.reloadData()
+               // Utils.showAlertWithOkButton(titleStr:"Chats" , messageStr: value!, viewController: self)
                 
             }
             
@@ -61,14 +100,12 @@ class ShowChatsViewController: UIViewController,UITextFieldDelegate {
             }
             else
             {
-                let value = response?.description
-                 Utils.showAlertWithOkButton(titleStr:"Chats" , messageStr: value!, viewController: self)
+                self.chatsQuery()
                 
             }
-            
         }
-        
     }
+    
 
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         
@@ -76,12 +113,15 @@ class ShowChatsViewController: UIViewController,UITextFieldDelegate {
         
         if textStr.characters.count > 0
         {
+            resignFirstResponder()
             createChats()
         }
-        resignFirstResponder()
+       
         return true
     }
     
+    
+ 
     
 
 }

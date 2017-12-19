@@ -15,11 +15,7 @@ class ViewController: UIViewController,UIImagePickerControllerDelegate,UINavigat
     
     let imagePicker = UIImagePickerController()
     var itemsArr = NSMutableArray()
-    var userslistArray: NSMutableArray = ["Create User","Login User","Show Current User","Update Current User","Remove User","Logout Current User","Query User"];
-    var cllistArray: NSMutableArray = ["Create ACL","Show ACL","Update User in ACL","Check Permission of ACL"]
-    var chatListArray: NSMutableArray = ["Query Chat Groups","Create New Group"]
-    var checkinArray: NSMutableArray = ["Create Checkin","Query Checkin"]
-  
+   
   override func viewDidLoad() {
     super.viewDidLoad()
     // Do any additional setup after loading the view, typically from a nib.
@@ -159,15 +155,24 @@ class ViewController: UIViewController,UIImagePickerControllerDelegate,UINavigat
         switch indexPath.row {
             
         case 0:
+            let userslistArray: NSMutableArray = ["Create User","Login User","Show Current User","Update Current User","Remove User","Logout Current User","Query User"];
+            
             navigateToApiListViewController(userlist: true, cllist: false, chatlist: false,checkinlist:false, listArray: userslistArray)
             break
         case 1:
+            let cllistArray: NSMutableArray = ["Create ACL","Show ACL","Update User in ACL","Check Permission of ACL"]
+            
             navigateToApiListViewController(userlist: false, cllist: true, chatlist: false,checkinlist:false, listArray: cllistArray)
             break
         case 2:
+            let chatListArray: NSMutableArray = ["Query Chat Groups","Create New Group"]
+            
             navigateToApiListViewController(userlist: false, cllist: false, chatlist: true,checkinlist:false, listArray: chatListArray)
             break
         case 3:
+            
+            let checkinArray: NSMutableArray = ["Create Checkin","Query Checkin"]
+            
             navigateToApiListViewController(userlist: false, cllist: false, chatlist: false, checkinlist: true, listArray: checkinArray)
             break
 //        case 4:

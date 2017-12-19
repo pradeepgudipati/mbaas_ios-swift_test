@@ -585,17 +585,40 @@
                                     <outlet property="delegate" destination="0zm-dZ-hrD" id="0pp-03-Y8D"/>
                                 </connections>
                             </textField>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="hyS-5a-CY3">
+                                <rect key="frame" x="0.0" y="103" width="375" height="564"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ChatsCell" rowHeight="90" id="VlT-7h-fFp">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="90"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="VlT-7h-fFp" id="44g-d6-cSc">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="89.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="0zm-dZ-hrD" id="jXf-XX-xVj"/>
+                                    <outlet property="delegate" destination="0zm-dZ-hrD" id="X9T-aN-rwN"/>
+                                </connections>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="t96-3j-2Kw" firstAttribute="top" secondItem="ixb-0F-SVB" secondAttribute="bottom" constant="592" id="Qm9-2P-0cG"/>
+                            <constraint firstItem="hyS-5a-CY3" firstAttribute="leading" secondItem="pUn-3d-7Fj" secondAttribute="leading" id="UKu-BM-1Zy"/>
+                            <constraint firstItem="hyS-5a-CY3" firstAttribute="top" secondItem="ixb-0F-SVB" secondAttribute="bottom" constant="28" id="cqS-vC-5cB"/>
                             <constraint firstItem="ixb-0F-SVB" firstAttribute="leading" secondItem="pUn-3d-7Fj" secondAttribute="leadingMargin" constant="11" id="ddw-2R-kdI"/>
+                            <constraint firstAttribute="trailing" secondItem="hyS-5a-CY3" secondAttribute="trailing" id="qoL-9j-fPG"/>
+                            <constraint firstItem="t96-3j-2Kw" firstAttribute="top" secondItem="hyS-5a-CY3" secondAttribute="bottom" id="sLa-KX-OBq"/>
                             <constraint firstItem="ixb-0F-SVB" firstAttribute="centerX" secondItem="pUn-3d-7Fj" secondAttribute="centerX" id="t52-qo-4rj"/>
                             <constraint firstItem="ixb-0F-SVB" firstAttribute="top" secondItem="zTA-gG-Ka7" secondAttribute="bottom" constant="25" id="uuY-Y3-6U7"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="chatTxtField" destination="ixb-0F-SVB" id="jOV-Cf-bQo"/>
+                        <outlet property="chatsTableView" destination="hyS-5a-CY3" id="GZB-Rc-Kfr"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="llR-Z7-mk4" userLabel="First Responder" sceneMemberID="firstResponder"/>
