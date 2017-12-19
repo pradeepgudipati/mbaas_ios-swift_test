@@ -57,7 +57,19 @@ class ShowChatsViewController: UIViewController,UITextFieldDelegate,UITableViewD
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
     }
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
     
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        if (editingStyle == UITableViewCellEditingStyle.delete) {
+            // handle delete (by removing the data from your array and updating the tableview)
+            let chatDict = self.chatsArr[indexPath.row] as! NSDictionary
+            let chtId = chatDict["id"] as! String
+            self.deleteChat(chatId:chtId)
+        }
+    }
+
     func chatsQuery(){
         ACProgressHUD.shared.showHUD()
         
@@ -106,6 +118,22 @@ class ShowChatsViewController: UIViewController,UITextFieldDelegate,UITableViewD
         }
     }
     
+    //delete chat to delete particular chat data
+    func deleteChat(chatId : String){
+        
+         ACProgressHUD.shared.showHUD()
+        ChatsAPI.chatsDelete(chatId:chatId) { (response, error) in
+            ACProgressHUD.shared.hideHUD()
+            if (error != nil) {
+                
+                Utils.showAlertWithOkButton(titleStr:"Error" , messageStr: (error?.localizedDescription)!, viewController: self)
+            }
+            else
+            {
+                self.chatsQuery()
+            }
+        }
+    }
 
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         
