@@ -10,6 +10,8 @@
 		23117BA41FDE6C1700A3541A /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23117BA31FDE6C1700A3541A /* UserModel.swift */; };
 		23BCE7421FE3F60800A4DDA5 /* CheckInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23BCE7411FE3F60700A4DDA5 /* CheckInViewController.swift */; };
 		23BCE7461FE7BFC000A4DDA5 /* ShowChatsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23BCE7451FE7BFC000A4DDA5 /* ShowChatsViewController.swift */; };
+		23BCE7491FE91C1E00A4DDA5 /* DisplayGroupChatsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23BCE7481FE91C1D00A4DDA5 /* DisplayGroupChatsViewController.swift */; };
+		23BCE74B1FE9231700A4DDA5 /* ListOfUsersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23BCE74A1FE9231700A4DDA5 /* ListOfUsersViewController.swift */; };
 		23CECA481FDE85F200D40693 /* CreateUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23CECA471FDE85F200D40693 /* CreateUserViewController.swift */; };
 		23CECA4A1FDE886500D40693 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23CECA491FDE886500D40693 /* Utils.swift */; };
 		7B474D201F6A5093005F044A /* ACHUD+Animation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B474D1C1F6A5093005F044A /* ACHUD+Animation.swift */; };
@@ -113,6 +115,8 @@
 		23117BA31FDE6C1700A3541A /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		23BCE7411FE3F60700A4DDA5 /* CheckInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckInViewController.swift; sourceTree = "<group>"; };
 		23BCE7451FE7BFC000A4DDA5 /* ShowChatsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowChatsViewController.swift; sourceTree = "<group>"; };
+		23BCE7481FE91C1D00A4DDA5 /* DisplayGroupChatsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayGroupChatsViewController.swift; sourceTree = "<group>"; };
+		23BCE74A1FE9231700A4DDA5 /* ListOfUsersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListOfUsersViewController.swift; sourceTree = "<group>"; };
 		23CECA471FDE85F200D40693 /* CreateUserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateUserViewController.swift; sourceTree = "<group>"; };
 		23CECA491FDE886500D40693 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		7B474D1C1F6A5093005F044A /* ACHUD+Animation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ACHUD+Animation.swift"; sourceTree = "<group>"; };
@@ -244,6 +248,8 @@
 			isa = PBXGroup;
 			children = (
 				23BCE7451FE7BFC000A4DDA5 /* ShowChatsViewController.swift */,
+				23BCE7481FE91C1D00A4DDA5 /* DisplayGroupChatsViewController.swift */,
+				23BCE74A1FE9231700A4DDA5 /* ListOfUsersViewController.swift */,
 			);
 			path = Chats;
 			sourceTree = "<group>";
@@ -566,6 +572,7 @@
 				7B51027A1F690E8A00A7BDF9 /* APIHelper.swift in Sources */,
 				7B5102851F690E8A00A7BDF9 /* FriendsAPI.swift in Sources */,
 				7B5102791F690E8A00A7BDF9 /* AlamofireImplementations.swift in Sources */,
+				23BCE7491FE91C1E00A4DDA5 /* DisplayGroupChatsViewController.swift in Sources */,
 				7B5102881F690E8A00A7BDF9 /* LikesAPI.swift in Sources */,
 				7B5102AC1F690E8A00A7BDF9 /* AXResponseSerialization.swift in Sources */,
 				7B51028E1F690E8A00A7BDF9 /* PlacesAPI.swift in Sources */,
@@ -611,6 +618,7 @@
 				7B5102B91F69170600A7BDF9 /* APIListViewController.swift in Sources */,
 				23117BA41FDE6C1700A3541A /* UserModel.swift in Sources */,
 				7B5102AA1F690E8A00A7BDF9 /* AXRequest.swift in Sources */,
+				23BCE74B1FE9231700A4DDA5 /* ListOfUsersViewController.swift in Sources */,
 				7B5102971F690E8A00A7BDF9 /* APIs.swift in Sources */,
 				7B51028A1F690E8A00A7BDF9 /* MessagesAPI.swift in Sources */,
 				7B51027D1F690E8A00A7BDF9 /* AppsAPI.swift in Sources */,

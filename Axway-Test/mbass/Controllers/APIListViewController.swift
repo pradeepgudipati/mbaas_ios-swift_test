@@ -172,10 +172,15 @@ class APIListViewController: UIViewController,UITableViewDataSource,UITableViewD
     {
         if indexPath.row == 0
         {
+            let displayChats = self.storyboard?.instantiateViewController(withIdentifier: "DisplayGroupChatsViewController") as! DisplayGroupChatsViewController
+            self.navigationController?.pushViewController(displayChats, animated: true)
             
         }
         else if indexPath.row == 1
         {
+            let displayUsers = self.storyboard?.instantiateViewController(withIdentifier: "ListOfUsersViewController") as! ListOfUsersViewController
+            self.navigationController?.pushViewController(displayUsers, animated: true)
+            
             
         }
         else
@@ -270,8 +275,8 @@ class APIListViewController: UIViewController,UITableViewDataSource,UITableViewD
     let saveAction = UIAlertAction(title: "Login", style: UIAlertActionStyle.default, handler: {
       alert -> Void in
       
-      let keyTextField = alertController.textFields![0] as UITextField
-      let valueTextField = alertController.textFields![1] as UITextField
+      //let keyTextField = alertController.textFields![0] as UITextField
+      //let valueTextField = alertController.textFields![1] as UITextField
       
       //Login with dynamic details
 //        if (keyTextField.text?.isEmpty)!
@@ -549,10 +554,6 @@ class APIListViewController: UIViewController,UITableViewDataSource,UITableViewD
                     }
                 }
                 
-                
-                let alert = UIAlertController(title: "User data", message:value, preferredStyle: UIAlertControllerStyle.alert)
-                alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler:nil))
-                self.present(alert, animated: true, completion: nil)
             }
         }
     }
