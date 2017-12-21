@@ -12,6 +12,7 @@ class ShowChatsViewController: UIViewController,UITextFieldDelegate,UITableViewD
 
     @IBOutlet weak var chatTxtField: UITextField!
     @IBOutlet weak var chatsTableView: UITableView!
+    var isFromCreateChat:Bool = false
     
     var chatsArr:NSArray = []
     
@@ -22,7 +23,10 @@ class ShowChatsViewController: UIViewController,UITextFieldDelegate,UITableViewD
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        if !isFromCreateChat
+        {
         chatsQuery()
+        }
         // Do any additional setup after loading the view.
     }
 
@@ -83,7 +87,8 @@ class ShowChatsViewController: UIViewController,UITextFieldDelegate,UITableViewD
             }
             else
             {
-                //let value = response?.description
+                if let val = response?["response"]{
+                    print(val)
                 let responseDictionary = response?["response"] as! NSDictionary
                 self.chatsArr = responseDictionary["chats"] as! NSArray
                 if self.chatsArr.count > 0
@@ -92,7 +97,13 @@ class ShowChatsViewController: UIViewController,UITextFieldDelegate,UITableViewD
                     self.queryWhere = chatDict["updated_at"] as! String
                 }
                 self.chatsTableView.reloadData()
-               // Utils.showAlertWithOkButton(titleStr:"Chats" , messageStr: value!, viewController: self)
+               
+                }
+                else
+                {
+                     let value = response?.description
+                   Utils.showAlertWithOkButton(titleStr:"Alert" , messageStr: value!, viewController: self)
+                }
                 
             }
             
@@ -112,6 +123,13 @@ class ShowChatsViewController: UIViewController,UITextFieldDelegate,UITableViewD
             }
             else
             {
+                if self.isFromCreateChat
+                {
+                    let responseDictionary = response?["response"] as! NSDictionary
+                    let responseArr = responseDictionary["chats"] as! NSArray
+                    let dict = responseArr[0] as! NSDictionary
+                    self.chatGroupId = dict["id"] as! String
+                }
                 self.chatsQuery()
                 
             }
