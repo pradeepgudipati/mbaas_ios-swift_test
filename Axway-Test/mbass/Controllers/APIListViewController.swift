@@ -19,6 +19,7 @@ class APIListViewController: UIViewController,UITableViewDataSource,UITableViewD
   var cllist:Bool = false
   var chatlist:Bool = false
   var checkinlist:Bool = false
+  var customObject:Bool = false
   var chatsArr: NSArray = []
   
     override func viewDidLoad() {
@@ -216,6 +217,24 @@ class APIListViewController: UIViewController,UITableViewDataSource,UITableViewD
        
         }
         
+    }
+    else if checkinlist
+    {
+        
+    }
+    else if customObject
+    {
+        if indexPath.row == 0
+        {
+            let createCustomObj = self.storyboard?.instantiateViewController(withIdentifier: "CreateCustomObjViewController") as! CreateCustomObjViewController
+            self.navigationController?.pushViewController(createCustomObj, animated: true)
+        }
+        else
+        {
+            let createCustomObj = self.storyboard?.instantiateViewController(withIdentifier: "QueryCustomObjViewController") as! QueryCustomObjViewController
+            self.navigationController?.pushViewController(createCustomObj, animated: true)
+            
+        }
     }
   }
   
@@ -523,7 +542,7 @@ class APIListViewController: UIViewController,UITableViewDataSource,UITableViewD
                 Utils.showAlertWithOkButton(titleStr:"All Users" , messageStr: (error?.localizedDescription)!, viewController: self)
             }
             else{
-                let value = response?.description
+                _ = response?.description
                 if response!["response"] != nil{
                     let responsDict = response?["response"] as! NSDictionary
                     self.chatsArr = responsDict["chat_groups"] as! NSArray

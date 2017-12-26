@@ -8,10 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		23117BA41FDE6C1700A3541A /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23117BA31FDE6C1700A3541A /* UserModel.swift */; };
-		23BCE7421FE3F60800A4DDA5 /* CheckInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23BCE7411FE3F60700A4DDA5 /* CheckInViewController.swift */; };
 		23BCE7461FE7BFC000A4DDA5 /* ShowChatsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23BCE7451FE7BFC000A4DDA5 /* ShowChatsViewController.swift */; };
 		23BCE7491FE91C1E00A4DDA5 /* DisplayGroupChatsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23BCE7481FE91C1D00A4DDA5 /* DisplayGroupChatsViewController.swift */; };
 		23BCE74B1FE9231700A4DDA5 /* ListOfUsersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23BCE74A1FE9231700A4DDA5 /* ListOfUsersViewController.swift */; };
+		23C58BE11FEBAF9A00DC014B /* CreateCustomObjViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23C58BE01FEBAF9900DC014B /* CreateCustomObjViewController.swift */; };
+		23C58BE31FEBAFB800DC014B /* QueryCustomObjViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23C58BE21FEBAFB800DC014B /* QueryCustomObjViewController.swift */; };
+		23C58BE51FEBAFD600DC014B /* RemoveCutomObjViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23C58BE41FEBAFD600DC014B /* RemoveCutomObjViewController.swift */; };
+		23C58BE71FEBAFEF00DC014B /* UpdateCustomObjViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23C58BE61FEBAFEE00DC014B /* UpdateCustomObjViewController.swift */; };
 		23CECA481FDE85F200D40693 /* CreateUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23CECA471FDE85F200D40693 /* CreateUserViewController.swift */; };
 		23CECA4A1FDE886500D40693 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23CECA491FDE886500D40693 /* Utils.swift */; };
 		7B474D201F6A5093005F044A /* ACHUD+Animation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B474D1C1F6A5093005F044A /* ACHUD+Animation.swift */; };
@@ -113,10 +116,13 @@
 
 /* Begin PBXFileReference section */
 		23117BA31FDE6C1700A3541A /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
-		23BCE7411FE3F60700A4DDA5 /* CheckInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckInViewController.swift; sourceTree = "<group>"; };
 		23BCE7451FE7BFC000A4DDA5 /* ShowChatsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowChatsViewController.swift; sourceTree = "<group>"; };
 		23BCE7481FE91C1D00A4DDA5 /* DisplayGroupChatsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayGroupChatsViewController.swift; sourceTree = "<group>"; };
 		23BCE74A1FE9231700A4DDA5 /* ListOfUsersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListOfUsersViewController.swift; sourceTree = "<group>"; };
+		23C58BE01FEBAF9900DC014B /* CreateCustomObjViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateCustomObjViewController.swift; sourceTree = "<group>"; };
+		23C58BE21FEBAFB800DC014B /* QueryCustomObjViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QueryCustomObjViewController.swift; sourceTree = "<group>"; };
+		23C58BE41FEBAFD600DC014B /* RemoveCutomObjViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoveCutomObjViewController.swift; sourceTree = "<group>"; };
+		23C58BE61FEBAFEE00DC014B /* UpdateCustomObjViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateCustomObjViewController.swift; sourceTree = "<group>"; };
 		23CECA471FDE85F200D40693 /* CreateUserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateUserViewController.swift; sourceTree = "<group>"; };
 		23CECA491FDE886500D40693 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		7B474D1C1F6A5093005F044A /* ACHUD+Animation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ACHUD+Animation.swift"; sourceTree = "<group>"; };
@@ -233,13 +239,13 @@
 		23A3C6821FD9776700E2CC98 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				23C58BDF1FEBAF5800DC014B /* CustomObject */,
 				23BCE7471FE7CCF800A4DDA5 /* Chats */,
 				7B5102081F690E6400A7BDF9 /* ViewController.swift */,
 				7B5102B81F69170600A7BDF9 /* APIListViewController.swift */,
 				7B474D241F6BB53D005F044A /* ACLListViewController.swift */,
 				7B474D261F6BB741005F044A /* CreateOrUpdateACLViewController.swift */,
 				23CECA471FDE85F200D40693 /* CreateUserViewController.swift */,
-				23BCE7411FE3F60700A4DDA5 /* CheckInViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -252,6 +258,17 @@
 				23BCE74A1FE9231700A4DDA5 /* ListOfUsersViewController.swift */,
 			);
 			path = Chats;
+			sourceTree = "<group>";
+		};
+		23C58BDF1FEBAF5800DC014B /* CustomObject */ = {
+			isa = PBXGroup;
+			children = (
+				23C58BE01FEBAF9900DC014B /* CreateCustomObjViewController.swift */,
+				23C58BE21FEBAFB800DC014B /* QueryCustomObjViewController.swift */,
+				23C58BE41FEBAFD600DC014B /* RemoveCutomObjViewController.swift */,
+				23C58BE61FEBAFEE00DC014B /* UpdateCustomObjViewController.swift */,
+			);
+			path = CustomObject;
 			sourceTree = "<group>";
 		};
 		7B474D1B1F6A5093005F044A /* Source */ = {
@@ -500,7 +517,7 @@
 					7B5102021F690E6400A7BDF9 = {
 						CreatedOnToolsVersion = 8.3.3;
 						DevelopmentTeam = 3PVLLN695R;
-						ProvisioningStyle = Automatic;
+						ProvisioningStyle = Manual;
 					};
 					7B5102161F690E6500A7BDF9 = {
 						CreatedOnToolsVersion = 8.3.3;
@@ -569,6 +586,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				23C58BE31FEBAFB800DC014B /* QueryCustomObjViewController.swift in Sources */,
 				7B51027A1F690E8A00A7BDF9 /* APIHelper.swift in Sources */,
 				7B5102851F690E8A00A7BDF9 /* FriendsAPI.swift in Sources */,
 				7B5102791F690E8A00A7BDF9 /* AlamofireImplementations.swift in Sources */,
@@ -591,8 +609,8 @@
 				23BCE7461FE7BFC000A4DDA5 /* ShowChatsViewController.swift in Sources */,
 				7B5102B61F690E8A00A7BDF9 /* AuthBrowserController.swift in Sources */,
 				7B474D251F6BB53D005F044A /* ACLListViewController.swift in Sources */,
-				23BCE7421FE3F60800A4DDA5 /* CheckInViewController.swift in Sources */,
 				7B474D201F6A5093005F044A /* ACHUD+Animation.swift in Sources */,
+				23C58BE51FEBAFD600DC014B /* RemoveCutomObjViewController.swift in Sources */,
 				7B5102B21F690E8A00A7BDF9 /* AXTimeline.swift in Sources */,
 				7B5102911F690E8A00A7BDF9 /* PushSchedulesAPI.swift in Sources */,
 				7B474D211F6A5093005F044A /* ACProgressHUD.swift in Sources */,
@@ -600,11 +618,13 @@
 				7B5102A51F690E8A00A7BDF9 /* AFError.swift in Sources */,
 				7B5102841F690E8A00A7BDF9 /* FilesAPI.swift in Sources */,
 				7B5102861F690E8A00A7BDF9 /* GeoFencesAPI.swift in Sources */,
+				23C58BE11FEBAF9A00DC014B /* CreateCustomObjViewController.swift in Sources */,
 				7B5102AF1F690E8A00A7BDF9 /* AXSessionDelegate.swift in Sources */,
 				7B5102B01F690E8A00A7BDF9 /* AXSessionManager.swift in Sources */,
 				7B51028C1F690E8A00A7BDF9 /* PhotoCollectionsAPI.swift in Sources */,
 				7B5102A71F690E8A00A7BDF9 /* AXMultipartFormData.swift in Sources */,
 				7B5102B11F690E8A00A7BDF9 /* AXTaskDelegate.swift in Sources */,
+				23C58BE71FEBAFEF00DC014B /* UpdateCustomObjViewController.swift in Sources */,
 				7B51029C1F690E8A00A7BDF9 /* OAuth.swift in Sources */,
 				7B5102951F690E8A00A7BDF9 /* SystemAPI.swift in Sources */,
 				7B51029E1F690E8A00A7BDF9 /* OAuthExplicit.swift in Sources */,
@@ -799,11 +819,15 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer: Sreedhar Tadavarthy (Y89UHW869P)";
+				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = 3PVLLN695R;
 				INFOPLIST_FILE = "Axway-Test/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.innominds.Axway-Test";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "51ddfbe1-b1c5-4d9e-9fb0-30ed1a165ac2";
+				PROVISIONING_PROFILE_SPECIFIER = "Innominds Development Latest Profile";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -812,11 +836,15 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer: Sreedhar Tadavarthy (Y89UHW869P)";
+				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = 3PVLLN695R;
 				INFOPLIST_FILE = "Axway-Test/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.innominds.Axway-Test";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "51ddfbe1-b1c5-4d9e-9fb0-30ed1a165ac2";
+				PROVISIONING_PROFILE_SPECIFIER = "Innominds Development Latest Profile";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
