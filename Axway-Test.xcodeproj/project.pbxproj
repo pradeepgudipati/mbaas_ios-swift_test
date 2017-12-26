@@ -13,7 +13,6 @@
 		23BCE74B1FE9231700A4DDA5 /* ListOfUsersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23BCE74A1FE9231700A4DDA5 /* ListOfUsersViewController.swift */; };
 		23C58BE11FEBAF9A00DC014B /* CreateCustomObjViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23C58BE01FEBAF9900DC014B /* CreateCustomObjViewController.swift */; };
 		23C58BE31FEBAFB800DC014B /* QueryCustomObjViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23C58BE21FEBAFB800DC014B /* QueryCustomObjViewController.swift */; };
-		23C58BE51FEBAFD600DC014B /* RemoveCutomObjViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23C58BE41FEBAFD600DC014B /* RemoveCutomObjViewController.swift */; };
 		23C58BE71FEBAFEF00DC014B /* UpdateCustomObjViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23C58BE61FEBAFEE00DC014B /* UpdateCustomObjViewController.swift */; };
 		23CECA481FDE85F200D40693 /* CreateUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23CECA471FDE85F200D40693 /* CreateUserViewController.swift */; };
 		23CECA4A1FDE886500D40693 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23CECA491FDE886500D40693 /* Utils.swift */; };
@@ -121,7 +120,6 @@
 		23BCE74A1FE9231700A4DDA5 /* ListOfUsersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListOfUsersViewController.swift; sourceTree = "<group>"; };
 		23C58BE01FEBAF9900DC014B /* CreateCustomObjViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateCustomObjViewController.swift; sourceTree = "<group>"; };
 		23C58BE21FEBAFB800DC014B /* QueryCustomObjViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QueryCustomObjViewController.swift; sourceTree = "<group>"; };
-		23C58BE41FEBAFD600DC014B /* RemoveCutomObjViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoveCutomObjViewController.swift; sourceTree = "<group>"; };
 		23C58BE61FEBAFEE00DC014B /* UpdateCustomObjViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateCustomObjViewController.swift; sourceTree = "<group>"; };
 		23CECA471FDE85F200D40693 /* CreateUserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateUserViewController.swift; sourceTree = "<group>"; };
 		23CECA491FDE886500D40693 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
@@ -265,7 +263,6 @@
 			children = (
 				23C58BE01FEBAF9900DC014B /* CreateCustomObjViewController.swift */,
 				23C58BE21FEBAFB800DC014B /* QueryCustomObjViewController.swift */,
-				23C58BE41FEBAFD600DC014B /* RemoveCutomObjViewController.swift */,
 				23C58BE61FEBAFEE00DC014B /* UpdateCustomObjViewController.swift */,
 			);
 			path = CustomObject;
@@ -610,7 +607,6 @@
 				7B5102B61F690E8A00A7BDF9 /* AuthBrowserController.swift in Sources */,
 				7B474D251F6BB53D005F044A /* ACLListViewController.swift in Sources */,
 				7B474D201F6A5093005F044A /* ACHUD+Animation.swift in Sources */,
-				23C58BE51FEBAFD600DC014B /* RemoveCutomObjViewController.swift in Sources */,
 				7B5102B21F690E8A00A7BDF9 /* AXTimeline.swift in Sources */,
 				7B5102911F690E8A00A7BDF9 /* PushSchedulesAPI.swift in Sources */,
 				7B474D211F6A5093005F044A /* ACProgressHUD.swift in Sources */,

@@ -14,6 +14,7 @@ class CreateCustomObjViewController: UIViewController,UITextFieldDelegate {
     @IBOutlet weak var createBtn: UIButton!
     
     var tagVal:Int = 100
+    var fieldDict: NSMutableDictionary = [:]
     let fieldsArr:NSMutableArray = []
     
     override func viewDidLoad() {
@@ -67,9 +68,7 @@ class CreateCustomObjViewController: UIViewController,UITextFieldDelegate {
         }
         else
         {
-            //var fieldsStr:String = ""
-            
-            var fieldDict: NSMutableDictionary = [:]
+
             for vw in  self.view.subviews
             {
                 if vw.tag > 100
@@ -77,15 +76,8 @@ class CreateCustomObjViewController: UIViewController,UITextFieldDelegate {
                      let sampleTextField  = vw as! UITextField
                      //fieldsStr = sampleTextField.text!
                      fieldDict = [sampleTextField.placeholder! : sampleTextField.text!]
-                     fieldsArr.add(fieldDict)
+                     //fieldsArr.add(fieldDict)
                 }
-//                else
-//                {
-//                   Utils.showAlertWithOkButton(titleStr: "Alert", messageStr: "Please add atlest one new property key", viewController: self)
-//                    break
-//                }
-                
-               
             }
             createCustomObj()
         }
@@ -99,13 +91,16 @@ class CreateCustomObjViewController: UIViewController,UITextFieldDelegate {
     
     func createCustomObj(){
         do{
-        //let data = try JSONSerialization.data(withJSONObject: fieldsArr, options: .prettyPrinted) as Data
-            let fieldStr = "[custom_field: 'red',aclid: '1234567890abcdef'}]"
-                
-                //NSString(data: data, encoding: String.Encoding.utf8.rawValue)
-        
-            CustomObjectsAPI.customObjectsCreate(classname: classNameTxt.text!, fields: fieldStr as String, prettyJson: nil , tags: nil , photo: nil , photoId: nil , aclName: nil , aclId: nil , suId:  nil ) { (response, error) in
+            let data = try JSONSerialization.data(withJSONObject: fieldDict, options: .init(rawValue: 0)) as Data
             
+            let fieldStr = NSString(data: data, encoding: String.Encoding.utf8.rawValue)
+            
+            
+            ACProgressHUD.shared.showHUD()
+
+            CustomObjectsAPI.customObjectsCreate(classname: classNameTxt.text!, fields: fieldStr! as String, prettyJson: nil , tags: nil , photo: nil , photoId: nil , aclName: nil , aclId: nil , suId:  nil ) { (response, error) in
+                ACProgressHUD.shared.hideHUD()
+
                 if (error != nil) {
                     
                     Utils.showAlertWithOkButton(titleStr:"Error" , messageStr: (error?.localizedDescription)!, viewController: self)
