@@ -20,7 +20,10 @@ class APIListViewController: UIViewController,UITableViewDataSource,UITableViewD
   var chatlist:Bool = false
   var checkinlist:Bool = false
   var customObject:Bool = false
+  var geoFencList : Bool = false
+
   var chatsArr: NSArray = []
+
   
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -233,6 +236,20 @@ class APIListViewController: UIViewController,UITableViewDataSource,UITableViewD
         {
             let createCustomObj = self.storyboard?.instantiateViewController(withIdentifier: "QueryCustomObjViewController") as! QueryCustomObjViewController
             self.navigationController?.pushViewController(createCustomObj, animated: true)
+        }
+    }
+    else if geoFencList
+    {
+        if indexPath.row == 0
+        {
+            let createGeoFence = self.storyboard?.instantiateViewController(withIdentifier: "CreateGeoFenceViewController") as! CreateGeoFenceViewController
+            self.navigationController?.pushViewController(createGeoFence, animated: true)
+            
+        }
+        else
+        {
+            let queryGeoFence = self.storyboard?.instantiateViewController(withIdentifier: "QueryGeoFencViewController") as! QueryGeoFencViewController
+            self.navigationController?.pushViewController(queryGeoFence, animated: true)
             
         }
     }

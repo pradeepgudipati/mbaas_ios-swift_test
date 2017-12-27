@@ -8,6 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		23117BA41FDE6C1700A3541A /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23117BA31FDE6C1700A3541A /* UserModel.swift */; };
+		236BBBD11FF27EBF00DD0D9D /* CreateGeoFenceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 236BBBCF1FF27EBF00DD0D9D /* CreateGeoFenceViewController.swift */; };
+		236BBBD21FF27EBF00DD0D9D /* QueryGeoFencViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 236BBBD01FF27EBF00DD0D9D /* QueryGeoFencViewController.swift */; };
+		236BBBD51FF39B3A00DD0D9D /* CreateCheckinsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 236BBBD41FF39B3A00DD0D9D /* CreateCheckinsViewController.swift */; };
+		236BBBD91FF39B6900DD0D9D /* QueryCheckinsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 236BBBD81FF39B6900DD0D9D /* QueryCheckinsViewController.swift */; };
+		236BBBDD1FF39B8800DD0D9D /* ShowCheckinsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 236BBBDC1FF39B8800DD0D9D /* ShowCheckinsViewController.swift */; };
 		23BCE7461FE7BFC000A4DDA5 /* ShowChatsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23BCE7451FE7BFC000A4DDA5 /* ShowChatsViewController.swift */; };
 		23BCE7491FE91C1E00A4DDA5 /* DisplayGroupChatsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23BCE7481FE91C1D00A4DDA5 /* DisplayGroupChatsViewController.swift */; };
 		23BCE74B1FE9231700A4DDA5 /* ListOfUsersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23BCE74A1FE9231700A4DDA5 /* ListOfUsersViewController.swift */; };
@@ -115,6 +120,11 @@
 
 /* Begin PBXFileReference section */
 		23117BA31FDE6C1700A3541A /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
+		236BBBCF1FF27EBF00DD0D9D /* CreateGeoFenceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateGeoFenceViewController.swift; sourceTree = "<group>"; };
+		236BBBD01FF27EBF00DD0D9D /* QueryGeoFencViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QueryGeoFencViewController.swift; sourceTree = "<group>"; };
+		236BBBD41FF39B3A00DD0D9D /* CreateCheckinsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateCheckinsViewController.swift; sourceTree = "<group>"; };
+		236BBBD81FF39B6900DD0D9D /* QueryCheckinsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QueryCheckinsViewController.swift; sourceTree = "<group>"; };
+		236BBBDC1FF39B8800DD0D9D /* ShowCheckinsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowCheckinsViewController.swift; sourceTree = "<group>"; };
 		23BCE7451FE7BFC000A4DDA5 /* ShowChatsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowChatsViewController.swift; sourceTree = "<group>"; };
 		23BCE7481FE91C1D00A4DDA5 /* DisplayGroupChatsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayGroupChatsViewController.swift; sourceTree = "<group>"; };
 		23BCE74A1FE9231700A4DDA5 /* ListOfUsersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListOfUsersViewController.swift; sourceTree = "<group>"; };
@@ -234,9 +244,30 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		236BBBCE1FF27EBF00DD0D9D /* GeoFence */ = {
+			isa = PBXGroup;
+			children = (
+				236BBBCF1FF27EBF00DD0D9D /* CreateGeoFenceViewController.swift */,
+				236BBBD01FF27EBF00DD0D9D /* QueryGeoFencViewController.swift */,
+			);
+			path = GeoFence;
+			sourceTree = "<group>";
+		};
+		236BBBD31FF39B1B00DD0D9D /* Checkins */ = {
+			isa = PBXGroup;
+			children = (
+				236BBBD41FF39B3A00DD0D9D /* CreateCheckinsViewController.swift */,
+				236BBBD81FF39B6900DD0D9D /* QueryCheckinsViewController.swift */,
+				236BBBDC1FF39B8800DD0D9D /* ShowCheckinsViewController.swift */,
+			);
+			path = Checkins;
+			sourceTree = "<group>";
+		};
 		23A3C6821FD9776700E2CC98 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				236BBBD31FF39B1B00DD0D9D /* Checkins */,
+				236BBBCE1FF27EBF00DD0D9D /* GeoFence */,
 				23C58BDF1FEBAF5800DC014B /* CustomObject */,
 				23BCE7471FE7CCF800A4DDA5 /* Chats */,
 				7B5102081F690E6400A7BDF9 /* ViewController.swift */,
@@ -600,6 +631,7 @@
 				7B5102AD1F690E8A00A7BDF9 /* AXResult.swift in Sources */,
 				7B5102B31F690E8A00A7BDF9 /* AXValidation.swift in Sources */,
 				7B5102091F690E6400A7BDF9 /* ViewController.swift in Sources */,
+				236BBBD91FF39B6900DD0D9D /* QueryCheckinsViewController.swift in Sources */,
 				7B5102871F690E8A00A7BDF9 /* KeyValuesAPI.swift in Sources */,
 				7B5102A31F690E8A00A7BDF9 /* SuccessResponse.swift in Sources */,
 				7B5102A41F690E8A00A7BDF9 /* Models.swift in Sources */,
@@ -615,6 +647,7 @@
 				7B5102841F690E8A00A7BDF9 /* FilesAPI.swift in Sources */,
 				7B5102861F690E8A00A7BDF9 /* GeoFencesAPI.swift in Sources */,
 				23C58BE11FEBAF9A00DC014B /* CreateCustomObjViewController.swift in Sources */,
+				236BBBD11FF27EBF00DD0D9D /* CreateGeoFenceViewController.swift in Sources */,
 				7B5102AF1F690E8A00A7BDF9 /* AXSessionDelegate.swift in Sources */,
 				7B5102B01F690E8A00A7BDF9 /* AXSessionManager.swift in Sources */,
 				7B51028C1F690E8A00A7BDF9 /* PhotoCollectionsAPI.swift in Sources */,
@@ -640,12 +673,14 @@
 				7B51027D1F690E8A00A7BDF9 /* AppsAPI.swift in Sources */,
 				7B51028B1F690E8A00A7BDF9 /* OrgAPI.swift in Sources */,
 				7B5102071F690E6400A7BDF9 /* AppDelegate.swift in Sources */,
+				236BBBD21FF27EBF00DD0D9D /* QueryGeoFencViewController.swift in Sources */,
 				7B51029A1F690E8A00A7BDF9 /* HTTPBasicAuth.swift in Sources */,
 				7B5102B41F690E8A00A7BDF9 /* DispatchQueue+Alamofire.swift in Sources */,
 				7B5102821F690E8A00A7BDF9 /* EmailTemplateAPI.swift in Sources */,
 				23CECA4A1FDE886500D40693 /* Utils.swift in Sources */,
 				7B51029D1F690E8A00A7BDF9 /* OAuthApplication.swift in Sources */,
 				7B5102AB1F690E8A00A7BDF9 /* AXResponse.swift in Sources */,
+				236BBBDD1FF39B8800DD0D9D /* ShowCheckinsViewController.swift in Sources */,
 				7B5102961F690E8A00A7BDF9 /* UsersAPI.swift in Sources */,
 				7B51029F1F690E8A00A7BDF9 /* OAuthImplicit.swift in Sources */,
 				7B5102A21F690E8A00A7BDF9 /* ErrorResponse_.swift in Sources */,
@@ -653,6 +688,7 @@
 				7B51029B1F690E8A00A7BDF9 /* Keychain.swift in Sources */,
 				7B51027F1F690E8A00A7BDF9 /* CheckinsAPI.swift in Sources */,
 				7B5102891F690E8A00A7BDF9 /* LogsAPI.swift in Sources */,
+				236BBBD51FF39B3A00DD0D9D /* CreateCheckinsViewController.swift in Sources */,
 				7B5102AE1F690E8A00A7BDF9 /* AXServerTrustPolicy.swift in Sources */,
 				7B5102931F690E8A00A7BDF9 /* SocialIntegrationsAPI.swift in Sources */,
 				7B5102811F690E8A00A7BDF9 /* EmailsAPI.swift in Sources */,
