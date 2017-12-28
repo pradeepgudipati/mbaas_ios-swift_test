@@ -176,8 +176,6 @@ class ViewController: UIViewController,UIImagePickerControllerDelegate,UINavigat
         case 3:
             
             let checkinArray: NSMutableArray = ["Create Checkin","Query Checkin"]
-            
-
             navigateToApiListViewController(userlist: false, cllist: false, chatlist: false, checkinlist: true,customObj:false,geoFecList:false, listArray: checkinArray)
             break
         case 4:

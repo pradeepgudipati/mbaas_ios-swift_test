@@ -13,6 +13,15 @@
 		236BBBD51FF39B3A00DD0D9D /* CreateCheckinsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 236BBBD41FF39B3A00DD0D9D /* CreateCheckinsViewController.swift */; };
 		236BBBD91FF39B6900DD0D9D /* QueryCheckinsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 236BBBD81FF39B6900DD0D9D /* QueryCheckinsViewController.swift */; };
 		236BBBDD1FF39B8800DD0D9D /* ShowCheckinsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 236BBBDC1FF39B8800DD0D9D /* ShowCheckinsViewController.swift */; };
+		236BBBE01FF3C3D600DD0D9D /* CreatePhotoClctnViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 236BBBDF1FF3C3D000DD0D9D /* CreatePhotoClctnViewController.swift */; };
+		236BBBE21FF3C46000DD0D9D /* ShowPhotoClctnViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 236BBBE11FF3C46000DD0D9D /* ShowPhotoClctnViewController.swift */; };
+		236BBBE81FF3C52B00DD0D9D /* PhotoClctnOptionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 236BBBE71FF3C52B00DD0D9D /* PhotoClctnOptionsViewController.swift */; };
+		237BDA741FF4BAE90004768B /* ShowPhotosInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 237BDA731FF4BAE90004768B /* ShowPhotosInfoViewController.swift */; };
+		237BDA771FF4C39B0004768B /* PushSubscriptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 237BDA761FF4C39B0004768B /* PushSubscriptionViewController.swift */; };
+		237BDA791FF4C3AF0004768B /* PushNotifyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 237BDA781FF4C3AF0004768B /* PushNotifyViewController.swift */; };
+		237BDA7B1FF4C3C70004768B /* PushUnsubscribeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 237BDA7A1FF4C3C70004768B /* PushUnsubscribeViewController.swift */; };
+		237BDA7D1FF4C3D50004768B /* PushSubscriptionQueryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 237BDA7C1FF4C3D50004768B /* PushSubscriptionQueryViewController.swift */; };
+		237BDA7F1FF4C3E30004768B /* QueryChannelsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 237BDA7E1FF4C3E30004768B /* QueryChannelsViewController.swift */; };
 		23BCE7461FE7BFC000A4DDA5 /* ShowChatsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23BCE7451FE7BFC000A4DDA5 /* ShowChatsViewController.swift */; };
 		23BCE7491FE91C1E00A4DDA5 /* DisplayGroupChatsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23BCE7481FE91C1D00A4DDA5 /* DisplayGroupChatsViewController.swift */; };
 		23BCE74B1FE9231700A4DDA5 /* ListOfUsersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23BCE74A1FE9231700A4DDA5 /* ListOfUsersViewController.swift */; };
@@ -125,6 +134,15 @@
 		236BBBD41FF39B3A00DD0D9D /* CreateCheckinsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateCheckinsViewController.swift; sourceTree = "<group>"; };
 		236BBBD81FF39B6900DD0D9D /* QueryCheckinsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QueryCheckinsViewController.swift; sourceTree = "<group>"; };
 		236BBBDC1FF39B8800DD0D9D /* ShowCheckinsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowCheckinsViewController.swift; sourceTree = "<group>"; };
+		236BBBDF1FF3C3D000DD0D9D /* CreatePhotoClctnViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePhotoClctnViewController.swift; sourceTree = "<group>"; };
+		236BBBE11FF3C46000DD0D9D /* ShowPhotoClctnViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowPhotoClctnViewController.swift; sourceTree = "<group>"; };
+		236BBBE71FF3C52B00DD0D9D /* PhotoClctnOptionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoClctnOptionsViewController.swift; sourceTree = "<group>"; };
+		237BDA731FF4BAE90004768B /* ShowPhotosInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowPhotosInfoViewController.swift; sourceTree = "<group>"; };
+		237BDA761FF4C39B0004768B /* PushSubscriptionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushSubscriptionViewController.swift; sourceTree = "<group>"; };
+		237BDA781FF4C3AF0004768B /* PushNotifyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushNotifyViewController.swift; sourceTree = "<group>"; };
+		237BDA7A1FF4C3C70004768B /* PushUnsubscribeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushUnsubscribeViewController.swift; sourceTree = "<group>"; };
+		237BDA7C1FF4C3D50004768B /* PushSubscriptionQueryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushSubscriptionQueryViewController.swift; sourceTree = "<group>"; };
+		237BDA7E1FF4C3E30004768B /* QueryChannelsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QueryChannelsViewController.swift; sourceTree = "<group>"; };
 		23BCE7451FE7BFC000A4DDA5 /* ShowChatsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowChatsViewController.swift; sourceTree = "<group>"; };
 		23BCE7481FE91C1D00A4DDA5 /* DisplayGroupChatsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayGroupChatsViewController.swift; sourceTree = "<group>"; };
 		23BCE74A1FE9231700A4DDA5 /* ListOfUsersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListOfUsersViewController.swift; sourceTree = "<group>"; };
@@ -263,9 +281,34 @@
 			path = Checkins;
 			sourceTree = "<group>";
 		};
+		236BBBDE1FF3BFE600DD0D9D /* Photo Collections */ = {
+			isa = PBXGroup;
+			children = (
+				236BBBDF1FF3C3D000DD0D9D /* CreatePhotoClctnViewController.swift */,
+				236BBBE11FF3C46000DD0D9D /* ShowPhotoClctnViewController.swift */,
+				236BBBE71FF3C52B00DD0D9D /* PhotoClctnOptionsViewController.swift */,
+				237BDA731FF4BAE90004768B /* ShowPhotosInfoViewController.swift */,
+			);
+			path = "Photo Collections";
+			sourceTree = "<group>";
+		};
+		237BDA751FF4C3630004768B /* Push Notifications */ = {
+			isa = PBXGroup;
+			children = (
+				237BDA761FF4C39B0004768B /* PushSubscriptionViewController.swift */,
+				237BDA781FF4C3AF0004768B /* PushNotifyViewController.swift */,
+				237BDA7A1FF4C3C70004768B /* PushUnsubscribeViewController.swift */,
+				237BDA7C1FF4C3D50004768B /* PushSubscriptionQueryViewController.swift */,
+				237BDA7E1FF4C3E30004768B /* QueryChannelsViewController.swift */,
+			);
+			path = "Push Notifications";
+			sourceTree = "<group>";
+		};
 		23A3C6821FD9776700E2CC98 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				237BDA751FF4C3630004768B /* Push Notifications */,
+				236BBBDE1FF3BFE600DD0D9D /* Photo Collections */,
 				236BBBD31FF39B1B00DD0D9D /* Checkins */,
 				236BBBCE1FF27EBF00DD0D9D /* GeoFence */,
 				23C58BDF1FEBAF5800DC014B /* CustomObject */,
@@ -616,11 +659,13 @@
 			files = (
 				23C58BE31FEBAFB800DC014B /* QueryCustomObjViewController.swift in Sources */,
 				7B51027A1F690E8A00A7BDF9 /* APIHelper.swift in Sources */,
+				237BDA7F1FF4C3E30004768B /* QueryChannelsViewController.swift in Sources */,
 				7B5102851F690E8A00A7BDF9 /* FriendsAPI.swift in Sources */,
 				7B5102791F690E8A00A7BDF9 /* AlamofireImplementations.swift in Sources */,
 				23BCE7491FE91C1E00A4DDA5 /* DisplayGroupChatsViewController.swift in Sources */,
 				7B5102881F690E8A00A7BDF9 /* LikesAPI.swift in Sources */,
 				7B5102AC1F690E8A00A7BDF9 /* AXResponseSerialization.swift in Sources */,
+				236BBBE21FF3C46000DD0D9D /* ShowPhotoClctnViewController.swift in Sources */,
 				7B51028E1F690E8A00A7BDF9 /* PlacesAPI.swift in Sources */,
 				7B51ED221F7279C500A26437 /* README.md in Sources */,
 				7B51027C1F690E8A00A7BDF9 /* AdminAPI.swift in Sources */,
@@ -634,10 +679,13 @@
 				236BBBD91FF39B6900DD0D9D /* QueryCheckinsViewController.swift in Sources */,
 				7B5102871F690E8A00A7BDF9 /* KeyValuesAPI.swift in Sources */,
 				7B5102A31F690E8A00A7BDF9 /* SuccessResponse.swift in Sources */,
+				236BBBE01FF3C3D600DD0D9D /* CreatePhotoClctnViewController.swift in Sources */,
+				237BDA7D1FF4C3D50004768B /* PushSubscriptionQueryViewController.swift in Sources */,
 				7B5102A41F690E8A00A7BDF9 /* Models.swift in Sources */,
 				23BCE7461FE7BFC000A4DDA5 /* ShowChatsViewController.swift in Sources */,
 				7B5102B61F690E8A00A7BDF9 /* AuthBrowserController.swift in Sources */,
 				7B474D251F6BB53D005F044A /* ACLListViewController.swift in Sources */,
+				237BDA741FF4BAE90004768B /* ShowPhotosInfoViewController.swift in Sources */,
 				7B474D201F6A5093005F044A /* ACHUD+Animation.swift in Sources */,
 				7B5102B21F690E8A00A7BDF9 /* AXTimeline.swift in Sources */,
 				7B5102911F690E8A00A7BDF9 /* PushSchedulesAPI.swift in Sources */,
@@ -647,6 +695,7 @@
 				7B5102841F690E8A00A7BDF9 /* FilesAPI.swift in Sources */,
 				7B5102861F690E8A00A7BDF9 /* GeoFencesAPI.swift in Sources */,
 				23C58BE11FEBAF9A00DC014B /* CreateCustomObjViewController.swift in Sources */,
+				237BDA7B1FF4C3C70004768B /* PushUnsubscribeViewController.swift in Sources */,
 				236BBBD11FF27EBF00DD0D9D /* CreateGeoFenceViewController.swift in Sources */,
 				7B5102AF1F690E8A00A7BDF9 /* AXSessionDelegate.swift in Sources */,
 				7B5102B01F690E8A00A7BDF9 /* AXSessionManager.swift in Sources */,
@@ -657,6 +706,7 @@
 				7B51029C1F690E8A00A7BDF9 /* OAuth.swift in Sources */,
 				7B5102951F690E8A00A7BDF9 /* SystemAPI.swift in Sources */,
 				7B51029E1F690E8A00A7BDF9 /* OAuthExplicit.swift in Sources */,
+				236BBBE81FF3C52B00DD0D9D /* PhotoClctnOptionsViewController.swift in Sources */,
 				7B5102A61F690E8A00A7BDF9 /* AXAlamofire.swift in Sources */,
 				7B5102A01F690E8A00A7BDF9 /* OAuthPassword.swift in Sources */,
 				7B5102A91F690E8A00A7BDF9 /* AXParameterEncoding.swift in Sources */,
@@ -689,11 +739,13 @@
 				7B51027F1F690E8A00A7BDF9 /* CheckinsAPI.swift in Sources */,
 				7B5102891F690E8A00A7BDF9 /* LogsAPI.swift in Sources */,
 				236BBBD51FF39B3A00DD0D9D /* CreateCheckinsViewController.swift in Sources */,
+				237BDA771FF4C39B0004768B /* PushSubscriptionViewController.swift in Sources */,
 				7B5102AE1F690E8A00A7BDF9 /* AXServerTrustPolicy.swift in Sources */,
 				7B5102931F690E8A00A7BDF9 /* SocialIntegrationsAPI.swift in Sources */,
 				7B5102811F690E8A00A7BDF9 /* EmailsAPI.swift in Sources */,
 				7B5102991F690E8A00A7BDF9 /* Authentication.swift in Sources */,
 				7B5102941F690E8A00A7BDF9 /* StatusesAPI.swift in Sources */,
+				237BDA791FF4C3AF0004768B /* PushNotifyViewController.swift in Sources */,
 				7B5102B51F690E8A00A7BDF9 /* Notifications.swift in Sources */,
 				7B51027E1F690E8A00A7BDF9 /* ChatsAPI.swift in Sources */,
 				7B51027B1F690E8A00A7BDF9 /* ACLsAPI.swift in Sources */,

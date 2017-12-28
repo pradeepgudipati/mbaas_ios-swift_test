@@ -223,6 +223,16 @@ class APIListViewController: UIViewController,UITableViewDataSource,UITableViewD
     }
     else if checkinlist
     {
+        if indexPath.row == 0
+        {
+            let createCheckin = self.storyboard?.instantiateViewController(withIdentifier: "CreateCheckinsViewController") as! CreateCheckinsViewController
+            self.navigationController?.pushViewController(createCheckin, animated: true)
+        }
+        else
+        {
+            let queryCheckin = self.storyboard?.instantiateViewController(withIdentifier: "QueryCheckinsViewController") as! QueryCheckinsViewController
+            self.navigationController?.pushViewController(queryCheckin, animated: true)
+        }
         
     }
     else if customObject

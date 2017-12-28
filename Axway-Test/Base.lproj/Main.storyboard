@@ -1108,5 +1108,134 @@
             </objects>
             <point key="canvasLocation" x="7701.6000000000004" y="44.527736131934034"/>
         </scene>
+        <!--Create Checkins View Controller-->
+        <scene sceneID="sVJ-4Q-xFO">
+            <objects>
+                <viewController storyboardIdentifier="CreateCheckinsViewController" id="Z6h-px-VLL" customClass="CreateCheckinsViewController" customModule="Axway_Test" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="QlP-0y-t06"/>
+                        <viewControllerLayoutGuide type="bottom" id="Q8t-9Q-7wx"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="pPI-3i-ahJ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="kly-vz-opL">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="CreateCheckinCell" rowHeight="50" id="fDC-0j-PJZ">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="50"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="fDC-0j-PJZ" id="Mdp-Ul-GZV">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="49.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="Z6h-px-VLL" id="Ph8-xN-6po"/>
+                                    <outlet property="delegate" destination="Z6h-px-VLL" id="nYL-TQ-axO"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="kly-vz-opL" firstAttribute="top" secondItem="pPI-3i-ahJ" secondAttribute="top" id="XYs-ML-SYv"/>
+                            <constraint firstItem="Q8t-9Q-7wx" firstAttribute="top" secondItem="kly-vz-opL" secondAttribute="bottom" id="rVu-eM-m2X"/>
+                            <constraint firstItem="kly-vz-opL" firstAttribute="leading" secondItem="pPI-3i-ahJ" secondAttribute="leading" id="vlh-3a-G7O"/>
+                            <constraint firstAttribute="trailing" secondItem="kly-vz-opL" secondAttribute="trailing" id="wVU-4J-2q5"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="checkinsTableView" destination="kly-vz-opL" id="Aeb-pg-IUs"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="FVN-xI-fOZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="8320.7999999999993" y="44.527736131934034"/>
+        </scene>
+        <!--Query Checkins View Controller-->
+        <scene sceneID="tQB-9I-Vye">
+            <objects>
+                <viewController storyboardIdentifier="QueryCheckinsViewController" id="alH-aT-qgi" customClass="QueryCheckinsViewController" customModule="Axway_Test" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="sxD-YS-aYq"/>
+                        <viewControllerLayoutGuide type="bottom" id="xk8-hh-5wL"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="oTb-oQ-3A1">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="obe-y5-KWt">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="QueryCheckinCell" id="05X-WS-OCS">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="05X-WS-OCS" id="FZm-s5-hnc">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="alH-aT-qgi" id="f0J-Cn-vHl"/>
+                                    <outlet property="delegate" destination="alH-aT-qgi" id="lrm-SR-Vef"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="obe-y5-KWt" firstAttribute="leading" secondItem="oTb-oQ-3A1" secondAttribute="leading" id="2jb-G4-bj8"/>
+                            <constraint firstItem="obe-y5-KWt" firstAttribute="top" secondItem="oTb-oQ-3A1" secondAttribute="top" id="6vc-vZ-tQL"/>
+                            <constraint firstItem="xk8-hh-5wL" firstAttribute="top" secondItem="obe-y5-KWt" secondAttribute="bottom" id="OQM-q7-zYs"/>
+                            <constraint firstAttribute="trailing" secondItem="obe-y5-KWt" secondAttribute="trailing" id="TTR-fz-e3a"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="querycheckinsTableView" destination="obe-y5-KWt" id="ShJ-Mw-BnO"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="C3u-nP-EHK" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="8936.7999999999993" y="44.527736131934034"/>
+        </scene>
+        <!--Show Checkins View Controller-->
+        <scene sceneID="day-Pp-lbb">
+            <objects>
+                <viewController storyboardIdentifier="ShowCheckinsViewController" id="12m-YF-npH" customClass="ShowCheckinsViewController" customModule="Axway_Test" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="EDQ-6w-fhB"/>
+                        <viewControllerLayoutGuide type="bottom" id="dcn-EL-G3Y"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="EJV-gt-bwR">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Fnb-c4-xdL">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Fnb-c4-xdL" firstAttribute="leading" secondItem="EJV-gt-bwR" secondAttribute="leading" id="KwP-KA-o0Z"/>
+                            <constraint firstItem="dcn-EL-G3Y" firstAttribute="top" secondItem="Fnb-c4-xdL" secondAttribute="bottom" id="Lxo-dS-wLf"/>
+                            <constraint firstAttribute="trailing" secondItem="Fnb-c4-xdL" secondAttribute="trailing" id="ttI-Ga-S1q"/>
+                            <constraint firstItem="Fnb-c4-xdL" firstAttribute="top" secondItem="EJV-gt-bwR" secondAttribute="top" id="zMZ-2s-1KD"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="checkinTxtView" destination="Fnb-c4-xdL" id="vJc-9F-2Fl"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="k0d-uw-JBu" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="9557.6000000000004" y="44.527736131934034"/>
+        </scene>
     </scenes>
 </document>
