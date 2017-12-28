@@ -70,7 +70,15 @@ class ShowChatsViewController: UIViewController,UITextFieldDelegate,UITableViewD
             // handle delete (by removing the data from your array and updating the tableview)
             let chatDict = self.chatsArr[indexPath.row] as! NSDictionary
             let chtId = chatDict["id"] as! String
-            self.deleteChat(chatId:chtId)
+            let alert = UIAlertController(title: "Delete", message:"Are you sure you want to delete", preferredStyle: UIAlertControllerStyle.alert)
+            alert.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.cancel, handler:nil))
+            alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: { alert -> Void in
+                
+               self.deleteChat(chatId:chtId)
+            }))
+            self.present(alert, animated: true, completion: nil)
+            
+            
         }
     }
 

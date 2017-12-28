@@ -35,3 +35,4 @@ This reference applications verifies the following Axway MBaaS Objects
 
   1. "Users"
   2. "Access Control Lists"
+  3. "Chats"
