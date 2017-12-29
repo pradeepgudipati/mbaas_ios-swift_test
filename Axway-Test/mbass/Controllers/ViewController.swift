@@ -157,39 +157,42 @@ class ViewController: UIViewController,UIImagePickerControllerDelegate,UINavigat
         case 0:
             let userslistArray: NSMutableArray = ["Create User","Login User","Show Current User","Update Current User","Remove User","Logout Current User","Query User"];
         
-            navigateToApiListViewController(userlist: true, cllist: false, chatlist: false,checkinlist:false,customObj:false,geoFecList:false, listArray: userslistArray)
+            navigateToApiListViewController(userlist: true, cllist: false, chatlist: false,checkinlist:false,customObj:false,geoFecList:false,photoCollection:false, listArray: userslistArray)
 
             break
         case 1:
             let cllistArray: NSMutableArray = ["Create ACL","Show ACL","Update User in ACL","Check Permission of ACL"]
 
-            navigateToApiListViewController(userlist: false, cllist: true, chatlist: false,checkinlist:false,customObj:false,geoFecList:false, listArray: cllistArray)
+            navigateToApiListViewController(userlist: false, cllist: true, chatlist: false,checkinlist:false,customObj:false,geoFecList:false,photoCollection:false, listArray: cllistArray)
 
             break
         case 2:
             let chatListArray: NSMutableArray = ["Query Chat Groups","Create New Group"]
             
 
-            navigateToApiListViewController(userlist: false, cllist: false, chatlist: true,checkinlist:false,customObj:false,geoFecList:false, listArray: chatListArray)
+            navigateToApiListViewController(userlist: false, cllist: false, chatlist: true,checkinlist:false,customObj:false,geoFecList:false,photoCollection:false, listArray: chatListArray)
 
             break
         case 3:
             
             let checkinArray: NSMutableArray = ["Create Checkin","Query Checkin"]
-            navigateToApiListViewController(userlist: false, cllist: false, chatlist: false, checkinlist: true,customObj:false,geoFecList:false, listArray: checkinArray)
+            navigateToApiListViewController(userlist: false, cllist: false, chatlist: false, checkinlist: true,customObj:false,geoFecList:false,photoCollection:false, listArray: checkinArray)
             break
         case 4:
             let geoFencArray: NSMutableArray = ["Create Geo Fence","Query Geo Fence"]
             
-            navigateToApiListViewController(userlist: false, cllist: false, chatlist: false, checkinlist: false,customObj:false,geoFecList:true, listArray: geoFencArray)
+            navigateToApiListViewController(userlist: false, cllist: false, chatlist: false, checkinlist: false,customObj:false,geoFecList:true,photoCollection:false, listArray: geoFencArray)
             break
         case 5:
             let customObj: NSMutableArray = ["Create Custom Object","Query Custom Object"]
             
-            navigateToApiListViewController(userlist: false, cllist: false, chatlist: false, checkinlist: false,customObj:true,geoFecList:false, listArray: customObj)
+            navigateToApiListViewController(userlist: false, cllist: false, chatlist: false, checkinlist: false,customObj:true,geoFecList:false,photoCollection:false, listArray: customObj)
             break
         case 6:
-           
+            let photoClctn: NSMutableArray = ["Create Photo Collection","Search Photo Collection"]
+            
+            navigateToApiListViewController(userlist: false, cllist: false, chatlist: false, checkinlist: false,customObj:false,geoFecList:false,photoCollection:true, listArray: photoClctn)
+
             break
 //        case 5:
 //            showAllUsers()
@@ -203,7 +206,7 @@ class ViewController: UIViewController,UIImagePickerControllerDelegate,UINavigat
     }
     
 
-    func navigateToApiListViewController(userlist:Bool,cllist:Bool,chatlist:Bool,checkinlist:Bool,customObj:Bool,geoFecList:Bool, listArray: NSMutableArray){
+    func navigateToApiListViewController(userlist:Bool,cllist:Bool,chatlist:Bool,checkinlist:Bool,customObj:Bool,geoFecList:Bool,photoCollection:Bool,listArray: NSMutableArray){
 
         let aAPIListViewController = self.storyboard?.instantiateViewController(withIdentifier: "APIListViewController") as! APIListViewController
         aAPIListViewController.listArray = listArray
@@ -213,6 +216,7 @@ class ViewController: UIViewController,UIImagePickerControllerDelegate,UINavigat
         aAPIListViewController.checkinlist = checkinlist
         aAPIListViewController.customObject = customObj
         aAPIListViewController.geoFencList = geoFecList
+        aAPIListViewController.photoCollection = photoCollection
         self.navigationController?.pushViewController(aAPIListViewController, animated: true)
 
     }
