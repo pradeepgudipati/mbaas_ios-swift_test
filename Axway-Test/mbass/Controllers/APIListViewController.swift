@@ -24,7 +24,7 @@ class APIListViewController: UIViewController,UITableViewDataSource,UITableViewD
   var photoCollection : Bool = false
   var placeslist:Bool = false
   var pushNotify:Bool = false
-
+  var photosList:Bool = false
   var chatsArr: NSArray = []
 
   
@@ -283,6 +283,24 @@ class APIListViewController: UIViewController,UITableViewDataSource,UITableViewD
             let shwPhotoClctn = self.storyboard?.instantiateViewController(withIdentifier: "ShowPhotoClctnViewController") as! ShowPhotoClctnViewController
             self.navigationController?.pushViewController(shwPhotoClctn, animated: true)
             
+        }
+    }
+    else if photosList
+    {
+        switch indexPath.row{
+        case 0:
+            let aCreatePhotoViewController = self.storyboard?.instantiateViewController(withIdentifier: "CreatePhotoViewController") as! CreatePhotoViewController
+            self.navigationController?.pushViewController(aCreatePhotoViewController, animated: true)
+            break;
+            
+        case 1:
+            let aQueryPhotoViewController = self.storyboard?.instantiateViewController(withIdentifier: "QueryPhotoViewController") as! QueryPhotoViewController
+            self.navigationController?.pushViewController(aQueryPhotoViewController, animated: true)
+            break;
+            
+            
+        default:
+            break;
         }
     }
     else if placeslist
