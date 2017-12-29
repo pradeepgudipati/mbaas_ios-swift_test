@@ -21,6 +21,7 @@ class APIListViewController: UIViewController,UITableViewDataSource,UITableViewD
   var checkinlist:Bool = false
   var customObject:Bool = false
   var geoFencList : Bool = false
+  var photoCollection : Bool = false
 
   var chatsArr: NSArray = []
 
@@ -260,6 +261,25 @@ class APIListViewController: UIViewController,UITableViewDataSource,UITableViewD
         {
             let queryGeoFence = self.storyboard?.instantiateViewController(withIdentifier: "QueryGeoFencViewController") as! QueryGeoFencViewController
             self.navigationController?.pushViewController(queryGeoFence, animated: true)
+            
+        }
+    }
+    else if photoCollection
+    {
+        if indexPath.row == 0
+        {
+            let userDefaults = UserDefaults.standard
+            userDefaults.set("", forKey: "collectionId")
+            userDefaults.set("", forKey: "collectionName")
+            
+            let createPhotoClctn = self.storyboard?.instantiateViewController(withIdentifier: "CreatePhotoClctnViewController") as! CreatePhotoClctnViewController
+            self.navigationController?.pushViewController(createPhotoClctn, animated: true)
+            
+        }
+        else
+        {
+            let shwPhotoClctn = self.storyboard?.instantiateViewController(withIdentifier: "ShowPhotoClctnViewController") as! ShowPhotoClctnViewController
+            self.navigationController?.pushViewController(shwPhotoClctn, animated: true)
             
         }
     }
