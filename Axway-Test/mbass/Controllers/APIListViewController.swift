@@ -22,6 +22,7 @@ class APIListViewController: UIViewController,UITableViewDataSource,UITableViewD
   var customObject:Bool = false
   var geoFencList : Bool = false
   var photoCollection : Bool = false
+  var placeslist:Bool = false
 
   var chatsArr: NSArray = []
 
@@ -281,6 +282,29 @@ class APIListViewController: UIViewController,UITableViewDataSource,UITableViewD
             let shwPhotoClctn = self.storyboard?.instantiateViewController(withIdentifier: "ShowPhotoClctnViewController") as! ShowPhotoClctnViewController
             self.navigationController?.pushViewController(shwPhotoClctn, animated: true)
             
+        }
+    }
+    else if placeslist
+    {
+        switch indexPath.row{
+        case 0:
+            let aCreatePlaceViewController = self.storyboard?.instantiateViewController(withIdentifier: "CreatePlaceViewController") as! CreatePlaceViewController
+            aCreatePlaceViewController.operationTypeValue = updationType.Create
+            self.navigationController?.pushViewController(aCreatePlaceViewController, animated: true)
+            break;
+            
+        case 1:
+            let listOfPlacesPACLViewController = self.storyboard?.instantiateViewController(withIdentifier: "QueryPlaceViewController") as! QueryPlaceViewController
+            self.navigationController?.pushViewController(listOfPlacesPACLViewController, animated: true)
+            break;
+            
+        case 2:
+            let aSearchACLViewController = self.storyboard?.instantiateViewController(withIdentifier: "SearchPlaceViewController") as! SearchPlaceViewController
+            self.navigationController?.pushViewController(aSearchACLViewController, animated: true)
+            break;
+            
+        default:
+            break;
         }
     }
   }

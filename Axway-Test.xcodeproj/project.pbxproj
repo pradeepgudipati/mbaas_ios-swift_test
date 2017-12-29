@@ -17,11 +17,13 @@
 		236BBBE21FF3C46000DD0D9D /* ShowPhotoClctnViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 236BBBE11FF3C46000DD0D9D /* ShowPhotoClctnViewController.swift */; };
 		236BBBE81FF3C52B00DD0D9D /* PhotoClctnOptionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 236BBBE71FF3C52B00DD0D9D /* PhotoClctnOptionsViewController.swift */; };
 		237BDA741FF4BAE90004768B /* ShowPhotosInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 237BDA731FF4BAE90004768B /* ShowPhotosInfoViewController.swift */; };
-		237BDA771FF4C39B0004768B /* PushSubscriptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 237BDA761FF4C39B0004768B /* PushSubscriptionViewController.swift */; };
-		237BDA791FF4C3AF0004768B /* PushNotifyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 237BDA781FF4C3AF0004768B /* PushNotifyViewController.swift */; };
-		237BDA7B1FF4C3C70004768B /* PushUnsubscribeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 237BDA7A1FF4C3C70004768B /* PushUnsubscribeViewController.swift */; };
-		237BDA7D1FF4C3D50004768B /* PushSubscriptionQueryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 237BDA7C1FF4C3D50004768B /* PushSubscriptionQueryViewController.swift */; };
-		237BDA7F1FF4C3E30004768B /* QueryChannelsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 237BDA7E1FF4C3E30004768B /* QueryChannelsViewController.swift */; };
+		237BDA851FF61A8B0004768B /* QueryPlaceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 237BDA811FF61A890004768B /* QueryPlaceViewController.swift */; };
+		237BDA861FF61A8B0004768B /* SearchPlaceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 237BDA821FF61A890004768B /* SearchPlaceViewController.swift */; };
+		237BDA871FF61A8B0004768B /* CreatePlaceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 237BDA831FF61A890004768B /* CreatePlaceViewController.swift */; };
+		237BDA881FF61A8B0004768B /* UpdateorDeletePlaceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 237BDA841FF61A8A0004768B /* UpdateorDeletePlaceViewController.swift */; };
+		237BDA8D1FF61AF90004768B /* UpdateorDeletePhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 237BDA8A1FF61AF80004768B /* UpdateorDeletePhotoViewController.swift */; };
+		237BDA8E1FF61AF90004768B /* CreatePhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 237BDA8B1FF61AF80004768B /* CreatePhotoViewController.swift */; };
+		237BDA8F1FF61AF90004768B /* QueryPhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 237BDA8C1FF61AF90004768B /* QueryPhotoViewController.swift */; };
 		23BCE7461FE7BFC000A4DDA5 /* ShowChatsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23BCE7451FE7BFC000A4DDA5 /* ShowChatsViewController.swift */; };
 		23BCE7491FE91C1E00A4DDA5 /* DisplayGroupChatsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23BCE7481FE91C1D00A4DDA5 /* DisplayGroupChatsViewController.swift */; };
 		23BCE74B1FE9231700A4DDA5 /* ListOfUsersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23BCE74A1FE9231700A4DDA5 /* ListOfUsersViewController.swift */; };
@@ -138,11 +140,13 @@
 		236BBBE11FF3C46000DD0D9D /* ShowPhotoClctnViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowPhotoClctnViewController.swift; sourceTree = "<group>"; };
 		236BBBE71FF3C52B00DD0D9D /* PhotoClctnOptionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoClctnOptionsViewController.swift; sourceTree = "<group>"; };
 		237BDA731FF4BAE90004768B /* ShowPhotosInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowPhotosInfoViewController.swift; sourceTree = "<group>"; };
-		237BDA761FF4C39B0004768B /* PushSubscriptionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushSubscriptionViewController.swift; sourceTree = "<group>"; };
-		237BDA781FF4C3AF0004768B /* PushNotifyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushNotifyViewController.swift; sourceTree = "<group>"; };
-		237BDA7A1FF4C3C70004768B /* PushUnsubscribeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushUnsubscribeViewController.swift; sourceTree = "<group>"; };
-		237BDA7C1FF4C3D50004768B /* PushSubscriptionQueryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushSubscriptionQueryViewController.swift; sourceTree = "<group>"; };
-		237BDA7E1FF4C3E30004768B /* QueryChannelsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QueryChannelsViewController.swift; sourceTree = "<group>"; };
+		237BDA811FF61A890004768B /* QueryPlaceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QueryPlaceViewController.swift; sourceTree = "<group>"; };
+		237BDA821FF61A890004768B /* SearchPlaceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchPlaceViewController.swift; sourceTree = "<group>"; };
+		237BDA831FF61A890004768B /* CreatePlaceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreatePlaceViewController.swift; sourceTree = "<group>"; };
+		237BDA841FF61A8A0004768B /* UpdateorDeletePlaceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UpdateorDeletePlaceViewController.swift; sourceTree = "<group>"; };
+		237BDA8A1FF61AF80004768B /* UpdateorDeletePhotoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UpdateorDeletePhotoViewController.swift; sourceTree = "<group>"; };
+		237BDA8B1FF61AF80004768B /* CreatePhotoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreatePhotoViewController.swift; sourceTree = "<group>"; };
+		237BDA8C1FF61AF90004768B /* QueryPhotoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QueryPhotoViewController.swift; sourceTree = "<group>"; };
 		23BCE7451FE7BFC000A4DDA5 /* ShowChatsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowChatsViewController.swift; sourceTree = "<group>"; };
 		23BCE7481FE91C1D00A4DDA5 /* DisplayGroupChatsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayGroupChatsViewController.swift; sourceTree = "<group>"; };
 		23BCE74A1FE9231700A4DDA5 /* ListOfUsersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListOfUsersViewController.swift; sourceTree = "<group>"; };
@@ -292,22 +296,32 @@
 			path = "Photo Collections";
 			sourceTree = "<group>";
 		};
-		237BDA751FF4C3630004768B /* Push Notifications */ = {
+		237BDA801FF619F90004768B /* Places */ = {
 			isa = PBXGroup;
 			children = (
-				237BDA761FF4C39B0004768B /* PushSubscriptionViewController.swift */,
-				237BDA781FF4C3AF0004768B /* PushNotifyViewController.swift */,
-				237BDA7A1FF4C3C70004768B /* PushUnsubscribeViewController.swift */,
-				237BDA7C1FF4C3D50004768B /* PushSubscriptionQueryViewController.swift */,
-				237BDA7E1FF4C3E30004768B /* QueryChannelsViewController.swift */,
+				237BDA831FF61A890004768B /* CreatePlaceViewController.swift */,
+				237BDA811FF61A890004768B /* QueryPlaceViewController.swift */,
+				237BDA821FF61A890004768B /* SearchPlaceViewController.swift */,
+				237BDA841FF61A8A0004768B /* UpdateorDeletePlaceViewController.swift */,
 			);
-			path = "Push Notifications";
+			path = Places;
+			sourceTree = "<group>";
+		};
+		237BDA891FF61AC80004768B /* Photos */ = {
+			isa = PBXGroup;
+			children = (
+				237BDA8B1FF61AF80004768B /* CreatePhotoViewController.swift */,
+				237BDA8C1FF61AF90004768B /* QueryPhotoViewController.swift */,
+				237BDA8A1FF61AF80004768B /* UpdateorDeletePhotoViewController.swift */,
+			);
+			path = Photos;
 			sourceTree = "<group>";
 		};
 		23A3C6821FD9776700E2CC98 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				237BDA751FF4C3630004768B /* Push Notifications */,
+				237BDA891FF61AC80004768B /* Photos */,
+				237BDA801FF619F90004768B /* Places */,
 				236BBBDE1FF3BFE600DD0D9D /* Photo Collections */,
 				236BBBD31FF39B1B00DD0D9D /* Checkins */,
 				236BBBCE1FF27EBF00DD0D9D /* GeoFence */,
@@ -659,7 +673,6 @@
 			files = (
 				23C58BE31FEBAFB800DC014B /* QueryCustomObjViewController.swift in Sources */,
 				7B51027A1F690E8A00A7BDF9 /* APIHelper.swift in Sources */,
-				237BDA7F1FF4C3E30004768B /* QueryChannelsViewController.swift in Sources */,
 				7B5102851F690E8A00A7BDF9 /* FriendsAPI.swift in Sources */,
 				7B5102791F690E8A00A7BDF9 /* AlamofireImplementations.swift in Sources */,
 				23BCE7491FE91C1E00A4DDA5 /* DisplayGroupChatsViewController.swift in Sources */,
@@ -680,7 +693,6 @@
 				7B5102871F690E8A00A7BDF9 /* KeyValuesAPI.swift in Sources */,
 				7B5102A31F690E8A00A7BDF9 /* SuccessResponse.swift in Sources */,
 				236BBBE01FF3C3D600DD0D9D /* CreatePhotoClctnViewController.swift in Sources */,
-				237BDA7D1FF4C3D50004768B /* PushSubscriptionQueryViewController.swift in Sources */,
 				7B5102A41F690E8A00A7BDF9 /* Models.swift in Sources */,
 				23BCE7461FE7BFC000A4DDA5 /* ShowChatsViewController.swift in Sources */,
 				7B5102B61F690E8A00A7BDF9 /* AuthBrowserController.swift in Sources */,
@@ -695,13 +707,14 @@
 				7B5102841F690E8A00A7BDF9 /* FilesAPI.swift in Sources */,
 				7B5102861F690E8A00A7BDF9 /* GeoFencesAPI.swift in Sources */,
 				23C58BE11FEBAF9A00DC014B /* CreateCustomObjViewController.swift in Sources */,
-				237BDA7B1FF4C3C70004768B /* PushUnsubscribeViewController.swift in Sources */,
 				236BBBD11FF27EBF00DD0D9D /* CreateGeoFenceViewController.swift in Sources */,
 				7B5102AF1F690E8A00A7BDF9 /* AXSessionDelegate.swift in Sources */,
 				7B5102B01F690E8A00A7BDF9 /* AXSessionManager.swift in Sources */,
+				237BDA881FF61A8B0004768B /* UpdateorDeletePlaceViewController.swift in Sources */,
 				7B51028C1F690E8A00A7BDF9 /* PhotoCollectionsAPI.swift in Sources */,
 				7B5102A71F690E8A00A7BDF9 /* AXMultipartFormData.swift in Sources */,
 				7B5102B11F690E8A00A7BDF9 /* AXTaskDelegate.swift in Sources */,
+				237BDA8D1FF61AF90004768B /* UpdateorDeletePhotoViewController.swift in Sources */,
 				23C58BE71FEBAFEF00DC014B /* UpdateCustomObjViewController.swift in Sources */,
 				7B51029C1F690E8A00A7BDF9 /* OAuth.swift in Sources */,
 				7B5102951F690E8A00A7BDF9 /* SystemAPI.swift in Sources */,
@@ -720,6 +733,7 @@
 				23BCE74B1FE9231700A4DDA5 /* ListOfUsersViewController.swift in Sources */,
 				7B5102971F690E8A00A7BDF9 /* APIs.swift in Sources */,
 				7B51028A1F690E8A00A7BDF9 /* MessagesAPI.swift in Sources */,
+				237BDA861FF61A8B0004768B /* SearchPlaceViewController.swift in Sources */,
 				7B51027D1F690E8A00A7BDF9 /* AppsAPI.swift in Sources */,
 				7B51028B1F690E8A00A7BDF9 /* OrgAPI.swift in Sources */,
 				7B5102071F690E6400A7BDF9 /* AppDelegate.swift in Sources */,
@@ -739,16 +753,18 @@
 				7B51027F1F690E8A00A7BDF9 /* CheckinsAPI.swift in Sources */,
 				7B5102891F690E8A00A7BDF9 /* LogsAPI.swift in Sources */,
 				236BBBD51FF39B3A00DD0D9D /* CreateCheckinsViewController.swift in Sources */,
-				237BDA771FF4C39B0004768B /* PushSubscriptionViewController.swift in Sources */,
+				237BDA851FF61A8B0004768B /* QueryPlaceViewController.swift in Sources */,
 				7B5102AE1F690E8A00A7BDF9 /* AXServerTrustPolicy.swift in Sources */,
+				237BDA8F1FF61AF90004768B /* QueryPhotoViewController.swift in Sources */,
+				237BDA871FF61A8B0004768B /* CreatePlaceViewController.swift in Sources */,
 				7B5102931F690E8A00A7BDF9 /* SocialIntegrationsAPI.swift in Sources */,
 				7B5102811F690E8A00A7BDF9 /* EmailsAPI.swift in Sources */,
 				7B5102991F690E8A00A7BDF9 /* Authentication.swift in Sources */,
 				7B5102941F690E8A00A7BDF9 /* StatusesAPI.swift in Sources */,
-				237BDA791FF4C3AF0004768B /* PushNotifyViewController.swift in Sources */,
 				7B5102B51F690E8A00A7BDF9 /* Notifications.swift in Sources */,
 				7B51027E1F690E8A00A7BDF9 /* ChatsAPI.swift in Sources */,
 				7B51027B1F690E8A00A7BDF9 /* ACLsAPI.swift in Sources */,
+				237BDA8E1FF61AF90004768B /* CreatePhotoViewController.swift in Sources */,
 				7B5102831F690E8A00A7BDF9 /* EventsAPI.swift in Sources */,
 				7B51028F1F690E8A00A7BDF9 /* PostsAPI.swift in Sources */,
 				7B5102901F690E8A00A7BDF9 /* PushNotificationsAPI.swift in Sources */,
