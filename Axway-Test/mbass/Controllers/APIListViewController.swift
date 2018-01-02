@@ -24,7 +24,7 @@ class APIListViewController: UIViewController,UITableViewDataSource,UITableViewD
   var photoCollection : Bool = false
   var placeslist:Bool = false
   var pushNotify:Bool = false
-
+  var photosList:Bool = false
   var chatsArr: NSArray = []
 
   
@@ -285,6 +285,24 @@ class APIListViewController: UIViewController,UITableViewDataSource,UITableViewD
             
         }
     }
+    else if photosList
+    {
+        switch indexPath.row{
+        case 0:
+            let aCreatePhotoViewController = self.storyboard?.instantiateViewController(withIdentifier: "CreatePhotoViewController") as! CreatePhotoViewController
+            self.navigationController?.pushViewController(aCreatePhotoViewController, animated: true)
+            break;
+            
+        case 1:
+            let aQueryPhotoViewController = self.storyboard?.instantiateViewController(withIdentifier: "QueryPhotoViewController") as! QueryPhotoViewController
+            self.navigationController?.pushViewController(aQueryPhotoViewController, animated: true)
+            break;
+            
+            
+        default:
+            break;
+        }
+    }
     else if placeslist
     {
         switch indexPath.row{
@@ -461,10 +479,16 @@ class APIListViewController: UIViewController,UITableViewDataSource,UITableViewD
     // deleting user
     func deleteUser(emailStr: String) {
     
+        do{
     ACProgressHUD.shared.showHUD()
 
-    let str = "{\"Email\":" + emailStr + "}"
-    UsersAPI.usersBatchDelete(where_: str) { (response, error) in
+        let fieldDict:[String:String] = ["Email":emailStr] //"{\"Email\":" + emailStr + "}"
+        
+        let data = try JSONSerialization.data(withJSONObject: fieldDict, options: .init(rawValue: 0)) as Data
+        
+        let fieldStr = NSString(data: data, encoding: String.Encoding.utf8.rawValue)
+        
+            UsersAPI.usersBatchDelete(where_: (fieldStr! as String)) { (response, error) in
       
       ACProgressHUD.shared.hideHUD()
 
@@ -482,6 +506,10 @@ class APIListViewController: UIViewController,UITableViewDataSource,UITableViewD
       
       
     }
+        }
+        catch _{
+            print("error")
+        }
     
     
   }

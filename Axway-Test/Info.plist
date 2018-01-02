@@ -2,6 +2,8 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key></key>
+	<string></string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
 	<key>CFBundleExecutable</key>
@@ -22,6 +24,8 @@
 	</array>
 	<key>CFBundleVersion</key>
 	<string>1</string>
+	<key>LSApplicationCategoryType</key>
+	<string></string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>NSAppTransportSecurity</key>
@@ -33,8 +37,12 @@
 	</dict>
 	<key>NSCameraUsageDescription</key>
 	<string>Axway</string>
-	<key>NSPhotoLibraryUsageDescription</key>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>App needs Location</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>Axway</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>App needs Location</string>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>

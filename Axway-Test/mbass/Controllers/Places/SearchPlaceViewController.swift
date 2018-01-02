@@ -19,6 +19,7 @@ class SearchPlaceViewController: UIViewController,UITableViewDataSource,UITableV
     var  latitude : Double = 0
     var  longitude : Double = 0
 
+    @IBOutlet weak var placeNameTxt: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,18 +28,27 @@ class SearchPlaceViewController: UIViewController,UITableViewDataSource,UITableV
         tableView.separatorStyle = .none
         locationManager.requestWhenInUseAuthorization()
         
+        // Do any additional setup after loading the view.
+    }
+    
+    @IBAction func searchBtnAction(_ sender: Any) {
         
         if( CLLocationManager.authorizationStatus() == CLAuthorizationStatus.authorizedWhenInUse ||
             CLLocationManager.authorizationStatus() == CLAuthorizationStatus.authorizedAlways){
             currentLocation = locationManager.location
+            if currentLocation != nil
+            {
             latitude =   Double(round(1000*currentLocation.coordinate.latitude)/1000)
             longitude = Double(round(1000*currentLocation.coordinate.longitude)/1000)
             getPlacesFromLocation()
+            }
+            else
+            {
+                Utils.showAlertWithOkButton(titleStr: "Alert", messageStr: "Error in current location", viewController: self)
+            }
         }
         
-        // Do any additional setup after loading the view.
     }
-    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -75,7 +85,7 @@ class SearchPlaceViewController: UIViewController,UITableViewDataSource,UITableV
     {
         ACProgressHUD.shared.showHUD()
         
-         PlacesAPI.placesSearch(page: nil, perPage: nil, responseJsonDepth: nil, latitude: nil, longitude: nil, distance: nil, q: "Nampally", prettyJson: true, completion: {(response, error) in
+         PlacesAPI.placesSearch(page: nil, perPage: nil, responseJsonDepth: nil, latitude: nil, longitude: nil, distance: nil, q: placeNameTxt.text, prettyJson: true, completion: {(response, error) in
             ACProgressHUD.shared.hideHUD()
             if (error != nil) {
                 

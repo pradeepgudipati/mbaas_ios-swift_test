@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		230AEDCC1FF6699400402DF8 /* CreatePhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 230AEDC91FF6699300402DF8 /* CreatePhotoViewController.swift */; };
+		230AEDCD1FF6699400402DF8 /* QueryPhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 230AEDCA1FF6699300402DF8 /* QueryPhotoViewController.swift */; };
+		230AEDCE1FF6699400402DF8 /* UpdateorDeletePhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 230AEDCB1FF6699300402DF8 /* UpdateorDeletePhotoViewController.swift */; };
 		23117BA41FDE6C1700A3541A /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23117BA31FDE6C1700A3541A /* UserModel.swift */; };
 		236BBBD11FF27EBF00DD0D9D /* CreateGeoFenceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 236BBBCF1FF27EBF00DD0D9D /* CreateGeoFenceViewController.swift */; };
 		236BBBD21FF27EBF00DD0D9D /* QueryGeoFencViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 236BBBD01FF27EBF00DD0D9D /* QueryGeoFencViewController.swift */; };
@@ -132,6 +135,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		230AEDC91FF6699300402DF8 /* CreatePhotoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreatePhotoViewController.swift; sourceTree = "<group>"; };
+		230AEDCA1FF6699300402DF8 /* QueryPhotoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QueryPhotoViewController.swift; sourceTree = "<group>"; };
+		230AEDCB1FF6699300402DF8 /* UpdateorDeletePhotoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UpdateorDeletePhotoViewController.swift; sourceTree = "<group>"; };
 		23117BA31FDE6C1700A3541A /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		236BBBCF1FF27EBF00DD0D9D /* CreateGeoFenceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateGeoFenceViewController.swift; sourceTree = "<group>"; };
 		236BBBD01FF27EBF00DD0D9D /* QueryGeoFencViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QueryGeoFencViewController.swift; sourceTree = "<group>"; };
@@ -270,6 +276,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		230AEDC81FF6699300402DF8 /* Photos */ = {
+			isa = PBXGroup;
+			children = (
+				230AEDC91FF6699300402DF8 /* CreatePhotoViewController.swift */,
+				230AEDCA1FF6699300402DF8 /* QueryPhotoViewController.swift */,
+				230AEDCB1FF6699300402DF8 /* UpdateorDeletePhotoViewController.swift */,
+			);
+			path = Photos;
+			sourceTree = "<group>";
+		};
 		236BBBCE1FF27EBF00DD0D9D /* GeoFence */ = {
 			isa = PBXGroup;
 			children = (
@@ -326,6 +342,7 @@
 		23A3C6821FD9776700E2CC98 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				230AEDC81FF6699300402DF8 /* Photos */,
 				2391C77B1FF62D1B007F0E7B /* Push Notifications */,
 				237BDA801FF619F90004768B /* Places */,
 				236BBBDE1FF3BFE600DD0D9D /* Photo Collections */,
@@ -684,6 +701,7 @@
 				7B5102791F690E8A00A7BDF9 /* AlamofireImplementations.swift in Sources */,
 				23BCE7491FE91C1E00A4DDA5 /* DisplayGroupChatsViewController.swift in Sources */,
 				7B5102881F690E8A00A7BDF9 /* LikesAPI.swift in Sources */,
+				230AEDCC1FF6699400402DF8 /* CreatePhotoViewController.swift in Sources */,
 				7B5102AC1F690E8A00A7BDF9 /* AXResponseSerialization.swift in Sources */,
 				236BBBE21FF3C46000DD0D9D /* ShowPhotoClctnViewController.swift in Sources */,
 				7B51028E1F690E8A00A7BDF9 /* PlacesAPI.swift in Sources */,
@@ -704,6 +722,7 @@
 				23BCE7461FE7BFC000A4DDA5 /* ShowChatsViewController.swift in Sources */,
 				7B5102B61F690E8A00A7BDF9 /* AuthBrowserController.swift in Sources */,
 				7B474D251F6BB53D005F044A /* ACLListViewController.swift in Sources */,
+				230AEDCD1FF6699400402DF8 /* QueryPhotoViewController.swift in Sources */,
 				237BDA741FF4BAE90004768B /* ShowPhotosInfoViewController.swift in Sources */,
 				7B474D201F6A5093005F044A /* ACHUD+Animation.swift in Sources */,
 				7B5102B21F690E8A00A7BDF9 /* AXTimeline.swift in Sources */,
@@ -765,6 +784,7 @@
 				7B5102AE1F690E8A00A7BDF9 /* AXServerTrustPolicy.swift in Sources */,
 				237BDA871FF61A8B0004768B /* CreatePlaceViewController.swift in Sources */,
 				2391C7841FF62D1B007F0E7B /* PushUnsubscribeViewController.swift in Sources */,
+				230AEDCE1FF6699400402DF8 /* UpdateorDeletePhotoViewController.swift in Sources */,
 				7B5102931F690E8A00A7BDF9 /* SocialIntegrationsAPI.swift in Sources */,
 				7B5102811F690E8A00A7BDF9 /* EmailsAPI.swift in Sources */,
 				7B5102991F690E8A00A7BDF9 /* Authentication.swift in Sources */,
