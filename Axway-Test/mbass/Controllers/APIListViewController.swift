@@ -22,6 +22,8 @@ class APIListViewController: UIViewController,UITableViewDataSource,UITableViewD
   var customObject:Bool = false
   var geoFencList : Bool = false
   var photoCollection : Bool = false
+  var placeslist:Bool = false
+  var pushNotify:Bool = false
 
   var chatsArr: NSArray = []
 
@@ -282,6 +284,62 @@ class APIListViewController: UIViewController,UITableViewDataSource,UITableViewD
             self.navigationController?.pushViewController(shwPhotoClctn, animated: true)
             
         }
+    }
+    else if placeslist
+    {
+        switch indexPath.row{
+        case 0:
+            let aCreatePlaceViewController = self.storyboard?.instantiateViewController(withIdentifier: "CreatePlaceViewController") as! CreatePlaceViewController
+            aCreatePlaceViewController.operationTypeValue = updationType.Create
+            self.navigationController?.pushViewController(aCreatePlaceViewController, animated: true)
+            break;
+            
+        case 1:
+            let listOfPlacesPACLViewController = self.storyboard?.instantiateViewController(withIdentifier: "QueryPlaceViewController") as! QueryPlaceViewController
+            self.navigationController?.pushViewController(listOfPlacesPACLViewController, animated: true)
+            break;
+            
+        case 2:
+            let aSearchACLViewController = self.storyboard?.instantiateViewController(withIdentifier: "SearchPlaceViewController") as! SearchPlaceViewController
+            self.navigationController?.pushViewController(aSearchACLViewController, animated: true)
+            break;
+            
+        default:
+            break;
+        }
+    }
+    else if pushNotify
+    {
+        switch indexPath.row{
+        case 0:
+            let aPushSubscription = self.storyboard?.instantiateViewController(withIdentifier: "PushSubscriptionViewController") as! PushSubscriptionViewController
+            self.navigationController?.pushViewController(aPushSubscription, animated: true)
+            break;
+            
+        case 1:
+            let aPushNotify = self.storyboard?.instantiateViewController(withIdentifier: "PushNotifyViewController") as! PushNotifyViewController
+            self.navigationController?.pushViewController(aPushNotify, animated: true)
+            break;
+            
+        case 2:
+            let aPushUnsubscribe = self.storyboard?.instantiateViewController(withIdentifier: "PushUnsubscribeViewController") as! PushUnsubscribeViewController
+            self.navigationController?.pushViewController(aPushUnsubscribe, animated: true)
+            break;
+        case 3:
+            let aPushsubscribeQuery = self.storyboard?.instantiateViewController(withIdentifier: "PushSubscriptionQueryViewController") as! PushSubscriptionQueryViewController
+            aPushsubscribeQuery.isPushQuery = true
+            
+            self.navigationController?.pushViewController(aPushsubscribeQuery, animated: true)
+            break;
+        case 4:
+            let aPushsubscribeQuery = self.storyboard?.instantiateViewController(withIdentifier: "PushSubscriptionQueryViewController") as! PushSubscriptionQueryViewController
+            aPushsubscribeQuery.isPushQuery = false
+            self.navigationController?.pushViewController(aPushsubscribeQuery, animated: true)
+            break;
+        default:
+            break;
+        }
+        
     }
   }
   
