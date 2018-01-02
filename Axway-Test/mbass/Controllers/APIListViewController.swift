@@ -479,10 +479,16 @@ class APIListViewController: UIViewController,UITableViewDataSource,UITableViewD
     // deleting user
     func deleteUser(emailStr: String) {
     
+        do{
     ACProgressHUD.shared.showHUD()
 
-    let str = "{\"Email\":" + emailStr + "}"
-    UsersAPI.usersBatchDelete(where_: str) { (response, error) in
+        let fieldDict:[String:String] = ["Email":emailStr] //"{\"Email\":" + emailStr + "}"
+        
+        let data = try JSONSerialization.data(withJSONObject: fieldDict, options: .init(rawValue: 0)) as Data
+        
+        let fieldStr = NSString(data: data, encoding: String.Encoding.utf8.rawValue)
+        
+            UsersAPI.usersBatchDelete(where_: (fieldStr! as String)) { (response, error) in
       
       ACProgressHUD.shared.hideHUD()
 
@@ -500,6 +506,10 @@ class APIListViewController: UIViewController,UITableViewDataSource,UITableViewD
       
       
     }
+        }
+        catch _{
+            print("error")
+        }
     
     
   }
