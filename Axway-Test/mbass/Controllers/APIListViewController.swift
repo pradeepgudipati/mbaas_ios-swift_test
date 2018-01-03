@@ -7,24 +7,28 @@
 //
 
 import UIKit
+enum ListType: Int {
+    case UsersList = 1, Cllist, Chatlist, Checkinlist,CustomObject,GeoFencList,PhotoCollection,PlacesList,PushNotify,PhotosList
+}
 
 class APIListViewController: UIViewController,UITableViewDataSource,UITableViewDelegate {
 
   @IBOutlet weak var tableView: UITableView!
   @IBOutlet weak var usersListtableView: UITableView!
   @IBOutlet weak var listView: UIView!
+  var ListTypeValue:ListType = .UsersList
   var listArray: NSMutableArray = []
   var allUsersListArray: NSArray = []
-  var usersList: Bool = false
-  var cllist:Bool = false
-  var chatlist:Bool = false
-  var checkinlist:Bool = false
-  var customObject:Bool = false
-  var geoFencList : Bool = false
-  var photoCollection : Bool = false
-  var placeslist:Bool = false
-  var pushNotify:Bool = false
-  var photosList:Bool = false
+//  var usersList: Bool = false
+//  var cllist:Bool = false
+//  var chatlist:Bool = false
+//  var checkinlist:Bool = false
+//  var customObject:Bool = false
+//  var geoFencList : Bool = false
+//  var photoCollection : Bool = false
+//  var placeslist:Bool = false
+//  var pushNotify:Bool = false
+//  var photosList:Bool = false
   var chatsArr: NSArray = []
 
   
@@ -35,7 +39,7 @@ class APIListViewController: UIViewController,UITableViewDataSource,UITableViewD
       listView.isHidden = true
       self.usersListtableView.tableFooterView = UIView()
         
-        if chatlist
+        if  ListTypeValue.rawValue == ListType.Chatlist.rawValue
         {
             getchatsGroup()
         }
@@ -86,7 +90,7 @@ class APIListViewController: UIViewController,UITableViewDataSource,UITableViewD
 
   func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
     
-    if usersList
+    if ListTypeValue.rawValue == ListType.UsersList.rawValue
     {
     if (tableView == self.usersListtableView) {
       
@@ -144,7 +148,7 @@ class APIListViewController: UIViewController,UITableViewDataSource,UITableViewD
 
     }
     }
-    else if cllist
+    else if ListTypeValue.rawValue == ListType.Cllist.rawValue
     {
         switch indexPath.row{
         case 0:
@@ -175,7 +179,7 @@ class APIListViewController: UIViewController,UITableViewDataSource,UITableViewD
             break;
         }
     }
-    else if chatlist
+    else if ListTypeValue.rawValue == ListType.Chatlist.rawValue
     {
         if indexPath.row == 0
         {
@@ -224,7 +228,7 @@ class APIListViewController: UIViewController,UITableViewDataSource,UITableViewD
         }
         
     }
-    else if checkinlist
+    else if ListTypeValue.rawValue == ListType.Checkinlist.rawValue
     {
         if indexPath.row == 0
         {
@@ -238,7 +242,7 @@ class APIListViewController: UIViewController,UITableViewDataSource,UITableViewD
         }
         
     }
-    else if customObject
+    else if ListTypeValue.rawValue == ListType.CustomObject.rawValue
     {
         if indexPath.row == 0
         {
@@ -251,7 +255,7 @@ class APIListViewController: UIViewController,UITableViewDataSource,UITableViewD
             self.navigationController?.pushViewController(createCustomObj, animated: true)
         }
     }
-    else if geoFencList
+    else if ListTypeValue.rawValue == ListType.GeoFencList.rawValue
     {
         if indexPath.row == 0
         {
@@ -266,7 +270,7 @@ class APIListViewController: UIViewController,UITableViewDataSource,UITableViewD
             
         }
     }
-    else if photoCollection
+    else if ListTypeValue.rawValue == ListType.PhotoCollection.rawValue
     {
         if indexPath.row == 0
         {
@@ -285,7 +289,7 @@ class APIListViewController: UIViewController,UITableViewDataSource,UITableViewD
             
         }
     }
-    else if photosList
+    else if ListTypeValue.rawValue == ListType.PhotosList.rawValue
     {
         switch indexPath.row{
         case 0:
@@ -303,7 +307,7 @@ class APIListViewController: UIViewController,UITableViewDataSource,UITableViewD
             break;
         }
     }
-    else if placeslist
+    else if ListTypeValue.rawValue == ListType.PlacesList.rawValue
     {
         switch indexPath.row{
         case 0:
@@ -326,7 +330,7 @@ class APIListViewController: UIViewController,UITableViewDataSource,UITableViewD
             break;
         }
     }
-    else if pushNotify
+    else if ListTypeValue.rawValue == ListType.PushNotify.rawValue
     {
         switch indexPath.row{
         case 0:
