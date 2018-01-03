@@ -28,6 +28,8 @@ class SearchPlaceViewController: UIViewController,UITableViewDataSource,UITableV
         tableView.separatorStyle = .none
         locationManager.requestWhenInUseAuthorization()
         
+        getPlacesFromLocation()
+        
         // Do any additional setup after loading the view.
     }
     
@@ -85,7 +87,7 @@ class SearchPlaceViewController: UIViewController,UITableViewDataSource,UITableV
     {
         ACProgressHUD.shared.showHUD()
         
-         PlacesAPI.placesSearch(page: nil, perPage: nil, responseJsonDepth: nil, latitude: nil, longitude: nil, distance: nil, q: placeNameTxt.text, prettyJson: true, completion: {(response, error) in
+        PlacesAPI.placesQuery(page: nil, perPage: nil, limit: nil, skip: nil, where_: nil, order: nil, sel: nil, showUserLike: nil, unsel: nil, responseJsonDepth: nil, prettyJson: nil) { (response, error) in
             ACProgressHUD.shared.hideHUD()
             if (error != nil) {
                 
@@ -103,12 +105,13 @@ class SearchPlaceViewController: UIViewController,UITableViewDataSource,UITableV
                         let nameId = participentsDict["id"] as! String
                         self.placesArr.add(nameStr);
                         self.placeIdArray.add(nameId);
-                        }
-                    self.tableView.reloadData()
                     }
+                    self.tableView.reloadData()
                 }
-        });
-           
+            }
+            
+        }
+        
     }
     
  

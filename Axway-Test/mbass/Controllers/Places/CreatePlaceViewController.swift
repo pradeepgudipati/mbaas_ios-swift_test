@@ -127,7 +127,7 @@ class CreatePlaceViewController: UIViewController,UITextFieldDelegate {
                 Utils.showAlertWithOkButton(titleStr:"Error" , messageStr: (error?.localizedDescription)!, viewController: self)
             }
             else {
-                let value = response?.description
+                _ = response?.description
                 if response!["response"] != nil{
                     
                     let responseDictionary = response?["response"] as! NSDictionary
