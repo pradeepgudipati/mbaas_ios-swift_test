@@ -115,6 +115,9 @@ class SearchPlaceViewController: UIViewController,UITableViewDataSource,UITableV
            
     }
     
- 
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
     
 }

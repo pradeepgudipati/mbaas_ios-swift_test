@@ -123,4 +123,8 @@ class CreatePhotoClctnViewController: UIViewController {
         
     }
 
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
 }
