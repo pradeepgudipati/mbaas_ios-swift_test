@@ -379,8 +379,7 @@ class APIListViewController: UIViewController,UITableViewDataSource,UITableViewD
       }
       else {
         
-        if let val = response?["response"]{
-            print(val)
+        if (response?["response"]) != nil{
         let value = response?.description
         let responseDictionary = response?["response"] as! NSDictionary
         let responseArr = responseDictionary["users"] as! NSArray
@@ -394,7 +393,8 @@ class APIListViewController: UIViewController,UITableViewDataSource,UITableViewD
         }
         else
         {
-        Utils.showAlertWithOkButton(titleStr:"Alert" , messageStr: (error?.localizedDescription)!, viewController: self)
+         let val = response?["response"]
+            Utils.showAlertWithOkButton(titleStr:"Alert" , messageStr: val! as! String, viewController: self)
             
         }
         
@@ -589,7 +589,8 @@ class APIListViewController: UIViewController,UITableViewDataSource,UITableViewD
             }
             else {
                 
-                
+                if let val = response?["response"]{
+                    print(val)
                 let value = response?.description
                 
                 let alert = UIAlertController(title: "User logged out Successfully", message:value, preferredStyle: UIAlertControllerStyle.alert)
@@ -599,6 +600,13 @@ class APIListViewController: UIViewController,UITableViewDataSource,UITableViewD
                     userDefaults.set("", forKey: "userId")
                 }))
                 self.present(alert, animated: true, completion: nil)
+                }
+                else
+                {
+                    Utils.showAlertWithOkButton(titleStr:"Alert" , messageStr: (error?.localizedDescription)!, viewController: self)
+                    
+                }
+
                 
             }
             
@@ -652,12 +660,19 @@ class APIListViewController: UIViewController,UITableViewDataSource,UITableViewD
          Utils.showAlertWithOkButton(titleStr:"All Users" , messageStr: (error?.localizedDescription)!, viewController: self)
       }
       else {
+        if response!["response"] != nil{
         let responseDictionary = response?["response"] as! NSDictionary
         self.allUsersListArray = responseDictionary["users"] as! NSArray
           
           self.view.bringSubview(toFront: self.listView)
           self.listView.isHidden = false
           self.usersListtableView.reloadData()
+        }
+        else
+        {
+          let value = response?.description
+          Utils.showAlertWithOkButton(titleStr:"Alert" , messageStr: value!, viewController: self)
+        }
         
       }
     }
@@ -675,7 +690,7 @@ class APIListViewController: UIViewController,UITableViewDataSource,UITableViewD
                 Utils.showAlertWithOkButton(titleStr:"All Users" , messageStr: (error?.localizedDescription)!, viewController: self)
             }
             else{
-                _ = response?.description
+                
                 if response!["response"] != nil{
                     let responsDict = response?["response"] as! NSDictionary
                     self.chatsArr = responsDict["chat_groups"] as! NSArray
@@ -705,7 +720,11 @@ class APIListViewController: UIViewController,UITableViewDataSource,UITableViewD
                     }
                     }
                 }
-                
+                else
+                {
+                    let val = response?["response"]
+                    Utils.showAlertWithOkButton(titleStr:"Alert" , messageStr: val! as! String, viewController: self)
+                }
             }
         }
     }
