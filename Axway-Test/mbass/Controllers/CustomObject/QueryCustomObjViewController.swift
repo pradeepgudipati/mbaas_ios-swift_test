@@ -40,13 +40,17 @@ class QueryCustomObjViewController: UIViewController,UITableViewDelegate,UITable
                     
                 }
                 else {
-                    
-                    
-                    //let value = response?.description
+                   if response!["response"] != nil{
                     let responseDictionary = response?["response"] as! NSDictionary
                     self.listArr = responseDictionary[self.classnameTxt.text as Any] as! NSArray
                     print(self.listArr)
                     self.queryTableVw.reloadData()
+                    }
+                   else
+                   {
+                    let value = response?.description
+                    Utils.showAlertWithOkButton(titleStr:"Alert" , messageStr: value!, viewController: self)
+                    }
                     
                 }
                 

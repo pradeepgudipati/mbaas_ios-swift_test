@@ -57,6 +57,7 @@ class UpdateCustomObjViewController: UIViewController,UITableViewDelegate,UITabl
                 
             }
             else {
+                  if response!["response"] != nil{
                 let value = response?.description
                 
                 let alert = UIAlertController(title: "Removed Successfully", message:value, preferredStyle: UIAlertControllerStyle.alert)
@@ -65,7 +66,12 @@ class UpdateCustomObjViewController: UIViewController,UITableViewDelegate,UITabl
                     self.navigationController?.popViewController(animated: true)
                 }))
                 self.present(alert, animated: true, completion: nil)
-                
+                }
+                else
+                {
+                    let value = response?.description
+                    Utils.showAlertWithOkButton(titleStr:"Alert" , messageStr: value!, viewController: self)
+                }
             }
         }
         

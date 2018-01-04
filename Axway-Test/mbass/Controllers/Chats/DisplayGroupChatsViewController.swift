@@ -39,7 +39,6 @@ class DisplayGroupChatsViewController: UIViewController,UITableViewDelegate,UITa
                 Utils.showAlertWithOkButton(titleStr:"All Users" , messageStr: (error?.localizedDescription)!, viewController: self)
             }
             else{
-                //let value = response?.description
                 if response!["response"] != nil{
                     let responsDict = response?["response"] as! NSDictionary
                     self.chatsArr = responsDict["chat_groups"] as! NSArray
@@ -68,6 +67,11 @@ class DisplayGroupChatsViewController: UIViewController,UITableViewDelegate,UITa
                             self.displayChatsTable.reloadData()
                         }
                     }
+                }
+                else
+                {
+                    let value = response?.description
+                    Utils.showAlertWithOkButton(titleStr:"Alert" , messageStr: value!, viewController: self)
                 }
             }
         }

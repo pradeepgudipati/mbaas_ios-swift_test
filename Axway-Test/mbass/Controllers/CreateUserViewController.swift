@@ -60,8 +60,7 @@ class CreateUserViewController: UIViewController,UITextFieldDelegate {
             }
             else
             {
-                if let val = response?["response"]{
-                    print(val)
+                if response!["response"] != nil{
                     let responseDictionary = response?["response"] as! NSDictionary
                     let responseArr = responseDictionary["users"] as! NSArray
                     let dict = responseArr[0] as! NSDictionary
@@ -75,16 +74,11 @@ class CreateUserViewController: UIViewController,UITextFieldDelegate {
                 else
                 {
                     let value = response?.description
-                    let alert = UIAlertController(title: "Alert", message: value, preferredStyle: UIAlertControllerStyle.alert)
-                    alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: nil))
-                    self.present(alert, animated: true, completion: nil)
+                    Utils.showAlertWithOkButton(titleStr:"Alert" , messageStr: value!, viewController: self)
                     
                 }
-                //print(value as Any)
-                
-                
+ 
             }
-            
             
         }
         

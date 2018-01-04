@@ -99,7 +99,7 @@ class CreateOrUpdateACLViewController: UIViewController,UITableViewDataSource,UI
       }
       else {
         
-        
+        if response!["response"] != nil{
         let metaDictionary = response?["meta"] as! NSDictionary
 
         let serverStatus = metaDictionary["status"] as! String
@@ -119,6 +119,14 @@ class CreateOrUpdateACLViewController: UIViewController,UITableViewDataSource,UI
           
         }
       }
+      else
+        {
+            let value = response?.description
+            Utils.showAlertWithOkButton(titleStr:"Alert" , messageStr:value!, viewController: self)
+            
+     }
+    }
+        
     }
     
   }
@@ -143,6 +151,7 @@ class CreateOrUpdateACLViewController: UIViewController,UITableViewDataSource,UI
         
         self.listArray.add(["name":"<<Public Access>>","id":""])
 
+        if response!["response"] != nil{
         let responseDictionary = response?["response"] as! NSDictionary
         
         let allUsersListArray = responseDictionary["users"] as! NSArray
@@ -176,8 +185,6 @@ class CreateOrUpdateACLViewController: UIViewController,UITableViewDataSource,UI
           }
         }
         else {
-          
-          
           for index in self.selectedWritersListArray {
             
             let  indexPath = IndexPath(row: index as Any as! Int, section: 0)
@@ -187,10 +194,12 @@ class CreateOrUpdateACLViewController: UIViewController,UITableViewDataSource,UI
         }
         
       }
+      else
+      {
+        Utils.showAlertWithOkButton(titleStr:"Alert" , messageStr: (error?.localizedDescription)!, viewController: self)
+      }
+     }
     }
-    
-    
-    
   }
   
   func prepareReadersListArray(aclsDetailDictionary:(String,String)) {
