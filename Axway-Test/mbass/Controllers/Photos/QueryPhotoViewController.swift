@@ -60,11 +60,10 @@ class QueryPhotoViewController: UIViewController ,UITableViewDataSource,UITableV
         Utils.showAlertWithOkButton(titleStr:"Error" , messageStr: (error?.localizedDescription)!, viewController: self)
         }
         else{
-            let value = response?.description
             if response!["response"] != nil{
             let responsDict = response?["response"] as! NSDictionary
                 NSLog("%@", responsDict)
-                var photos = responsDict["photos"] as! NSArray
+                let photos = responsDict["photos"] as! NSArray
                 for photosDict in photos
                 {
                     let participentsDict = photosDict as! NSDictionary
@@ -75,6 +74,11 @@ class QueryPhotoViewController: UIViewController ,UITableViewDataSource,UITableV
                 }
                 self.tableView.reloadData()
                 }
+            else
+            {
+                let value = response?.description
+                Utils.showAlertWithOkButton(titleStr:"Alert" , messageStr: value!, viewController: self)
+            }
             self.tableView.isHidden=false
             }
         });

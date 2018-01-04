@@ -85,11 +85,16 @@ class QueryGeoFencViewController: UIViewController,UITableViewDelegate,UITableVi
                 
             }
             else {
-                
-                // let value = response?.description
+                 if response!["response"] != nil{
                 let responseDictionary = response?["response"] as! NSDictionary
                 self.listArr = responseDictionary["geo_fences"] as! NSArray
                 self.queryTableView.reloadData()
+                }
+                 else
+                 {
+                    let value = response?.description
+                    Utils.showAlertWithOkButton(titleStr:"Alert" , messageStr: value!, viewController: self)
+                }
             }
         }
         

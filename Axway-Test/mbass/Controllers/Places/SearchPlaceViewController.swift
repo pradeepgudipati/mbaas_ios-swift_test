@@ -92,7 +92,6 @@ class SearchPlaceViewController: UIViewController,UITableViewDataSource,UITableV
                 Utils.showAlertWithOkButton(titleStr:"Error" , messageStr: (error?.localizedDescription)!, viewController: self)
             }
             else{
-                _ = response?.description
                 if response!["response"] != nil{
                     let responsDict = response?["response"] as! NSDictionary
                     let names = responsDict["places"] as! NSArray
@@ -106,6 +105,11 @@ class SearchPlaceViewController: UIViewController,UITableViewDataSource,UITableV
                         }
                     self.tableView.reloadData()
                     }
+                else
+                {
+                    let value = response?.description
+                    Utils.showAlertWithOkButton(titleStr:"Alert" , messageStr: value!, viewController: self)
+                }
                 }
         });
            

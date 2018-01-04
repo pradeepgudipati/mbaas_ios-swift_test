@@ -127,9 +127,7 @@ class CreatePlaceViewController: UIViewController,UITextFieldDelegate {
                 Utils.showAlertWithOkButton(titleStr:"Error" , messageStr: (error?.localizedDescription)!, viewController: self)
             }
             else {
-                let value = response?.description
-                if response!["response"] != nil{
-                    
+               if response!["response"] != nil{
                     let responseDictionary = response?["response"] as! NSDictionary
                     let arr = responseDictionary["places"] as! NSArray
                     let dict = arr[0] as? NSDictionary
@@ -145,6 +143,11 @@ class CreatePlaceViewController: UIViewController,UITextFieldDelegate {
                     self.userId = dict?["user_id"] as! NSString;
 
                 }
+                else
+                 {
+                    let value = response?.description
+                    Utils.showAlertWithOkButton(titleStr:"Alert" , messageStr: value!, viewController: self)
+                 }
             }
         });
 }

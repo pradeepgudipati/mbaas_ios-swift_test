@@ -83,9 +83,16 @@ class QueryCheckinsViewController: UIViewController,UITableViewDelegate,UITableV
             }
             else
             {
+                if response!["response"] != nil{
                 let responseDictionary = response?["response"] as! NSDictionary
                 self.checkinsArr = responseDictionary["checkins"] as! NSArray
                 self.querycheckinsTableView.reloadData()
+                }
+                else
+                {
+                    let value = response?.description
+                    Utils.showAlertWithOkButton(titleStr:"Alert" , messageStr: value!, viewController: self)
+                }
             }
 
         }

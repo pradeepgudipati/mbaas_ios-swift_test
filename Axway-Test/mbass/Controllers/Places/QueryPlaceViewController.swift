@@ -69,7 +69,6 @@ class QueryPlaceViewController: UIViewController,UITableViewDataSource,UITableVi
                 Utils.showAlertWithOkButton(titleStr:"Error" , messageStr: (error?.localizedDescription)!, viewController: self)
             }
             else{
-                _ = response?.description
                 if response!["response"] != nil{
                     let responsDict = response?["response"] as! NSDictionary
                     let names = responsDict["places"] as! NSArray
@@ -83,7 +82,13 @@ class QueryPlaceViewController: UIViewController,UITableViewDataSource,UITableVi
                         }
                     self.tableView.reloadData()
                     }
+                else
+                {
+                    let value = response?.description
+                    Utils.showAlertWithOkButton(titleStr:"Alert" , messageStr: value!, viewController: self)
                 }
+                }
+          
         });
            
     }

@@ -59,9 +59,16 @@ class CreateCheckinsViewController: UIViewController,UITableViewDelegate,UITable
             }
             else
             {
+               if response!["response"] != nil{
                 let responseDictionary = response?["response"] as! NSDictionary
                 self.checkinsArr = responseDictionary["places"] as! NSArray
                 self.checkinsTableView.reloadData()
+                }
+                else
+                {
+                    let value = response?.description
+                    Utils.showAlertWithOkButton(titleStr:"Alert" , messageStr: value!, viewController: self)
+                }
                 
             }
         }

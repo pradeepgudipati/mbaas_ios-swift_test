@@ -48,9 +48,16 @@ class ShowPhotoClctnViewController: UIViewController,UITableViewDelegate,UITable
                     
                 }
                 else {
+                   if response!["response"] != nil{
                     let responseDictionary = response?["response"] as! NSDictionary
                     self.photosClctnArr = responseDictionary["collections"] as! NSArray
                     self.photoClctnTableView.reloadData()
+                    }
+                   else
+                   {
+                    let value = response?.description
+                    Utils.showAlertWithOkButton(titleStr:"Alert" , messageStr: value!, viewController: self)
+                   }
                     
                     
                 }
