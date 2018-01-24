@@ -417,24 +417,24 @@ class APIListViewController: UIViewController,UITableViewDataSource,UITableViewD
     let saveAction = UIAlertAction(title: "Login", style: UIAlertActionStyle.default, handler: {
       alert -> Void in
       
-      //let keyTextField = alertController.textFields![0] as UITextField
-      //let valueTextField = alertController.textFields![1] as UITextField
+      let keyTextField = alertController.textFields![0] as UITextField
+      let valueTextField = alertController.textFields![1] as UITextField
       
-      //Login with dynamic details
-//        if (keyTextField.text?.isEmpty)!
-//        {
-//           Utils.showAlertWithOkButton(titleStr:"Alert", messageStr: "Please enter username", viewController: self)
-//        }
-//        else if (valueTextField.text?.isEmpty)!
-//        {
-//          Utils.showAlertWithOkButton(titleStr:"Alert", messageStr: "Please enter password", viewController: self)
-//        }
-//        else
-//        {
-      //self.loginMethod(username: keyTextField.text!, password: valueTextField.text!)
-       // }
+     // Login with dynamic details
+        if (keyTextField.text?.isEmpty)!
+        {
+           Utils.showAlertWithOkButton(titleStr:"Alert", messageStr: "Please enter username", viewController: self)
+        }
+        else if (valueTextField.text?.isEmpty)!
+        {
+          Utils.showAlertWithOkButton(titleStr:"Alert", messageStr: "Please enter password", viewController: self)
+        }
+        else
+        {
+      self.loginMethod(username: keyTextField.text!, password: valueTextField.text!)
+        }
         
-        self.loginMethod(username: "bahubhali", password: "password")
+        //self.loginMethod(username: "bahubhali", password: "password")
         
       
     })
