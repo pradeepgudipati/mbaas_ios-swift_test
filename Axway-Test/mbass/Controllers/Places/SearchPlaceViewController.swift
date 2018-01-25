@@ -12,6 +12,7 @@ import CoreLocation
 class SearchPlaceViewController: UIViewController,UITableViewDataSource,UITableViewDelegate,CLLocationManagerDelegate {
     
     @IBOutlet weak var tableView: UITableView!
+  var fieldDict: NSMutableDictionary = [:]
     var placesArr: NSMutableArray = []
     var placeIdArray: NSMutableArray = []
     let locationManager = CLLocationManager()
@@ -33,20 +34,20 @@ class SearchPlaceViewController: UIViewController,UITableViewDataSource,UITableV
     
     @IBAction func searchBtnAction(_ sender: Any) {
         
-        if( CLLocationManager.authorizationStatus() == CLAuthorizationStatus.authorizedWhenInUse ||
-            CLLocationManager.authorizationStatus() == CLAuthorizationStatus.authorizedAlways){
-            currentLocation = locationManager.location
-            if currentLocation != nil
-            {
-            latitude =   Double(round(1000*currentLocation.coordinate.latitude)/1000)
-            longitude = Double(round(1000*currentLocation.coordinate.longitude)/1000)
+//        if( CLLocationManager.authorizationStatus() == CLAuthorizationStatus.authorizedWhenInUse ||
+//            CLLocationManager.authorizationStatus() == CLAuthorizationStatus.authorizedAlways){
+//            currentLocation = locationManager.location
+//            if currentLocation != nil
+//            {
+//            latitude =   Double(round(1000*currentLocation.coordinate.latitude)/1000)
+//            longitude = Double(round(1000*currentLocation.coordinate.longitude)/1000)
             getPlacesFromLocation()
-            }
-            else
-            {
-                Utils.showAlertWithOkButton(titleStr: "Alert", messageStr: "Error in current location", viewController: self)
-            }
-        }
+//            }
+//            else
+//            {
+//                Utils.showAlertWithOkButton(titleStr: "Alert", messageStr: "Error in current location", viewController: self)
+//            }
+//        }
         
     }
     override func didReceiveMemoryWarning() {
@@ -83,34 +84,53 @@ class SearchPlaceViewController: UIViewController,UITableViewDataSource,UITableV
     
     func getPlacesFromLocation()
     {
-        ACProgressHUD.shared.showHUD()
         
-         PlacesAPI.placesSearch(page: nil, perPage: nil, responseJsonDepth: nil, latitude: nil, longitude: nil, distance: nil, q: placeNameTxt.text, prettyJson: true, completion: {(response, error) in
-            ACProgressHUD.shared.hideHUD()
-            if (error != nil) {
-                
-                Utils.showAlertWithOkButton(titleStr:"Error" , messageStr: (error?.localizedDescription)!, viewController: self)
-            }
-            else{
-                _ = response?.description
-                if response!["response"] != nil{
-                    let responsDict = response?["response"] as! NSDictionary
-                    let names = responsDict["places"] as! NSArray
-                    for partcpntsDict in names
-                    {
-                        let participentsDict = partcpntsDict as! NSDictionary
-                        let nameStr = participentsDict["name"] as! String
-                        let nameId = participentsDict["id"] as! String
-                        self.placesArr.add(nameStr);
-                        self.placeIdArray.add(nameId);
+        //where={"$text": { "$search": "javascript,ruby,python,-php" }}
+        //fieldDict = [sampleTextField.placeholder! : sampleTextField.text!]
+        
+//        let searTxtArr:NSMutableArray = []
+//        searTxtArr.add(placeNameTxt.text as Any)
+//
+        let SearchDict:NSMutableDictionary = [:]
+        SearchDict.setValue(placeNameTxt.text, forKey: "$search")
+        
+        fieldDict.setValue(SearchDict, forKey: "$text")
+        
+        do{
+            let data = try JSONSerialization.data(withJSONObject: fieldDict, options: .init(rawValue: 0)) as Data
+            
+            let fieldStr = NSString(data: data, encoding: String.Encoding.utf8.rawValue)
+            ACProgressHUD.shared.showHUD()
+            
+            PlacesAPI.placesQuery(page: nil, perPage: nil, limit: nil, skip: nil, where_: fieldStr! as String , order: nil, sel: nil, showUserLike: nil, unsel: nil, responseJsonDepth: nil, prettyJson: true, completion: {(response, error) in
+                ACProgressHUD.shared.hideHUD()
+                if (error != nil) {
+                    
+                    Utils.showAlertWithOkButton(titleStr:"Error" , messageStr: (error?.localizedDescription)!, viewController: self)
+                }
+                else{
+                    _ = response?.description
+                    if response!["response"] != nil{
+                        let responsDict = response?["response"] as! NSDictionary
+                        let names = responsDict["places"] as! NSArray
+                        for partcpntsDict in names
+                        {
+                            let participentsDict = partcpntsDict as! NSDictionary
+                            let nameStr = participentsDict["name"] as! String
+                            let nameId = participentsDict["id"] as! String
+                            self.placesArr.add(nameStr);
+                            self.placeIdArray.add(nameId);
                         }
-                    self.tableView.reloadData()
+                        self.tableView.reloadData()
                     }
                 }
-        });
-           
+            });
+            
+        
     }
-    
+    catch _{
+    print("error")
+    }
  
-    
+    }
 }
