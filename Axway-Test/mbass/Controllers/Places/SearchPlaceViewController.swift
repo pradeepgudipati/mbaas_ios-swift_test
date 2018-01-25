@@ -34,20 +34,20 @@ class SearchPlaceViewController: UIViewController,UITableViewDataSource,UITableV
     
     @IBAction func searchBtnAction(_ sender: Any) {
         
-//        if( CLLocationManager.authorizationStatus() == CLAuthorizationStatus.authorizedWhenInUse ||
-//            CLLocationManager.authorizationStatus() == CLAuthorizationStatus.authorizedAlways){
-//            currentLocation = locationManager.location
-//            if currentLocation != nil
-//            {
-//            latitude =   Double(round(1000*currentLocation.coordinate.latitude)/1000)
-//            longitude = Double(round(1000*currentLocation.coordinate.longitude)/1000)
+        if( CLLocationManager.authorizationStatus() == CLAuthorizationStatus.authorizedWhenInUse ||
+            CLLocationManager.authorizationStatus() == CLAuthorizationStatus.authorizedAlways){
+            currentLocation = locationManager.location
+            if currentLocation != nil
+            {
+            latitude =   Double(round(1000*currentLocation.coordinate.latitude)/1000)
+            longitude = Double(round(1000*currentLocation.coordinate.longitude)/1000)
             getPlacesFromLocation()
-//            }
-//            else
-//            {
-//                Utils.showAlertWithOkButton(titleStr: "Alert", messageStr: "Error in current location", viewController: self)
-//            }
-//        }
+            }
+            else
+            {
+                Utils.showAlertWithOkButton(titleStr: "Alert", messageStr: "Error in current location", viewController: self)
+            }
+        }
         
     }
     override func didReceiveMemoryWarning() {
