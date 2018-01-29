@@ -29,6 +29,7 @@ class PhotoClctnOptionsViewController: UIViewController {
         let showPhotos = self.storyboard?.instantiateViewController(withIdentifier: "ShowPhotosInfoViewController") as! ShowPhotosInfoViewController
         showPhotos.isShowPhotos = true
         showPhotos.photoCollectionID = photoCollectionID
+        showPhotos.navTitle = "Show Photos"
         self.navigationController?.pushViewController(showPhotos, animated: true)
         
     }
@@ -36,6 +37,7 @@ class PhotoClctnOptionsViewController: UIViewController {
         let showPhotos = self.storyboard?.instantiateViewController(withIdentifier: "ShowPhotosInfoViewController") as! ShowPhotosInfoViewController
         showPhotos.isShowPhotos = false
         showPhotos.photoCollectionID = photoCollectionID
+         showPhotos.navTitle = "Show SubCollection"
         self.navigationController?.pushViewController(showPhotos, animated: true)
         
     }

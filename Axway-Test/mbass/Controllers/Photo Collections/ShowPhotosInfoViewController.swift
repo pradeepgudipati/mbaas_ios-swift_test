@@ -12,11 +12,12 @@ class ShowPhotosInfoViewController: UIViewController {
 
     var isShowPhotos:Bool = false
     var photoCollectionID:String = ""
+    var navTitle:String = ""
     @IBOutlet weak var showPhotosTxtVw: UITextView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        self.title = navTitle
         if isShowPhotos
         {
             showPhotosApi()
@@ -25,8 +26,7 @@ class ShowPhotosInfoViewController: UIViewController {
         {
             showSubCollectionApi()
         }
-
-        // Do any additional setup after loading the view.
+    // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {
