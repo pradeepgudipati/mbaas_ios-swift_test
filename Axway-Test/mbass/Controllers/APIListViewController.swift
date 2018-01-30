@@ -394,7 +394,7 @@ class APIListViewController: UIViewController,UITableViewDataSource,UITableViewD
         }
         else
         {
-        Utils.showAlertWithOkButton(titleStr:"Alert" , messageStr: (error?.localizedDescription)!, viewController: self)
+        Utils.showAlertWithOkButton(titleStr:"Alert" , messageStr: "Invalid email/username or password", viewController: self)
             
         }
         
