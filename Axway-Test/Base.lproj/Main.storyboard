@@ -578,6 +578,9 @@
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" placeholder="Enter chat message" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ixb-0F-SVB">
                                 <rect key="frame" x="27" y="45" width="320" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="57j-Hr-etH"/>
+                                </constraints>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" returnKeyType="done"/>
@@ -606,14 +609,13 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="t96-3j-2Kw" firstAttribute="top" secondItem="ixb-0F-SVB" secondAttribute="bottom" constant="592" id="Qm9-2P-0cG"/>
-                            <constraint firstItem="hyS-5a-CY3" firstAttribute="leading" secondItem="pUn-3d-7Fj" secondAttribute="leading" id="UKu-BM-1Zy"/>
-                            <constraint firstItem="hyS-5a-CY3" firstAttribute="top" secondItem="ixb-0F-SVB" secondAttribute="bottom" constant="28" id="cqS-vC-5cB"/>
-                            <constraint firstItem="ixb-0F-SVB" firstAttribute="leading" secondItem="pUn-3d-7Fj" secondAttribute="leadingMargin" constant="11" id="ddw-2R-kdI"/>
-                            <constraint firstAttribute="trailing" secondItem="hyS-5a-CY3" secondAttribute="trailing" id="qoL-9j-fPG"/>
-                            <constraint firstItem="t96-3j-2Kw" firstAttribute="top" secondItem="hyS-5a-CY3" secondAttribute="bottom" id="sLa-KX-OBq"/>
-                            <constraint firstItem="ixb-0F-SVB" firstAttribute="centerX" secondItem="pUn-3d-7Fj" secondAttribute="centerX" id="t52-qo-4rj"/>
-                            <constraint firstItem="ixb-0F-SVB" firstAttribute="top" secondItem="zTA-gG-Ka7" secondAttribute="bottom" constant="25" id="uuY-Y3-6U7"/>
+                            <constraint firstItem="hyS-5a-CY3" firstAttribute="leading" secondItem="pUn-3d-7Fj" secondAttribute="leading" id="5r9-NA-De6"/>
+                            <constraint firstItem="t96-3j-2Kw" firstAttribute="top" secondItem="hyS-5a-CY3" secondAttribute="bottom" id="KzO-wr-ZwH"/>
+                            <constraint firstAttribute="trailing" secondItem="hyS-5a-CY3" secondAttribute="trailing" id="aEB-1N-gnn"/>
+                            <constraint firstItem="ixb-0F-SVB" firstAttribute="leading" secondItem="pUn-3d-7Fj" secondAttribute="leading" constant="27" id="cOT-2i-J7a"/>
+                            <constraint firstAttribute="trailing" secondItem="ixb-0F-SVB" secondAttribute="trailing" constant="28" id="ph6-KC-bFa"/>
+                            <constraint firstItem="ixb-0F-SVB" firstAttribute="top" secondItem="zTA-gG-Ka7" secondAttribute="bottom" constant="25" id="uFm-Zr-eJB"/>
+                            <constraint firstItem="hyS-5a-CY3" firstAttribute="top" secondItem="ixb-0F-SVB" secondAttribute="bottom" constant="28" id="yxM-pj-7Ky"/>
                         </constraints>
                     </view>
                     <connections>
