@@ -15,7 +15,6 @@ class ShowChatsViewController: UIViewController,UITextFieldDelegate,UITableViewD
     var isFromCreateChat:Bool = false
     
     var chatsArr:NSArray = []
-    
     var chatGroupId:String = ""
     var participateIds:String = ""
     var chatId:String = ""
@@ -85,7 +84,24 @@ class ShowChatsViewController: UIViewController,UITextFieldDelegate,UITableViewD
     func chatsQuery(){
         ACProgressHUD.shared.showHUD()
         
-        ChatsAPI.chatsQuery(participateIds: self.participateIds, chatGroupId: self.chatGroupId, page: nil, perPage: nil, prettyJson: nil, limit: nil, skip: nil, where_: nil
+        do {
+            var jsonStr:NSString = ""
+            if isFromCreateChat
+             {
+                let dict:NSMutableDictionary = [:]
+                dict.setValue(self.queryWhere, forKey: "$gt")
+                
+                let updateDict:NSMutableDictionary = [:]
+                updateDict.setValue(dict, forKey: "updated_at")
+                
+                let whereDict:NSMutableDictionary = [:]
+                whereDict.setValue(updateDict, forKey: "where")
+                let data = try JSONSerialization.data(withJSONObject: whereDict, options: .init(rawValue: 0)) as Data
+                
+                jsonStr = NSString(data: data, encoding: String.Encoding.utf8.rawValue)!
+             }
+        
+            ChatsAPI.chatsQuery(participateIds: self.participateIds, chatGroupId: nil, page: nil, perPage: nil, prettyJson: nil, limit: nil, skip: nil, where_: jsonStr as String?
         , order: nil, sel: nil, unsel: nil, responseJsonDepth: 3) { (response, error) in
             
             ACProgressHUD.shared.hideHUD()
@@ -116,6 +132,10 @@ class ShowChatsViewController: UIViewController,UITextFieldDelegate,UITableViewD
             }
             
         }
+        }
+        catch {
+            print("Error")
+        }
         
     }
     
@@ -137,6 +157,7 @@ class ShowChatsViewController: UIViewController,UITextFieldDelegate,UITableViewD
                     let responseArr = responseDictionary["chats"] as! NSArray
                     let dict = responseArr[0] as! NSDictionary
                     self.chatGroupId = dict["id"] as! String
+                    self.queryWhere = dict["updated_at"] as! String
                 }
                 self.chatsQuery()
                 
