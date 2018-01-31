@@ -137,7 +137,11 @@ class APIListViewController: UIViewController,UITableViewDataSource,UITableViewD
       logoutCurrentUser()
       break
       case 6:
-        showQueryAlert()
+        let navQuery = self.storyboard?.instantiateViewController(withIdentifier: "QueryListViewController") as! QueryListViewController
+        self.navigationController?.pushViewController(navQuery,animated:true)
+        break
+        
+       // showQueryAlert()
       
     default:
         showLoginAlert()
