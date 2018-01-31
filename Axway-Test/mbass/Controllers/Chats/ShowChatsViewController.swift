@@ -101,7 +101,7 @@ class ShowChatsViewController: UIViewController,UITextFieldDelegate,UITableViewD
                 jsonStr = NSString(data: data, encoding: String.Encoding.utf8.rawValue)!
              }
         
-            ChatsAPI.chatsQuery(participateIds: self.participateIds, chatGroupId: nil, page: nil, perPage: nil, prettyJson: nil, limit: nil, skip: nil, where_: jsonStr as String?
+            ChatsAPI.chatsQuery(participateIds: self.participateIds, chatGroupId: (isFromCreateChat ? nil : self.chatGroupId), page: nil, perPage: nil, prettyJson: nil, limit: nil, skip: nil, where_: jsonStr as String?
         , order: nil, sel: nil, unsel: nil, responseJsonDepth: 3) { (response, error) in
             
             ACProgressHUD.shared.hideHUD()
@@ -156,7 +156,7 @@ class ShowChatsViewController: UIViewController,UITextFieldDelegate,UITableViewD
                     let responseDictionary = response?["response"] as! NSDictionary
                     let responseArr = responseDictionary["chats"] as! NSArray
                     let dict = responseArr[0] as! NSDictionary
-                    self.chatGroupId = dict["id"] as! String
+                    //self.chatGroupId = dict["id"] as! String
                     self.queryWhere = dict["updated_at"] as! String
                 }
                 self.chatsQuery()
