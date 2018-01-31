@@ -2275,5 +2275,52 @@
             </objects>
             <point key="canvasLocation" x="9119" y="32"/>
         </scene>
+        <!--Query List View Controller-->
+        <scene sceneID="pbF-nM-zgc">
+            <objects>
+                <viewController storyboardIdentifier="QueryListViewController" id="GLe-8L-PRg" customClass="QueryListViewController" customModule="Axway_Test" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="wmQ-fy-uey"/>
+                        <viewControllerLayoutGuide type="bottom" id="Pvg-Ff-sYT"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="I2O-VU-jlf">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="sce-bg-3hI">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="userQueryCell" id="SjR-s7-pxY">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="SjR-s7-pxY" id="4EH-kM-dZs">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="GLe-8L-PRg" id="WKT-Cu-9o5"/>
+                                    <outlet property="delegate" destination="GLe-8L-PRg" id="Flu-IY-bz2"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="sce-bg-3hI" firstAttribute="leading" secondItem="I2O-VU-jlf" secondAttribute="leading" id="1BH-Fz-9WK"/>
+                            <constraint firstItem="sce-bg-3hI" firstAttribute="top" secondItem="I2O-VU-jlf" secondAttribute="top" id="4Kx-Dr-wKI"/>
+                            <constraint firstItem="Pvg-Ff-sYT" firstAttribute="top" secondItem="sce-bg-3hI" secondAttribute="bottom" id="AVJ-ye-jpG"/>
+                            <constraint firstAttribute="trailing" secondItem="sce-bg-3hI" secondAttribute="trailing" id="i7F-zx-eHc"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="queryTableView" destination="sce-bg-3hI" id="kwP-TH-cPe"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="OhK-kP-7fs" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="9369" y="-656"/>
+        </scene>
     </scenes>
 </document>

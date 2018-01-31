@@ -115,6 +115,7 @@
 		7B5102B71F690E8A00A7BDF9 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B5102781F690E8A00A7BDF9 /* Logger.swift */; };
 		7B5102B91F69170600A7BDF9 /* APIListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B5102B81F69170600A7BDF9 /* APIListViewController.swift */; };
 		7B51ED221F7279C500A26437 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = 7B51ED211F7279C500A26437 /* README.md */; };
+		AD5CA77F2021CEA500226691 /* QueryListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD5CA77E2021CEA500226691 /* QueryListViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -249,6 +250,7 @@
 		7B5102781F690E8A00A7BDF9 /* Logger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
 		7B5102B81F69170600A7BDF9 /* APIListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIListViewController.swift; sourceTree = "<group>"; };
 		7B51ED211F7279C500A26437 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		AD5CA77E2021CEA500226691 /* QueryListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QueryListViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -355,6 +357,7 @@
 				7B474D241F6BB53D005F044A /* ACLListViewController.swift */,
 				7B474D261F6BB741005F044A /* CreateOrUpdateACLViewController.swift */,
 				23CECA471FDE85F200D40693 /* CreateUserViewController.swift */,
+				AD5CA77E2021CEA500226691 /* QueryListViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -732,6 +735,7 @@
 				7B5102A51F690E8A00A7BDF9 /* AFError.swift in Sources */,
 				7B5102841F690E8A00A7BDF9 /* FilesAPI.swift in Sources */,
 				7B5102861F690E8A00A7BDF9 /* GeoFencesAPI.swift in Sources */,
+				AD5CA77F2021CEA500226691 /* QueryListViewController.swift in Sources */,
 				23C58BE11FEBAF9A00DC014B /* CreateCustomObjViewController.swift in Sources */,
 				236BBBD11FF27EBF00DD0D9D /* CreateGeoFenceViewController.swift in Sources */,
 				7B5102AF1F690E8A00A7BDF9 /* AXSessionDelegate.swift in Sources */,
