@@ -69,6 +69,11 @@ class DisplayGroupChatsViewController: UIViewController,UITableViewDelegate,UITa
                         }
                     }
                 }
+                else
+                {
+                    let value = response?.description
+                    Utils.showAlertWithOkButton(titleStr:"Fail" , messageStr: value!, viewController: self)
+                }
             }
         }
     }
