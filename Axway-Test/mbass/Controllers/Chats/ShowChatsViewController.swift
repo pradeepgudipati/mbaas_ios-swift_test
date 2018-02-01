@@ -153,13 +153,24 @@ class ShowChatsViewController: UIViewController,UITextFieldDelegate,UITableViewD
             {
                 if self.isFromCreateChat
                 {
+                    if response!["response"] != nil
+                    {
                     let responseDictionary = response?["response"] as! NSDictionary
                     let responseArr = responseDictionary["chats"] as! NSArray
                     let dict = responseArr[0] as! NSDictionary
                     //self.chatGroupId = dict["id"] as! String
                     self.queryWhere = dict["updated_at"] as! String
+                    self.chatsQuery()
+                    }
+                    else
+                    {
+                        
+                        let value = response?.description
+                        Utils.showAlertWithOkButton(titleStr:"Fail" , messageStr: value!, viewController: self)
+                        
+                    }
                 }
-                self.chatsQuery()
+               
                 
             }
         }
