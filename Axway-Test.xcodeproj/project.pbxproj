@@ -19,7 +19,6 @@
 		236BBBE01FF3C3D600DD0D9D /* CreatePhotoClctnViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 236BBBDF1FF3C3D000DD0D9D /* CreatePhotoClctnViewController.swift */; };
 		236BBBE21FF3C46000DD0D9D /* ShowPhotoClctnViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 236BBBE11FF3C46000DD0D9D /* ShowPhotoClctnViewController.swift */; };
 		236BBBE81FF3C52B00DD0D9D /* PhotoClctnOptionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 236BBBE71FF3C52B00DD0D9D /* PhotoClctnOptionsViewController.swift */; };
-		237BDA741FF4BAE90004768B /* ShowPhotosInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 237BDA731FF4BAE90004768B /* ShowPhotosInfoViewController.swift */; };
 		237BDA851FF61A8B0004768B /* QueryPlaceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 237BDA811FF61A890004768B /* QueryPlaceViewController.swift */; };
 		237BDA861FF61A8B0004768B /* SearchPlaceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 237BDA821FF61A890004768B /* SearchPlaceViewController.swift */; };
 		237BDA871FF61A8B0004768B /* CreatePlaceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 237BDA831FF61A890004768B /* CreatePlaceViewController.swift */; };
@@ -148,7 +147,6 @@
 		236BBBDF1FF3C3D000DD0D9D /* CreatePhotoClctnViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePhotoClctnViewController.swift; sourceTree = "<group>"; };
 		236BBBE11FF3C46000DD0D9D /* ShowPhotoClctnViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowPhotoClctnViewController.swift; sourceTree = "<group>"; };
 		236BBBE71FF3C52B00DD0D9D /* PhotoClctnOptionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoClctnOptionsViewController.swift; sourceTree = "<group>"; };
-		237BDA731FF4BAE90004768B /* ShowPhotosInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowPhotosInfoViewController.swift; sourceTree = "<group>"; };
 		237BDA811FF61A890004768B /* QueryPlaceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QueryPlaceViewController.swift; sourceTree = "<group>"; };
 		237BDA821FF61A890004768B /* SearchPlaceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchPlaceViewController.swift; sourceTree = "<group>"; };
 		237BDA831FF61A890004768B /* CreatePlaceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreatePlaceViewController.swift; sourceTree = "<group>"; };
@@ -313,7 +311,6 @@
 				236BBBDF1FF3C3D000DD0D9D /* CreatePhotoClctnViewController.swift */,
 				236BBBE11FF3C46000DD0D9D /* ShowPhotoClctnViewController.swift */,
 				236BBBE71FF3C52B00DD0D9D /* PhotoClctnOptionsViewController.swift */,
-				237BDA731FF4BAE90004768B /* ShowPhotosInfoViewController.swift */,
 			);
 			path = "Photo Collections";
 			sourceTree = "<group>";
@@ -726,7 +723,6 @@
 				7B5102B61F690E8A00A7BDF9 /* AuthBrowserController.swift in Sources */,
 				7B474D251F6BB53D005F044A /* ACLListViewController.swift in Sources */,
 				230AEDCD1FF6699400402DF8 /* QueryPhotoViewController.swift in Sources */,
-				237BDA741FF4BAE90004768B /* ShowPhotosInfoViewController.swift in Sources */,
 				7B474D201F6A5093005F044A /* ACHUD+Animation.swift in Sources */,
 				7B5102B21F690E8A00A7BDF9 /* AXTimeline.swift in Sources */,
 				7B5102911F690E8A00A7BDF9 /* PushSchedulesAPI.swift in Sources */,

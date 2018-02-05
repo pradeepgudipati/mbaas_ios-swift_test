@@ -1693,41 +1693,6 @@
             </objects>
             <point key="canvasLocation" x="11489" y="52"/>
         </scene>
-        <!--Show Photos Info View Controller-->
-        <scene sceneID="CAq-nX-PHJ">
-            <objects>
-                <viewController storyboardIdentifier="ShowPhotosInfoViewController" id="SCs-0z-Svn" customClass="ShowPhotosInfoViewController" customModule="Axway_Test" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="rSe-w7-ff7"/>
-                        <viewControllerLayoutGuide type="bottom" id="1WY-j8-qX0"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="8HI-Mq-5F5">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="4Fc-WZ-ehF">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="4Fc-WZ-ehF" firstAttribute="leading" secondItem="8HI-Mq-5F5" secondAttribute="leading" id="5Uc-Z8-Ivw"/>
-                            <constraint firstItem="1WY-j8-qX0" firstAttribute="top" secondItem="4Fc-WZ-ehF" secondAttribute="bottom" id="6KX-aO-xMW"/>
-                            <constraint firstAttribute="trailing" secondItem="4Fc-WZ-ehF" secondAttribute="trailing" id="mAq-DV-b3D"/>
-                            <constraint firstItem="4Fc-WZ-ehF" firstAttribute="top" secondItem="8HI-Mq-5F5" secondAttribute="top" id="nUH-6J-g6N"/>
-                        </constraints>
-                    </view>
-                    <connections>
-                        <outlet property="showPhotosTxtVw" destination="4Fc-WZ-ehF" id="STd-no-I0p"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="FsI-wt-wN6" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="12117" y="49"/>
-        </scene>
         <!--Create Place View Controller-->
         <scene sceneID="cbw-vN-geL">
             <objects>
