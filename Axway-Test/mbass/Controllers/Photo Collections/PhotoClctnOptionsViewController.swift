@@ -63,7 +63,9 @@ class PhotoClctnOptionsViewController: UIViewController {
             }
             else
             {
-                Utils.showAlertWithOkButton(titleStr:"Alert" , messageStr:"Deleted Successfully", viewController: self)
+                let value = response?.description
+                Utils.showAlertWithOkButton(titleStr:"Alert" , messageStr:value!, viewController: self)
+                
             }
         }
     }

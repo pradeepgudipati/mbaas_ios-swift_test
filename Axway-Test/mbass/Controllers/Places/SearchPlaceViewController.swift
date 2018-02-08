@@ -85,12 +85,6 @@ class SearchPlaceViewController: UIViewController,UITableViewDataSource,UITableV
     func getPlacesFromLocation()
     {
         
-        //where={"$text": { "$search": "javascript,ruby,python,-php" }}
-        //fieldDict = [sampleTextField.placeholder! : sampleTextField.text!]
-        
-//        let searTxtArr:NSMutableArray = []
-//        searTxtArr.add(placeNameTxt.text as Any)
-//
         let SearchDict:NSMutableDictionary = [:]
         SearchDict.setValue(placeNameTxt.text, forKey: "$search")
         
