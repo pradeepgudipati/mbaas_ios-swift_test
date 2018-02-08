@@ -75,4 +75,38 @@ class ShowCheckinsViewController: UIViewController {
         }
     }
 
+    @IBAction func deleteBtnAction(_ sender: Any) {
+        
+        let alert = UIAlertController(title: "Delete", message:"Are you sure you want to delete", preferredStyle: UIAlertControllerStyle.alert)
+        alert.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.cancel, handler:nil))
+        alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: { alert -> Void in
+            
+            self.deleteCheckin(checkinID: self.checkinId)
+        }))
+        self.present(alert, animated: true, completion: nil)
+    }
+    
+    func deleteCheckin(checkinID:String)
+    {
+        ACProgressHUD.shared.showHUD()
+        CheckinsAPI.checkinsDelete(checkinId: checkinID) { (response, error) in
+            ACProgressHUD.shared.hideHUD()
+            if (error != nil) {
+                
+                Utils.showAlertWithOkButton(titleStr:"Error" , messageStr: (error?.localizedDescription)!, viewController: self)
+            }
+            else
+            {
+                let value = response?.description
+                let alert = UIAlertController(title: "Delete", message:value!, preferredStyle: UIAlertControllerStyle.alert)
+                alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: { alert -> Void in
+                    
+                   self.navigationController?.popViewController(animated: true)
+                }))
+                self.present(alert, animated: true, completion: nil)
+                
+            }
+        }
+        
+    }
 }

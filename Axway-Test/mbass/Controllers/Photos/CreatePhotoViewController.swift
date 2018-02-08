@@ -58,7 +58,7 @@ class CreatePhotoViewController: UIViewController,UIImagePickerControllerDelegat
         
         if imageUrl.length == 0{
            Utils.showAlertWithOkButton(titleStr:"Alert" , messageStr: "Please select an image from gallery", viewController: self)
-            return 
+            return
         }
     
         if UserDefaults.standard.object(forKey: "collectionId") != nil

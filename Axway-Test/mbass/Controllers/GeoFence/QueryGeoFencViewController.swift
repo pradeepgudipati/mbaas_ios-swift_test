@@ -16,8 +16,11 @@ class QueryGeoFencViewController: UIViewController,UITableViewDelegate,UITableVi
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        queryGeoFence()
         // Do any additional setup after loading the view.
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+       queryGeoFence()
     }
 
     override func didReceiveMemoryWarning() {
@@ -50,27 +53,7 @@ class QueryGeoFencViewController: UIViewController,UITableViewDelegate,UITableVi
         
         
     }
-    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        return true
-    }
-    
-    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-        if (editingStyle == UITableViewCellEditingStyle.delete) {
-            // handle delete (by removing the data from your array and updating the tableview)
-            let listDict = listArr[indexPath.row] as! NSDictionary;
-            let geofenceId = listDict["id"] as! String
-            let alert = UIAlertController(title: "Delete", message:"Are you sure you want to delete", preferredStyle: UIAlertControllerStyle.alert)
-            alert.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.cancel, handler:nil))
-            alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: { alert -> Void in
-                
-                self.deleteGeoFence(geofenceId: geofenceId)
-            }))
-            self.present(alert, animated: true, completion: nil)
-            
-            
-        }
-    }
-
+   
     //Query and delete apis
     
     func queryGeoFence(){
@@ -94,22 +77,7 @@ class QueryGeoFencViewController: UIViewController,UITableViewDelegate,UITableVi
         }
         
     }
-    func deleteGeoFence(geofenceId:String)
-    {
-        ACProgressHUD.shared.showHUD()
-        GeoFencesAPI.geoFencesDelete(iD: geofenceId, prettyJson: nil) { (response, error) in
-            ACProgressHUD.shared.hideHUD()
-            if (error != nil) {
-                
-                Utils.showAlertWithOkButton(titleStr:"Error" , messageStr: (error?.localizedDescription)!, viewController: self)
-                
-            }
-            else {
-              self.queryGeoFence()
-            }
-        }
-        
-    }
+
 
     
   

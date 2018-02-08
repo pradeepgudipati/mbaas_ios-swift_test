@@ -15,6 +15,9 @@ class CreateGeoFenceViewController: UIViewController {
     @IBOutlet weak var longitudeTxt: UITextField!
     @IBOutlet weak var radiusTxt: UITextField!
     @IBOutlet weak var createBtn: UIButton!
+    @IBOutlet weak var deleteBtn: UIButton!
+    
+    
     var geoDict:NSDictionary = [:]
     
     override func viewDidLoad() {
@@ -39,11 +42,12 @@ class CreateGeoFenceViewController: UIViewController {
                 self.latitudeTxt.text = String(format:"%.2f",b)
             }
             self.radiusTxt.text = (locDict["radius"] as! String)
-           
+            self.deleteBtn.isHidden = false
         }
         else
         {
            createBtn.setTitle("Create", for: UIControlState.normal)
+            self.deleteBtn.isHidden = true
         }
         
     }
@@ -170,4 +174,32 @@ class CreateGeoFenceViewController: UIViewController {
         
     }
     
+    @IBAction func deleteBtnAction(_ sender: Any) {
+        
+        self.deleteGeoFence(geofenceId: geoDict["id"] as! String)
+    }
+    
+    func deleteGeoFence(geofenceId:String)
+    {
+        ACProgressHUD.shared.showHUD()
+        GeoFencesAPI.geoFencesDelete(iD: geofenceId, prettyJson: nil) { (response, error) in
+            ACProgressHUD.shared.hideHUD()
+            if (error != nil) {
+                
+                Utils.showAlertWithOkButton(titleStr:"Error" , messageStr: (error?.localizedDescription)!, viewController: self)
+                
+            }
+            else {
+                let value = response?.description
+                let alert = UIAlertController(title: "Delete", message:value!, preferredStyle: UIAlertControllerStyle.alert)
+                alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: { alert -> Void in
+                    
+                    self.navigationController?.popViewController(animated: true)
+                }))
+                self.present(alert, animated: true, completion: nil)
+                
+            }
+        }
+        
+    }
 }
