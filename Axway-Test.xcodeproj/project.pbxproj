@@ -11,6 +11,7 @@
 		230AEDCD1FF6699400402DF8 /* QueryPhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 230AEDCA1FF6699300402DF8 /* QueryPhotoViewController.swift */; };
 		230AEDCE1FF6699400402DF8 /* UpdateorDeletePhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 230AEDCB1FF6699300402DF8 /* UpdateorDeletePhotoViewController.swift */; };
 		23117BA41FDE6C1700A3541A /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23117BA31FDE6C1700A3541A /* UserModel.swift */; };
+		2341373D202C50CD0012DC1E /* ChoosePhotoCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2341373C202C50CD0012DC1E /* ChoosePhotoCollection.swift */; };
 		236BBBD11FF27EBF00DD0D9D /* CreateGeoFenceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 236BBBCF1FF27EBF00DD0D9D /* CreateGeoFenceViewController.swift */; };
 		236BBBD21FF27EBF00DD0D9D /* QueryGeoFencViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 236BBBD01FF27EBF00DD0D9D /* QueryGeoFencViewController.swift */; };
 		236BBBD51FF39B3A00DD0D9D /* CreateCheckinsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 236BBBD41FF39B3A00DD0D9D /* CreateCheckinsViewController.swift */; };
@@ -139,6 +140,7 @@
 		230AEDCA1FF6699300402DF8 /* QueryPhotoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QueryPhotoViewController.swift; sourceTree = "<group>"; };
 		230AEDCB1FF6699300402DF8 /* UpdateorDeletePhotoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UpdateorDeletePhotoViewController.swift; sourceTree = "<group>"; };
 		23117BA31FDE6C1700A3541A /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
+		2341373C202C50CD0012DC1E /* ChoosePhotoCollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChoosePhotoCollection.swift; sourceTree = "<group>"; };
 		236BBBCF1FF27EBF00DD0D9D /* CreateGeoFenceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateGeoFenceViewController.swift; sourceTree = "<group>"; };
 		236BBBD01FF27EBF00DD0D9D /* QueryGeoFencViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QueryGeoFencViewController.swift; sourceTree = "<group>"; };
 		236BBBD41FF39B3A00DD0D9D /* CreateCheckinsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateCheckinsViewController.swift; sourceTree = "<group>"; };
@@ -282,6 +284,7 @@
 				230AEDC91FF6699300402DF8 /* CreatePhotoViewController.swift */,
 				230AEDCA1FF6699300402DF8 /* QueryPhotoViewController.swift */,
 				230AEDCB1FF6699300402DF8 /* UpdateorDeletePhotoViewController.swift */,
+				2341373C202C50CD0012DC1E /* ChoosePhotoCollection.swift */,
 			);
 			path = Photos;
 			sourceTree = "<group>";
@@ -786,6 +789,7 @@
 				2391C7841FF62D1B007F0E7B /* PushUnsubscribeViewController.swift in Sources */,
 				230AEDCE1FF6699400402DF8 /* UpdateorDeletePhotoViewController.swift in Sources */,
 				7B5102931F690E8A00A7BDF9 /* SocialIntegrationsAPI.swift in Sources */,
+				2341373D202C50CD0012DC1E /* ChoosePhotoCollection.swift in Sources */,
 				7B5102811F690E8A00A7BDF9 /* EmailsAPI.swift in Sources */,
 				7B5102991F690E8A00A7BDF9 /* Authentication.swift in Sources */,
 				7B5102941F690E8A00A7BDF9 /* StatusesAPI.swift in Sources */,

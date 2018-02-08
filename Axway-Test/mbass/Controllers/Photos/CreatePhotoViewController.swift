@@ -13,6 +13,7 @@ class CreatePhotoViewController: UIViewController,UIImagePickerControllerDelegat
 
     let imagePicker = UIImagePickerController()
     var imageUrl : NSString = ""
+    var parentClctnId:String = ""
     
     @IBOutlet weak var imageView: UIImageView!
     override func viewDidLoad() {
@@ -49,13 +50,28 @@ class CreatePhotoViewController: UIViewController,UIImagePickerControllerDelegat
     @IBAction func photoFromCamera(_ sender: Any) {
     }
     @IBAction func chooseCollection(_ sender: Any) {
-       
-
+        let showPhotoList = self.storyboard?.instantiateViewController(withIdentifier: "ShowPhotoClctnViewController") as! ShowPhotoClctnViewController
+        showPhotoList.isFromCreate = true
+        self.navigationController?.pushViewController(showPhotoList, animated: true)
     }
     @IBAction func createPhoto(_ sender: Any) {
+        
+        if imageUrl.length == 0{
+           Utils.showAlertWithOkButton(titleStr:"Alert" , messageStr: "Please select an image from gallery", viewController: self)
+            return 
+        }
+    
+        if UserDefaults.standard.object(forKey: "collectionId") != nil
+        {
+           let userDefaults = UserDefaults.standard
+           parentClctnId  = userDefaults.string(forKey: "collectionId")!
+           userDefaults.removeObject(forKey: "collectionId")
+        }
         ACProgressHUD.shared.showHUD()
+    
         let fileUrl = NSURL(fileURLWithPath: imageUrl as String) as URL
-        PhotosAPI.photosCreate(photo: fileUrl , title: nil, collectionName: nil, collectionId: nil, tags: nil, customFields: nil, aclName: nil, aclId: nil, suId: nil, photoSizes: nil, photoSyncSizes: nil, prettyJson: nil, completion: {(response, error) in
+        
+        PhotosAPI.photosCreate(photo: fileUrl , title: nil, collectionName: nil, collectionId: parentClctnId, tags: nil, customFields: nil, aclName: nil, aclId: nil, suId: nil, photoSizes: nil, photoSyncSizes: nil, prettyJson: nil, completion: {(response, error) in
             
             ACProgressHUD.shared.hideHUD()
             if (error != nil) {
