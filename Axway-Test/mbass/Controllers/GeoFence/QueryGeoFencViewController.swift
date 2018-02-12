@@ -59,7 +59,7 @@ class QueryGeoFencViewController: UIViewController,UITableViewDelegate,UITableVi
     func queryGeoFence(){
         
         ACProgressHUD.shared.showHUD()
-        GeoFencesAPI.geoFencesQuery(page: nil, perPage: nil, limit: nil, skip: nil, responseJsonDepth: nil, where_: nil, prettyJson: nil) { (response, error) in
+        GeoFencesAPI.geoFencesQuery(page: nil, perPage: nil, limit: 50, skip: nil, responseJsonDepth: nil, where_: nil, prettyJson: nil) { (response, error) in
             
             ACProgressHUD.shared.hideHUD()
             if (error != nil) {
