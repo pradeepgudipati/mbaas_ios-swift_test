@@ -159,6 +159,8 @@ class ShowChatsViewController: UIViewController,UITextFieldDelegate,UITableViewD
                         Utils.showAlertWithOkButton(titleStr:"Fail" , messageStr: value!, viewController: self)
                         
                     }
+                } else {
+                     self.chatsQuery()
                 }
                
                 
