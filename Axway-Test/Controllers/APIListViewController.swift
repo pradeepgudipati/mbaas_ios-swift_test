@@ -486,7 +486,7 @@ class APIListViewController: UIViewController,UITableViewDataSource,UITableViewD
         do{
     ACProgressHUD.shared.showHUD()
 
-        let fieldDict:[String:String] = ["Email":emailStr] //"{\"Email\":" + emailStr + "}"
+        let fieldDict:[String:String] = ["email":emailStr] //"{\"email\":" + emailStr + "}"
         
         let data = try JSONSerialization.data(withJSONObject: fieldDict, options: .init(rawValue: 0)) as Data
         
