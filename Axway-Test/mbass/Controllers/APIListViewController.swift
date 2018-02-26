@@ -498,7 +498,7 @@ class APIListViewController: UIViewController,UITableViewDataSource,UITableViewD
 
       if (error != nil) {
         
-        Utils.showAlertWithOkButton(titleStr:"Delete Error" , messageStr: (error?.localizedDescription)!, viewController: self)
+        Utils.showAlertWithOkButton(titleStr:"Error" , messageStr: (error?.localizedDescription)!, viewController: self)
         
       }
       else {
