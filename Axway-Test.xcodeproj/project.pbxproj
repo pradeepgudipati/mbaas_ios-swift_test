@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+
 		23E05DC5204532660071DE0C /* ACLListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23E05D9B204532650071DE0C /* ACLListViewController.swift */; };
 		23E05DC6204532660071DE0C /* APIListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23E05D9C204532650071DE0C /* APIListViewController.swift */; };
 		23E05DC7204532660071DE0C /* DisplayGroupChatsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23E05D9E204532650071DE0C /* DisplayGroupChatsViewController.swift */; };
@@ -106,6 +107,7 @@
 		23E05EB9204532DB0071DE0C /* AuthBrowserController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23E05E56204532DB0071DE0C /* AuthBrowserController.swift */; };
 		23E05EBA204532DB0071DE0C /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23E05E57204532DB0071DE0C /* Logger.swift */; };
 		23E05EBB204532DB0071DE0C /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23E05E58204532DB0071DE0C /* Utils.swift */; };
+
 		7B474D201F6A5093005F044A /* ACHUD+Animation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B474D1C1F6A5093005F044A /* ACHUD+Animation.swift */; };
 		7B474D211F6A5093005F044A /* ACProgressHUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B474D1D1F6A5093005F044A /* ACProgressHUD.swift */; };
 		7B474D221F6A5093005F044A /* ACProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B474D1E1F6A5093005F044A /* ACProgressView.swift */; };
@@ -137,6 +139,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+
 		23E05D9B204532650071DE0C /* ACLListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ACLListViewController.swift; sourceTree = "<group>"; };
 		23E05D9C204532650071DE0C /* APIListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIListViewController.swift; sourceTree = "<group>"; };
 		23E05D9E204532650071DE0C /* DisplayGroupChatsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DisplayGroupChatsViewController.swift; sourceTree = "<group>"; };
@@ -236,6 +239,7 @@
 		23E05E56204532DB0071DE0C /* AuthBrowserController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthBrowserController.swift; sourceTree = "<group>"; };
 		23E05E57204532DB0071DE0C /* Logger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
 		23E05E58204532DB0071DE0C /* Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
+
 		7B474D1C1F6A5093005F044A /* ACHUD+Animation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ACHUD+Animation.swift"; sourceTree = "<group>"; };
 		7B474D1D1F6A5093005F044A /* ACProgressHUD.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ACProgressHUD.swift; sourceTree = "<group>"; };
 		7B474D1E1F6A5093005F044A /* ACProgressView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ACProgressView.swift; sourceTree = "<group>"; };
@@ -280,6 +284,7 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+
 		23E05D9A204532650071DE0C /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
@@ -298,30 +303,36 @@
 				23E05DBD204532650071DE0C /* Push Notifications */,
 				23E05DC3204532650071DE0C /* QueryListViewController.swift */,
 				23E05DC4204532650071DE0C /* ViewController.swift */,
+
 			);
 			path = Controllers;
 			sourceTree = "<group>";
 		};
+
 		23E05D9D204532650071DE0C /* Chats */ = {
 			isa = PBXGroup;
 			children = (
 				23E05D9E204532650071DE0C /* DisplayGroupChatsViewController.swift */,
 				23E05D9F204532650071DE0C /* ListOfUsersViewController.swift */,
 				23E05DA0204532650071DE0C /* ShowChatsViewController.swift */,
+
 			);
 			path = Chats;
 			sourceTree = "<group>";
 		};
+
 		23E05DA1204532650071DE0C /* Checkins */ = {
 			isa = PBXGroup;
 			children = (
 				23E05DA2204532650071DE0C /* CreateCheckinsViewController.swift */,
 				23E05DA3204532650071DE0C /* QueryCheckinsViewController.swift */,
 				23E05DA4204532650071DE0C /* ShowCheckinsViewController.swift */,
+
 			);
 			path = Checkins;
 			sourceTree = "<group>";
 		};
+
 		23E05DA8204532650071DE0C /* CustomObject */ = {
 			isa = PBXGroup;
 			children = (
@@ -347,10 +358,12 @@
 				23E05DB0204532650071DE0C /* CreatePhotoClctnViewController.swift */,
 				23E05DB1204532650071DE0C /* PhotoClctnOptionsViewController.swift */,
 				23E05DB2204532650071DE0C /* ShowPhotoClctnViewController.swift */,
+
 			);
 			path = "Photo Collections";
 			sourceTree = "<group>";
 		};
+
 		23E05DB3204532650071DE0C /* Photos */ = {
 			isa = PBXGroup;
 			children = (
@@ -369,10 +382,12 @@
 				23E05DBA204532650071DE0C /* QueryPlaceViewController.swift */,
 				23E05DBB204532650071DE0C /* SearchPlaceViewController.swift */,
 				23E05DBC204532650071DE0C /* UpdateorDeletePlaceViewController.swift */,
+
 			);
 			path = Places;
 			sourceTree = "<group>";
 		};
+
 		23E05DBD204532650071DE0C /* Push Notifications */ = {
 			isa = PBXGroup;
 			children = (
@@ -381,10 +396,12 @@
 				23E05DC0204532650071DE0C /* PushSubscriptionViewController.swift */,
 				23E05DC1204532650071DE0C /* PushUnsubscribeViewController.swift */,
 				23E05DC2204532650071DE0C /* QueryChannelsViewController.swift */,
+
 			);
 			path = "Push Notifications";
 			sourceTree = "<group>";
 		};
+
 		23E05DE7204532DB0071DE0C /* mbass */ = {
 			isa = PBXGroup;
 			children = (
@@ -459,10 +476,12 @@
 				23E05E3F204532DB0071DE0C /* ErrorResponse_.swift */,
 				23E05E40204532DB0071DE0C /* SuccessResponse.swift */,
 				23E05E41204532DB0071DE0C /* UserModel.swift */,
+
 			);
 			path = Model;
 			sourceTree = "<group>";
 		};
+
 		23E05E43204532DB0071DE0C /* Networking */ = {
 			isa = PBXGroup;
 			children = (
@@ -483,16 +502,19 @@
 				23E05E52204532DB0071DE0C /* AXValidation.swift */,
 				23E05E53204532DB0071DE0C /* DispatchQueue+Alamofire.swift */,
 				23E05E54204532DB0071DE0C /* Notifications.swift */,
+
 			);
 			path = Networking;
 			sourceTree = "<group>";
 		};
+
 		23E05E55204532DB0071DE0C /* Utils */ = {
 			isa = PBXGroup;
 			children = (
 				23E05E56204532DB0071DE0C /* AuthBrowserController.swift */,
 				23E05E57204532DB0071DE0C /* Logger.swift */,
 				23E05E58204532DB0071DE0C /* Utils.swift */,
+
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -532,8 +554,10 @@
 		7B5102051F690E6400A7BDF9 /* Axway-Test */ = {
 			isa = PBXGroup;
 			children = (
+
 				23E05DE7204532DB0071DE0C /* mbass */,
 				23E05D9A204532650071DE0C /* Controllers */,
+
 				7B474D1B1F6A5093005F044A /* Source */,
 				7B5102061F690E6400A7BDF9 /* AppDelegate.swift */,
 				7B51020A1F690E6400A7BDF9 /* Main.storyboard */,
@@ -700,6 +724,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+
 				23E05DC7204532660071DE0C /* DisplayGroupChatsViewController.swift in Sources */,
 				23E05DE3204532660071DE0C /* PushUnsubscribeViewController.swift in Sources */,
 				23E05DCF204532660071DE0C /* CreateUserViewController.swift in Sources */,
@@ -804,6 +829,7 @@
 				23E05DDF204532660071DE0C /* UpdateorDeletePlaceViewController.swift in Sources */,
 				23E05DCA204532660071DE0C /* CreateCheckinsViewController.swift in Sources */,
 				23E05E79204532DB0071DE0C /* Authentication.swift in Sources */,
+
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -45,6 +45,7 @@ class ViewController: UIViewController,UIImagePickerControllerDelegate,UINavigat
     ACProgressHUD.shared.showHUD()
 
     PhotosAPI.photosCreate(photo:imageUploadURL as URL, title: "IOS test \(Timestamp)", collectionName: "", collectionId: "", tags: "", customFields: nil, aclName: "", aclId: "", suId: "", photoSizes:nil, photoSyncSizes: nil, prettyJson: true) { (response, error) in
+
       
        ACProgressHUD.shared.hideHUD()
 
