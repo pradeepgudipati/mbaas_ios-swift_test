@@ -7,40 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		23E05DC5204532660071DE0C /* ACLListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23E05D9B204532650071DE0C /* ACLListViewController.swift */; };
-		23E05DC6204532660071DE0C /* APIListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23E05D9C204532650071DE0C /* APIListViewController.swift */; };
-		23E05DC7204532660071DE0C /* DisplayGroupChatsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23E05D9E204532650071DE0C /* DisplayGroupChatsViewController.swift */; };
-		23E05DC8204532660071DE0C /* ListOfUsersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23E05D9F204532650071DE0C /* ListOfUsersViewController.swift */; };
-		23E05DC9204532660071DE0C /* ShowChatsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23E05DA0204532650071DE0C /* ShowChatsViewController.swift */; };
-		23E05DCA204532660071DE0C /* CreateCheckinsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23E05DA2204532650071DE0C /* CreateCheckinsViewController.swift */; };
-		23E05DCB204532660071DE0C /* QueryCheckinsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23E05DA3204532650071DE0C /* QueryCheckinsViewController.swift */; };
-		23E05DCC204532660071DE0C /* ShowCheckinsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23E05DA4204532650071DE0C /* ShowCheckinsViewController.swift */; };
-		23E05DCD204532660071DE0C /* CheckinsViewControllers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23E05DA5204532650071DE0C /* CheckinsViewControllers.swift */; };
-		23E05DCE204532660071DE0C /* CreateOrUpdateACLViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23E05DA6204532650071DE0C /* CreateOrUpdateACLViewController.swift */; };
-		23E05DCF204532660071DE0C /* CreateUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23E05DA7204532650071DE0C /* CreateUserViewController.swift */; };
-		23E05DD0204532660071DE0C /* CreateCustomObjViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23E05DA9204532650071DE0C /* CreateCustomObjViewController.swift */; };
-		23E05DD1204532660071DE0C /* QueryCustomObjViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23E05DAA204532650071DE0C /* QueryCustomObjViewController.swift */; };
-		23E05DD2204532660071DE0C /* UpdateCustomObjViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23E05DAB204532650071DE0C /* UpdateCustomObjViewController.swift */; };
-		23E05DD3204532660071DE0C /* CreateGeoFenceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23E05DAD204532650071DE0C /* CreateGeoFenceViewController.swift */; };
-		23E05DD4204532660071DE0C /* QueryGeoFencViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23E05DAE204532650071DE0C /* QueryGeoFencViewController.swift */; };
-		23E05DD5204532660071DE0C /* CreatePhotoClctnViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23E05DB0204532650071DE0C /* CreatePhotoClctnViewController.swift */; };
-		23E05DD6204532660071DE0C /* PhotoClctnOptionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23E05DB1204532650071DE0C /* PhotoClctnOptionsViewController.swift */; };
-		23E05DD7204532660071DE0C /* ShowPhotoClctnViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23E05DB2204532650071DE0C /* ShowPhotoClctnViewController.swift */; };
-		23E05DD8204532660071DE0C /* ChoosePhotoCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23E05DB4204532650071DE0C /* ChoosePhotoCollection.swift */; };
-		23E05DD9204532660071DE0C /* CreatePhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23E05DB5204532650071DE0C /* CreatePhotoViewController.swift */; };
-		23E05DDA204532660071DE0C /* QueryPhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23E05DB6204532650071DE0C /* QueryPhotoViewController.swift */; };
-		23E05DDB204532660071DE0C /* UpdateorDeletePhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23E05DB7204532650071DE0C /* UpdateorDeletePhotoViewController.swift */; };
-		23E05DDC204532660071DE0C /* CreatePlaceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23E05DB9204532650071DE0C /* CreatePlaceViewController.swift */; };
-		23E05DDD204532660071DE0C /* QueryPlaceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23E05DBA204532650071DE0C /* QueryPlaceViewController.swift */; };
-		23E05DDE204532660071DE0C /* SearchPlaceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23E05DBB204532650071DE0C /* SearchPlaceViewController.swift */; };
-		23E05DDF204532660071DE0C /* UpdateorDeletePlaceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23E05DBC204532650071DE0C /* UpdateorDeletePlaceViewController.swift */; };
-		23E05DE0204532660071DE0C /* PushNotifyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23E05DBE204532650071DE0C /* PushNotifyViewController.swift */; };
-		23E05DE1204532660071DE0C /* PushSubscriptionQueryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23E05DBF204532650071DE0C /* PushSubscriptionQueryViewController.swift */; };
-		23E05DE2204532660071DE0C /* PushSubscriptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23E05DC0204532650071DE0C /* PushSubscriptionViewController.swift */; };
-		23E05DE3204532660071DE0C /* PushUnsubscribeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23E05DC1204532650071DE0C /* PushUnsubscribeViewController.swift */; };
-		23E05DE4204532660071DE0C /* QueryChannelsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23E05DC2204532650071DE0C /* QueryChannelsViewController.swift */; };
-		23E05DE5204532660071DE0C /* QueryListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23E05DC3204532650071DE0C /* QueryListViewController.swift */; };
-		23E05DE6204532660071DE0C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23E05DC4204532650071DE0C /* ViewController.swift */; };
 		23E05F2E2045371F0071DE0C /* AlamofireImplementations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23E05EBD2045371F0071DE0C /* AlamofireImplementations.swift */; };
 		23E05F2F2045371F0071DE0C /* APIHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23E05EBE2045371F0071DE0C /* APIHelper.swift */; };
 		23E05F302045371F0071DE0C /* ACLsAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23E05EC02045371F0071DE0C /* ACLsAPI.swift */; };
@@ -171,40 +137,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		23E05D9B204532650071DE0C /* ACLListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ACLListViewController.swift; sourceTree = "<group>"; };
-		23E05D9C204532650071DE0C /* APIListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIListViewController.swift; sourceTree = "<group>"; };
-		23E05D9E204532650071DE0C /* DisplayGroupChatsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DisplayGroupChatsViewController.swift; sourceTree = "<group>"; };
-		23E05D9F204532650071DE0C /* ListOfUsersViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListOfUsersViewController.swift; sourceTree = "<group>"; };
-		23E05DA0204532650071DE0C /* ShowChatsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShowChatsViewController.swift; sourceTree = "<group>"; };
-		23E05DA2204532650071DE0C /* CreateCheckinsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateCheckinsViewController.swift; sourceTree = "<group>"; };
-		23E05DA3204532650071DE0C /* QueryCheckinsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QueryCheckinsViewController.swift; sourceTree = "<group>"; };
-		23E05DA4204532650071DE0C /* ShowCheckinsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShowCheckinsViewController.swift; sourceTree = "<group>"; };
-		23E05DA5204532650071DE0C /* CheckinsViewControllers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CheckinsViewControllers.swift; sourceTree = "<group>"; };
-		23E05DA6204532650071DE0C /* CreateOrUpdateACLViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateOrUpdateACLViewController.swift; sourceTree = "<group>"; };
-		23E05DA7204532650071DE0C /* CreateUserViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateUserViewController.swift; sourceTree = "<group>"; };
-		23E05DA9204532650071DE0C /* CreateCustomObjViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateCustomObjViewController.swift; sourceTree = "<group>"; };
-		23E05DAA204532650071DE0C /* QueryCustomObjViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QueryCustomObjViewController.swift; sourceTree = "<group>"; };
-		23E05DAB204532650071DE0C /* UpdateCustomObjViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UpdateCustomObjViewController.swift; sourceTree = "<group>"; };
-		23E05DAD204532650071DE0C /* CreateGeoFenceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateGeoFenceViewController.swift; sourceTree = "<group>"; };
-		23E05DAE204532650071DE0C /* QueryGeoFencViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QueryGeoFencViewController.swift; sourceTree = "<group>"; };
-		23E05DB0204532650071DE0C /* CreatePhotoClctnViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreatePhotoClctnViewController.swift; sourceTree = "<group>"; };
-		23E05DB1204532650071DE0C /* PhotoClctnOptionsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoClctnOptionsViewController.swift; sourceTree = "<group>"; };
-		23E05DB2204532650071DE0C /* ShowPhotoClctnViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShowPhotoClctnViewController.swift; sourceTree = "<group>"; };
-		23E05DB4204532650071DE0C /* ChoosePhotoCollection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChoosePhotoCollection.swift; sourceTree = "<group>"; };
-		23E05DB5204532650071DE0C /* CreatePhotoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreatePhotoViewController.swift; sourceTree = "<group>"; };
-		23E05DB6204532650071DE0C /* QueryPhotoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QueryPhotoViewController.swift; sourceTree = "<group>"; };
-		23E05DB7204532650071DE0C /* UpdateorDeletePhotoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UpdateorDeletePhotoViewController.swift; sourceTree = "<group>"; };
-		23E05DB9204532650071DE0C /* CreatePlaceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreatePlaceViewController.swift; sourceTree = "<group>"; };
-		23E05DBA204532650071DE0C /* QueryPlaceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QueryPlaceViewController.swift; sourceTree = "<group>"; };
-		23E05DBB204532650071DE0C /* SearchPlaceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchPlaceViewController.swift; sourceTree = "<group>"; };
-		23E05DBC204532650071DE0C /* UpdateorDeletePlaceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UpdateorDeletePlaceViewController.swift; sourceTree = "<group>"; };
-		23E05DBE204532650071DE0C /* PushNotifyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PushNotifyViewController.swift; sourceTree = "<group>"; };
-		23E05DBF204532650071DE0C /* PushSubscriptionQueryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PushSubscriptionQueryViewController.swift; sourceTree = "<group>"; };
-		23E05DC0204532650071DE0C /* PushSubscriptionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PushSubscriptionViewController.swift; sourceTree = "<group>"; };
-		23E05DC1204532650071DE0C /* PushUnsubscribeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PushUnsubscribeViewController.swift; sourceTree = "<group>"; };
-		23E05DC2204532650071DE0C /* QueryChannelsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QueryChannelsViewController.swift; sourceTree = "<group>"; };
-		23E05DC3204532650071DE0C /* QueryListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QueryListViewController.swift; sourceTree = "<group>"; };
-		23E05DC4204532650071DE0C /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		23E05EBD2045371F0071DE0C /* AlamofireImplementations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlamofireImplementations.swift; sourceTree = "<group>"; };
 		23E05EBE2045371F0071DE0C /* APIHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIHelper.swift; sourceTree = "<group>"; };
 		23E05EC02045371F0071DE0C /* ACLsAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ACLsAPI.swift; sourceTree = "<group>"; };
@@ -348,111 +280,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		23E05D9A204532650071DE0C /* Controllers */ = {
-			isa = PBXGroup;
-			children = (
-				23E05D9B204532650071DE0C /* ACLListViewController.swift */,
-				23E05D9C204532650071DE0C /* APIListViewController.swift */,
-				23E05D9D204532650071DE0C /* Chats */,
-				23E05DA1204532650071DE0C /* Checkins */,
-				23E05DA5204532650071DE0C /* CheckinsViewControllers.swift */,
-				23E05DA6204532650071DE0C /* CreateOrUpdateACLViewController.swift */,
-				23E05DA7204532650071DE0C /* CreateUserViewController.swift */,
-				23E05DA8204532650071DE0C /* CustomObject */,
-				23E05DAC204532650071DE0C /* GeoFence */,
-				23E05DAF204532650071DE0C /* Photo Collections */,
-				23E05DB3204532650071DE0C /* Photos */,
-				23E05DB8204532650071DE0C /* Places */,
-				23E05DBD204532650071DE0C /* Push Notifications */,
-				23E05DC3204532650071DE0C /* QueryListViewController.swift */,
-				23E05DC4204532650071DE0C /* ViewController.swift */,
-			);
-			path = Controllers;
-			sourceTree = "<group>";
-		};
-		23E05D9D204532650071DE0C /* Chats */ = {
-			isa = PBXGroup;
-			children = (
-				23E05D9E204532650071DE0C /* DisplayGroupChatsViewController.swift */,
-				23E05D9F204532650071DE0C /* ListOfUsersViewController.swift */,
-				23E05DA0204532650071DE0C /* ShowChatsViewController.swift */,
-			);
-			path = Chats;
-			sourceTree = "<group>";
-		};
-		23E05DA1204532650071DE0C /* Checkins */ = {
-			isa = PBXGroup;
-			children = (
-				23E05DA2204532650071DE0C /* CreateCheckinsViewController.swift */,
-				23E05DA3204532650071DE0C /* QueryCheckinsViewController.swift */,
-				23E05DA4204532650071DE0C /* ShowCheckinsViewController.swift */,
-			);
-			path = Checkins;
-			sourceTree = "<group>";
-		};
-		23E05DA8204532650071DE0C /* CustomObject */ = {
-			isa = PBXGroup;
-			children = (
-				23E05DA9204532650071DE0C /* CreateCustomObjViewController.swift */,
-				23E05DAA204532650071DE0C /* QueryCustomObjViewController.swift */,
-				23E05DAB204532650071DE0C /* UpdateCustomObjViewController.swift */,
-			);
-			path = CustomObject;
-			sourceTree = "<group>";
-		};
-		23E05DAC204532650071DE0C /* GeoFence */ = {
-			isa = PBXGroup;
-			children = (
-				23E05DAD204532650071DE0C /* CreateGeoFenceViewController.swift */,
-				23E05DAE204532650071DE0C /* QueryGeoFencViewController.swift */,
-			);
-			path = GeoFence;
-			sourceTree = "<group>";
-		};
-		23E05DAF204532650071DE0C /* Photo Collections */ = {
-			isa = PBXGroup;
-			children = (
-				23E05DB0204532650071DE0C /* CreatePhotoClctnViewController.swift */,
-				23E05DB1204532650071DE0C /* PhotoClctnOptionsViewController.swift */,
-				23E05DB2204532650071DE0C /* ShowPhotoClctnViewController.swift */,
-			);
-			path = "Photo Collections";
-			sourceTree = "<group>";
-		};
-		23E05DB3204532650071DE0C /* Photos */ = {
-			isa = PBXGroup;
-			children = (
-				23E05DB4204532650071DE0C /* ChoosePhotoCollection.swift */,
-				23E05DB5204532650071DE0C /* CreatePhotoViewController.swift */,
-				23E05DB6204532650071DE0C /* QueryPhotoViewController.swift */,
-				23E05DB7204532650071DE0C /* UpdateorDeletePhotoViewController.swift */,
-			);
-			path = Photos;
-			sourceTree = "<group>";
-		};
-		23E05DB8204532650071DE0C /* Places */ = {
-			isa = PBXGroup;
-			children = (
-				23E05DB9204532650071DE0C /* CreatePlaceViewController.swift */,
-				23E05DBA204532650071DE0C /* QueryPlaceViewController.swift */,
-				23E05DBB204532650071DE0C /* SearchPlaceViewController.swift */,
-				23E05DBC204532650071DE0C /* UpdateorDeletePlaceViewController.swift */,
-			);
-			path = Places;
-			sourceTree = "<group>";
-		};
-		23E05DBD204532650071DE0C /* Push Notifications */ = {
-			isa = PBXGroup;
-			children = (
-				23E05DBE204532650071DE0C /* PushNotifyViewController.swift */,
-				23E05DBF204532650071DE0C /* PushSubscriptionQueryViewController.swift */,
-				23E05DC0204532650071DE0C /* PushSubscriptionViewController.swift */,
-				23E05DC1204532650071DE0C /* PushUnsubscribeViewController.swift */,
-				23E05DC2204532650071DE0C /* QueryChannelsViewController.swift */,
-			);
-			path = "Push Notifications";
-			sourceTree = "<group>";
-		};
 		23E05EBC2045371F0071DE0C /* mbass */ = {
 			isa = PBXGroup;
 			children = (
@@ -707,7 +534,6 @@
 			isa = PBXGroup;
 			children = (
 				23E05EBC2045371F0071DE0C /* mbass */,
-				23E05D9A204532650071DE0C /* Controllers */,
 				7B474D1B1F6A5093005F044A /* Source */,
 				7B5102061F690E6400A7BDF9 /* AppDelegate.swift */,
 				7B51020A1F690E6400A7BDF9 /* Main.storyboard */,
@@ -874,10 +700,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				23E05DC7204532660071DE0C /* DisplayGroupChatsViewController.swift in Sources */,
-				23E05DE3204532660071DE0C /* PushUnsubscribeViewController.swift in Sources */,
-				23E05DCF204532660071DE0C /* CreateUserViewController.swift in Sources */,
-				23E05DD5204532660071DE0C /* CreatePhotoClctnViewController.swift in Sources */,
 				23E05F802045371F0071DE0C /* AXNetworkReachabilityManager.swift in Sources */,
 				23E05F352045371F0071DE0C /* CustomObjectsAPI.swift in Sources */,
 				23E05F3B2045371F0071DE0C /* GeoFencesAPI.swift in Sources */,
@@ -887,14 +709,12 @@
 				23E05F3E2045371F0071DE0C /* LogsAPI.swift in Sources */,
 				23E05F4C2045371F0071DE0C /* APIs.swift in Sources */,
 				23E05F5B2045371F0071DE0C /* CreateCheckinsViewController.swift in Sources */,
-				23E05DD3204532660071DE0C /* CreateGeoFenceViewController.swift in Sources */,
 				23E05F302045371F0071DE0C /* ACLsAPI.swift in Sources */,
 				23E05F8A2045371F0071DE0C /* AXTimeline.swift in Sources */,
 				7B51ED221F7279C500A26437 /* README.md in Sources */,
 				23E05F462045371F0071DE0C /* PushSchedulesAPI.swift in Sources */,
 				23E05F592045371F0071DE0C /* ListOfUsersViewController.swift in Sources */,
 				23E05F332045371F0071DE0C /* ChatsAPI.swift in Sources */,
-				23E05DC9204532660071DE0C /* ShowChatsViewController.swift in Sources */,
 				23E05F4D2045371F0071DE0C /* ApiKeyAuth.swift in Sources */,
 				23E05F5E2045371F0071DE0C /* CheckinsViewControllers.swift in Sources */,
 				23E05F862045371F0071DE0C /* AXServerTrustPolicy.swift in Sources */,
@@ -905,7 +725,6 @@
 				23E05F7A2045371F0071DE0C /* SuccessResponse.swift in Sources */,
 				23E05F792045371F0071DE0C /* ErrorResponse_.swift in Sources */,
 				23E05F8D2045371F0071DE0C /* Notifications.swift in Sources */,
-				23E05DCB204532660071DE0C /* QueryCheckinsViewController.swift in Sources */,
 				23E05F3A2045371F0071DE0C /* FriendsAPI.swift in Sources */,
 				23E05F392045371F0071DE0C /* FilesAPI.swift in Sources */,
 				23E05F5C2045371F0071DE0C /* QueryCheckinsViewController.swift in Sources */,
@@ -913,13 +732,10 @@
 				23E05F542045371F0071DE0C /* OAuthImplicit.swift in Sources */,
 				23E05F6B2045371F0071DE0C /* QueryPhotoViewController.swift in Sources */,
 				23E05F572045371F0071DE0C /* APIListViewController.swift in Sources */,
-				23E05DDA204532660071DE0C /* QueryPhotoViewController.swift in Sources */,
-				23E05DD4204532660071DE0C /* QueryGeoFencViewController.swift in Sources */,
 				23E05F532045371F0071DE0C /* OAuthExplicit.swift in Sources */,
 				23E05F632045371F0071DE0C /* UpdateCustomObjViewController.swift in Sources */,
 				7B474D201F6A5093005F044A /* ACHUD+Animation.swift in Sources */,
 				23E05F8F2045371F0071DE0C /* Logger.swift in Sources */,
-				23E05DCD204532660071DE0C /* CheckinsViewControllers.swift in Sources */,
 				23E05F692045371F0071DE0C /* ChoosePhotoCollection.swift in Sources */,
 				23E05F742045371F0071DE0C /* PushUnsubscribeViewController.swift in Sources */,
 				23E05F822045371F0071DE0C /* AXRequest.swift in Sources */,
@@ -930,26 +746,18 @@
 				23E05F712045371F0071DE0C /* PushNotifyViewController.swift in Sources */,
 				23E05F872045371F0071DE0C /* AXSessionDelegate.swift in Sources */,
 				23E05F882045371F0071DE0C /* AXSessionManager.swift in Sources */,
-				23E05DDC204532660071DE0C /* CreatePlaceViewController.swift in Sources */,
-				23E05DDD204532660071DE0C /* QueryPlaceViewController.swift in Sources */,
 				23E05F612045371F0071DE0C /* CreateCustomObjViewController.swift in Sources */,
 				23E05F732045371F0071DE0C /* PushSubscriptionViewController.swift in Sources */,
 				23E05F312045371F0071DE0C /* AdminAPI.swift in Sources */,
-				23E05DE4204532660071DE0C /* QueryChannelsViewController.swift in Sources */,
 				23E05F5F2045371F0071DE0C /* CreateOrUpdateACLViewController.swift in Sources */,
 				23E05F6D2045371F0071DE0C /* CreatePlaceViewController.swift in Sources */,
-				23E05DDE204532660071DE0C /* SearchPlaceViewController.swift in Sources */,
 				23E05F8E2045371F0071DE0C /* AuthBrowserController.swift in Sources */,
 				23E05F842045371F0071DE0C /* AXResponseSerialization.swift in Sources */,
 				23E05F602045371F0071DE0C /* CreateUserViewController.swift in Sources */,
 				23E05F682045371F0071DE0C /* ShowPhotoClctnViewController.swift in Sources */,
-				23E05DD2204532660071DE0C /* UpdateCustomObjViewController.swift in Sources */,
-				23E05DD8204532660071DE0C /* ChoosePhotoCollection.swift in Sources */,
 				23E05F832045371F0071DE0C /* AXResponse.swift in Sources */,
 				23E05F5A2045371F0071DE0C /* ShowChatsViewController.swift in Sources */,
 				23E05F442045371F0071DE0C /* PostsAPI.swift in Sources */,
-				23E05DD1204532660071DE0C /* QueryCustomObjViewController.swift in Sources */,
-				23E05DE6204532660071DE0C /* ViewController.swift in Sources */,
 				23E05F652045371F0071DE0C /* QueryGeoFencViewController.swift in Sources */,
 				23E05F582045371F0071DE0C /* DisplayGroupChatsViewController.swift in Sources */,
 				23E05F4A2045371F0071DE0C /* SystemAPI.swift in Sources */,
@@ -957,15 +765,12 @@
 				23E05F402045371F0071DE0C /* OrgAPI.swift in Sources */,
 				23E05F8C2045371F0071DE0C /* DispatchQueue+Alamofire.swift in Sources */,
 				23E05F892045371F0071DE0C /* AXTaskDelegate.swift in Sources */,
-				23E05DCC204532660071DE0C /* ShowCheckinsViewController.swift in Sources */,
 				23E05F7F2045371F0071DE0C /* AXMultipartFormData.swift in Sources */,
 				23E05F7D2045371F0071DE0C /* AFError.swift in Sources */,
-				23E05DE0204532660071DE0C /* PushNotifyViewController.swift in Sources */,
 				23E05F7B2045371F0071DE0C /* UserModel.swift in Sources */,
 				23E05F452045371F0071DE0C /* PushNotificationsAPI.swift in Sources */,
 				23E05F622045371F0071DE0C /* QueryCustomObjViewController.swift in Sources */,
 				23E05F552045371F0071DE0C /* OAuthPassword.swift in Sources */,
-				23E05DD9204532660071DE0C /* CreatePhotoViewController.swift in Sources */,
 				23E05F2F2045371F0071DE0C /* APIHelper.swift in Sources */,
 				23E05F372045371F0071DE0C /* EmailTemplateAPI.swift in Sources */,
 				23E05F702045371F0071DE0C /* UpdateorDeletePlaceViewController.swift in Sources */,
@@ -976,41 +781,28 @@
 				7B5102071F690E6400A7BDF9 /* AppDelegate.swift in Sources */,
 				23E05F362045371F0071DE0C /* EmailsAPI.swift in Sources */,
 				23E05F342045371F0071DE0C /* CheckinsAPI.swift in Sources */,
-				23E05DC8204532660071DE0C /* ListOfUsersViewController.swift in Sources */,
 				23E05F3F2045371F0071DE0C /* MessagesAPI.swift in Sources */,
-				23E05DC6204532660071DE0C /* APIListViewController.swift in Sources */,
-				23E05DD0204532660071DE0C /* CreateCustomObjViewController.swift in Sources */,
 				23E05F5D2045371F0071DE0C /* ShowCheckinsViewController.swift in Sources */,
 				23E05F902045371F0071DE0C /* Utils.swift in Sources */,
-				23E05DC5204532660071DE0C /* ACLListViewController.swift in Sources */,
 				23E05F7E2045371F0071DE0C /* AXAlamofire.swift in Sources */,
 				23E05F852045371F0071DE0C /* AXResult.swift in Sources */,
 				23E05F3C2045371F0071DE0C /* KeyValuesAPI.swift in Sources */,
-				23E05DD6204532660071DE0C /* PhotoClctnOptionsViewController.swift in Sources */,
 				23E05F6E2045371F0071DE0C /* QueryPlaceViewController.swift in Sources */,
 				23E05F322045371F0071DE0C /* AppsAPI.swift in Sources */,
 				23E05F812045371F0071DE0C /* AXParameterEncoding.swift in Sources */,
-				23E05DDB204532660071DE0C /* UpdateorDeletePhotoViewController.swift in Sources */,
 				23E05F422045371F0071DE0C /* PhotosAPI.swift in Sources */,
 				23E05F662045371F0071DE0C /* CreatePhotoClctnViewController.swift in Sources */,
-				23E05DE2204532660071DE0C /* PushSubscriptionViewController.swift in Sources */,
 				23E05F6F2045371F0071DE0C /* SearchPlaceViewController.swift in Sources */,
 				23E05F642045371F0071DE0C /* CreateGeoFenceViewController.swift in Sources */,
-				23E05DE5204532660071DE0C /* QueryListViewController.swift in Sources */,
 				23E05F2E2045371F0071DE0C /* AlamofireImplementations.swift in Sources */,
 				23E05F6C2045371F0071DE0C /* UpdateorDeletePhotoViewController.swift in Sources */,
-				23E05DCE204532660071DE0C /* CreateOrUpdateACLViewController.swift in Sources */,
-				23E05DD7204532660071DE0C /* ShowPhotoClctnViewController.swift in Sources */,
 				23E05F432045371F0071DE0C /* PlacesAPI.swift in Sources */,
 				23E05F482045371F0071DE0C /* SocialIntegrationsAPI.swift in Sources */,
-				23E05DE1204532660071DE0C /* PushSubscriptionQueryViewController.swift in Sources */,
 				23E05F512045371F0071DE0C /* OAuth.swift in Sources */,
 				23E05F762045371F0071DE0C /* QueryListViewController.swift in Sources */,
 				23E05F3D2045371F0071DE0C /* LikesAPI.swift in Sources */,
 				23E05F412045371F0071DE0C /* PhotoCollectionsAPI.swift in Sources */,
-				23E05DDF204532660071DE0C /* UpdateorDeletePlaceViewController.swift in Sources */,
 				23E05F752045371F0071DE0C /* QueryChannelsViewController.swift in Sources */,
-				23E05DCA204532660071DE0C /* CreateCheckinsViewController.swift in Sources */,
 				23E05F4E2045371F0071DE0C /* Authentication.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
