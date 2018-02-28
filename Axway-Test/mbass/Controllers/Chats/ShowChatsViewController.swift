@@ -75,23 +75,24 @@ class ShowChatsViewController: UIViewController,UITextFieldDelegate,UITableViewD
         ACProgressHUD.shared.showHUD()
         
         do {
-            var jsonStr:NSString = ""
-            if isFromCreateChat
-             {
-                let dict:NSMutableDictionary = [:]
-                dict.setValue(self.queryWhere, forKey: "$gt")
-                
-                let updateDict:NSMutableDictionary = [:]
-                updateDict.setValue(dict, forKey: "updated_at")
-                
-                let whereDict:NSMutableDictionary = [:]
-                whereDict.setValue(updateDict, forKey: "where")
-                let data = try JSONSerialization.data(withJSONObject: whereDict, options: .init(rawValue: 0)) as Data
-                
-                jsonStr = NSString(data: data, encoding: String.Encoding.utf8.rawValue)!
-             }
+            //If where clause is required then use this if optional leave it as nil
+//            var jsonStr:NSString = ""
+//            if isFromCreateChat
+//             {
+//                let dict:NSMutableDictionary = [:]
+//                dict.setValue(self.queryWhere, forKey: "$gt")
+//
+//                let updateDict:NSMutableDictionary = [:]
+//                updateDict.setValue(dict, forKey: "updated_at")
+//
+//                let whereDict:NSMutableDictionary = [:]
+//                whereDict.setValue(updateDict, forKey: "where")
+//                let data = try JSONSerialization.data(withJSONObject: whereDict, options: .init(rawValue: 0)) as Data
+//
+//                jsonStr = NSString(data: data, encoding: String.Encoding.utf8.rawValue)!
+//             }
         
-            ChatsAPI.chatsQuery(participateIds: self.participateIds, chatGroupId: (isFromCreateChat ? nil : self.chatGroupId), page: nil, perPage: nil, prettyJson: nil, limit: nil, skip: nil, where_: jsonStr as String?
+        ChatsAPI.chatsQuery(participateIds: self.participateIds, chatGroupId: (isFromCreateChat ? nil : self.chatGroupId), page: nil, perPage: nil, prettyJson: nil, limit: nil, skip: nil, where_: nil
         , order: nil, sel: nil, unsel: nil, responseJsonDepth: 3) { (response, error) in
             
             ACProgressHUD.shared.hideHUD()
@@ -150,7 +151,7 @@ class ShowChatsViewController: UIViewController,UITextFieldDelegate,UITableViewD
                     let dict = responseArr[0] as! NSDictionary
                     //self.chatGroupId = dict["id"] as! String
                     self.queryWhere = dict["updated_at"] as! String
-                    self.chatsQuery()
+                   
                     }
                     else
                     {
@@ -159,9 +160,8 @@ class ShowChatsViewController: UIViewController,UITextFieldDelegate,UITableViewD
                         Utils.showAlertWithOkButton(titleStr:"Fail" , messageStr: value!, viewController: self)
                         
                     }
-                } else {
-                     self.chatsQuery()
                 }
+                self.chatsQuery()
                
                 
             }
