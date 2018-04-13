@@ -15,8 +15,12 @@ class QueryCheckinsViewController: UIViewController,UITableViewDelegate,UITableV
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        queryCheckin()
+        
         // Do any additional setup after loading the view.
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        queryCheckin()
     }
 
     override func didReceiveMemoryWarning() {
@@ -50,26 +54,7 @@ class QueryCheckinsViewController: UIViewController,UITableViewDelegate,UITableV
         self.navigationController?.pushViewController(showCheckin, animated: true)
         
     }
-    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        return true
-    }
-    
-    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-        if (editingStyle == UITableViewCellEditingStyle.delete) {
-            // handle delete (by removing the data from your array and updating the tableview)
-            let checkinDict = self.checkinsArr[indexPath.row] as! NSDictionary
-            
-            let alert = UIAlertController(title: "Delete", message:"Are you sure you want to delete", preferredStyle: UIAlertControllerStyle.alert)
-            alert.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.cancel, handler:nil))
-            alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: { alert -> Void in
-                
-                self.deleteCheckin(checkinID: checkinDict["id"] as! String)
-            }))
-            self.present(alert, animated: true, completion: nil)
-            
-            
-        }
-    }
+
 
     //checkin related apis
     func queryCheckin(){
@@ -91,21 +76,6 @@ class QueryCheckinsViewController: UIViewController,UITableViewDelegate,UITableV
         }
     }
 
-    func deleteCheckin(checkinID:String)
-    {
-         ACProgressHUD.shared.showHUD()
-        CheckinsAPI.checkinsDelete(checkinId: checkinID) { (response, error) in
-            ACProgressHUD.shared.hideHUD()
-            if (error != nil) {
-                
-                Utils.showAlertWithOkButton(titleStr:"Error" , messageStr: (error?.localizedDescription)!, viewController: self)
-            }
-            else
-            {
-               self.queryCheckin()
-            }
-        }
-        
-    }
+   
     
 }

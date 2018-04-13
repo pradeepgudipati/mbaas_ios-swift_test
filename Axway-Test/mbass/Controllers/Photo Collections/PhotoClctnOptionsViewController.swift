@@ -26,17 +26,11 @@ class PhotoClctnOptionsViewController: UIViewController {
     
     @IBAction func showPhotos(_ sender: Any) {
         
-        let showPhotos = self.storyboard?.instantiateViewController(withIdentifier: "ShowPhotosInfoViewController") as! ShowPhotosInfoViewController
-        showPhotos.isShowPhotos = true
-        showPhotos.photoCollectionID = photoCollectionID
-        self.navigationController?.pushViewController(showPhotos, animated: true)
+        self.showPhotosApi()
         
     }
     @IBAction func showSubCollection(_ sender: Any) {
-        let showPhotos = self.storyboard?.instantiateViewController(withIdentifier: "ShowPhotosInfoViewController") as! ShowPhotosInfoViewController
-        showPhotos.isShowPhotos = false
-        showPhotos.photoCollectionID = photoCollectionID
-        self.navigationController?.pushViewController(showPhotos, animated: true)
+       self.showSubCollectionApi()
         
     }
     @IBAction func update(_ sender: Any) {
@@ -69,10 +63,57 @@ class PhotoClctnOptionsViewController: UIViewController {
             }
             else
             {
-                Utils.showAlertWithOkButton(titleStr:"Alert" , messageStr:"Deleted Successfully", viewController: self)
+                let value = response?.description
+                Utils.showAlertWithOkButton(titleStr:"Alert" , messageStr:value!, viewController: self)
+                
             }
         }
     }
     
+    
+    //Photos collection api
+    func showPhotosApi(){
+        
+        ACProgressHUD.shared.showHUD()
+        PhotoCollectionsAPI.photoCollectionsShowPhotos(collectionId: photoCollectionID) { (response, error) in
+            ACProgressHUD.shared.hideHUD()
+            
+            if (error != nil) {
+                
+                Utils.showAlertWithOkButton(titleStr:"Error" , messageStr: (error?.localizedDescription)!, viewController: self)
+                
+            }
+            else {
+                let value = response?.description
+                Utils.showAlertWithOkButton(titleStr:"Alert" , messageStr: value!, viewController: self)
+                
+                
+            }
+            
+        }
+        
+    }
+    
+    func showSubCollectionApi(){
+        
+        ACProgressHUD.shared.showHUD()
+        PhotoCollectionsAPI.photoCollectionsShowSubcollections(collectionId: photoCollectionID) { (response, error) in
+            ACProgressHUD.shared.hideHUD()
+            
+            if (error != nil) {
+                
+                Utils.showAlertWithOkButton(titleStr:"Error" , messageStr: (error?.localizedDescription)!, viewController: self)
+                
+            }
+            else {
+                let value = response?.description
+                Utils.showAlertWithOkButton(titleStr:"Alert" , messageStr: value!, viewController: self)
+                
+                
+            }
+            
+        }
+        
+    }
 
 }

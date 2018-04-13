@@ -15,7 +15,6 @@ class ShowChatsViewController: UIViewController,UITextFieldDelegate,UITableViewD
     var isFromCreateChat:Bool = false
     
     var chatsArr:NSArray = []
-    
     var chatGroupId:String = ""
     var participateIds:String = ""
     var chatId:String = ""
@@ -59,33 +58,41 @@ class ShowChatsViewController: UIViewController,UITextFieldDelegate,UITableViewD
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let chatDict = self.chatsArr[indexPath.row] as! NSDictionary
+        let chtId = chatDict["id"] as! String
+        let alert = UIAlertController(title: "Delete", message:"Are you sure you want to delete", preferredStyle: UIAlertControllerStyle.alert)
+        alert.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.cancel, handler:nil))
+        alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: { alert -> Void in
+            
+            self.deleteChat(chatId:chtId)
+        }))
+        self.present(alert, animated: true, completion: nil)
         
     }
-    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        return true
-    }
-    
-    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-        if (editingStyle == UITableViewCellEditingStyle.delete) {
-            // handle delete (by removing the data from your array and updating the tableview)
-            let chatDict = self.chatsArr[indexPath.row] as! NSDictionary
-            let chtId = chatDict["id"] as! String
-            let alert = UIAlertController(title: "Delete", message:"Are you sure you want to delete", preferredStyle: UIAlertControllerStyle.alert)
-            alert.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.cancel, handler:nil))
-            alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: { alert -> Void in
-                
-               self.deleteChat(chatId:chtId)
-            }))
-            self.present(alert, animated: true, completion: nil)
-            
-            
-        }
-    }
+
 
     func chatsQuery(){
         ACProgressHUD.shared.showHUD()
         
-        ChatsAPI.chatsQuery(participateIds: self.participateIds, chatGroupId: self.chatGroupId, page: nil, perPage: nil, prettyJson: nil, limit: nil, skip: nil, where_: nil
+        do {
+            //If where clause is required then use this if optional leave it as nil
+//            var jsonStr:NSString = ""
+//            if isFromCreateChat
+//             {
+//                let dict:NSMutableDictionary = [:]
+//                dict.setValue(self.queryWhere, forKey: "$gt")
+//
+//                let updateDict:NSMutableDictionary = [:]
+//                updateDict.setValue(dict, forKey: "updated_at")
+//
+//                let whereDict:NSMutableDictionary = [:]
+//                whereDict.setValue(updateDict, forKey: "where")
+//                let data = try JSONSerialization.data(withJSONObject: whereDict, options: .init(rawValue: 0)) as Data
+//
+//                jsonStr = NSString(data: data, encoding: String.Encoding.utf8.rawValue)!
+//             }
+        
+        ChatsAPI.chatsQuery(participateIds: self.participateIds, chatGroupId: (isFromCreateChat ? nil : self.chatGroupId), page: nil, perPage: nil, prettyJson: nil, limit: nil, skip: nil, where_: nil
         , order: nil, sel: nil, unsel: nil, responseJsonDepth: 3) { (response, error) in
             
             ACProgressHUD.shared.hideHUD()
@@ -116,6 +123,10 @@ class ShowChatsViewController: UIViewController,UITextFieldDelegate,UITableViewD
             }
             
         }
+        }
+        catch {
+            print("Error")
+        }
         
     }
     
@@ -133,12 +144,25 @@ class ShowChatsViewController: UIViewController,UITextFieldDelegate,UITableViewD
             {
                 if self.isFromCreateChat
                 {
+                    if response!["response"] != nil
+                    {
                     let responseDictionary = response?["response"] as! NSDictionary
                     let responseArr = responseDictionary["chats"] as! NSArray
                     let dict = responseArr[0] as! NSDictionary
-                    self.chatGroupId = dict["id"] as! String
+                    //self.chatGroupId = dict["id"] as! String
+                    self.queryWhere = dict["updated_at"] as! String
+                   
+                    }
+                    else
+                    {
+                        
+                        let value = response?.description
+                        Utils.showAlertWithOkButton(titleStr:"Fail" , messageStr: value!, viewController: self)
+                        
+                    }
                 }
                 self.chatsQuery()
+               
                 
             }
         }

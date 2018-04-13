@@ -34,7 +34,7 @@ class UpdateCustomObjViewController: UIViewController,UITableViewDelegate,UITabl
             (action : UIAlertAction!) -> Void in
             alertController.dismiss(animated: true, completion:nil)
         })
-        let removeAction = UIAlertAction(title: "Remove", style: UIAlertActionStyle.default, handler: {
+        let removeAction = UIAlertAction(title: "Delete", style: UIAlertActionStyle.default, handler: {
             alert -> Void in
             
             self.removeObj()

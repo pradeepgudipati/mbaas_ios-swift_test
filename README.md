@@ -9,7 +9,7 @@
 * Should have access to API Management Plus Environment This environment includes following components
   * API Manager/Gateway
   * API Portal
-     * MBaaS IOS SDK
+     * MBaaS IOS-SWIFT SDK Generator
   * API Builder (API Runtime Services)
   * Axway MBaaS
   * Axway Decison Insight (Optional)
@@ -25,7 +25,7 @@ Steps to Download MBaaS IOS SDK
 
 ## Assuming you have the Axway MBaaS IOS SDK. ##
 
-Pull this project to your Xcode project and just perform below modifications in the project files
+Pull this project to your Xcode project and make the below modifications in the project files
 
   1. Copy the Downloaded SDK folder to project
   2. Check mark - Copy items if needed, Check mark add to targets
@@ -36,3 +36,11 @@ This reference applications verifies the following Axway MBaaS Objects
   1. "Users"
   2. "Access Control Lists"
   3. "Chats"
+  4. "Push Notifications"
+  5. "Places"
+  6. "Geo Fences"
+  7. "Checkins"
+  8. "Photos"
+  9. "Photo Collections"
+  10. "Custom Objects"
+  
