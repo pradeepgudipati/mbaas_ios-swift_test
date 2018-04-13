@@ -23,8 +23,7 @@ class APIListViewController: UIViewController,UITableViewDataSource,UITableViewD
   var geoFencList : Bool = false
   var photoCollection : Bool = false
   var placeslist:Bool = false
-  var pushNotify:Bool = false
-  var photosList:Bool = false
+
   var chatsArr: NSArray = []
 
   
@@ -285,24 +284,6 @@ class APIListViewController: UIViewController,UITableViewDataSource,UITableViewD
             
         }
     }
-    else if photosList
-    {
-        switch indexPath.row{
-        case 0:
-            let aCreatePhotoViewController = self.storyboard?.instantiateViewController(withIdentifier: "CreatePhotoViewController") as! CreatePhotoViewController
-            self.navigationController?.pushViewController(aCreatePhotoViewController, animated: true)
-            break;
-            
-        case 1:
-            let aQueryPhotoViewController = self.storyboard?.instantiateViewController(withIdentifier: "QueryPhotoViewController") as! QueryPhotoViewController
-            self.navigationController?.pushViewController(aQueryPhotoViewController, animated: true)
-            break;
-            
-            
-        default:
-            break;
-        }
-    }
     else if placeslist
     {
         switch indexPath.row{
@@ -326,39 +307,6 @@ class APIListViewController: UIViewController,UITableViewDataSource,UITableViewD
             break;
         }
     }
-    else if pushNotify
-    {
-        switch indexPath.row{
-        case 0:
-            let aPushSubscription = self.storyboard?.instantiateViewController(withIdentifier: "PushSubscriptionViewController") as! PushSubscriptionViewController
-            self.navigationController?.pushViewController(aPushSubscription, animated: true)
-            break;
-            
-        case 1:
-            let aPushNotify = self.storyboard?.instantiateViewController(withIdentifier: "PushNotifyViewController") as! PushNotifyViewController
-            self.navigationController?.pushViewController(aPushNotify, animated: true)
-            break;
-            
-        case 2:
-            let aPushUnsubscribe = self.storyboard?.instantiateViewController(withIdentifier: "PushUnsubscribeViewController") as! PushUnsubscribeViewController
-            self.navigationController?.pushViewController(aPushUnsubscribe, animated: true)
-            break;
-        case 3:
-            let aPushsubscribeQuery = self.storyboard?.instantiateViewController(withIdentifier: "PushSubscriptionQueryViewController") as! PushSubscriptionQueryViewController
-            aPushsubscribeQuery.isPushQuery = true
-            
-            self.navigationController?.pushViewController(aPushsubscribeQuery, animated: true)
-            break;
-        case 4:
-            let aPushsubscribeQuery = self.storyboard?.instantiateViewController(withIdentifier: "PushSubscriptionQueryViewController") as! PushSubscriptionQueryViewController
-            aPushsubscribeQuery.isPushQuery = false
-            self.navigationController?.pushViewController(aPushsubscribeQuery, animated: true)
-            break;
-        default:
-            break;
-        }
-        
-    }
   }
   
 /*
@@ -379,7 +327,8 @@ class APIListViewController: UIViewController,UITableViewDataSource,UITableViewD
       }
       else {
         
-        if (response?["response"]) != nil{
+        if let val = response?["response"]{
+            print(val)
         let value = response?.description
         let responseDictionary = response?["response"] as! NSDictionary
         let responseArr = responseDictionary["users"] as! NSArray
@@ -393,8 +342,7 @@ class APIListViewController: UIViewController,UITableViewDataSource,UITableViewD
         }
         else
         {
-         let val = response?["response"]
-            Utils.showAlertWithOkButton(titleStr:"Alert" , messageStr: val! as! String, viewController: self)
+        Utils.showAlertWithOkButton(titleStr:"Alert" , messageStr: (error?.localizedDescription)!, viewController: self)
             
         }
         
@@ -479,16 +427,10 @@ class APIListViewController: UIViewController,UITableViewDataSource,UITableViewD
     // deleting user
     func deleteUser(emailStr: String) {
     
-        do{
     ACProgressHUD.shared.showHUD()
 
-        let fieldDict:[String:String] = ["Email":emailStr] //"{\"Email\":" + emailStr + "}"
-        
-        let data = try JSONSerialization.data(withJSONObject: fieldDict, options: .init(rawValue: 0)) as Data
-        
-        let fieldStr = NSString(data: data, encoding: String.Encoding.utf8.rawValue)
-        
-            UsersAPI.usersBatchDelete(where_: (fieldStr! as String)) { (response, error) in
+    let str = "{\"Email\":" + emailStr + "}"
+    UsersAPI.usersBatchDelete(where_: str) { (response, error) in
       
       ACProgressHUD.shared.hideHUD()
 
@@ -506,10 +448,6 @@ class APIListViewController: UIViewController,UITableViewDataSource,UITableViewD
       
       
     }
-        }
-        catch _{
-            print("error")
-        }
     
     
   }
@@ -589,8 +527,7 @@ class APIListViewController: UIViewController,UITableViewDataSource,UITableViewD
             }
             else {
                 
-                if let val = response?["response"]{
-                    print(val)
+                
                 let value = response?.description
                 
                 let alert = UIAlertController(title: "User logged out Successfully", message:value, preferredStyle: UIAlertControllerStyle.alert)
@@ -600,13 +537,6 @@ class APIListViewController: UIViewController,UITableViewDataSource,UITableViewD
                     userDefaults.set("", forKey: "userId")
                 }))
                 self.present(alert, animated: true, completion: nil)
-                }
-                else
-                {
-                    Utils.showAlertWithOkButton(titleStr:"Alert" , messageStr: (error?.localizedDescription)!, viewController: self)
-                    
-                }
-
                 
             }
             
@@ -660,19 +590,12 @@ class APIListViewController: UIViewController,UITableViewDataSource,UITableViewD
          Utils.showAlertWithOkButton(titleStr:"All Users" , messageStr: (error?.localizedDescription)!, viewController: self)
       }
       else {
-        if response!["response"] != nil{
         let responseDictionary = response?["response"] as! NSDictionary
         self.allUsersListArray = responseDictionary["users"] as! NSArray
           
           self.view.bringSubview(toFront: self.listView)
           self.listView.isHidden = false
           self.usersListtableView.reloadData()
-        }
-        else
-        {
-          let value = response?.description
-          Utils.showAlertWithOkButton(titleStr:"Alert" , messageStr: value!, viewController: self)
-        }
         
       }
     }
@@ -690,7 +613,7 @@ class APIListViewController: UIViewController,UITableViewDataSource,UITableViewD
                 Utils.showAlertWithOkButton(titleStr:"All Users" , messageStr: (error?.localizedDescription)!, viewController: self)
             }
             else{
-                
+                _ = response?.description
                 if response!["response"] != nil{
                     let responsDict = response?["response"] as! NSDictionary
                     self.chatsArr = responsDict["chat_groups"] as! NSArray
@@ -720,11 +643,7 @@ class APIListViewController: UIViewController,UITableViewDataSource,UITableViewD
                     }
                     }
                 }
-                else
-                {
-                    let val = response?["response"]
-                    Utils.showAlertWithOkButton(titleStr:"Alert" , messageStr: val! as! String, viewController: self)
-                }
+                
             }
         }
     }

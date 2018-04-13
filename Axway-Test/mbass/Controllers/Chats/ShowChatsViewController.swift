@@ -95,7 +95,8 @@ class ShowChatsViewController: UIViewController,UITextFieldDelegate,UITableViewD
             }
             else
             {
-               if response!["response"] != nil{
+                if let val = response?["response"]{
+                    print(val)
                 let responseDictionary = response?["response"] as! NSDictionary
                 self.chatsArr = responseDictionary["chats"] as! NSArray
                 if self.chatsArr.count > 0
@@ -132,17 +133,10 @@ class ShowChatsViewController: UIViewController,UITextFieldDelegate,UITableViewD
             {
                 if self.isFromCreateChat
                 {
-                    if response!["response"] != nil{
                     let responseDictionary = response?["response"] as! NSDictionary
                     let responseArr = responseDictionary["chats"] as! NSArray
                     let dict = responseArr[0] as! NSDictionary
                     self.chatGroupId = dict["id"] as! String
-                    }
-                    else
-                    {
-                        let value = response?.description
-                        Utils.showAlertWithOkButton(titleStr:"Alert" , messageStr: value!, viewController: self)
-                    }
                 }
                 self.chatsQuery()
                 
@@ -179,9 +173,5 @@ class ShowChatsViewController: UIViewController,UITextFieldDelegate,UITableViewD
        
         return true
     }
-    
-    
- 
-    
 
 }

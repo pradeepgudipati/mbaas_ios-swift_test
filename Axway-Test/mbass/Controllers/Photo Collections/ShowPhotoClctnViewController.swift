@@ -105,6 +105,8 @@ class ShowPhotoClctnViewController: UIViewController,UITableViewDelegate,UITable
             let userDefaults = UserDefaults.standard
             userDefaults.set(photoDict["id"] as! String, forKey: "collectionId")
             userDefaults.set(photoDict["name"] as! String, forKey: "collectionName")
+            self.navigationController?.popViewController(animated: true)
+            
         }
         else
         {

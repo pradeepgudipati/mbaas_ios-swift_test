@@ -35,6 +35,7 @@ class CreatePhotoClctnViewController: UIViewController {
             parentClctnId  = userDefaults.string(forKey: "collectionId")!
             collectionName = userDefaults.string(forKey: "collectionName")!
             nameTxt.text = collectionName
+            userDefaults.removeObject(forKey: "collectionId")
         }
         if isUpdate
         {
