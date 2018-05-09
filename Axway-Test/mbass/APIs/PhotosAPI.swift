@@ -74,7 +74,7 @@ single line (`false`). Default is `false`.
 	  - parameter completion: completion handler to receive the data and the error objects
 	*/
 
-	public class func photosCreate(photo: URL , title: String? = nil , collectionName: String? = nil , collectionId: String? = nil , tags: String? = nil , customFields: String? = nil , aclName: String? = nil , aclId: String? = nil , suId: String? = nil , photoSizes: String? = nil , photoSyncSizes: String? = nil , prettyJson: Bool? = nil ,  completion: @escaping ((_ data: [String:Any]?, _ error: Error?) -> Void)) {
+	public class func photosCreate(photo: NSURL , title: String? = nil , collectionName: String? = nil , collectionId: String? = nil , tags: String? = nil , customFields: String? = nil , aclName: String? = nil , aclId: String? = nil , suId: String? = nil , photoSizes: String? = nil , photoSyncSizes: String? = nil , prettyJson: Bool? = nil ,  completion: @escaping ((_ data: [String:Any]?, _ error: Error?) -> Void)) {
 		photosCreateRequestBuilder(photo: photo, title: title, collectionName: collectionName, collectionId: collectionId, tags: tags, customFields: customFields, aclName: aclName, aclId: aclId, suId: suId, photoSizes: photoSizes, photoSyncSizes: photoSyncSizes, prettyJson: prettyJson).execute { (response, error) -> Void in
 			completion(response?.body, error)
 		}
@@ -154,9 +154,9 @@ single line (`false`). Default is `false`.
 	  - returns: RequestBuilder<[String:Any]>
 	*/
 
-	/*public class func photosCreateRequestBuilder(photo: NSData,title: String? = nil,collectionName: String? = nil,collectionId: String? = nil,tags: String? = nil,customFields: String? = nil,aclName: String? = nil,aclId: String? = nil,suId: String? = nil,photoSizes: String? = nil,photoSyncSizes: String? = nil,prettyJson: Bool? = nil) -> RequestBuilder<[String:Any]> {
+	public class func photosCreateRequestBuilder(photo: NSURL,title: String? = nil,collectionName: String? = nil,collectionId: String? = nil,tags: String? = nil,customFields: String? = nil,aclName: String? = nil,aclId: String? = nil,suId: String? = nil,photoSizes: String? = nil,photoSyncSizes: String? = nil,prettyJson: Bool? = nil) -> RequestBuilder<[String:Any]> { 
 		let path = "/photos/create.json"
-		let URLString = MbassAPI.sharedInstance.basePath + path
+		let URLString = MbaasPreprodAPI.sharedInstance.basePath + path
 		let nillableParameters: [String:AnyObject?] = [
 		 	"photo": photo as AnyObject , 
 		 	"title": title as AnyObject , 
@@ -172,40 +172,14 @@ single line (`false`). Default is `false`.
 		 	"pretty_json": prettyJson as AnyObject ]
 		let parameters = APIHelper.rejectNil(source: nillableParameters  as [String : AnyObject?])
 		let convertedParameters = APIHelper.convertBoolToString(source: parameters)
-		let requestBuilder: RequestBuilder<[String:Any]>.Type = MbassAPI.sharedInstance.requestBuilderFactory.getBuilder()
+		let requestBuilder: RequestBuilder<[String:Any]>.Type = MbaasPreprodAPI.sharedInstance.requestBuilderFactory.getBuilder()
 
-		let customHeadersDict : [String: String] = [:]
+		var customHeadersDict : [String: String] = [:]
 
 
 
 		return requestBuilder.init(method: "POST", URLString: URLString, parameters: convertedParameters, customHeader: customHeadersDict,isBody:  false, authNames: ["api_key"])
-	}*/
-  public class func photosCreateRequestBuilder(photo:URL,title: String? = nil,collectionName: String? = nil,collectionId: String? = nil,tags: String? = nil,customFields: String? = nil,aclName: String? = nil,aclId: String? = nil,suId: String? = nil,photoSizes: String? = nil,photoSyncSizes: String? = nil,prettyJson: Bool? = nil) -> RequestBuilder<[String:Any]> {
-    let path = "/photos/create.json"
-    let URLString = MbassAPI.sharedInstance.basePath + path
-    let nillableParameters: [String:AnyObject?] = [
-      "photo": photo as AnyObject ,
-      "title": title as AnyObject ,
-      "collection_name": collectionName as AnyObject ,
-      "collection_id": collectionId as AnyObject ,
-      "tags": tags as AnyObject ,
-      "custom_fields": customFields as AnyObject ,
-      "acl_name": aclName as AnyObject ,
-      "acl_id": aclId as AnyObject ,
-      "su_id": suId as AnyObject ,
-      "photo_sizes": photoSizes as AnyObject ,
-      "photo_sync_sizes[]": photoSyncSizes as AnyObject ,
-      "pretty_json": prettyJson as AnyObject ]
-    let parameters = APIHelper.rejectNil(source: nillableParameters  as [String : AnyObject?])
-    let convertedParameters = APIHelper.convertBoolToString(source: parameters)
-    let requestBuilder: RequestBuilder<[String:Any]>.Type = MbassAPI.sharedInstance.requestBuilderFactory.getBuilder()
-    
-    let customHeadersDict : [String: String] = [:]
-    
-    
-    
-    return requestBuilder.init(method: "POST", URLString: URLString, parameters: convertedParameters, customHeader: customHeadersDict,isBody:  false, authNames: ["api_key"])
-  }
+	}
 	/**
 	  Show Photo Info
       Returns the information for the identified photo.
@@ -273,9 +247,9 @@ single line (`false`). Default is `false`.
 	  - returns: RequestBuilder<[String:Any]>
 	*/
 
-	public class func photosShowRequestBuilder(photoId: String,responseJsonDepth: Int32? = nil,showUserLike: Bool? = nil,prettyJson: Bool? = nil) -> RequestBuilder<[String:Any]> {
+	public class func photosShowRequestBuilder(photoId: String,responseJsonDepth: Int32? = nil,showUserLike: Bool? = nil,prettyJson: Bool? = nil) -> RequestBuilder<[String:Any]> { 
 		let path = "/photos/show.json"
-		let URLString = MbassAPI.sharedInstance.basePath + path
+		let URLString = MbaasPreprodAPI.sharedInstance.basePath + path
 		let nillableParameters: [String:AnyObject?] = [
 			"photo_id": photoId as AnyObject, 
 			"response_json_depth": responseJsonDepth as AnyObject, 
@@ -283,9 +257,9 @@ single line (`false`). Default is `false`.
 			"pretty_json": prettyJson as AnyObject]
 		let parameters = APIHelper.rejectNil(source: nillableParameters  as [String : AnyObject?])
 		let convertedParameters = APIHelper.convertBoolToString(source: parameters)
-		let requestBuilder: RequestBuilder<[String:Any]>.Type = MbassAPI.sharedInstance.requestBuilderFactory.getBuilder()
+		let requestBuilder: RequestBuilder<[String:Any]>.Type = MbaasPreprodAPI.sharedInstance.requestBuilderFactory.getBuilder()
 
-		let customHeadersDict : [String: String] = [:]
+		var customHeadersDict : [String: String] = [:]
 
 
 
@@ -466,7 +440,7 @@ single line (`false`). Default is `false`.
 
 	public class func photosUpdateRequestBuilder(photoId: String,photo: NSURL,title: String? = nil,collectionName: String? = nil,collectionId: String? = nil,tags: String? = nil,customFields: String? = nil,aclName: String? = nil,aclId: String? = nil,photoSizes: String? = nil,photoSyncSizes: String? = nil,suId: String? = nil,prettyJson: Bool? = nil) -> RequestBuilder<[String:Any]> { 
 		let path = "/photos/update.json"
-		let URLString = MbassAPI.sharedInstance.basePath + path
+		let URLString = MbaasPreprodAPI.sharedInstance.basePath + path
 		let nillableParameters: [String:AnyObject?] = [
 		 	"photo_id": photoId as AnyObject , 
 		 	"photo": photo as AnyObject , 
@@ -483,7 +457,7 @@ single line (`false`). Default is `false`.
 		 	"pretty_json": prettyJson as AnyObject ]
 		let parameters = APIHelper.rejectNil(source: nillableParameters  as [String : AnyObject?])
 		let convertedParameters = APIHelper.convertBoolToString(source: parameters)
-		let requestBuilder: RequestBuilder<[String:Any]>.Type = MbassAPI.sharedInstance.requestBuilderFactory.getBuilder()
+		let requestBuilder: RequestBuilder<[String:Any]>.Type = MbaasPreprodAPI.sharedInstance.requestBuilderFactory.getBuilder()
 
 		var customHeadersDict : [String: String] = [:]
 
@@ -549,14 +523,14 @@ single line (`false`). Default is `false`.
 
 	public class func photosDeleteRequestBuilder(photoId: String,suId: String? = nil,prettyJson: Bool? = nil) -> RequestBuilder<[String:Any]> { 
 		let path = "/photos/delete.json"
-		let URLString = MbassAPI.sharedInstance.basePath + path
+		let URLString = MbaasPreprodAPI.sharedInstance.basePath + path
 		let nillableParameters: [String:AnyObject?] = [
 		 	"photo_id": photoId as AnyObject , 
 		 	"su_id": suId as AnyObject , 
 		 	"pretty_json": prettyJson as AnyObject ]
 		let parameters = APIHelper.rejectNil(source: nillableParameters  as [String : AnyObject?])
 		let convertedParameters = APIHelper.convertBoolToString(source: parameters)
-		let requestBuilder: RequestBuilder<[String:Any]>.Type = MbassAPI.sharedInstance.requestBuilderFactory.getBuilder()
+		let requestBuilder: RequestBuilder<[String:Any]>.Type = MbaasPreprodAPI.sharedInstance.requestBuilderFactory.getBuilder()
 
 		var customHeadersDict : [String: String] = [:]
 
@@ -756,7 +730,7 @@ single line (`false`). Default is `false`.
 
 	public class func photosQueryRequestBuilder(page: Int32? = nil,perPage: Int32? = nil,limit: Int32? = nil,skip: Int32? = nil,where_: String? = nil,order: String? = nil,sel: String? = nil,showUserLike: Bool? = nil,unsel: String? = nil,responseJsonDepth: Int32? = nil,prettyJson: Bool? = nil) -> RequestBuilder<[String:Any]> { 
 		let path = "/photos/query.json"
-		let URLString = MbassAPI.sharedInstance.basePath + path
+		let URLString = MbaasPreprodAPI.sharedInstance.basePath + path
 		let nillableParameters: [String:AnyObject?] = [
 			"page": page as AnyObject, 
 			"per_page": perPage as AnyObject, 
@@ -771,7 +745,7 @@ single line (`false`). Default is `false`.
 			"pretty_json": prettyJson as AnyObject]
 		let parameters = APIHelper.rejectNil(source: nillableParameters  as [String : AnyObject?])
 		let convertedParameters = APIHelper.convertBoolToString(source: parameters)
-		let requestBuilder: RequestBuilder<[String:Any]>.Type = MbassAPI.sharedInstance.requestBuilderFactory.getBuilder()
+		let requestBuilder: RequestBuilder<[String:Any]>.Type = MbaasPreprodAPI.sharedInstance.requestBuilderFactory.getBuilder()
 
 		var customHeadersDict : [String: String] = [:]
 
@@ -847,12 +821,12 @@ If not specified, all Photos objects are deleted.
 
 	public class func photosBatchDeleteRequestBuilder(where_: String? = nil) -> RequestBuilder<[String:Any]> { 
 		let path = "/photos/batch_delete.json"
-		let URLString = MbassAPI.sharedInstance.basePath + path
+		let URLString = MbaasPreprodAPI.sharedInstance.basePath + path
 		let nillableParameters: [String:AnyObject?] = [
 		 	"where": where_ as AnyObject ]
 		let parameters = APIHelper.rejectNil(source: nillableParameters  as [String : AnyObject?])
 		let convertedParameters = APIHelper.convertBoolToString(source: parameters)
-		let requestBuilder: RequestBuilder<[String:Any]>.Type = MbassAPI.sharedInstance.requestBuilderFactory.getBuilder()
+		let requestBuilder: RequestBuilder<[String:Any]>.Type = MbaasPreprodAPI.sharedInstance.requestBuilderFactory.getBuilder()
 
 		var customHeadersDict : [String: String] = [:]
 
@@ -888,11 +862,11 @@ If not specified, all Photos objects are deleted.
 
 	public class func photosCountRequestBuilder() -> RequestBuilder<[String:Any]> { 
 		let path = "/photos/count.json"
-		let URLString = MbassAPI.sharedInstance.basePath + path
+		let URLString = MbaasPreprodAPI.sharedInstance.basePath + path
 		let nillableParameters: [String:AnyObject?] = [:]
 		let parameters = APIHelper.rejectNil(source: nillableParameters  as [String : AnyObject?])
 		let convertedParameters = APIHelper.convertBoolToString(source: parameters)
-		let requestBuilder: RequestBuilder<[String:Any]>.Type = MbassAPI.sharedInstance.requestBuilderFactory.getBuilder()
+		let requestBuilder: RequestBuilder<[String:Any]>.Type = MbaasPreprodAPI.sharedInstance.requestBuilderFactory.getBuilder()
 
 		var customHeadersDict : [String: String] = [:]
 

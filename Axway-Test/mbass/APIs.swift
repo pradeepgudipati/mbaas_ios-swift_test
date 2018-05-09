@@ -2,7 +2,7 @@
  
 import Foundation
 
-public class MbassAPI {
+public class MbaasPreprodAPI {
 
     public var basePath = "https://preprod-api.cloud.appctest.com/v1"
     public var doNotValidateCertificates = false
@@ -15,8 +15,8 @@ public class MbassAPI {
            "api_key": ApiKeyAuth(location: "query", paramName: "key")
     ]
     /// Lazy Loaded shared instance for the class
-    static let sharedInstance: MbassAPI = {
-          return MbassAPI() // Lazy loading of singleton object.
+    static let sharedInstance: MbaasPreprodAPI = {
+          return MbaasPreprodAPI() // Lazy loading of singleton object.
     }()
 
     /// Used to set the logging level of the logger.
@@ -242,10 +242,10 @@ public class RequestBuilder<T> {
         self.isBody = isBody
 
         addHeaders(aHeaders: customHeader)
-        addHeaders(aHeaders: MbassAPI.sharedInstance.customHeaders)
+        addHeaders(aHeaders: MbaasPreprodAPI.sharedInstance.customHeaders)
         // Add additional headers from the authName
         for singleAuthName in authNames {
-             if let authenticator = MbassAPI.sharedInstance.getAuthenticator(name: singleAuthName) {
+             if let authenticator = MbaasPreprodAPI.sharedInstance.getAuthenticator(name: singleAuthName) {
                 let authHeaders = authenticator.authHeaders
                 Logger.shared.verbose("init#Adding headers == ", authHeaders)
                 if (self.isAuthOnHeader(for: authenticator)) {
@@ -257,8 +257,8 @@ public class RequestBuilder<T> {
          }
         
         // If there is only one definition , add it by default.
-        if (authNames.count == 0 && MbassAPI.sharedInstance.authenticators.count == 1) {
-            if let singleAuthenticator =  MbassAPI.sharedInstance.authenticators.first?.value {
+        if (authNames.count == 0 && MbaasPreprodAPI.sharedInstance.authenticators.count == 1) {
+            if let singleAuthenticator =  MbaasPreprodAPI.sharedInstance.authenticators.first?.value {
                 if (self.isAuthOnHeader(for: singleAuthenticator)) {
                     addHeaders(aHeaders: singleAuthenticator.authHeaders)
                 } else {
@@ -303,7 +303,7 @@ public class RequestBuilder<T> {
     }
 
     public func addCredential() -> Self {
-        self.credential = MbassAPI.sharedInstance.credential
+        self.credential = MbaasPreprodAPI.sharedInstance.credential
         return self
     }
 }

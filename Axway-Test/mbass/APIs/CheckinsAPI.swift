@@ -75,12 +75,12 @@ If not specified, all Checkins objects are deleted.
 
 	public class func checkinsBatchDeleteRequestBuilder(where_: String? = nil) -> RequestBuilder<[String:Any]> { 
 		let path = "/checkins/batch_delete.json"
-		let URLString = MbassAPI.sharedInstance.basePath + path
+		let URLString = MbaasPreprodAPI.sharedInstance.basePath + path
 		let nillableParameters: [String:AnyObject?] = [
 		 	"where": where_ as AnyObject ]
 		let parameters = APIHelper.rejectNil(source: nillableParameters  as [String : AnyObject?])
 		let convertedParameters = APIHelper.convertBoolToString(source: parameters)
-		let requestBuilder: RequestBuilder<[String:Any]>.Type = MbassAPI.sharedInstance.requestBuilderFactory.getBuilder()
+		let requestBuilder: RequestBuilder<[String:Any]>.Type = MbaasPreprodAPI.sharedInstance.requestBuilderFactory.getBuilder()
 
 		var customHeadersDict : [String: String] = [:]
 
@@ -116,11 +116,11 @@ If not specified, all Checkins objects are deleted.
 
 	public class func checkinsCountRequestBuilder() -> RequestBuilder<[String:Any]> { 
 		let path = "/checkins/count.json"
-		let URLString = MbassAPI.sharedInstance.basePath + path
+		let URLString = MbaasPreprodAPI.sharedInstance.basePath + path
 		let nillableParameters: [String:AnyObject?] = [:]
 		let parameters = APIHelper.rejectNil(source: nillableParameters  as [String : AnyObject?])
 		let convertedParameters = APIHelper.convertBoolToString(source: parameters)
-		let requestBuilder: RequestBuilder<[String:Any]>.Type = MbassAPI.sharedInstance.requestBuilderFactory.getBuilder()
+		let requestBuilder: RequestBuilder<[String:Any]>.Type = MbaasPreprodAPI.sharedInstance.requestBuilderFactory.getBuilder()
 
 		var customHeadersDict : [String: String] = [:]
 
@@ -290,7 +290,7 @@ behalf of another user.
 
 	public class func checkinsCreateRequestBuilder(placeId: String? = nil,eventId: String? = nil,message: String? = nil,photo: NSURL? = nil,photoId: String? = nil,prettyJson: Bool? = nil,responseJsonDepth: Int32? = nil,tags: String? = nil,customFields: String? = nil,aclName: String? = nil,aclId: String? = nil,suId: String? = nil) -> RequestBuilder<[String:Any]> { 
 		let path = "/checkins/create.json"
-		let URLString = MbassAPI.sharedInstance.basePath + path
+		let URLString = MbaasPreprodAPI.sharedInstance.basePath + path
 		let nillableParameters: [String:AnyObject?] = [
 		 	"place_id": placeId as AnyObject , 
 		 	"event_id": eventId as AnyObject , 
@@ -306,7 +306,7 @@ behalf of another user.
 		 	"su_id": suId as AnyObject ]
 		let parameters = APIHelper.rejectNil(source: nillableParameters  as [String : AnyObject?])
 		let convertedParameters = APIHelper.convertBoolToString(source: parameters)
-		let requestBuilder: RequestBuilder<[String:Any]>.Type = MbassAPI.sharedInstance.requestBuilderFactory.getBuilder()
+		let requestBuilder: RequestBuilder<[String:Any]>.Type = MbaasPreprodAPI.sharedInstance.requestBuilderFactory.getBuilder()
 
 		var customHeadersDict : [String: String] = [:]
 
@@ -381,14 +381,14 @@ behalf of another user.
 
 	public class func checkinsDeleteRequestBuilder(checkinId: String,prettyJson: Bool? = nil,suId: String? = nil) -> RequestBuilder<[String:Any]> { 
 		let path = "/checkins/delete.json"
-		let URLString = MbassAPI.sharedInstance.basePath + path
+		let URLString = MbaasPreprodAPI.sharedInstance.basePath + path
 		let nillableParameters: [String:AnyObject?] = [
 		 	"checkin_id": checkinId as AnyObject , 
 		 	"pretty_json": prettyJson as AnyObject , 
 		 	"su_id": suId as AnyObject ]
 		let parameters = APIHelper.rejectNil(source: nillableParameters  as [String : AnyObject?])
 		let convertedParameters = APIHelper.convertBoolToString(source: parameters)
-		let requestBuilder: RequestBuilder<[String:Any]>.Type = MbassAPI.sharedInstance.requestBuilderFactory.getBuilder()
+		let requestBuilder: RequestBuilder<[String:Any]>.Type = MbaasPreprodAPI.sharedInstance.requestBuilderFactory.getBuilder()
 
 		var customHeadersDict : [String: String] = [:]
 
@@ -552,7 +552,7 @@ single line (`false`). Default is `false`.
 
 	public class func checkinsQueryRequestBuilder(page: Int32? = nil,perPage: Int32? = nil,limit: Int32? = nil,skip: Int32? = nil,where_: String? = nil,order: String? = nil,sel: String? = nil,showUserLike: Bool? = nil,unsel: String? = nil,responseJsonDepth: Int32? = nil,prettyJson: Bool? = nil) -> RequestBuilder<[String:Any]> { 
 		let path = "/checkins/query.json"
-		let URLString = MbassAPI.sharedInstance.basePath + path
+		let URLString = MbaasPreprodAPI.sharedInstance.basePath + path
 		let nillableParameters: [String:AnyObject?] = [
 			"page": page as AnyObject, 
 			"per_page": perPage as AnyObject, 
@@ -567,7 +567,7 @@ single line (`false`). Default is `false`.
 			"pretty_json": prettyJson as AnyObject]
 		let parameters = APIHelper.rejectNil(source: nillableParameters  as [String : AnyObject?])
 		let convertedParameters = APIHelper.convertBoolToString(source: parameters)
-		let requestBuilder: RequestBuilder<[String:Any]>.Type = MbassAPI.sharedInstance.requestBuilderFactory.getBuilder()
+		let requestBuilder: RequestBuilder<[String:Any]>.Type = MbaasPreprodAPI.sharedInstance.requestBuilderFactory.getBuilder()
 
 		var customHeadersDict : [String: String] = [:]
 
@@ -635,7 +635,7 @@ single line (`false`). Default is `false`.
 
 	public class func checkinsShowRequestBuilder(checkinId: String,responseJsonDepth: Int32? = nil,showUserLike: Bool? = nil,prettyJson: Bool? = nil) -> RequestBuilder<[String:Any]> { 
 		let path = "/checkins/show.json"
-		let URLString = MbassAPI.sharedInstance.basePath + path
+		let URLString = MbaasPreprodAPI.sharedInstance.basePath + path
 		let nillableParameters: [String:AnyObject?] = [
 			"checkin_id": checkinId as AnyObject, 
 			"response_json_depth": responseJsonDepth as AnyObject, 
@@ -643,7 +643,7 @@ single line (`false`). Default is `false`.
 			"pretty_json": prettyJson as AnyObject]
 		let parameters = APIHelper.rejectNil(source: nillableParameters  as [String : AnyObject?])
 		let convertedParameters = APIHelper.convertBoolToString(source: parameters)
-		let requestBuilder: RequestBuilder<[String:Any]>.Type = MbassAPI.sharedInstance.requestBuilderFactory.getBuilder()
+		let requestBuilder: RequestBuilder<[String:Any]>.Type = MbaasPreprodAPI.sharedInstance.requestBuilderFactory.getBuilder()
 
 		var customHeadersDict : [String: String] = [:]
 
@@ -779,7 +779,7 @@ behalf of another user.
 
 	public class func checkinsUpdateRequestBuilder(checkinId: String,placeId: String? = nil,eventId: String? = nil,message: String? = nil,photo: NSURL? = nil,photoId: String? = nil,prettyJson: Bool? = nil,tags: String? = nil,customFields: String? = nil,aclName: String? = nil,aclId: String? = nil,suId: String? = nil) -> RequestBuilder<[String:Any]> { 
 		let path = "/checkins/update.json"
-		let URLString = MbassAPI.sharedInstance.basePath + path
+		let URLString = MbaasPreprodAPI.sharedInstance.basePath + path
 		let nillableParameters: [String:AnyObject?] = [
 		 	"checkin_id": checkinId as AnyObject , 
 		 	"place_id": placeId as AnyObject , 
@@ -795,7 +795,7 @@ behalf of another user.
 		 	"su_id": suId as AnyObject ]
 		let parameters = APIHelper.rejectNil(source: nillableParameters  as [String : AnyObject?])
 		let convertedParameters = APIHelper.convertBoolToString(source: parameters)
-		let requestBuilder: RequestBuilder<[String:Any]>.Type = MbassAPI.sharedInstance.requestBuilderFactory.getBuilder()
+		let requestBuilder: RequestBuilder<[String:Any]>.Type = MbaasPreprodAPI.sharedInstance.requestBuilderFactory.getBuilder()
 
 		var customHeadersDict : [String: String] = [:]
 

@@ -42,12 +42,12 @@ single line (`false`). Default is `false`.
 
 	public class func socialIntegrationsFacebookSearchFriendsRequestBuilder(prettyJson: Bool? = nil) -> RequestBuilder<[String:Any]> { 
 		let path = "/social/facebook/search_friends.json"
-		let URLString = MbassAPI.sharedInstance.basePath + path
+		let URLString = MbaasPreprodAPI.sharedInstance.basePath + path
 		let nillableParameters: [String:AnyObject?] = [
 			"pretty_json": prettyJson as AnyObject]
 		let parameters = APIHelper.rejectNil(source: nillableParameters  as [String : AnyObject?])
 		let convertedParameters = APIHelper.convertBoolToString(source: parameters)
-		let requestBuilder: RequestBuilder<[String:Any]>.Type = MbassAPI.sharedInstance.requestBuilderFactory.getBuilder()
+		let requestBuilder: RequestBuilder<[String:Any]>.Type = MbaasPreprodAPI.sharedInstance.requestBuilderFactory.getBuilder()
 
 		var customHeadersDict : [String: String] = [:]
 
@@ -128,7 +128,7 @@ single line (`false`). Default is `false`.
 
 	public class func socialIntegrationsExternalAccountLinkRequestBuilder(iD: String,type: String,token: String,prettyJson: Bool? = nil) -> RequestBuilder<[String:Any]> { 
 		let path = "/users/external_account_link.json"
-		let URLString = MbassAPI.sharedInstance.basePath + path
+		let URLString = MbaasPreprodAPI.sharedInstance.basePath + path
 		let nillableParameters: [String:AnyObject?] = [
 		 	"id": iD as AnyObject , 
 		 	"type": type as AnyObject , 
@@ -136,7 +136,7 @@ single line (`false`). Default is `false`.
 		 	"pretty_json": prettyJson as AnyObject ]
 		let parameters = APIHelper.rejectNil(source: nillableParameters  as [String : AnyObject?])
 		let convertedParameters = APIHelper.convertBoolToString(source: parameters)
-		let requestBuilder: RequestBuilder<[String:Any]>.Type = MbassAPI.sharedInstance.requestBuilderFactory.getBuilder()
+		let requestBuilder: RequestBuilder<[String:Any]>.Type = MbaasPreprodAPI.sharedInstance.requestBuilderFactory.getBuilder()
 
 		var customHeadersDict : [String: String] = [:]
 
@@ -239,7 +239,7 @@ single line (`false`). Default is `false`.
 
 	public class func socialIntegrationsExternalAccountLoginRequestBuilder(iD: String,type: String,token: String,aclName: String? = nil,aclId: String? = nil,prettyJson: Bool? = nil) -> RequestBuilder<[String:Any]> { 
 		let path = "/users/external_account_login.json"
-		let URLString = MbassAPI.sharedInstance.basePath + path
+		let URLString = MbaasPreprodAPI.sharedInstance.basePath + path
 		let nillableParameters: [String:AnyObject?] = [
 		 	"id": iD as AnyObject , 
 		 	"type": type as AnyObject , 
@@ -249,7 +249,7 @@ single line (`false`). Default is `false`.
 		 	"pretty_json": prettyJson as AnyObject ]
 		let parameters = APIHelper.rejectNil(source: nillableParameters  as [String : AnyObject?])
 		let convertedParameters = APIHelper.convertBoolToString(source: parameters)
-		let requestBuilder: RequestBuilder<[String:Any]>.Type = MbassAPI.sharedInstance.requestBuilderFactory.getBuilder()
+		let requestBuilder: RequestBuilder<[String:Any]>.Type = MbaasPreprodAPI.sharedInstance.requestBuilderFactory.getBuilder()
 
 		var customHeadersDict : [String: String] = [:]
 
@@ -310,14 +310,14 @@ single line (`false`). Default is `false`.
 
 	public class func socialIntegrationsExternalAccountUnlinkRequestBuilder(iD: String,type: String,prettyJson: Bool? = nil) -> RequestBuilder<[String:Any]> { 
 		let path = "/users/external_account_unlink.json"
-		let URLString = MbassAPI.sharedInstance.basePath + path
+		let URLString = MbaasPreprodAPI.sharedInstance.basePath + path
 		let nillableParameters: [String:AnyObject?] = [
 		 	"id": iD as AnyObject , 
 		 	"type": type as AnyObject , 
 		 	"pretty_json": prettyJson as AnyObject ]
 		let parameters = APIHelper.rejectNil(source: nillableParameters  as [String : AnyObject?])
 		let convertedParameters = APIHelper.convertBoolToString(source: parameters)
-		let requestBuilder: RequestBuilder<[String:Any]>.Type = MbassAPI.sharedInstance.requestBuilderFactory.getBuilder()
+		let requestBuilder: RequestBuilder<[String:Any]>.Type = MbaasPreprodAPI.sharedInstance.requestBuilderFactory.getBuilder()
 
 		var customHeadersDict : [String: String] = [:]
 

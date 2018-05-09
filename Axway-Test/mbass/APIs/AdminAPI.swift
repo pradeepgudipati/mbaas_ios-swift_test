@@ -47,7 +47,7 @@ public class AdminAPI: APIBase {
 
 	public class func adminLogin360RequestBuilder(connectSid: String,groupId: String? = nil,ct: String? = nil,xAuthToken: String? = nil,email: String? = nil) -> RequestBuilder<SuccessResponse> { 
 		let path = "/admins/login360.json"
-		let URLString = MbassAPI.sharedInstance.basePath + path
+		let URLString = MbaasPreprodAPI.sharedInstance.basePath + path
 		let nillableParameters: [String:AnyObject?] = [
 			"connect.sid": connectSid as AnyObject, 
 			"group_id": groupId as AnyObject, 
@@ -56,7 +56,7 @@ public class AdminAPI: APIBase {
 			"email": email as AnyObject]
 		let parameters = APIHelper.rejectNil(source: nillableParameters  as [String : AnyObject?])
 		let convertedParameters = APIHelper.convertBoolToString(source: parameters)
-		let requestBuilder: RequestBuilder<SuccessResponse>.Type = MbassAPI.sharedInstance.requestBuilderFactory.getBuilder()
+		let requestBuilder: RequestBuilder<SuccessResponse>.Type = MbaasPreprodAPI.sharedInstance.requestBuilderFactory.getBuilder()
 
 		var customHeadersDict : [String: String] = [:]
 

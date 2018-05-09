@@ -40,7 +40,7 @@ class AlamofireRequestBuilder<T>: RequestBuilder<T> {
         configuration.httpAdditionalHeaders = buildHeaders()
         var manager =  AXManager(configuration: configuration)
 
-        if MbassAPI.sharedInstance.doNotValidateCertificates {
+        if MbaasPreprodAPI.sharedInstance.doNotValidateCertificates {
             // Use this to remove exceptions for SSL
             manager =  AXManager(configuration: configuration,
                                  serverTrustPolicyManager:ServerTrustPolicyManager(policies:serverTrustPolicies)
@@ -62,9 +62,6 @@ class AlamofireRequestBuilder<T>: RequestBuilder<T> {
                     case let fileURL as URL:
                         mpForm.append(fileURL, withName: k)
                         break
-                    case let imageData as Data:
-                      mpForm.append(imageData, withName: k)
-                      break
                     case let string as String:
                         mpForm.append(string.data(using: String.Encoding.utf8)!, withName: k)
                         break

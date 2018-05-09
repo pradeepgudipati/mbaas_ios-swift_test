@@ -71,7 +71,7 @@ class CreatePhotoViewController: UIViewController,UIImagePickerControllerDelegat
     
         let fileUrl = NSURL(fileURLWithPath: imageUrl as String) as URL
         
-        PhotosAPI.photosCreate(photo: fileUrl , title: nil, collectionName: nil, collectionId: parentClctnId, tags: nil, customFields: nil, aclName: nil, aclId: nil, suId: nil, photoSizes: nil, photoSyncSizes: nil, prettyJson: nil, completion: {(response, error) in
+        PhotosAPI.photosCreate(photo: fileUrl as NSURL , title: nil, collectionName: nil, collectionId: parentClctnId, tags: nil, customFields: nil, aclName: nil, aclId: nil, suId: nil, photoSizes: nil, photoSyncSizes: nil, prettyJson: nil, completion: {(response, error) in
             
             ACProgressHUD.shared.hideHUD()
             if (error != nil) {

@@ -39,21 +39,21 @@ public class OrgAPI: APIBase {
 	  - returns: RequestBuilder<[String:Any]>
 	*/
 
-	public class func orgOrgUpdateRequestBuilder(orgId: String,xAuthToken: String,packageInfo: String) -> RequestBuilder<[String:Any]> { 
+	public class func orgOrgUpdateRequestBuilder(orgId: String,xAuthToken: String?,packageInfo: String) -> RequestBuilder<[String:Any]> {
 		var path = "/org/{org_id}"
 		path = path.replacingOccurrences(of: "{org_id}", with: "\(orgId)", options: String.CompareOptions.literal, range: nil)
-		let URLString = MbassAPI.sharedInstance.basePath + path
+		let URLString = MbaasPreprodAPI.sharedInstance.basePath + path
 		let nillableParameters: [String:AnyObject?] = [
 		 	"packageInfo": packageInfo as AnyObject ]
 		let parameters = APIHelper.rejectNil(source: nillableParameters  as [String : AnyObject?])
 		let convertedParameters = APIHelper.convertBoolToString(source: parameters)
-		let requestBuilder: RequestBuilder<[String:Any]>.Type = MbassAPI.sharedInstance.requestBuilderFactory.getBuilder()
+		let requestBuilder: RequestBuilder<[String:Any]>.Type = MbaasPreprodAPI.sharedInstance.requestBuilderFactory.getBuilder()
 
 		var customHeadersDict : [String: String] = [:]
 
-		  //if let xAuthToken = xAuthToken {
+		  if let xAuthToken = xAuthToken {
             customHeadersDict["x-auth-token"] = xAuthToken
-       // }
+        }
 
 		return requestBuilder.init(method: "PUT", URLString: URLString, parameters: convertedParameters, customHeader: customHeadersDict,isBody:  false, authNames: ["api_key"])
 	}
@@ -89,20 +89,20 @@ public class OrgAPI: APIBase {
 	  - returns: RequestBuilder<[String:Any]>
 	*/
 
-	public class func orgOrgDeleteRequestBuilder(orgId: String,xAuthToken: String) -> RequestBuilder<[String:Any]> { 
+	public class func orgOrgDeleteRequestBuilder(orgId: String,xAuthToken: String?) -> RequestBuilder<[String:Any]> { 
 		var path = "/org/{org_id}"
 		path = path.replacingOccurrences(of: "{org_id}", with: "\(orgId)", options: String.CompareOptions.literal, range: nil)
-		let URLString = MbassAPI.sharedInstance.basePath + path
+		let URLString = MbaasPreprodAPI.sharedInstance.basePath + path
 		let nillableParameters: [String:AnyObject?] = [:]
 		let parameters = APIHelper.rejectNil(source: nillableParameters  as [String : AnyObject?])
 		let convertedParameters = APIHelper.convertBoolToString(source: parameters)
-		let requestBuilder: RequestBuilder<[String:Any]>.Type = MbassAPI.sharedInstance.requestBuilderFactory.getBuilder()
+		let requestBuilder: RequestBuilder<[String:Any]>.Type = MbaasPreprodAPI.sharedInstance.requestBuilderFactory.getBuilder()
 
 		var customHeadersDict : [String: String] = [:]
 
-		 // if let xAuthToken = xAuthToken {
+		  if let xAuthToken = xAuthToken {
             customHeadersDict["x-auth-token"] = xAuthToken
-       // }
+        }
 
 		return requestBuilder.init(method: "DELETE", URLString: URLString, parameters: convertedParameters, customHeader: customHeadersDict,isBody:  false, authNames: ["api_key"])
 	}

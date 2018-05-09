@@ -44,12 +44,12 @@ public class AppsAPI: APIBase {
 
 	public class func appsAppsCreateRequestBuilder(ct: String? = nil,name: String? = nil,description: String? = nil,orgId: String? = nil) -> RequestBuilder<SuccessResponse> { 
 		let path = "/apps/create.json"
-		let URLString = MbassAPI.sharedInstance.basePath + path
+		let URLString = MbaasPreprodAPI.sharedInstance.basePath + path
 		let nillableParameters: [String:AnyObject?] = [
 			"ct": ct as AnyObject, ]
 		let parameters = APIHelper.rejectNil(source: nillableParameters  as [String : AnyObject?])
 		let convertedParameters = APIHelper.convertBoolToString(source: parameters)
-		let requestBuilder: RequestBuilder<SuccessResponse>.Type = MbassAPI.sharedInstance.requestBuilderFactory.getBuilder()
+		let requestBuilder: RequestBuilder<SuccessResponse>.Type = MbaasPreprodAPI.sharedInstance.requestBuilderFactory.getBuilder()
 
 		var customHeadersDict : [String: String] = [:]
 
@@ -85,11 +85,11 @@ public class AppsAPI: APIBase {
 
 	public class func appsAppsShowRequestBuilder() -> RequestBuilder<SuccessResponse> { 
 		let path = "/apps/show.json"
-		let URLString = MbassAPI.sharedInstance.basePath + path
+		let URLString = MbaasPreprodAPI.sharedInstance.basePath + path
 		let nillableParameters: [String:AnyObject?] = [:]
 		let parameters = APIHelper.rejectNil(source: nillableParameters  as [String : AnyObject?])
 		let convertedParameters = APIHelper.convertBoolToString(source: parameters)
-		let requestBuilder: RequestBuilder<SuccessResponse>.Type = MbassAPI.sharedInstance.requestBuilderFactory.getBuilder()
+		let requestBuilder: RequestBuilder<SuccessResponse>.Type = MbaasPreprodAPI.sharedInstance.requestBuilderFactory.getBuilder()
 
 		var customHeadersDict : [String: String] = [:]
 
@@ -146,7 +146,7 @@ public class AppsAPI: APIBase {
 
 	public class func appsAppsUpdateRequestBuilder(name: String? = nil,description: String? = nil,friendsTwoWay: Bool? = nil,allowUserCreation: Bool? = nil,newUserVerification: Bool? = nil,secureIdentity: Bool? = nil,orgId: String? = nil) -> RequestBuilder<SuccessResponse> { 
 		let path = "/apps/update.json"
-		let URLString = MbassAPI.sharedInstance.basePath + path
+		let URLString = MbaasPreprodAPI.sharedInstance.basePath + path
 		let nillableParameters: [String:AnyObject?] = [
 		 	"name": name as AnyObject , 
 		 	"description": description as AnyObject , 
@@ -157,7 +157,7 @@ public class AppsAPI: APIBase {
 		 	"org_id": orgId as AnyObject ]
 		let parameters = APIHelper.rejectNil(source: nillableParameters  as [String : AnyObject?])
 		let convertedParameters = APIHelper.convertBoolToString(source: parameters)
-		let requestBuilder: RequestBuilder<SuccessResponse>.Type = MbassAPI.sharedInstance.requestBuilderFactory.getBuilder()
+		let requestBuilder: RequestBuilder<SuccessResponse>.Type = MbaasPreprodAPI.sharedInstance.requestBuilderFactory.getBuilder()
 
 		var customHeadersDict : [String: String] = [:]
 
@@ -193,11 +193,11 @@ public class AppsAPI: APIBase {
 
 	public class func appsAppsCountObjectsRequestBuilder() -> RequestBuilder<SuccessResponse> { 
 		let path = "/apps/app_object_counts.json"
-		let URLString = MbassAPI.sharedInstance.basePath + path
+		let URLString = MbaasPreprodAPI.sharedInstance.basePath + path
 		let nillableParameters: [String:AnyObject?] = [:]
 		let parameters = APIHelper.rejectNil(source: nillableParameters  as [String : AnyObject?])
 		let convertedParameters = APIHelper.convertBoolToString(source: parameters)
-		let requestBuilder: RequestBuilder<SuccessResponse>.Type = MbassAPI.sharedInstance.requestBuilderFactory.getBuilder()
+		let requestBuilder: RequestBuilder<SuccessResponse>.Type = MbaasPreprodAPI.sharedInstance.requestBuilderFactory.getBuilder()
 
 		var customHeadersDict : [String: String] = [:]
 
@@ -233,11 +233,11 @@ public class AppsAPI: APIBase {
 
 	public class func appsRemoveAppleCertificatesRequestBuilder() -> RequestBuilder<SuccessResponse> { 
 		let path = "/apps/remove_apple_certificates.json"
-		let URLString = MbassAPI.sharedInstance.basePath + path
+		let URLString = MbaasPreprodAPI.sharedInstance.basePath + path
 		let nillableParameters: [String:AnyObject?] = [:]
 		let parameters = APIHelper.rejectNil(source: nillableParameters  as [String : AnyObject?])
 		let convertedParameters = APIHelper.convertBoolToString(source: parameters)
-		let requestBuilder: RequestBuilder<SuccessResponse>.Type = MbassAPI.sharedInstance.requestBuilderFactory.getBuilder()
+		let requestBuilder: RequestBuilder<SuccessResponse>.Type = MbaasPreprodAPI.sharedInstance.requestBuilderFactory.getBuilder()
 
 		var customHeadersDict : [String: String] = [:]
 
@@ -285,7 +285,7 @@ public class AppsAPI: APIBase {
 
 	public class func appsSetAppleCertificatesRequestBuilder(certificateDev: NSURL? = nil,devCertPassword: String? = nil,certificateProd: NSURL? = nil,productionCertPassword: String? = nil) -> RequestBuilder<SuccessResponse> { 
 		let path = "/apps/set_apple_certificates.json"
-		let URLString = MbassAPI.sharedInstance.basePath + path
+		let URLString = MbaasPreprodAPI.sharedInstance.basePath + path
 		let nillableParameters: [String:AnyObject?] = [
 		 	"certificate_dev": certificateDev as AnyObject , 
 		 	"dev_cert_password": devCertPassword as AnyObject , 
@@ -293,7 +293,7 @@ public class AppsAPI: APIBase {
 		 	"production_cert_password": productionCertPassword as AnyObject ]
 		let parameters = APIHelper.rejectNil(source: nillableParameters  as [String : AnyObject?])
 		let convertedParameters = APIHelper.convertBoolToString(source: parameters)
-		let requestBuilder: RequestBuilder<SuccessResponse>.Type = MbassAPI.sharedInstance.requestBuilderFactory.getBuilder()
+		let requestBuilder: RequestBuilder<SuccessResponse>.Type = MbaasPreprodAPI.sharedInstance.requestBuilderFactory.getBuilder()
 
 		var customHeadersDict : [String: String] = [:]
 
@@ -338,14 +338,14 @@ public class AppsAPI: APIBase {
 
 	public class func appsSetAndroidCertificateRequestBuilder(androidAppPackage: String? = nil,androidGcmApikey: String? = nil,androidGcmSenderId: String? = nil) -> RequestBuilder<SuccessResponse> { 
 		let path = "/apps/set_android_certificate.json"
-		let URLString = MbassAPI.sharedInstance.basePath + path
+		let URLString = MbaasPreprodAPI.sharedInstance.basePath + path
 		let nillableParameters: [String:AnyObject?] = [
 		 	"android_app_package": androidAppPackage as AnyObject , 
 		 	"android_gcm_apikey": androidGcmApikey as AnyObject , 
 		 	"android_gcm_sender_id": androidGcmSenderId as AnyObject ]
 		let parameters = APIHelper.rejectNil(source: nillableParameters  as [String : AnyObject?])
 		let convertedParameters = APIHelper.convertBoolToString(source: parameters)
-		let requestBuilder: RequestBuilder<SuccessResponse>.Type = MbassAPI.sharedInstance.requestBuilderFactory.getBuilder()
+		let requestBuilder: RequestBuilder<SuccessResponse>.Type = MbaasPreprodAPI.sharedInstance.requestBuilderFactory.getBuilder()
 
 		var customHeadersDict : [String: String] = [:]
 
@@ -387,13 +387,13 @@ public class AppsAPI: APIBase {
 
 	public class func appsSetWindowsCertificateRequestBuilder(wnsSid: String? = nil,wnsClientSecret: String? = nil) -> RequestBuilder<SuccessResponse> { 
 		let path = "/apps/set_windows_certificate.json"
-		let URLString = MbassAPI.sharedInstance.basePath + path
+		let URLString = MbaasPreprodAPI.sharedInstance.basePath + path
 		let nillableParameters: [String:AnyObject?] = [
 		 	"wns_sid": wnsSid as AnyObject , 
 		 	"wns_client_secret": wnsClientSecret as AnyObject ]
 		let parameters = APIHelper.rejectNil(source: nillableParameters  as [String : AnyObject?])
 		let convertedParameters = APIHelper.convertBoolToString(source: parameters)
-		let requestBuilder: RequestBuilder<SuccessResponse>.Type = MbassAPI.sharedInstance.requestBuilderFactory.getBuilder()
+		let requestBuilder: RequestBuilder<SuccessResponse>.Type = MbaasPreprodAPI.sharedInstance.requestBuilderFactory.getBuilder()
 
 		var customHeadersDict : [String: String] = [:]
 
@@ -435,13 +435,13 @@ public class AppsAPI: APIBase {
 
 	public class func appsAppsDeleteRequestBuilder(groupId: String? = nil,appId: String? = nil) -> RequestBuilder<SuccessResponse> { 
 		let path = "/apps/delete.json"
-		let URLString = MbassAPI.sharedInstance.basePath + path
+		let URLString = MbaasPreprodAPI.sharedInstance.basePath + path
 		let nillableParameters: [String:AnyObject?] = [
 		 	"group_id": groupId as AnyObject , 
 		 	"app_id": appId as AnyObject ]
 		let parameters = APIHelper.rejectNil(source: nillableParameters  as [String : AnyObject?])
 		let convertedParameters = APIHelper.convertBoolToString(source: parameters)
-		let requestBuilder: RequestBuilder<SuccessResponse>.Type = MbassAPI.sharedInstance.requestBuilderFactory.getBuilder()
+		let requestBuilder: RequestBuilder<SuccessResponse>.Type = MbaasPreprodAPI.sharedInstance.requestBuilderFactory.getBuilder()
 
 		var customHeadersDict : [String: String] = [:]
 
@@ -480,12 +480,12 @@ public class AppsAPI: APIBase {
 
 	public class func appsAppsDeleteDataRequestBuilder(appId: String? = nil) -> RequestBuilder<SuccessResponse> { 
 		let path = "/apps/delete/data.json"
-		let URLString = MbassAPI.sharedInstance.basePath + path
+		let URLString = MbaasPreprodAPI.sharedInstance.basePath + path
 		let nillableParameters: [String:AnyObject?] = [
 		 	"app_id": appId as AnyObject ]
 		let parameters = APIHelper.rejectNil(source: nillableParameters  as [String : AnyObject?])
 		let convertedParameters = APIHelper.convertBoolToString(source: parameters)
-		let requestBuilder: RequestBuilder<SuccessResponse>.Type = MbassAPI.sharedInstance.requestBuilderFactory.getBuilder()
+		let requestBuilder: RequestBuilder<SuccessResponse>.Type = MbaasPreprodAPI.sharedInstance.requestBuilderFactory.getBuilder()
 
 		var customHeadersDict : [String: String] = [:]
 
@@ -566,7 +566,7 @@ public class AppsAPI: APIBase {
 
 	public class func appsAppsEmailsSettingRequestBuilder(accountid: String? = nil,apikey: String? = nil,endpoint: String? = nil,senderEmail: String? = nil,senderName: String? = nil,address: String? = nil,username: String? = nil,password: String? = nil,tls: Bool? = nil,port: String? = nil,authentication: String? = nil,domain: String? = nil,provider: String? = nil,devMode: Bool? = nil,replacementEmail: String? = nil) -> RequestBuilder<SuccessResponse> { 
 		let path = "/apps/emails/setting.json"
-		let URLString = MbassAPI.sharedInstance.basePath + path
+		let URLString = MbaasPreprodAPI.sharedInstance.basePath + path
 		let nillableParameters: [String:AnyObject?] = [
 			"accountid": accountid as AnyObject, 
 			"apikey": apikey as AnyObject, 
@@ -575,7 +575,7 @@ public class AppsAPI: APIBase {
 			"sender_name": senderName as AnyObject, ]
 		let parameters = APIHelper.rejectNil(source: nillableParameters  as [String : AnyObject?])
 		let convertedParameters = APIHelper.convertBoolToString(source: parameters)
-		let requestBuilder: RequestBuilder<SuccessResponse>.Type = MbassAPI.sharedInstance.requestBuilderFactory.getBuilder()
+		let requestBuilder: RequestBuilder<SuccessResponse>.Type = MbaasPreprodAPI.sharedInstance.requestBuilderFactory.getBuilder()
 
 		var customHeadersDict : [String: String] = [:]
 

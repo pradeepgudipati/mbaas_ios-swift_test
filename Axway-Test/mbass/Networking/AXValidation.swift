@@ -74,7 +74,7 @@ extension AXRequest {
 
     // MARK: Properties
 
-    fileprivate var acceptableStatusCodes: [Int] { return Array(200..<600) }
+    fileprivate var acceptableStatusCodes: [Int] { return Array(200..<300) }
 
     fileprivate var acceptableContentTypes: [String] {
         if let accept = request?.value(forHTTPHeaderField: "Accept") {
