@@ -32,11 +32,11 @@ public class MessagesAPI: APIBase {
 
 	public class func messagesCountRequestBuilder() -> RequestBuilder<[String:Any]> { 
 		let path = "/messages/count.json"
-		let URLString = MbaasPreprodAPI.sharedInstance.basePath + path
+		let URLString = MbassAPI.sharedInstance.basePath + path
 		let nillableParameters: [String:AnyObject?] = [:]
 		let parameters = APIHelper.rejectNil(source: nillableParameters  as [String : AnyObject?])
 		let convertedParameters = APIHelper.convertBoolToString(source: parameters)
-		let requestBuilder: RequestBuilder<[String:Any]>.Type = MbaasPreprodAPI.sharedInstance.requestBuilderFactory.getBuilder()
+		let requestBuilder: RequestBuilder<[String:Any]>.Type = MbassAPI.sharedInstance.requestBuilderFactory.getBuilder()
 
 		var customHeadersDict : [String: String] = [:]
 
@@ -112,7 +112,7 @@ single line (`false`). Default is `false`.
 
 	public class func messagesCreateRequestBuilder(toIds: String,body: String,subject: String? = nil,customFields: String? = nil,suId: String? = nil,prettyJson: Bool? = nil) -> RequestBuilder<[String:Any]> { 
 		let path = "/messages/create.json"
-		let URLString = MbaasPreprodAPI.sharedInstance.basePath + path
+		let URLString = MbassAPI.sharedInstance.basePath + path
 		let nillableParameters: [String:AnyObject?] = [
 		 	"to_ids": toIds as AnyObject , 
 		 	"body": body as AnyObject , 
@@ -122,7 +122,7 @@ single line (`false`). Default is `false`.
 		 	"pretty_json": prettyJson as AnyObject ]
 		let parameters = APIHelper.rejectNil(source: nillableParameters  as [String : AnyObject?])
 		let convertedParameters = APIHelper.convertBoolToString(source: parameters)
-		let requestBuilder: RequestBuilder<[String:Any]>.Type = MbaasPreprodAPI.sharedInstance.requestBuilderFactory.getBuilder()
+		let requestBuilder: RequestBuilder<[String:Any]>.Type = MbassAPI.sharedInstance.requestBuilderFactory.getBuilder()
 
 		var customHeadersDict : [String: String] = [:]
 
@@ -187,13 +187,13 @@ behalf of another user.
 
 	public class func messagesDeleteRequestBuilder(messageId: String,suId: String? = nil) -> RequestBuilder<[String:Any]> { 
 		let path = "/messages/delete.json"
-		let URLString = MbaasPreprodAPI.sharedInstance.basePath + path
+		let URLString = MbassAPI.sharedInstance.basePath + path
 		let nillableParameters: [String:AnyObject?] = [
 		 	"message_id": messageId as AnyObject , 
 		 	"su_id": suId as AnyObject ]
 		let parameters = APIHelper.rejectNil(source: nillableParameters  as [String : AnyObject?])
 		let convertedParameters = APIHelper.convertBoolToString(source: parameters)
-		let requestBuilder: RequestBuilder<[String:Any]>.Type = MbaasPreprodAPI.sharedInstance.requestBuilderFactory.getBuilder()
+		let requestBuilder: RequestBuilder<[String:Any]>.Type = MbassAPI.sharedInstance.requestBuilderFactory.getBuilder()
 
 		var customHeadersDict : [String: String] = [:]
 
@@ -239,12 +239,12 @@ and deletion is permanent.
 
 	public class func messagesDeleteThreadRequestBuilder(threadId: String) -> RequestBuilder<[String:Any]> { 
 		let path = "/messages/delete/thread.json"
-		let URLString = MbaasPreprodAPI.sharedInstance.basePath + path
+		let URLString = MbassAPI.sharedInstance.basePath + path
 		let nillableParameters: [String:AnyObject?] = [
 		 	"thread_id": threadId as AnyObject ]
 		let parameters = APIHelper.rejectNil(source: nillableParameters  as [String : AnyObject?])
 		let convertedParameters = APIHelper.convertBoolToString(source: parameters)
-		let requestBuilder: RequestBuilder<[String:Any]>.Type = MbaasPreprodAPI.sharedInstance.requestBuilderFactory.getBuilder()
+		let requestBuilder: RequestBuilder<[String:Any]>.Type = MbassAPI.sharedInstance.requestBuilderFactory.getBuilder()
 
 		var customHeadersDict : [String: String] = [:]
 
@@ -407,7 +407,7 @@ Default is 1, valid range is 1 to 8.
 
 	public class func messagesQueryRequestBuilder(page: Int32? = nil,perPage: Int32? = nil,limit: Int32? = nil,skip: Int32? = nil,prettyJson: Bool? = nil,where_: String? = nil,order: String? = nil,sel: String? = nil,unsel: String? = nil,responseJsonDepth: Int32? = nil) -> RequestBuilder<[String:Any]> { 
 		let path = "/messages/query.json"
-		let URLString = MbaasPreprodAPI.sharedInstance.basePath + path
+		let URLString = MbassAPI.sharedInstance.basePath + path
 		let nillableParameters: [String:AnyObject?] = [
 			"page": page as AnyObject, 
 			"per_page": perPage as AnyObject, 
@@ -421,7 +421,7 @@ Default is 1, valid range is 1 to 8.
 			"response_json_depth": responseJsonDepth as AnyObject]
 		let parameters = APIHelper.rejectNil(source: nillableParameters  as [String : AnyObject?])
 		let convertedParameters = APIHelper.convertBoolToString(source: parameters)
-		let requestBuilder: RequestBuilder<[String:Any]>.Type = MbaasPreprodAPI.sharedInstance.requestBuilderFactory.getBuilder()
+		let requestBuilder: RequestBuilder<[String:Any]>.Type = MbassAPI.sharedInstance.requestBuilderFactory.getBuilder()
 
 		var customHeadersDict : [String: String] = [:]
 
@@ -467,13 +467,13 @@ will be changed to `replied`.
 
 	public class func messagesReplyRequestBuilder(messageId: String,body: String) -> RequestBuilder<[String:Any]> { 
 		let path = "/messages/reply.json"
-		let URLString = MbaasPreprodAPI.sharedInstance.basePath + path
+		let URLString = MbassAPI.sharedInstance.basePath + path
 		let nillableParameters: [String:AnyObject?] = [
 		 	"message_id": messageId as AnyObject , 
 		 	"body": body as AnyObject ]
 		let parameters = APIHelper.rejectNil(source: nillableParameters  as [String : AnyObject?])
 		let convertedParameters = APIHelper.convertBoolToString(source: parameters)
-		let requestBuilder: RequestBuilder<[String:Any]>.Type = MbaasPreprodAPI.sharedInstance.requestBuilderFactory.getBuilder()
+		let requestBuilder: RequestBuilder<[String:Any]>.Type = MbassAPI.sharedInstance.requestBuilderFactory.getBuilder()
 
 		var customHeadersDict : [String: String] = [:]
 
@@ -510,12 +510,12 @@ will be changed to `replied`.
 
 	public class func messagesShowRequestBuilder(messageId: String) -> RequestBuilder<[String:Any]> { 
 		let path = "/messages/show.json"
-		let URLString = MbaasPreprodAPI.sharedInstance.basePath + path
+		let URLString = MbassAPI.sharedInstance.basePath + path
 		let nillableParameters: [String:AnyObject?] = [
 			"message_id": messageId as AnyObject]
 		let parameters = APIHelper.rejectNil(source: nillableParameters  as [String : AnyObject?])
 		let convertedParameters = APIHelper.convertBoolToString(source: parameters)
-		let requestBuilder: RequestBuilder<[String:Any]>.Type = MbaasPreprodAPI.sharedInstance.requestBuilderFactory.getBuilder()
+		let requestBuilder: RequestBuilder<[String:Any]>.Type = MbassAPI.sharedInstance.requestBuilderFactory.getBuilder()
 
 		var customHeadersDict : [String: String] = [:]
 
@@ -561,13 +561,13 @@ status of `unread`, `read`, or `replied`.
 
 	public class func messagesShowInboxRequestBuilder(page: Int32? = nil,perPage: Int32? = nil) -> RequestBuilder<[String:Any]> { 
 		let path = "/messages/show/inbox.json"
-		let URLString = MbaasPreprodAPI.sharedInstance.basePath + path
+		let URLString = MbassAPI.sharedInstance.basePath + path
 		let nillableParameters: [String:AnyObject?] = [
 			"page": page as AnyObject, 
 			"per_page": perPage as AnyObject]
 		let parameters = APIHelper.rejectNil(source: nillableParameters  as [String : AnyObject?])
 		let convertedParameters = APIHelper.convertBoolToString(source: parameters)
-		let requestBuilder: RequestBuilder<[String:Any]>.Type = MbaasPreprodAPI.sharedInstance.requestBuilderFactory.getBuilder()
+		let requestBuilder: RequestBuilder<[String:Any]>.Type = MbassAPI.sharedInstance.requestBuilderFactory.getBuilder()
 
 		var customHeadersDict : [String: String] = [:]
 
@@ -607,13 +607,13 @@ status of `unread`, `read`, or `replied`.
 
 	public class func messagesShowSentRequestBuilder(page: Int32? = nil,perPage: Int32? = nil) -> RequestBuilder<[String:Any]> { 
 		let path = "/messages/show/sent.json"
-		let URLString = MbaasPreprodAPI.sharedInstance.basePath + path
+		let URLString = MbassAPI.sharedInstance.basePath + path
 		let nillableParameters: [String:AnyObject?] = [
 			"page": page as AnyObject, 
 			"per_page": perPage as AnyObject]
 		let parameters = APIHelper.rejectNil(source: nillableParameters  as [String : AnyObject?])
 		let convertedParameters = APIHelper.convertBoolToString(source: parameters)
-		let requestBuilder: RequestBuilder<[String:Any]>.Type = MbaasPreprodAPI.sharedInstance.requestBuilderFactory.getBuilder()
+		let requestBuilder: RequestBuilder<[String:Any]>.Type = MbassAPI.sharedInstance.requestBuilderFactory.getBuilder()
 
 		var customHeadersDict : [String: String] = [:]
 
@@ -662,14 +662,14 @@ of any of the returned messages is `unread`, it will be changed to `read`.
 
 	public class func messagesShowThreadRequestBuilder(threadId: String? = nil,page: Int32? = nil,perPage: Int32? = nil) -> RequestBuilder<[String:Any]> { 
 		let path = "/messages/show/thread.json"
-		let URLString = MbaasPreprodAPI.sharedInstance.basePath + path
+		let URLString = MbassAPI.sharedInstance.basePath + path
 		let nillableParameters: [String:AnyObject?] = [
 			"thread_id": threadId as AnyObject, 
 			"page": page as AnyObject, 
 			"per_page": perPage as AnyObject]
 		let parameters = APIHelper.rejectNil(source: nillableParameters  as [String : AnyObject?])
 		let convertedParameters = APIHelper.convertBoolToString(source: parameters)
-		let requestBuilder: RequestBuilder<[String:Any]>.Type = MbaasPreprodAPI.sharedInstance.requestBuilderFactory.getBuilder()
+		let requestBuilder: RequestBuilder<[String:Any]>.Type = MbassAPI.sharedInstance.requestBuilderFactory.getBuilder()
 
 		var customHeadersDict : [String: String] = [:]
 
@@ -709,13 +709,13 @@ of any of the returned messages is `unread`, it will be changed to `read`.
 
 	public class func messagesShowThreadsRequestBuilder(page: Int32? = nil,perPage: Int32? = nil) -> RequestBuilder<[String:Any]> { 
 		let path = "/messages/show/threads.json"
-		let URLString = MbaasPreprodAPI.sharedInstance.basePath + path
+		let URLString = MbassAPI.sharedInstance.basePath + path
 		let nillableParameters: [String:AnyObject?] = [
 			"page": page as AnyObject, 
 			"per_page": perPage as AnyObject]
 		let parameters = APIHelper.rejectNil(source: nillableParameters  as [String : AnyObject?])
 		let convertedParameters = APIHelper.convertBoolToString(source: parameters)
-		let requestBuilder: RequestBuilder<[String:Any]>.Type = MbaasPreprodAPI.sharedInstance.requestBuilderFactory.getBuilder()
+		let requestBuilder: RequestBuilder<[String:Any]>.Type = MbassAPI.sharedInstance.requestBuilderFactory.getBuilder()
 
 		var customHeadersDict : [String: String] = [:]
 

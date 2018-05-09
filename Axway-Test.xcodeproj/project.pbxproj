@@ -84,6 +84,7 @@
 		23E05F782045371F0071DE0C /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23E05F122045371F0071DE0C /* Extensions.swift */; };
 		23E05F792045371F0071DE0C /* ErrorResponse_.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23E05F142045371F0071DE0C /* ErrorResponse_.swift */; };
 		23E05F7A2045371F0071DE0C /* SuccessResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23E05F152045371F0071DE0C /* SuccessResponse.swift */; };
+		23E05F7B2045371F0071DE0C /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23E05F162045371F0071DE0C /* UserModel.swift */; };
 		23E05F7C2045371F0071DE0C /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23E05F172045371F0071DE0C /* Models.swift */; };
 		23E05F7D2045371F0071DE0C /* AFError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23E05F192045371F0071DE0C /* AFError.swift */; };
 		23E05F7E2045371F0071DE0C /* AXAlamofire.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23E05F1A2045371F0071DE0C /* AXAlamofire.swift */; };
@@ -104,6 +105,7 @@
 		23E05F8D2045371F0071DE0C /* Notifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23E05F292045371F0071DE0C /* Notifications.swift */; };
 		23E05F8E2045371F0071DE0C /* AuthBrowserController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23E05F2B2045371F0071DE0C /* AuthBrowserController.swift */; };
 		23E05F8F2045371F0071DE0C /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23E05F2C2045371F0071DE0C /* Logger.swift */; };
+		23E05F902045371F0071DE0C /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23E05F2D2045371F0071DE0C /* Utils.swift */; };
 		7B474D201F6A5093005F044A /* ACHUD+Animation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B474D1C1F6A5093005F044A /* ACHUD+Animation.swift */; };
 		7B474D211F6A5093005F044A /* ACProgressHUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B474D1D1F6A5093005F044A /* ACProgressHUD.swift */; };
 		7B474D221F6A5093005F044A /* ACProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B474D1E1F6A5093005F044A /* ACProgressView.swift */; };
@@ -115,7 +117,6 @@
 		7B51021C1F690E6500A7BDF9 /* Axway_TestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B51021B1F690E6500A7BDF9 /* Axway_TestTests.swift */; };
 		7B5102271F690E6600A7BDF9 /* Axway_TestUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B5102261F690E6600A7BDF9 /* Axway_TestUITests.swift */; };
 		7B51ED221F7279C500A26437 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = 7B51ED211F7279C500A26437 /* README.md */; };
-		AD5F80D22092E7F100CAE2E5 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD5F80D12092E7F100CAE2E5 /* Utils.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -213,6 +214,7 @@
 		23E05F122045371F0071DE0C /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		23E05F142045371F0071DE0C /* ErrorResponse_.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorResponse_.swift; sourceTree = "<group>"; };
 		23E05F152045371F0071DE0C /* SuccessResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SuccessResponse.swift; sourceTree = "<group>"; };
+		23E05F162045371F0071DE0C /* UserModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		23E05F172045371F0071DE0C /* Models.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
 		23E05F192045371F0071DE0C /* AFError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AFError.swift; sourceTree = "<group>"; };
 		23E05F1A2045371F0071DE0C /* AXAlamofire.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AXAlamofire.swift; sourceTree = "<group>"; };
@@ -233,6 +235,7 @@
 		23E05F292045371F0071DE0C /* Notifications.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Notifications.swift; sourceTree = "<group>"; };
 		23E05F2B2045371F0071DE0C /* AuthBrowserController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthBrowserController.swift; sourceTree = "<group>"; };
 		23E05F2C2045371F0071DE0C /* Logger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
+		23E05F2D2045371F0071DE0C /* Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		7B474D1C1F6A5093005F044A /* ACHUD+Animation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ACHUD+Animation.swift"; sourceTree = "<group>"; };
 		7B474D1D1F6A5093005F044A /* ACProgressHUD.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ACProgressHUD.swift; sourceTree = "<group>"; };
 		7B474D1E1F6A5093005F044A /* ACProgressView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ACProgressView.swift; sourceTree = "<group>"; };
@@ -250,7 +253,6 @@
 		7B5102261F690E6600A7BDF9 /* Axway_TestUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Axway_TestUITests.swift; sourceTree = "<group>"; };
 		7B5102281F690E6600A7BDF9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7B51ED211F7279C500A26437 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
-		AD5F80D12092E7F100CAE2E5 /* Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -457,6 +459,7 @@
 			children = (
 				23E05F142045371F0071DE0C /* ErrorResponse_.swift */,
 				23E05F152045371F0071DE0C /* SuccessResponse.swift */,
+				23E05F162045371F0071DE0C /* UserModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -488,9 +491,9 @@
 		23E05F2A2045371F0071DE0C /* Utils */ = {
 			isa = PBXGroup;
 			children = (
-				AD5F80D12092E7F100CAE2E5 /* Utils.swift */,
 				23E05F2B2045371F0071DE0C /* AuthBrowserController.swift */,
 				23E05F2C2045371F0071DE0C /* Logger.swift */,
+				23E05F2D2045371F0071DE0C /* Utils.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -756,7 +759,6 @@
 				23E05F5A2045371F0071DE0C /* ShowChatsViewController.swift in Sources */,
 				23E05F442045371F0071DE0C /* PostsAPI.swift in Sources */,
 				23E05F652045371F0071DE0C /* QueryGeoFencViewController.swift in Sources */,
-				AD5F80D22092E7F100CAE2E5 /* Utils.swift in Sources */,
 				23E05F582045371F0071DE0C /* DisplayGroupChatsViewController.swift in Sources */,
 				23E05F4A2045371F0071DE0C /* SystemAPI.swift in Sources */,
 				7B474D221F6A5093005F044A /* ACProgressView.swift in Sources */,
@@ -765,6 +767,7 @@
 				23E05F892045371F0071DE0C /* AXTaskDelegate.swift in Sources */,
 				23E05F7F2045371F0071DE0C /* AXMultipartFormData.swift in Sources */,
 				23E05F7D2045371F0071DE0C /* AFError.swift in Sources */,
+				23E05F7B2045371F0071DE0C /* UserModel.swift in Sources */,
 				23E05F452045371F0071DE0C /* PushNotificationsAPI.swift in Sources */,
 				23E05F622045371F0071DE0C /* QueryCustomObjViewController.swift in Sources */,
 				23E05F552045371F0071DE0C /* OAuthPassword.swift in Sources */,
@@ -780,6 +783,7 @@
 				23E05F342045371F0071DE0C /* CheckinsAPI.swift in Sources */,
 				23E05F3F2045371F0071DE0C /* MessagesAPI.swift in Sources */,
 				23E05F5D2045371F0071DE0C /* ShowCheckinsViewController.swift in Sources */,
+				23E05F902045371F0071DE0C /* Utils.swift in Sources */,
 				23E05F7E2045371F0071DE0C /* AXAlamofire.swift in Sources */,
 				23E05F852045371F0071DE0C /* AXResult.swift in Sources */,
 				23E05F3C2045371F0071DE0C /* KeyValuesAPI.swift in Sources */,

@@ -35,12 +35,12 @@ public class SystemAPI: APIBase {
 
 	public class func systemPingRequestBuilder(ct: String? = nil) -> RequestBuilder<SuccessResponse> { 
 		let path = "/admins/ping.json"
-		let URLString = MbaasPreprodAPI.sharedInstance.basePath + path
+		let URLString = MbassAPI.sharedInstance.basePath + path
 		let nillableParameters: [String:AnyObject?] = [
 			"ct": ct as AnyObject]
 		let parameters = APIHelper.rejectNil(source: nillableParameters  as [String : AnyObject?])
 		let convertedParameters = APIHelper.convertBoolToString(source: parameters)
-		let requestBuilder: RequestBuilder<SuccessResponse>.Type = MbaasPreprodAPI.sharedInstance.requestBuilderFactory.getBuilder()
+		let requestBuilder: RequestBuilder<SuccessResponse>.Type = MbassAPI.sharedInstance.requestBuilderFactory.getBuilder()
 
 		var customHeadersDict : [String: String] = [:]
 

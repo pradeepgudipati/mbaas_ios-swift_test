@@ -173,10 +173,8 @@ class Decoders {
             }
             let sourceDictionary = source as! [AnyHashable: AnyObject]
             let instance = ErrorResponse_(
-                            status : Decoders.decodeOptional(clazz: String.self, source: sourceDictionary["status"]),
-                            code : Decoders.decodeOptional(clazz: Int.self, source: sourceDictionary["code"]),
-                            message : Decoders.decodeOptional(clazz: String.self, source: sourceDictionary["message"]),
-                            methodName : Decoders.decodeOptional(clazz: String.self, source: sourceDictionary["method_name"])
+                            meta : Decoders.decodeOptional(clazz: String.self, source: sourceDictionary["meta"]),
+                            response : Decoders.decodeOptional(clazz: String.self, source: sourceDictionary["response"])
             )
             return instance
             }

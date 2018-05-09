@@ -77,7 +77,7 @@ Only valid for applications created with ArrowDB 1.1.8 or greater.
 
 	public class func pushNotificationsChannelsQueryRequestBuilder(userId: String? = nil,page: Int32? = nil,perPage: Int32? = nil,prettyJson: Bool? = nil,count: Bool? = nil) -> RequestBuilder<[String:Any]> { 
 		let path = "/push_notification/channels/query.json"
-		let URLString = MbaasPreprodAPI.sharedInstance.basePath + path
+		let URLString = MbassAPI.sharedInstance.basePath + path
 		let nillableParameters: [String:AnyObject?] = [
 			"user_id": userId as AnyObject, 
 			"page": page as AnyObject, 
@@ -86,7 +86,7 @@ Only valid for applications created with ArrowDB 1.1.8 or greater.
 			"count": count as AnyObject]
 		let parameters = APIHelper.rejectNil(source: nillableParameters  as [String : AnyObject?])
 		let convertedParameters = APIHelper.convertBoolToString(source: parameters)
-		let requestBuilder: RequestBuilder<[String:Any]>.Type = MbaasPreprodAPI.sharedInstance.requestBuilderFactory.getBuilder()
+		let requestBuilder: RequestBuilder<[String:Any]>.Type = MbassAPI.sharedInstance.requestBuilderFactory.getBuilder()
 
 		var customHeadersDict : [String: String] = [:]
 
@@ -141,13 +141,13 @@ single line (`false`). Default is `false`.
 
 	public class func pushNotificationsChannelsShowRequestBuilder(name: String,prettyJson: Bool? = nil) -> RequestBuilder<[String:Any]> { 
 		let path = "/push_notification/channels/show.json"
-		let URLString = MbaasPreprodAPI.sharedInstance.basePath + path
+		let URLString = MbassAPI.sharedInstance.basePath + path
 		let nillableParameters: [String:AnyObject?] = [
 			"name": name as AnyObject, 
 			"pretty_json": prettyJson as AnyObject]
 		let parameters = APIHelper.rejectNil(source: nillableParameters  as [String : AnyObject?])
 		let convertedParameters = APIHelper.convertBoolToString(source: parameters)
-		let requestBuilder: RequestBuilder<[String:Any]>.Type = MbaasPreprodAPI.sharedInstance.requestBuilderFactory.getBuilder()
+		let requestBuilder: RequestBuilder<[String:Any]>.Type = MbassAPI.sharedInstance.requestBuilderFactory.getBuilder()
 
 		var customHeadersDict : [String: String] = [:]
 
@@ -183,11 +183,11 @@ single line (`false`). Default is `false`.
 
 	public class func pushNotificationsCountRequestBuilder() -> RequestBuilder<[String:Any]> { 
 		let path = "/push_notification/count.json"
-		let URLString = MbaasPreprodAPI.sharedInstance.basePath + path
+		let URLString = MbassAPI.sharedInstance.basePath + path
 		let nillableParameters: [String:AnyObject?] = [:]
 		let parameters = APIHelper.rejectNil(source: nillableParameters  as [String : AnyObject?])
 		let convertedParameters = APIHelper.convertBoolToString(source: parameters)
-		let requestBuilder: RequestBuilder<[String:Any]>.Type = MbaasPreprodAPI.sharedInstance.requestBuilderFactory.getBuilder()
+		let requestBuilder: RequestBuilder<[String:Any]>.Type = MbassAPI.sharedInstance.requestBuilderFactory.getBuilder()
 
 		var customHeadersDict : [String: String] = [:]
 
@@ -364,7 +364,7 @@ single line (`false`). Default is `false`.
 
 	public class func pushNotificationsNotifyRequestBuilder(channel: String,friends: String? = nil,toIds: String? = nil,payload: String,options: String? = nil,where_: String? = nil,prettyJson: Bool? = nil) -> RequestBuilder<[String:Any]> { 
 		let path = "/push_notification/notify.json"
-		let URLString = MbaasPreprodAPI.sharedInstance.basePath + path
+		let URLString = MbassAPI.sharedInstance.basePath + path
 		let nillableParameters: [String:AnyObject?] = [
 		 	"channel": channel as AnyObject , 
 		 	"friends": friends as AnyObject , 
@@ -375,7 +375,7 @@ single line (`false`). Default is `false`.
 		 	"pretty_json": prettyJson as AnyObject ]
 		let parameters = APIHelper.rejectNil(source: nillableParameters  as [String : AnyObject?])
 		let convertedParameters = APIHelper.convertBoolToString(source: parameters)
-		let requestBuilder: RequestBuilder<[String:Any]>.Type = MbaasPreprodAPI.sharedInstance.requestBuilderFactory.getBuilder()
+		let requestBuilder: RequestBuilder<[String:Any]>.Type = MbassAPI.sharedInstance.requestBuilderFactory.getBuilder()
 
 		var customHeadersDict : [String: String] = [:]
 
@@ -536,7 +536,7 @@ single line (`false`). Default is `false`.
 
 	public class func pushNotificationsNotifyTokensRequestBuilder(channel: String,toTokens: String,payload: String,options: String? = nil,where_: String? = nil,prettyJson: Bool? = nil) -> RequestBuilder<[String:Any]> { 
 		let path = "/push_notification/notify_tokens.json"
-		let URLString = MbaasPreprodAPI.sharedInstance.basePath + path
+		let URLString = MbassAPI.sharedInstance.basePath + path
 		let nillableParameters: [String:AnyObject?] = [
 		 	"channel": channel as AnyObject , 
 		 	"to_tokens": toTokens as AnyObject , 
@@ -546,7 +546,7 @@ single line (`false`). Default is `false`.
 		 	"pretty_json": prettyJson as AnyObject ]
 		let parameters = APIHelper.rejectNil(source: nillableParameters  as [String : AnyObject?])
 		let convertedParameters = APIHelper.convertBoolToString(source: parameters)
-		let requestBuilder: RequestBuilder<[String:Any]>.Type = MbaasPreprodAPI.sharedInstance.requestBuilderFactory.getBuilder()
+		let requestBuilder: RequestBuilder<[String:Any]>.Type = MbassAPI.sharedInstance.requestBuilderFactory.getBuilder()
 
 		var customHeadersDict : [String: String] = [:]
 
@@ -674,7 +674,7 @@ single line (`false`). Default is `false`.
 
 	public class func pushNotificationsQueryRequestBuilder(suId: String? = nil,channel: String? = nil,deviceToken: String? = nil,type: String? = nil,page: Int32? = nil,perPage: Int32? = nil,limit: Int32? = nil,skip: Int32? = nil,prettyJson: Bool? = nil) -> RequestBuilder<[String:Any]> { 
 		let path = "/push_notification/query.json"
-		let URLString = MbaasPreprodAPI.sharedInstance.basePath + path
+		let URLString = MbassAPI.sharedInstance.basePath + path
 		let nillableParameters: [String:AnyObject?] = [
 			"su_id": suId as AnyObject, 
 			"channel": channel as AnyObject, 
@@ -687,7 +687,7 @@ single line (`false`). Default is `false`.
 			"pretty_json": prettyJson as AnyObject]
 		let parameters = APIHelper.rejectNil(source: nillableParameters  as [String : AnyObject?])
 		let convertedParameters = APIHelper.convertBoolToString(source: parameters)
-		let requestBuilder: RequestBuilder<[String:Any]>.Type = MbaasPreprodAPI.sharedInstance.requestBuilderFactory.getBuilder()
+		let requestBuilder: RequestBuilder<[String:Any]>.Type = MbassAPI.sharedInstance.requestBuilderFactory.getBuilder()
 
 		var customHeadersDict : [String: String] = [:]
 
@@ -746,12 +746,12 @@ If you are an application admin, you may omit the device token.
 
 	public class func pushNotificationsResetBadgeRequestBuilder(deviceToken: String) -> RequestBuilder<[String:Any]> { 
 		let path = "/push_notification/reset_badge.json"
-		let URLString = MbaasPreprodAPI.sharedInstance.basePath + path
+		let URLString = MbassAPI.sharedInstance.basePath + path
 		let nillableParameters: [String:AnyObject?] = [
 		 	"device_token": deviceToken as AnyObject ]
 		let parameters = APIHelper.rejectNil(source: nillableParameters  as [String : AnyObject?])
 		let convertedParameters = APIHelper.convertBoolToString(source: parameters)
-		let requestBuilder: RequestBuilder<[String:Any]>.Type = MbaasPreprodAPI.sharedInstance.requestBuilderFactory.getBuilder()
+		let requestBuilder: RequestBuilder<[String:Any]>.Type = MbassAPI.sharedInstance.requestBuilderFactory.getBuilder()
 
 		var customHeadersDict : [String: String] = [:]
 
@@ -820,14 +820,14 @@ single line (`false`). Default is `false`.
 
 	public class func pushNotificationsSetBadgeRequestBuilder(deviceToken: String? = nil,badgeNumber: String? = nil,prettyJson: Bool? = nil) -> RequestBuilder<[String:Any]> { 
 		let path = "/push_notification/set_badge.json"
-		let URLString = MbaasPreprodAPI.sharedInstance.basePath + path
+		let URLString = MbassAPI.sharedInstance.basePath + path
 		let nillableParameters: [String:AnyObject?] = [
 		 	"device_token": deviceToken as AnyObject , 
 		 	"badge_number": badgeNumber as AnyObject , 
 		 	"pretty_json": prettyJson as AnyObject ]
 		let parameters = APIHelper.rejectNil(source: nillableParameters  as [String : AnyObject?])
 		let convertedParameters = APIHelper.convertBoolToString(source: parameters)
-		let requestBuilder: RequestBuilder<[String:Any]>.Type = MbaasPreprodAPI.sharedInstance.requestBuilderFactory.getBuilder()
+		let requestBuilder: RequestBuilder<[String:Any]>.Type = MbassAPI.sharedInstance.requestBuilderFactory.getBuilder()
 
 		var customHeadersDict : [String: String] = [:]
 
@@ -918,7 +918,7 @@ single line (`false`). Default is `false`.
 
 	public class func pushNotificationsSubscribeRequestBuilder(channel: String,deviceToken: String,type: String,suId: String? = nil,prettyJson: Bool? = nil) -> RequestBuilder<[String:Any]> { 
 		let path = "/push_notification/subscribe.json"
-		let URLString = MbaasPreprodAPI.sharedInstance.basePath + path
+		let URLString = MbassAPI.sharedInstance.basePath + path
 		let nillableParameters: [String:AnyObject?] = [
 		 	"channel": channel as AnyObject , 
 		 	"device_token": deviceToken as AnyObject , 
@@ -927,7 +927,7 @@ single line (`false`). Default is `false`.
 		 	"pretty_json": prettyJson as AnyObject ]
 		let parameters = APIHelper.rejectNil(source: nillableParameters  as [String : AnyObject?])
 		let convertedParameters = APIHelper.convertBoolToString(source: parameters)
-		let requestBuilder: RequestBuilder<[String:Any]>.Type = MbaasPreprodAPI.sharedInstance.requestBuilderFactory.getBuilder()
+		let requestBuilder: RequestBuilder<[String:Any]>.Type = MbassAPI.sharedInstance.requestBuilderFactory.getBuilder()
 
 		var customHeadersDict : [String: String] = [:]
 
@@ -1013,7 +1013,7 @@ single line (`false`). Default is `false`.
 
 	public class func pushNotificationsSubscribeTokenRequestBuilder(deviceToken: String,channel: String,type: String? = nil,prettyJson: Bool? = nil) -> RequestBuilder<[String:Any]> { 
 		let path = "/push_notification/subscribe_token.json"
-		let URLString = MbaasPreprodAPI.sharedInstance.basePath + path
+		let URLString = MbassAPI.sharedInstance.basePath + path
 		let nillableParameters: [String:AnyObject?] = [
 		 	"device_token": deviceToken as AnyObject , 
 		 	"channel": channel as AnyObject , 
@@ -1021,7 +1021,7 @@ single line (`false`). Default is `false`.
 		 	"pretty_json": prettyJson as AnyObject ]
 		let parameters = APIHelper.rejectNil(source: nillableParameters  as [String : AnyObject?])
 		let convertedParameters = APIHelper.convertBoolToString(source: parameters)
-		let requestBuilder: RequestBuilder<[String:Any]>.Type = MbaasPreprodAPI.sharedInstance.requestBuilderFactory.getBuilder()
+		let requestBuilder: RequestBuilder<[String:Any]>.Type = MbassAPI.sharedInstance.requestBuilderFactory.getBuilder()
 
 		var customHeadersDict : [String: String] = [:]
 
@@ -1084,7 +1084,7 @@ single line (`false`). Default is `false`.
 
 	public class func pushNotificationsSubscriptionUpdateRequestBuilder(deviceToken: String,suId: String? = nil,loc: String? = nil,prettyJson: Bool? = nil) -> RequestBuilder<[String:Any]> { 
 		let path = "/push_notification/subscription/update.json"
-		let URLString = MbaasPreprodAPI.sharedInstance.basePath + path
+		let URLString = MbassAPI.sharedInstance.basePath + path
 		let nillableParameters: [String:AnyObject?] = [
 		 	"device_token": deviceToken as AnyObject , 
 		 	"su_id": suId as AnyObject , 
@@ -1092,7 +1092,7 @@ single line (`false`). Default is `false`.
 		 	"pretty_json": prettyJson as AnyObject ]
 		let parameters = APIHelper.rejectNil(source: nillableParameters  as [String : AnyObject?])
 		let convertedParameters = APIHelper.convertBoolToString(source: parameters)
-		let requestBuilder: RequestBuilder<[String:Any]>.Type = MbaasPreprodAPI.sharedInstance.requestBuilderFactory.getBuilder()
+		let requestBuilder: RequestBuilder<[String:Any]>.Type = MbassAPI.sharedInstance.requestBuilderFactory.getBuilder()
 
 		var customHeadersDict : [String: String] = [:]
 
@@ -1173,7 +1173,7 @@ single line (`false`). Default is `false`.
 
 	public class func pushNotificationsUnsubscribeRequestBuilder(channel: String? = nil,deviceToken: String,userId: String? = nil,prettyJson: Bool? = nil) -> RequestBuilder<[String:Any]> { 
 		let path = "/push_notification/unsubscribe.json"
-		let URLString = MbaasPreprodAPI.sharedInstance.basePath + path
+		let URLString = MbassAPI.sharedInstance.basePath + path
 		let nillableParameters: [String:AnyObject?] = [
 		 	"channel": channel as AnyObject , 
 		 	"device_token": deviceToken as AnyObject , 
@@ -1181,7 +1181,7 @@ single line (`false`). Default is `false`.
 		 	"pretty_json": prettyJson as AnyObject ]
 		let parameters = APIHelper.rejectNil(source: nillableParameters  as [String : AnyObject?])
 		let convertedParameters = APIHelper.convertBoolToString(source: parameters)
-		let requestBuilder: RequestBuilder<[String:Any]>.Type = MbaasPreprodAPI.sharedInstance.requestBuilderFactory.getBuilder()
+		let requestBuilder: RequestBuilder<[String:Any]>.Type = MbassAPI.sharedInstance.requestBuilderFactory.getBuilder()
 
 		var customHeadersDict : [String: String] = [:]
 
@@ -1244,14 +1244,14 @@ single line (`false`). Default is `false`.
 
 	public class func pushNotificationsUnsubscribeTokenRequestBuilder(channel: String? = nil,deviceToken: String,prettyJson: Bool? = nil) -> RequestBuilder<[String:Any]> { 
 		let path = "/push_notification/unsubscribe_token.json"
-		let URLString = MbaasPreprodAPI.sharedInstance.basePath + path
+		let URLString = MbassAPI.sharedInstance.basePath + path
 		let nillableParameters: [String:AnyObject?] = [
 		 	"channel": channel as AnyObject , 
 		 	"device_token": deviceToken as AnyObject , 
 		 	"pretty_json": prettyJson as AnyObject ]
 		let parameters = APIHelper.rejectNil(source: nillableParameters  as [String : AnyObject?])
 		let convertedParameters = APIHelper.convertBoolToString(source: parameters)
-		let requestBuilder: RequestBuilder<[String:Any]>.Type = MbaasPreprodAPI.sharedInstance.requestBuilderFactory.getBuilder()
+		let requestBuilder: RequestBuilder<[String:Any]>.Type = MbassAPI.sharedInstance.requestBuilderFactory.getBuilder()
 
 		var customHeadersDict : [String: String] = [:]
 

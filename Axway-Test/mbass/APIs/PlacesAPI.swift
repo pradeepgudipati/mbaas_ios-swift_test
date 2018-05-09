@@ -78,12 +78,12 @@ If not specified, all Places objects are deleted.
 
 	public class func placesBatchDeleteRequestBuilder(where_: String? = nil) -> RequestBuilder<[String:Any]> { 
 		let path = "/places/batch_delete.json"
-		let URLString = MbaasPreprodAPI.sharedInstance.basePath + path
+		let URLString = MbassAPI.sharedInstance.basePath + path
 		let nillableParameters: [String:AnyObject?] = [
 		 	"where": where_ as AnyObject ]
 		let parameters = APIHelper.rejectNil(source: nillableParameters  as [String : AnyObject?])
 		let convertedParameters = APIHelper.convertBoolToString(source: parameters)
-		let requestBuilder: RequestBuilder<[String:Any]>.Type = MbaasPreprodAPI.sharedInstance.requestBuilderFactory.getBuilder()
+		let requestBuilder: RequestBuilder<[String:Any]>.Type = MbassAPI.sharedInstance.requestBuilderFactory.getBuilder()
 
 		var customHeadersDict : [String: String] = [:]
 
@@ -119,11 +119,11 @@ If not specified, all Places objects are deleted.
 
 	public class func placesCountRequestBuilder() -> RequestBuilder<[String:Any]> { 
 		let path = "/places/count.json"
-		let URLString = MbaasPreprodAPI.sharedInstance.basePath + path
+		let URLString = MbassAPI.sharedInstance.basePath + path
 		let nillableParameters: [String:AnyObject?] = [:]
 		let parameters = APIHelper.rejectNil(source: nillableParameters  as [String : AnyObject?])
 		let convertedParameters = APIHelper.convertBoolToString(source: parameters)
-		let requestBuilder: RequestBuilder<[String:Any]>.Type = MbaasPreprodAPI.sharedInstance.requestBuilderFactory.getBuilder()
+		let requestBuilder: RequestBuilder<[String:Any]>.Type = MbassAPI.sharedInstance.requestBuilderFactory.getBuilder()
 
 		var customHeadersDict : [String: String] = [:]
 
@@ -268,7 +268,7 @@ single line (`false`). Default is `false`.
 
 	public class func placesCreateRequestBuilder(name: String,address: String? = nil,city: String? = nil,state: String? = nil,postalCode: String? = nil,country: String? = nil,latitude: Double? = nil,longitude: Double? = nil,website: String? = nil,twitter: String? = nil,phoneNumber: String? = nil,photo: NSURL? = nil,photoId: String? = nil,tags: String? = nil,customFields: String? = nil,aclName: String? = nil,aclId: String? = nil,suId: String? = nil,prettyJson: Bool? = nil) -> RequestBuilder<[String:Any]> { 
 		let path = "/places/create.json"
-		let URLString = MbaasPreprodAPI.sharedInstance.basePath + path
+		let URLString = MbassAPI.sharedInstance.basePath + path
 		let nillableParameters: [String:AnyObject?] = [
 		 	"name": name as AnyObject , 
 		 	"address": address as AnyObject , 
@@ -291,7 +291,7 @@ single line (`false`). Default is `false`.
 		 	"pretty_json": prettyJson as AnyObject ]
 		let parameters = APIHelper.rejectNil(source: nillableParameters  as [String : AnyObject?])
 		let convertedParameters = APIHelper.convertBoolToString(source: parameters)
-		let requestBuilder: RequestBuilder<[String:Any]>.Type = MbaasPreprodAPI.sharedInstance.requestBuilderFactory.getBuilder()
+		let requestBuilder: RequestBuilder<[String:Any]>.Type = MbassAPI.sharedInstance.requestBuilderFactory.getBuilder()
 
 		var customHeadersDict : [String: String] = [:]
 
@@ -369,14 +369,14 @@ single line (`false`). Default is `false`.
 
 	public class func placesDeleteRequestBuilder(placeId: String,suId: String? = nil,prettyJson: Bool? = nil) -> RequestBuilder<[String:Any]> { 
 		let path = "/places/delete.json"
-		let URLString = MbaasPreprodAPI.sharedInstance.basePath + path
+		let URLString = MbassAPI.sharedInstance.basePath + path
 		let nillableParameters: [String:AnyObject?] = [
 		 	"place_id": placeId as AnyObject , 
 		 	"su_id": suId as AnyObject , 
 		 	"pretty_json": prettyJson as AnyObject ]
 		let parameters = APIHelper.rejectNil(source: nillableParameters  as [String : AnyObject?])
 		let convertedParameters = APIHelper.convertBoolToString(source: parameters)
-		let requestBuilder: RequestBuilder<[String:Any]>.Type = MbaasPreprodAPI.sharedInstance.requestBuilderFactory.getBuilder()
+		let requestBuilder: RequestBuilder<[String:Any]>.Type = MbassAPI.sharedInstance.requestBuilderFactory.getBuilder()
 
 		var customHeadersDict : [String: String] = [:]
 
@@ -596,7 +596,7 @@ single line (`false`). Default is `false`.
 
 	public class func placesQueryRequestBuilder(page: Int32? = nil,perPage: Int32? = nil,limit: Int32? = nil,skip: Int32? = nil,where_: String? = nil,order: String? = nil,sel: String? = nil,showUserLike: Bool? = nil,unsel: String? = nil,responseJsonDepth: Int32? = nil,prettyJson: Bool? = nil) -> RequestBuilder<[String:Any]> { 
 		let path = "/places/query.json"
-		let URLString = MbaasPreprodAPI.sharedInstance.basePath + path
+		let URLString = MbassAPI.sharedInstance.basePath + path
 		let nillableParameters: [String:AnyObject?] = [
 			"page": page as AnyObject, 
 			"per_page": perPage as AnyObject, 
@@ -611,12 +611,9 @@ single line (`false`). Default is `false`.
 			"pretty_json": prettyJson as AnyObject]
 		let parameters = APIHelper.rejectNil(source: nillableParameters  as [String : AnyObject?])
 		let convertedParameters = APIHelper.convertBoolToString(source: parameters)
-		let requestBuilder: RequestBuilder<[String:Any]>.Type = MbaasPreprodAPI.sharedInstance.requestBuilderFactory.getBuilder()
+		let requestBuilder: RequestBuilder<[String:Any]>.Type = MbassAPI.sharedInstance.requestBuilderFactory.getBuilder()
 
 		var customHeadersDict : [String: String] = [:]
-
-
-
 		return requestBuilder.init(method: "GET", URLString: URLString, parameters: convertedParameters, customHeader: customHeadersDict,isBody:  false, authNames: ["api_key"])
 	}
 	/**
@@ -721,7 +718,7 @@ single line (`false`). Default is `false`.
 
 	public class func placesSearchRequestBuilder(page: Int32? = nil,perPage: Int32? = nil,responseJsonDepth: Int32? = nil,latitude: Double? = nil,longitude: Double? = nil,distance: Double? = nil,q: String? = nil,prettyJson: Bool? = nil) -> RequestBuilder<[String:Any]> { 
 		let path = "/places/search.json"
-		let URLString = MbaasPreprodAPI.sharedInstance.basePath + path
+		let URLString = MbassAPI.sharedInstance.basePath + path
 		let nillableParameters: [String:AnyObject?] = [
 			"page": page as AnyObject, 
 			"per_page": perPage as AnyObject, 
@@ -733,7 +730,7 @@ single line (`false`). Default is `false`.
 			"pretty_json": prettyJson as AnyObject]
 		let parameters = APIHelper.rejectNil(source: nillableParameters  as [String : AnyObject?])
 		let convertedParameters = APIHelper.convertBoolToString(source: parameters)
-		let requestBuilder: RequestBuilder<[String:Any]>.Type = MbaasPreprodAPI.sharedInstance.requestBuilderFactory.getBuilder()
+		let requestBuilder: RequestBuilder<[String:Any]>.Type = MbassAPI.sharedInstance.requestBuilderFactory.getBuilder()
 
 		var customHeadersDict : [String: String] = [:]
 
@@ -807,7 +804,7 @@ single line (`false`). Default is `false`.
 
 	public class func placesShowRequestBuilder(placeId: String,responseJsonDepth: Int32? = nil,showUserLike: Bool? = nil,prettyJson: Bool? = nil) -> RequestBuilder<[String:Any]> { 
 		let path = "/places/show.json"
-		let URLString = MbaasPreprodAPI.sharedInstance.basePath + path
+		let URLString = MbassAPI.sharedInstance.basePath + path
 		let nillableParameters: [String:AnyObject?] = [
 			"place_id": placeId as AnyObject, 
 			"response_json_depth": responseJsonDepth as AnyObject, 
@@ -815,7 +812,7 @@ single line (`false`). Default is `false`.
 			"pretty_json": prettyJson as AnyObject]
 		let parameters = APIHelper.rejectNil(source: nillableParameters  as [String : AnyObject?])
 		let convertedParameters = APIHelper.convertBoolToString(source: parameters)
-		let requestBuilder: RequestBuilder<[String:Any]>.Type = MbaasPreprodAPI.sharedInstance.requestBuilderFactory.getBuilder()
+		let requestBuilder: RequestBuilder<[String:Any]>.Type = MbassAPI.sharedInstance.requestBuilderFactory.getBuilder()
 
 		var customHeadersDict : [String: String] = [:]
 
@@ -973,7 +970,7 @@ single line (`false`). Default is `false`.
 
 	public class func placesUpdateRequestBuilder(placeId: String,name: String? = nil,address: String? = nil,city: String? = nil,state: String? = nil,postalCode: String? = nil,country: String? = nil,latitude: Double? = nil,longitude: Double? = nil,website: String? = nil,twitter: String? = nil,phoneNumber: String? = nil,photo: NSURL? = nil,photoId: String? = nil,tags: String? = nil,customFields: String? = nil,aclName: String? = nil,aclId: String? = nil,userId: String? = nil,suId: String? = nil,prettyJson: Bool? = nil) -> RequestBuilder<[String:Any]> { 
 		let path = "/places/update.json"
-		let URLString = MbaasPreprodAPI.sharedInstance.basePath + path
+		let URLString = MbassAPI.sharedInstance.basePath + path
 		let nillableParameters: [String:AnyObject?] = [
 		 	"place_id": placeId as AnyObject , 
 		 	"name": name as AnyObject , 
@@ -998,7 +995,7 @@ single line (`false`). Default is `false`.
 		 	"pretty_json": prettyJson as AnyObject ]
 		let parameters = APIHelper.rejectNil(source: nillableParameters  as [String : AnyObject?])
 		let convertedParameters = APIHelper.convertBoolToString(source: parameters)
-		let requestBuilder: RequestBuilder<[String:Any]>.Type = MbaasPreprodAPI.sharedInstance.requestBuilderFactory.getBuilder()
+		let requestBuilder: RequestBuilder<[String:Any]>.Type = MbassAPI.sharedInstance.requestBuilderFactory.getBuilder()
 
 		var customHeadersDict : [String: String] = [:]
 

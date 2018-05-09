@@ -74,7 +74,7 @@ controlled by this ACL.
 
 	public class func aCLsAddRequestBuilder(name: String? = nil,iD: String? = nil,prettyJson: Bool? = nil,readerIds: String,writerIds: String) -> RequestBuilder<[String:Any]> { 
 		let path = "/acls/add.json"
-		let URLString = MbaasPreprodAPI.sharedInstance.basePath + path
+		let URLString = MbassAPI.sharedInstance.basePath + path
 		let nillableParameters: [String:AnyObject?] = [
 		 	"name": name as AnyObject , 
 		 	"id": iD as AnyObject , 
@@ -83,7 +83,7 @@ controlled by this ACL.
 		 	"writer_ids": writerIds as AnyObject ]
 		let parameters = APIHelper.rejectNil(source: nillableParameters  as [String : AnyObject?])
 		let convertedParameters = APIHelper.convertBoolToString(source: parameters)
-		let requestBuilder: RequestBuilder<[String:Any]>.Type = MbaasPreprodAPI.sharedInstance.requestBuilderFactory.getBuilder()
+		let requestBuilder: RequestBuilder<[String:Any]>.Type = MbassAPI.sharedInstance.requestBuilderFactory.getBuilder()
 
 		var customHeadersDict : [String: String] = [:]
 
@@ -171,7 +171,7 @@ single line (`false`). Default is `false`.
 
 	public class func aCLsCheckRequestBuilder(name: String? = nil,iD: String? = nil,prettyJson: Bool? = nil,userId: String? = nil) -> RequestBuilder<[String:Any]> { 
 		let path = "/acls/check.json"
-		let URLString = MbaasPreprodAPI.sharedInstance.basePath + path
+		let URLString = MbassAPI.sharedInstance.basePath + path
 		let nillableParameters: [String:AnyObject?] = [
 			"name": name as AnyObject, 
 			"id": iD as AnyObject, 
@@ -179,7 +179,7 @@ single line (`false`). Default is `false`.
 			"user_id": userId as AnyObject]
 		let parameters = APIHelper.rejectNil(source: nillableParameters  as [String : AnyObject?])
 		let convertedParameters = APIHelper.convertBoolToString(source: parameters)
-		let requestBuilder: RequestBuilder<[String:Any]>.Type = MbaasPreprodAPI.sharedInstance.requestBuilderFactory.getBuilder()
+		let requestBuilder: RequestBuilder<[String:Any]>.Type = MbassAPI.sharedInstance.requestBuilderFactory.getBuilder()
 
 		var customHeadersDict : [String: String] = [:]
 
@@ -215,11 +215,11 @@ single line (`false`). Default is `false`.
 
 	public class func aCLsCountRequestBuilder() -> RequestBuilder<[String:Any]> { 
 		let path = "/acls/count.json"
-		let URLString = MbaasPreprodAPI.sharedInstance.basePath + path
+		let URLString = MbassAPI.sharedInstance.basePath + path
 		let nillableParameters: [String:AnyObject?] = [:]
 		let parameters = APIHelper.rejectNil(source: nillableParameters  as [String : AnyObject?])
 		let convertedParameters = APIHelper.convertBoolToString(source: parameters)
-		let requestBuilder: RequestBuilder<[String:Any]>.Type = MbaasPreprodAPI.sharedInstance.requestBuilderFactory.getBuilder()
+		let requestBuilder: RequestBuilder<[String:Any]>.Type = MbassAPI.sharedInstance.requestBuilderFactory.getBuilder()
 
 		var customHeadersDict : [String: String] = [:]
 
@@ -313,7 +313,7 @@ new ACL is always owned by the current login user.
 
 	public class func aCLsCreateRequestBuilder(name: String,readerIds: String? = nil,writerIds: String? = nil,prettyJson: Bool? = nil,publicRead: String? = nil,publicWrite: String? = nil,suId: String? = nil) -> RequestBuilder<[String:Any]> { 
 		let path = "/acls/create.json"
-		let URLString = MbaasPreprodAPI.sharedInstance.basePath + path
+		let URLString = MbassAPI.sharedInstance.basePath + path
 		let nillableParameters: [String:AnyObject?] = [
 		 	"name": name as AnyObject , 
 		 	"reader_ids": readerIds as AnyObject , 
@@ -324,7 +324,7 @@ new ACL is always owned by the current login user.
 		 	"su_id": suId as AnyObject ]
 		let parameters = APIHelper.rejectNil(source: nillableParameters  as [String : AnyObject?])
 		let convertedParameters = APIHelper.convertBoolToString(source: parameters)
-		let requestBuilder: RequestBuilder<[String:Any]>.Type = MbaasPreprodAPI.sharedInstance.requestBuilderFactory.getBuilder()
+		let requestBuilder: RequestBuilder<[String:Any]>.Type = MbassAPI.sharedInstance.requestBuilderFactory.getBuilder()
 
 		var customHeadersDict : [String: String] = [:]
 
@@ -405,7 +405,7 @@ behalf of another user.
 
 	public class func aCLsDeleteRequestBuilder(iD: String? = nil,name: String? = nil,prettyJson: Bool? = nil,suId: String? = nil) -> RequestBuilder<[String:Any]> { 
 		let path = "/acls/delete.json"
-		let URLString = MbaasPreprodAPI.sharedInstance.basePath + path
+		let URLString = MbassAPI.sharedInstance.basePath + path
 		let nillableParameters: [String:AnyObject?] = [
 		 	"id": iD as AnyObject , 
 		 	"name": name as AnyObject , 
@@ -413,7 +413,7 @@ behalf of another user.
 		 	"su_id": suId as AnyObject ]
 		let parameters = APIHelper.rejectNil(source: nillableParameters  as [String : AnyObject?])
 		let convertedParameters = APIHelper.convertBoolToString(source: parameters)
-		let requestBuilder: RequestBuilder<[String:Any]>.Type = MbaasPreprodAPI.sharedInstance.requestBuilderFactory.getBuilder()
+		let requestBuilder: RequestBuilder<[String:Any]>.Type = MbassAPI.sharedInstance.requestBuilderFactory.getBuilder()
 
 		var customHeadersDict : [String: String] = [:]
 
@@ -582,7 +582,7 @@ parameter.
 
 	public class func aCLsQueryRequestBuilder(count: Bool? = nil,page: Int32? = nil,perPage: Int32? = nil,prettyJson: Bool? = nil,limit: Int32? = nil,skip: Int32? = nil,order: String? = nil,sel: String? = nil,unsel: String? = nil,responseJsonDepth: Int32? = nil,userId: String? = nil) -> RequestBuilder<[String:Any]> { 
 		let path = "/acls/query.json"
-		let URLString = MbaasPreprodAPI.sharedInstance.basePath + path
+		let URLString = MbassAPI.sharedInstance.basePath + path
 		let nillableParameters: [String:AnyObject?] = [
 			"count": count as AnyObject, 
 			"page": page as AnyObject, 
@@ -597,7 +597,7 @@ parameter.
 			"user_id": userId as AnyObject]
 		let parameters = APIHelper.rejectNil(source: nillableParameters  as [String : AnyObject?])
 		let convertedParameters = APIHelper.convertBoolToString(source: parameters)
-		let requestBuilder: RequestBuilder<[String:Any]>.Type = MbaasPreprodAPI.sharedInstance.requestBuilderFactory.getBuilder()
+		let requestBuilder: RequestBuilder<[String:Any]>.Type = MbassAPI.sharedInstance.requestBuilderFactory.getBuilder()
 
 		var customHeadersDict : [String: String] = [:]
 
@@ -680,7 +680,7 @@ single line (`false`). Default is `false`.
 
 	public class func aCLsRemoveRequestBuilder(name: String? = nil,iD: String? = nil,prettyJson: Bool? = nil,readerIds: String,writerIds: String) -> RequestBuilder<[String:Any]> { 
 		let path = "/acls/remove.json"
-		let URLString = MbaasPreprodAPI.sharedInstance.basePath + path
+		let URLString = MbassAPI.sharedInstance.basePath + path
 		let nillableParameters: [String:AnyObject?] = [
 		 	"name": name as AnyObject , 
 		 	"id": iD as AnyObject , 
@@ -689,7 +689,7 @@ single line (`false`). Default is `false`.
 		 	"writer_ids": writerIds as AnyObject ]
 		let parameters = APIHelper.rejectNil(source: nillableParameters  as [String : AnyObject?])
 		let convertedParameters = APIHelper.convertBoolToString(source: parameters)
-		let requestBuilder: RequestBuilder<[String:Any]>.Type = MbaasPreprodAPI.sharedInstance.requestBuilderFactory.getBuilder()
+		let requestBuilder: RequestBuilder<[String:Any]>.Type = MbassAPI.sharedInstance.requestBuilderFactory.getBuilder()
 
 		var customHeadersDict : [String: String] = [:]
 
@@ -753,14 +753,14 @@ single line (`false`). Default is `false`.
 
 	public class func aCLsShowRequestBuilder(iD: String? = nil,name: String? = nil,prettyJson: Bool? = nil) -> RequestBuilder<[String:Any]> { 
 		let path = "/acls/show.json"
-		let URLString = MbaasPreprodAPI.sharedInstance.basePath + path
+		let URLString = MbassAPI.sharedInstance.basePath + path
 		let nillableParameters: [String:AnyObject?] = [
 			"id": iD as AnyObject, 
 			"name": name as AnyObject, 
 			"pretty_json": prettyJson as AnyObject]
 		let parameters = APIHelper.rejectNil(source: nillableParameters  as [String : AnyObject?])
 		let convertedParameters = APIHelper.convertBoolToString(source: parameters)
-		let requestBuilder: RequestBuilder<[String:Any]>.Type = MbaasPreprodAPI.sharedInstance.requestBuilderFactory.getBuilder()
+		let requestBuilder: RequestBuilder<[String:Any]>.Type = MbassAPI.sharedInstance.requestBuilderFactory.getBuilder()
 
 		var customHeadersDict : [String: String] = [:]
 
@@ -891,7 +891,7 @@ behalf of another user.
 
 	public class func aCLsUpdateRequestBuilder(iD: String? = nil,name: String? = nil,prettyJson: Bool? = nil,readerIds: String,writerIds: String,publicRead: String? = nil,publicWrite: String? = nil,suId: String? = nil) -> RequestBuilder<[String:Any]> { 
 		let path = "/acls/update.json"
-		let URLString = MbaasPreprodAPI.sharedInstance.basePath + path
+		let URLString = MbassAPI.sharedInstance.basePath + path
 		let nillableParameters: [String:AnyObject?] = [
 		 	"id": iD as AnyObject , 
 		 	"name": name as AnyObject , 
@@ -903,7 +903,7 @@ behalf of another user.
 		 	"su_id": suId as AnyObject ]
 		let parameters = APIHelper.rejectNil(source: nillableParameters  as [String : AnyObject?])
 		let convertedParameters = APIHelper.convertBoolToString(source: parameters)
-		let requestBuilder: RequestBuilder<[String:Any]>.Type = MbaasPreprodAPI.sharedInstance.requestBuilderFactory.getBuilder()
+		let requestBuilder: RequestBuilder<[String:Any]>.Type = MbassAPI.sharedInstance.requestBuilderFactory.getBuilder()
 
 		var customHeadersDict : [String: String] = [:]
 

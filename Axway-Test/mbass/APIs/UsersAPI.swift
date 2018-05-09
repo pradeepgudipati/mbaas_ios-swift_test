@@ -227,7 +227,7 @@ single line (`false`). Default is `false`.
 
 	public class func usersCreateRequestBuilder(email: String? = nil,username: String? = nil,password: String,passwordConfirmation: String,firstName: String? = nil,lastName: String? = nil,photo: NSURL? = nil,photoId: String? = nil,tags: String? = nil,customFields: String? = nil,aclName: String? = nil,aclId: String? = nil,suId: String? = nil,role: String? = nil,template: String? = nil,confirmationTemplate: String? = nil,prettyJson: Bool? = nil) -> RequestBuilder<[String:Any]> { 
 		let path = "/users/create.json"
-		let URLString = MbaasPreprodAPI.sharedInstance.basePath + path
+		let URLString = MbassAPI.sharedInstance.basePath + path
 		let nillableParameters: [String:AnyObject?] = [
 		 	"email": email as AnyObject , 
 		 	"username": username as AnyObject , 
@@ -235,12 +235,12 @@ single line (`false`). Default is `false`.
 		 	"password_confirmation": passwordConfirmation as AnyObject , 
 		 	"first_name": firstName as AnyObject , 
 		 	"last_name": lastName as AnyObject , 
-		 	"photo": photo as AnyObject , 
-		 	"photo_id": photoId as AnyObject , 
+		 	//"photo": photo as AnyObject ,
+		 	//"photo_id": photoId as AnyObject ,
 		 	"tags": tags as AnyObject , 
-		 	"custom_fields": customFields as AnyObject , 
-		 	"acl_name": aclName as AnyObject , 
-		 	"acl_id": aclId as AnyObject , 
+		 	//"custom_fields": customFields as AnyObject ,
+		 	//"acl_name": aclName as AnyObject ,
+		 	//"acl_id": aclId as AnyObject ,
 		 	"su_id": suId as AnyObject , 
 		 	"role": role as AnyObject , 
 		 	"template": template as AnyObject , 
@@ -248,9 +248,9 @@ single line (`false`). Default is `false`.
 		 	"pretty_json": prettyJson as AnyObject ]
 		let parameters = APIHelper.rejectNil(source: nillableParameters  as [String : AnyObject?])
 		let convertedParameters = APIHelper.convertBoolToString(source: parameters)
-		let requestBuilder: RequestBuilder<[String:Any]>.Type = MbaasPreprodAPI.sharedInstance.requestBuilderFactory.getBuilder()
+		let requestBuilder: RequestBuilder<[String:Any]>.Type = MbassAPI.sharedInstance.requestBuilderFactory.getBuilder()
 
-		var customHeadersDict : [String: String] = [:]
+		let customHeadersDict : [String: String] = [:]
 
 
 
@@ -290,15 +290,15 @@ single line (`false`). Default is `false`.
 
 	public class func usersLoginUserRequestBuilder(login: String,password: String) -> RequestBuilder<[String:Any]> { 
 		let path = "/users/login.json"
-		let URLString = MbaasPreprodAPI.sharedInstance.basePath + path
+		let URLString = MbassAPI.sharedInstance.basePath + path
 		let nillableParameters: [String:AnyObject?] = [
 		 	"login": login as AnyObject , 
 		 	"password": password as AnyObject ]
 		let parameters = APIHelper.rejectNil(source: nillableParameters  as [String : AnyObject?])
 		let convertedParameters = APIHelper.convertBoolToString(source: parameters)
-		let requestBuilder: RequestBuilder<[String:Any]>.Type = MbaasPreprodAPI.sharedInstance.requestBuilderFactory.getBuilder()
+		let requestBuilder: RequestBuilder<[String:Any]>.Type = MbassAPI.sharedInstance.requestBuilderFactory.getBuilder()
 
-		var customHeadersDict : [String: String] = [:]
+		let customHeadersDict : [String: String] = [:]
 
 
 
@@ -332,73 +332,17 @@ single line (`false`). Default is `false`.
 
 	public class func usersLogoutUserRequestBuilder() -> RequestBuilder<[String:Any]> { 
 		let path = "/users/logout.json"
-		let URLString = MbaasPreprodAPI.sharedInstance.basePath + path
+		let URLString = MbassAPI.sharedInstance.basePath + path
 		let nillableParameters: [String:AnyObject?] = [:]
 		let parameters = APIHelper.rejectNil(source: nillableParameters  as [String : AnyObject?])
 		let convertedParameters = APIHelper.convertBoolToString(source: parameters)
-		let requestBuilder: RequestBuilder<[String:Any]>.Type = MbaasPreprodAPI.sharedInstance.requestBuilderFactory.getBuilder()
+		let requestBuilder: RequestBuilder<[String:Any]>.Type = MbassAPI.sharedInstance.requestBuilderFactory.getBuilder()
 
 		var customHeadersDict : [String: String] = [:]
 
 
 
 		return requestBuilder.init(method: "GET", URLString: URLString, parameters: convertedParameters, customHeader: customHeadersDict,isBody:  true, authNames: ["api_key"])
-	}
-	/**
-	  Delete a User or multiple Users
-      A user must already be logged in to their account to delete it. Any Friends-related data and push notification subscriptions associated with the user are also deleted.
-	  - parameter userIds: (formData) Comma separated list of User IDs to delete this user on behalf of. The current login user must be an application admin to delete a user on behalf of another user. Another case is that the user can be deleted when the user_ids only contains the id of current user. (optional)
-	  - parameter completion: completion handler to receive the data and the error objects
-	  - parameter suId: (formData) User ID to delete this user on behalf of. The current login user must be an application admin to delete a user on behalf of another user. (optional)
-	  - parameter completion: completion handler to receive the data and the error objects
-	  - parameter prettyJson: (formData) Determines if the JSON response is formatted for readability (`true`), or displayed on a
-single line (`false`). Default is `false`.
- (optional)
-	  - parameter completion: completion handler to receive the data and the error objects
-	*/
-
-	public class func usersDelete(userIds: String? = nil , suId: String? = nil , prettyJson: Bool? = nil ,  completion: @escaping ((_ data: [String:Any]?, _ error: Error?) -> Void)) {
-		usersDeleteRequestBuilder(userIds: userIds, suId: suId, prettyJson: prettyJson).execute { (response, error) -> Void in
-			completion(response?.body, error)
-		}
-	}
-
-	/**
-	  Delete a User or multiple Users
-      A user must already be logged in to their account to delete it. Any Friends-related data and push notification subscriptions associated with the user are also deleted.
-	  - DELETE /users/delete.json
-	  - A user must already be logged in to their account to delete it. Any Friends-related data and push notification subscriptions associated with the user are also deleted.
-	  - OAuth:
-	    - type: oauth2
-		- name:  api_key 
-		- parameter  user_ids: (formData) Comma separated list of User IDs to delete this user on behalf of. The current login user must be an application admin to delete a user on behalf of another user. Another case is that the user can be deleted when the user_ids only contains the id of current user. (optional) 
-		- parameter  su_id: (formData) User ID to delete this user on behalf of. The current login user must be an application admin to delete a user on behalf of another user. (optional) 
-		- parameter  pretty_json: (formData) Determines if the JSON response is formatted for readability (`true`), or displayed on a
-single line (`false`). Default is `false`.
- (optional) 
-     	- externalDocs: 
-			- description: ArrowDB/Push API Documentation 
-			- url: http://docs.appcelerator.com/arrowdb/latest/#!/api
-
-	  - returns: RequestBuilder<[String:Any]>
-	*/
-
-	public class func usersDeleteRequestBuilder(userIds: String? = nil,suId: String? = nil,prettyJson: Bool? = nil) -> RequestBuilder<[String:Any]> { 
-		let path = "/users/delete.json"
-		let URLString = MbaasPreprodAPI.sharedInstance.basePath + path
-		let nillableParameters: [String:AnyObject?] = [
-		 	"user_ids": userIds as AnyObject , 
-		 	"su_id": suId as AnyObject , 
-		 	"pretty_json": prettyJson as AnyObject ]
-		let parameters = APIHelper.rejectNil(source: nillableParameters  as [String : AnyObject?])
-		let convertedParameters = APIHelper.convertBoolToString(source: parameters)
-		let requestBuilder: RequestBuilder<[String:Any]>.Type = MbaasPreprodAPI.sharedInstance.requestBuilderFactory.getBuilder()
-
-		var customHeadersDict : [String: String] = [:]
-
-
-
-		return requestBuilder.init(method: "DELETE", URLString: URLString, parameters: convertedParameters, customHeader: customHeadersDict,isBody:  false, authNames: ["api_key"])
 	}
 	/**
 	  Show Current User Profile
@@ -458,13 +402,13 @@ single line (`false`). Default is `false`.
 
 	public class func usersShowMeRequestBuilder(responseJsonDepth: NSNumber? = nil,prettyJson: Bool? = nil) -> RequestBuilder<[String:Any]> { 
 		let path = "/users/show/me.json"
-		let URLString = MbaasPreprodAPI.sharedInstance.basePath + path
+		let URLString = MbassAPI.sharedInstance.basePath + path
 		let nillableParameters: [String:AnyObject?] = [
 			"response_json_depth": responseJsonDepth as AnyObject, 
 			"pretty_json": prettyJson as AnyObject]
 		let parameters = APIHelper.rejectNil(source: nillableParameters  as [String : AnyObject?])
 		let convertedParameters = APIHelper.convertBoolToString(source: parameters)
-		let requestBuilder: RequestBuilder<[String:Any]>.Type = MbaasPreprodAPI.sharedInstance.requestBuilderFactory.getBuilder()
+		let requestBuilder: RequestBuilder<[String:Any]>.Type = MbassAPI.sharedInstance.requestBuilderFactory.getBuilder()
 
 		var customHeadersDict : [String: String] = [:]
 
@@ -603,7 +547,7 @@ single line (`false`). Default is `false`.
 
 	public class func usersUpdateRequestBuilder(email: String? = nil,username: String? = nil,password: String? = nil,passwordConfirmation: String? = nil,firstName: String? = nil,lastName: String? = nil,photo: NSURL? = nil,photoId: String? = nil,tags: String? = nil,customFields: String? = nil,aclName: String? = nil,aclId: String? = nil,suId: String? = nil,prettyJson: Bool? = nil) -> RequestBuilder<[String:Any]> { 
 		let path = "/users/update.json"
-		let URLString = MbaasPreprodAPI.sharedInstance.basePath + path
+		let URLString = MbassAPI.sharedInstance.basePath + path
 		let nillableParameters: [String:AnyObject?] = [
 		 	"email": email as AnyObject , 
 		 	"username": username as AnyObject , 
@@ -621,7 +565,7 @@ single line (`false`). Default is `false`.
 		 	"pretty_json": prettyJson as AnyObject ]
 		let parameters = APIHelper.rejectNil(source: nillableParameters  as [String : AnyObject?])
 		let convertedParameters = APIHelper.convertBoolToString(source: parameters)
-		let requestBuilder: RequestBuilder<[String:Any]>.Type = MbaasPreprodAPI.sharedInstance.requestBuilderFactory.getBuilder()
+		let requestBuilder: RequestBuilder<[String:Any]>.Type = MbassAPI.sharedInstance.requestBuilderFactory.getBuilder()
 
 		var customHeadersDict : [String: String] = [:]
 
@@ -708,7 +652,7 @@ single line (`false`). Default is `false`.
 
 	public class func usersShowRequestBuilder(userId: String? = nil,userIds: String? = nil,responseJsonDepth: NSNumber? = nil,showUserLike: Bool? = nil,prettyJson: Bool? = nil) -> RequestBuilder<[String:Any]> { 
 		let path = "/users/show.json"
-		let URLString = MbaasPreprodAPI.sharedInstance.basePath + path
+		let URLString = MbassAPI.sharedInstance.basePath + path
 		let nillableParameters: [String:AnyObject?] = [
 			"user_id": userId as AnyObject, 
 			"user_ids": userIds as AnyObject, 
@@ -717,7 +661,7 @@ single line (`false`). Default is `false`.
 			"pretty_json": prettyJson as AnyObject]
 		let parameters = APIHelper.rejectNil(source: nillableParameters  as [String : AnyObject?])
 		let convertedParameters = APIHelper.convertBoolToString(source: parameters)
-		let requestBuilder: RequestBuilder<[String:Any]>.Type = MbaasPreprodAPI.sharedInstance.requestBuilderFactory.getBuilder()
+		let requestBuilder: RequestBuilder<[String:Any]>.Type = MbassAPI.sharedInstance.requestBuilderFactory.getBuilder()
 
 		var customHeadersDict : [String: String] = [:]
 
@@ -817,7 +761,7 @@ single line (`false`). Default is `false`.
 
 	public class func usersSearchRequestBuilder(page: NSNumber? = nil,perPage: NSNumber? = nil,q: String? = nil,responseJsonDepth: NSNumber? = nil,prettyJson: Bool? = nil) -> RequestBuilder<[String:Any]> { 
 		let path = "/users/search.json"
-		let URLString = MbaasPreprodAPI.sharedInstance.basePath + path
+		let URLString = MbassAPI.sharedInstance.basePath + path
 		let nillableParameters: [String:AnyObject?] = [
 			"page": page as AnyObject, 
 			"per_page": perPage as AnyObject, 
@@ -826,7 +770,7 @@ single line (`false`). Default is `false`.
 			"pretty_json": prettyJson as AnyObject]
 		let parameters = APIHelper.rejectNil(source: nillableParameters  as [String : AnyObject?])
 		let convertedParameters = APIHelper.convertBoolToString(source: parameters)
-		let requestBuilder: RequestBuilder<[String:Any]>.Type = MbaasPreprodAPI.sharedInstance.requestBuilderFactory.getBuilder()
+		let requestBuilder: RequestBuilder<[String:Any]>.Type = MbassAPI.sharedInstance.requestBuilderFactory.getBuilder()
 
 		var customHeadersDict : [String: String] = [:]
 
@@ -913,7 +857,7 @@ single line (`false`). Default is `false`.
 	*/
 
 	public class func usersQuery(page: Int32? = nil , perPage: Int32? = nil , limit: Int32? = nil , skip: Int32? = nil , where_: String? = nil , order: String? = nil , sel: String? = nil , showUserLike: Bool? = nil , unsel: String? = nil , responseJsonDepth: Int32? = nil , prettyJson: Bool? = nil ,  completion: @escaping ((_ data: [String:Any]?, _ error: Error?) -> Void)) {
-		usersQueryRequestBuilder(page: page, perPage: perPage, limit: limit, skip: skip, where_: where_, order: order, sel: sel, showUserLike: showUserLike, unsel: unsel, responseJsonDepth: responseJsonDepth, prettyJson: prettyJson).execute { (response, error) -> Void in
+		usersQueryRequestBuilder(page: page, perPage: perPage, limit: limit, skip: skip, where_: where_, order: order, sel: sel, showUserLike: showUserLike, responseJsonDepth: responseJsonDepth, prettyJson: prettyJson).execute { (response, error) -> Void in
 			completion(response?.body, error)
 		}
 	}
@@ -1014,7 +958,7 @@ single line (`false`). Default is `false`.
 
 	public class func usersQueryRequestBuilder(page: Int32? = nil,perPage: Int32? = nil,limit: Int32? = nil,skip: Int32? = nil,where_: String? = nil,order: String? = nil,sel: String? = nil,showUserLike: Bool? = nil,unsel: String? = nil,responseJsonDepth: Int32? = nil,prettyJson: Bool? = nil) -> RequestBuilder<[String:Any]> { 
 		let path = "/users/query.json"
-		let URLString = MbaasPreprodAPI.sharedInstance.basePath + path
+		let URLString = MbassAPI.sharedInstance.basePath + path
 		let nillableParameters: [String:AnyObject?] = [
 			"page": page as AnyObject, 
 			"per_page": perPage as AnyObject, 
@@ -1024,14 +968,14 @@ single line (`false`). Default is `false`.
 			"order": order as AnyObject, 
 			"sel": sel as AnyObject, 
 			"show_user_like": showUserLike as AnyObject, 
-			"unsel": unsel as AnyObject, 
+			"unsel": unsel as AnyObject,
 			"response_json_depth": responseJsonDepth as AnyObject, 
 			"pretty_json": prettyJson as AnyObject]
 		let parameters = APIHelper.rejectNil(source: nillableParameters  as [String : AnyObject?])
 		let convertedParameters = APIHelper.convertBoolToString(source: parameters)
-		let requestBuilder: RequestBuilder<[String:Any]>.Type = MbaasPreprodAPI.sharedInstance.requestBuilderFactory.getBuilder()
+		let requestBuilder: RequestBuilder<[String:Any]>.Type = MbassAPI.sharedInstance.requestBuilderFactory.getBuilder()
 
-		var customHeadersDict : [String: String] = [:]
+		let customHeadersDict : [String: String] = [:]
 
 
 
@@ -1150,7 +1094,7 @@ single line (`false`). Default is `false`.
 
 	public class func usersRequestResetPasswordRequestBuilder(email: String,subject: String? = nil,template: String? = nil,prettyJson: Bool? = nil) -> RequestBuilder<[String:Any]> { 
 		let path = "/users/request_reset_password.json"
-		let URLString = MbaasPreprodAPI.sharedInstance.basePath + path
+		let URLString = MbassAPI.sharedInstance.basePath + path
 		let nillableParameters: [String:AnyObject?] = [
 			"email": email as AnyObject, 
 			"subject": subject as AnyObject, 
@@ -1158,7 +1102,7 @@ single line (`false`). Default is `false`.
 			"pretty_json": prettyJson as AnyObject]
 		let parameters = APIHelper.rejectNil(source: nillableParameters  as [String : AnyObject?])
 		let convertedParameters = APIHelper.convertBoolToString(source: parameters)
-		let requestBuilder: RequestBuilder<[String:Any]>.Type = MbaasPreprodAPI.sharedInstance.requestBuilderFactory.getBuilder()
+		let requestBuilder: RequestBuilder<[String:Any]>.Type = MbassAPI.sharedInstance.requestBuilderFactory.getBuilder()
 
 		var customHeadersDict : [String: String] = [:]
 
@@ -1255,7 +1199,7 @@ single line (`false`). Default is `false`.
 
 	public class func usersResendConfirmationRequestBuilder(email: String,confirmationSubject: String? = nil,confirmationTemplate: String? = nil,prettyJson: Bool? = nil) -> RequestBuilder<[String:Any]> { 
 		let path = "/users/resend_confirmation.json"
-		let URLString = MbaasPreprodAPI.sharedInstance.basePath + path
+		let URLString = MbassAPI.sharedInstance.basePath + path
 		let nillableParameters: [String:AnyObject?] = [
 			"email": email as AnyObject, 
 			"confirmation_subject": confirmationSubject as AnyObject, 
@@ -1263,9 +1207,9 @@ single line (`false`). Default is `false`.
 			"pretty_json": prettyJson as AnyObject]
 		let parameters = APIHelper.rejectNil(source: nillableParameters  as [String : AnyObject?])
 		let convertedParameters = APIHelper.convertBoolToString(source: parameters)
-		let requestBuilder: RequestBuilder<[String:Any]>.Type = MbaasPreprodAPI.sharedInstance.requestBuilderFactory.getBuilder()
+		let requestBuilder: RequestBuilder<[String:Any]>.Type = MbassAPI.sharedInstance.requestBuilderFactory.getBuilder()
 
-		var customHeadersDict : [String: String] = [:]
+        let customHeadersDict : [String: String] = [:]
 
 
 
@@ -1299,11 +1243,11 @@ single line (`false`). Default is `false`.
 
 	public class func usersCountRequestBuilder() -> RequestBuilder<[String:Any]> { 
 		let path = "/users/count.json"
-		let URLString = MbaasPreprodAPI.sharedInstance.basePath + path
+		let URLString = MbassAPI.sharedInstance.basePath + path
 		let nillableParameters: [String:AnyObject?] = [:]
 		let parameters = APIHelper.rejectNil(source: nillableParameters  as [String : AnyObject?])
 		let convertedParameters = APIHelper.convertBoolToString(source: parameters)
-		let requestBuilder: RequestBuilder<[String:Any]>.Type = MbaasPreprodAPI.sharedInstance.requestBuilderFactory.getBuilder()
+		let requestBuilder: RequestBuilder<[String:Any]>.Type = MbassAPI.sharedInstance.requestBuilderFactory.getBuilder()
 
 		var customHeadersDict : [String: String] = [:]
 
@@ -1388,12 +1332,12 @@ If not specified, all Users objects are deleted.
 
 	public class func usersBatchDeleteRequestBuilder(where_: String? = nil) -> RequestBuilder<[String:Any]> { 
 		let path = "/users/batch_delete.json"
-		let URLString = MbaasPreprodAPI.sharedInstance.basePath + path
+		let URLString = MbassAPI.sharedInstance.basePath + path
 		let nillableParameters: [String:AnyObject?] = [
 		 	"where": where_ as AnyObject ]
 		let parameters = APIHelper.rejectNil(source: nillableParameters  as [String : AnyObject?])
 		let convertedParameters = APIHelper.convertBoolToString(source: parameters)
-		let requestBuilder: RequestBuilder<[String:Any]>.Type = MbaasPreprodAPI.sharedInstance.requestBuilderFactory.getBuilder()
+		let requestBuilder: RequestBuilder<[String:Any]>.Type = MbassAPI.sharedInstance.requestBuilderFactory.getBuilder()
 
 		var customHeadersDict : [String: String] = [:]
 

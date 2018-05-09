@@ -7,16 +7,10 @@ class APIHelper {
     static func rejectNil(source: [String: AnyObject?]) -> [String: AnyObject]? {
         var destination: [String: AnyObject] = [:]
         for (key, nillableValue) in source {
-            if let value = nillableValue {
-                if(!(value is NSNull)){
+            if let value: AnyObject = nillableValue {
+              if( value as! NSObject != NSNull()){ // Check for NSNull
                 destination[key] = value
-                }
-                else{
-                    print("nnnnn")
-                }
-            }
-            else{
-                print("nil object")
+              }
             }
         }
 

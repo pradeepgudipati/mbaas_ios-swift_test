@@ -44,7 +44,7 @@ public class EmailTemplateAPI: APIBase {
 
 	public class func emailTemplateEmailTemplatesCreateRequestBuilder(name: String,subject: String,body: String? = nil,plainBody: String? = nil) -> RequestBuilder<SuccessResponse> { 
 		let path = "/email_templates/create.json"
-		let URLString = MbaasPreprodAPI.sharedInstance.basePath + path
+		let URLString = MbassAPI.sharedInstance.basePath + path
 		let nillableParameters: [String:AnyObject?] = [
 		 	"name": name as AnyObject , 
 		 	"subject": subject as AnyObject , 
@@ -52,7 +52,7 @@ public class EmailTemplateAPI: APIBase {
 		 	"plain_body": plainBody as AnyObject ]
 		let parameters = APIHelper.rejectNil(source: nillableParameters  as [String : AnyObject?])
 		let convertedParameters = APIHelper.convertBoolToString(source: parameters)
-		let requestBuilder: RequestBuilder<SuccessResponse>.Type = MbaasPreprodAPI.sharedInstance.requestBuilderFactory.getBuilder()
+		let requestBuilder: RequestBuilder<SuccessResponse>.Type = MbassAPI.sharedInstance.requestBuilderFactory.getBuilder()
 
 		var customHeadersDict : [String: String] = [:]
 
@@ -103,7 +103,7 @@ public class EmailTemplateAPI: APIBase {
 
 	public class func emailTemplateEmailTemplatesUpdateRequestBuilder(emailTemplateId: String,name: String? = nil,subject: String? = nil,body: String? = nil,plainBody: String? = nil) -> RequestBuilder<SuccessResponse> { 
 		let path = "/email_templates/update.json"
-		let URLString = MbaasPreprodAPI.sharedInstance.basePath + path
+		let URLString = MbassAPI.sharedInstance.basePath + path
 		let nillableParameters: [String:AnyObject?] = [
 		 	"email_template_id": emailTemplateId as AnyObject , 
 		 	"name": name as AnyObject , 
@@ -112,7 +112,7 @@ public class EmailTemplateAPI: APIBase {
 		 	"plain_body": plainBody as AnyObject ]
 		let parameters = APIHelper.rejectNil(source: nillableParameters  as [String : AnyObject?])
 		let convertedParameters = APIHelper.convertBoolToString(source: parameters)
-		let requestBuilder: RequestBuilder<SuccessResponse>.Type = MbaasPreprodAPI.sharedInstance.requestBuilderFactory.getBuilder()
+		let requestBuilder: RequestBuilder<SuccessResponse>.Type = MbassAPI.sharedInstance.requestBuilderFactory.getBuilder()
 
 		var customHeadersDict : [String: String] = [:]
 
@@ -151,12 +151,12 @@ public class EmailTemplateAPI: APIBase {
 
 	public class func emailTemplateEmailTemplatesShowRequestBuilder(emailTemplateId: String) -> RequestBuilder<SuccessResponse> { 
 		let path = "/email_templates/show.json"
-		let URLString = MbaasPreprodAPI.sharedInstance.basePath + path
+		let URLString = MbassAPI.sharedInstance.basePath + path
 		let nillableParameters: [String:AnyObject?] = [
 			"email_template_id": emailTemplateId as AnyObject]
 		let parameters = APIHelper.rejectNil(source: nillableParameters  as [String : AnyObject?])
 		let convertedParameters = APIHelper.convertBoolToString(source: parameters)
-		let requestBuilder: RequestBuilder<SuccessResponse>.Type = MbaasPreprodAPI.sharedInstance.requestBuilderFactory.getBuilder()
+		let requestBuilder: RequestBuilder<SuccessResponse>.Type = MbassAPI.sharedInstance.requestBuilderFactory.getBuilder()
 
 		var customHeadersDict : [String: String] = [:]
 
@@ -195,12 +195,12 @@ public class EmailTemplateAPI: APIBase {
 
 	public class func emailTemplateEmailTemplatesDeleteRequestBuilder(emailTemplateId: String) -> RequestBuilder<SuccessResponse> { 
 		let path = "/email_templates/delete.json"
-		let URLString = MbaasPreprodAPI.sharedInstance.basePath + path
+		let URLString = MbassAPI.sharedInstance.basePath + path
 		let nillableParameters: [String:AnyObject?] = [
 		 	"email_template_id": emailTemplateId as AnyObject ]
 		let parameters = APIHelper.rejectNil(source: nillableParameters  as [String : AnyObject?])
 		let convertedParameters = APIHelper.convertBoolToString(source: parameters)
-		let requestBuilder: RequestBuilder<SuccessResponse>.Type = MbaasPreprodAPI.sharedInstance.requestBuilderFactory.getBuilder()
+		let requestBuilder: RequestBuilder<SuccessResponse>.Type = MbassAPI.sharedInstance.requestBuilderFactory.getBuilder()
 
 		var customHeadersDict : [String: String] = [:]
 
@@ -236,11 +236,11 @@ public class EmailTemplateAPI: APIBase {
 
 	public class func emailTemplateEmailTemplatesQueryRequestBuilder() -> RequestBuilder<SuccessResponse> { 
 		let path = "/email_templates/query.json"
-		let URLString = MbaasPreprodAPI.sharedInstance.basePath + path
+		let URLString = MbassAPI.sharedInstance.basePath + path
 		let nillableParameters: [String:AnyObject?] = [:]
 		let parameters = APIHelper.rejectNil(source: nillableParameters  as [String : AnyObject?])
 		let convertedParameters = APIHelper.convertBoolToString(source: parameters)
-		let requestBuilder: RequestBuilder<SuccessResponse>.Type = MbaasPreprodAPI.sharedInstance.requestBuilderFactory.getBuilder()
+		let requestBuilder: RequestBuilder<SuccessResponse>.Type = MbassAPI.sharedInstance.requestBuilderFactory.getBuilder()
 
 		var customHeadersDict : [String: String] = [:]
 
